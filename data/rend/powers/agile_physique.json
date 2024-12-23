@@ -1,0 +1,1426 @@
+	{
+		"type": "origins:multiple",
+		"name": "Agile Physique",
+		"description": "You struggle to utilise heavy armours and swords at lower levels of strength. Axes are always of reduced effectiveness. However, your attack speed is increased at higher levels and you are able to use mana to double jump.",
+		"diamond_decrease_equip_1": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.2
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.2
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"diamond_decrease_equip_2": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.3
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.3
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"diamond_decrease_equip_3": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.4
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.4
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"diamond_decrease_equip_4": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.5
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.5
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_helmet\",Slot:103b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_chestplate\",Slot:102b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_leggings\",Slot:101b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:diamond_boots\",Slot:100b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"netherite_decrease_equip_1": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.3
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.3
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 40
+					}
+				]
+			}
+		},
+		"netherite_decrease_equip_2": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.4
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.4
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 40
+					}
+				]
+			}
+		},
+		"netherite_decrease_equip_3": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.5
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.5
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									}
+								]
+							},
+							{
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+										"comparison": "==",
+										"compare_to": 1
+									},
+									{
+										"type": "origins:command",
+										"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+										"comparison": "==",
+										"compare_to": 0
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 40
+					}
+				]
+			}
+		},
+		"netherite_decrease_equip_4": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.6
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.6
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_helmet\",Slot:103b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_chestplate\",Slot:102b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_leggings\",Slot:101b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{
+								"type": "origins:command",
+								"command": "execute if entity @s[nbt={Inventory:[{id:\"minecraft:netherite_boots\",Slot:100b}]}]",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						]
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 40
+					}
+				]
+			}
+		},
+		"diamond_sword_decrease": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.1
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.2
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:diamond_sword\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"netherite_sword_decrease": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.movement_speed",
+					"operation": "multiply_total",
+					"value": -0.1
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "multiply_total",
+					"value": -0.2
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:netherite_sword\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:xp_levels",
+						"comparison": "<",
+						"compare_to": 30
+					}
+				]
+			}
+		},
+		"axe_limit": {
+			"type": "origins:conditioned_attribute",
+			"modifiers": [
+				{
+					"attribute": "minecraft:generic.attack_damage",
+					"operation": "addition",
+					"value": -5
+				},
+				{
+					"attribute": "minecraft:generic.attack_speed",
+					"operation": "addition",
+					"value": -0.4
+				}
+			],
+			"tick_rate": 40,
+			"condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:netherite_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:diamond_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:iron_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:golden_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:stone_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "execute if entity @s[nbt={SelectedItem:{id:\"minecraft:wooden_axe\"}}]",
+						"comparison": "==",
+						"compare_to": 1
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_1": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 24
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_2": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 28
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_3": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 32
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_4": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 36
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_5": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 40
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_6": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 44
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_7": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 48
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		},
+		"attack_speed_bonus_8": {
+			"type": "origins:conditioned_attribute",
+			"modifier": {
+				"attribute": "minecraft:generic.attack_speed",
+				"operation": "addition",
+				"value": 0.1
+			},
+			"tick_rate": 50,
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:xp_levels",
+						"comparison": ">=",
+						"compare_to": 52
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": false
+					}
+				]
+			}
+		}
+	}

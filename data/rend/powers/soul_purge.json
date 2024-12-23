@@ -1,0 +1,552 @@
+{
+	"name": "Soul purge",
+	"description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be launched back and does damage depending on your level. All levels are lost. Does not function whilst in the Nether.",
+	"type": "origins:multiple",
+	"on_death": {
+		"type": "origins:prevent_death",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:clear_effect"
+				},
+				{
+					"type": "origins:extinguish"
+				},
+				{
+					"type": "origins:apply_effect",
+					"effects": [
+						{
+							"effect": "minecraft:regeneration",
+							"duration": 30,
+							"amplifier": 5,
+							"show_particles": false,
+							"show_icon": false
+						},
+						{
+							"effect": "minecraft:resistance",
+							"duration": 3,
+							"amplifier": 5,
+							"show_particles": false,
+							"show_icon": false
+						}
+					]
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "rend:soul_purge_purge",
+					"change": 1
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:soul_fire_flame ~ ~1.5 ~ .9 .9 .9 0.30 100 normal @a"
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:item.trident.thunder"
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 20
+				}
+			]
+		}
+	},
+	"purge": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"max_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "rend:soul_purge_purge",
+					"change": -1
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players set @s rend_soul_purge_actor 1"
+				},
+				{
+					"type": "origins:area_of_effect",
+					"radius": 10,
+					"bientity_action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:actor_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute store result score #playerX pos as @s run data get entity @s Pos[0] 1"
+								}
+							},
+							{
+								"type": "origins:actor_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute store result score #playerZ pos as @s run data get entity @s Pos[2] 1"
+								}
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute store result score #targetX pos as @s run data get entity @s Pos[0] 1"
+								}
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute store result score #targetZ pos as @s run data get entity @s Pos[2] 1"
+								}
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute if entity @s[type=player] run gamerule showDeathMessages false"
+								}
+							},
+							{
+								"type": "origins:if_else_list",
+								"actions": [
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 50
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 19,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 45
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 17,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 40
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 15,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 35
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 13,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 30
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 11,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 25
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 9,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:actor_condition",
+											"condition": {
+												"type": "origins:xp_levels",
+												"comparison": ">=",
+												"compare_to": 20
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:damage",
+												"amount": 7,
+												"source": {
+													"name": "onFire",
+													"magic": true,
+													"bypasses_armor": true,
+													"unblockable": true
+												}
+											}
+										}
+									}
+								]
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:if_else",
+									"condition": {
+										"type": "origins:health",
+										"comparison": "<=",
+										"compare_to": 0
+									},
+									"if_action": {
+										"type": "origins:execute_command",
+										"command": "execute if entity @s[type=player] run tellraw @a [{\"text\":\"\",\"extra\":[{\"selector\":\"@s\"}]},{\"text\":\" was torn to shreds by \",\"extra\":[{\"selector\":\"@a[sort=nearest,limit=1,scores={rend_soul_purge_actor=1}]\"}]},{\"text\":\"'s soul\"}]"
+									}
+								}
+							},
+							{
+								"type": "origins:target_action",
+								"action": {
+									"type": "origins:execute_command",
+									"command": "execute if entity @s[type=player] run gamerule showDeathMessages true"
+								}
+							},
+							{
+								"type": "origins:if_else_list",
+								"actions": [
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos < #playerX pos if score #targetZ pos = #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": -2,
+												"y": 0.8,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos > #playerX pos if score #targetZ pos = #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": 2,
+												"y": 0.8,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetZ pos < #playerZ pos if score #targetX pos = #playerX pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"z": -2,
+												"y": 0.8,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetZ pos > #playerZ pos if score #targetX pos = #playerX pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"z": 2,
+												"y": 0.8,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos < #playerX pos if score #targetZ pos < #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": -2,
+												"y": 0.8,
+												"z": -2,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos < #playerX pos if score #targetZ pos > #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": -2,
+												"y": 0.8,
+												"z": 2,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos > #playerX pos if score #targetZ pos < #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": 2,
+												"y": 0.8,
+												"z": -2,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos > #playerX pos if score #targetZ pos > #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"x": 2,
+												"y": 0.8,
+												"z": 2,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									},
+									{
+										"condition": {
+											"type": "origins:target_condition",
+											"condition": {
+												"type": "origins:command",
+												"command": "execute if score #targetX pos = #playerX pos if score #targetZ pos = #playerZ pos",
+												"comparison": "==",
+												"compare_to": 1
+											}
+										},
+										"action": {
+											"type": "origins:target_action",
+											"action": {
+												"type": "origins:add_velocity",
+												"y": 0.8,
+												"space": "world",
+												"client": true,
+												"server": true,
+												"set": true
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"bientity_condition": {
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:command",
+							"command": "execute if entity @s[team=!rend]",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "scoreboard players set @s rend_soul_purge_actor 0"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "xp set @s 0 levels"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,135 @@
+{
+	"name": "8th Sense",
+	"description": "Creatures sense your weakened state and take the opportunity to pursue you over greater distances, imbuing extra strength into their attacks.",
+	"type": "origins:multiple",
+	"modify_follow_range": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:area_of_effect",
+			"radius": 50,
+			"bientity_action": {
+				"type": "origins:if_else_list",
+				"actions": [
+					{
+						"condition": {
+							"type": "origins:target_condition",
+							"condition": {
+								"type": "origins:command",
+								"command": "execute if entity @s[type=#rend:follow_base_sixteen]",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "attribute @s minecraft:generic.follow_range base set 28"
+							}
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:target_condition",
+							"condition": {
+								"type": "origins:command",
+								"command": "execute if entity @s[type=#rend:follow_base_forty]",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "attribute @s minecraft:generic.follow_range base set 50"
+							}
+						}
+					},
+					{
+						"condition": {
+							"type": "origins:target_condition",
+							"condition": {
+								"type": "origins:command",
+								"command": "execute if entity @s[type=#rend:follow_base_fifty]",
+								"comparison": "==",
+								"compare_to": 1
+							}
+						},
+						"action": {
+							"type": "origins:target_action",
+							"action": {
+								"type": "origins:execute_command",
+								"command": "attribute @s minecraft:generic.follow_range base set 60"
+							}
+						}
+					}
+				]
+			},
+			"bientity_condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:can_see"
+					},
+					{
+						"type": "origins:target_condition",
+						"condition": {
+							"type": "origins:command",
+							"command": "execute if entity @s[type=#rend:follow_base_all]",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					}
+				]
+			}
+		},
+		"interval": 60,
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:xp_levels",
+					"comparison": "<",
+					"compare_to": 20
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": false
+				}
+			]
+		}
+	},
+	"modify_entity_attack": {
+		"type": "origins:modify_damage_taken",
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:command",
+				"command": "execute if entity @s[type=#rend:follow_base_all]",
+				"comparison": "==",
+				"compare_to": 1
+			}
+		},
+		"modifier": {
+			"operation": "addition",
+			"value": 1
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:xp_levels",
+					"comparison": "<",
+					"compare_to": 20
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": false
+				}
+			]
+		}
+	}
+}

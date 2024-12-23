@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"rend:setup",
+		"rend:cursed_prison",
+		"rend:faded_husk",
+		"rend:eighth_sense",
+		"rend:mana",
+		"rend:agile_physique",
+		"rend:carnivore",
+		"rend:soul_purge",
+		"rend:double_jump",
+		"rend:fallen_allies",
+		"rend:soul_staff",
+		"rend:advancement_handler",
+		"rend:transparency"
+	],
+	"icon": "minecraft:ancient_debris",
+	"order": 10,
+	"impact": 3,
+	"name": "Rend",
+	"description": "Subclass of an ancient species. Millenia of isolation has drastically weakened them."
+}

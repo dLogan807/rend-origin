@@ -1,0 +1,13 @@
+{
+    "criteria": {
+        "Soul Staff": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "soul_staff"
+            }
+        }
+    },
+    "rewards": {
+        "function": "rend:recipe"
+    }
+}
