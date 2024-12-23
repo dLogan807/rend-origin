@@ -21,17 +21,13 @@
         {
           "type": "origins:damage",
           "amount": 3,
-          "source": {
-            "name": "onFire",
-            "fire": true,
-            "bypasses_armor": true
-          }
+          "damage_type": "minecraft:on_fire"
         }
       ]
     },
     "interval": 20,
     "condition": {
-      "type": "origins:and",
+      "type": "origins:all_of",
       "conditions": [
         {
           "type": "origins:block_in_radius",
@@ -64,31 +60,24 @@
       "actions": [
         {
           "type": "origins:explode",
-          "power": 1,
-          "destruction_type": "break",
-          "damage_self": true,
-          "create_fire": false
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "fill ~3 ~3 ~3 ~-3 ~-2 ~-3 air replace nether_portal"
+          "power": 1
         }
       ]
     },
     "interval": 10,
     "condition": {
-      "type": "origins:and",
+      "type": "origins:all_of",
       "conditions": [
         {
-          "type": "origins:command",
-          "command": "execute at @s if block ~ ~ ~ minecraft:nether_portal",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:in_block",
+          "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:nether_portal"
+          }
         },
         {
           "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": false
+          "dimension": "minecraft:the_nether"
         },
         {
           "type": "origins:xp_levels",

@@ -1,10 +1,11 @@
 {
   "powers": [
-    "rend:setup",
-    "rend:carnivore",
-    "rend:mana",
-    "rend:double_jump",
-    "rend:advancement_handler"
+    "*:setup",
+    "*:cursed_prison",
+    "*:carnivore",
+    "*:mana",
+    "*:double_jump",
+    "*:advancement_handler"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
