@@ -11,10 +11,7 @@
       "id": "minecraft:netherite_sword",
       "nbt": "{CustomModelData:439202}"
     },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "frame": "challenge"
   },
   "criteria": {
     "Soul Staff Created": {

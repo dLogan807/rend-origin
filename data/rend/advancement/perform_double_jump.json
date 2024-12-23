@@ -9,10 +9,7 @@
     },
     "icon": {
       "id": "minecraft:feather"
-    },
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    }
   },
   "criteria": {
     "54 Levels": {

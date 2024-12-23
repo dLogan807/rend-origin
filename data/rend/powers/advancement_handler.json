@@ -1,43 +1,33 @@
 {
-	"type": "origins:action_over_time",
-	"entity_action": {
-		"type": "origins:if_else_list",
-		"actions": [
-			{
-				"condition": {
-					"type": "origins:resource",
-					"resource": "rend:double_jump_number_of_jumps",
-					"comparison": "<",
-					"compare_to": 1
-				},
-				"action": {
-					"type": "origins:execute_command",
-					"command": "advancement grant @s only rend:perform_double_jump"
-				}
-			},
-			{
-				"condition": {
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 54
-				},
-				"action": {
-					"type": "origins:execute_command",
-					"command": "advancement grant @s only rend:reach_level_54"
-				}
-			},
-			{
-				"condition": {
-					"type": "origins:dimension",
-					"dimension": "minecraft:overworld"
-				},
-				"action": {
-					"type": "origins:execute_command",
-					"command": "advancement grant @s only rend:escape_nether"
-				}
-			}
-		]
-	},
-	"interval": 10,
-	"hidden": true
+  "type": "origins:action_over_time",
+  "rising_action": {
+    "type": "origins:if_else_list",
+    "actions": [
+      {
+        "condition": {
+          "type": "origins:resource",
+          "resource": "rend:double_jump_number_of_jumps",
+          "comparison": "<",
+          "compare_to": 1
+        },
+        "action": {
+          "type": "origins:grant_advancement",
+          "advancement": "rend:perform_double_jump"
+        }
+      },
+      {
+        "condition": {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 54
+        },
+        "action": {
+          "type": "origins:grant_advancement",
+          "advancement": "rend:reach_level_54"
+        }
+      }
+    ]
+  },
+  "interval": 10,
+  "hidden": false
 }

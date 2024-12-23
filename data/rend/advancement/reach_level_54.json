@@ -10,10 +10,7 @@
     "icon": {
       "id": "minecraft:experience_bottle"
     },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "frame": "goal"
   },
   "criteria": {
     "54 Levels": {

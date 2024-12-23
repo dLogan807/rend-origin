@@ -9,14 +9,15 @@
     },
     "icon": {
       "id": "minecraft:grass_block"
-    },
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    }
   },
   "criteria": {
     "The Overworld": {
-      "trigger": "minecraft:impossible"
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "from": "minecraft:the_nether",
+        "to": "minecraft:overworld"
+      }
     }
   },
   "parent": "rend:root"
