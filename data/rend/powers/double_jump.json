@@ -1,167 +1,168 @@
 {
-    "hidden": true,
-    "type": "origins:multiple",
-    "number_of_jumps": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 1,
-        "hud_render": {
-            "should_render": false
-        }
-    },
-    "jump_reset": {
-        "type": "origins:action_over_time",
-        "interval": 1,
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_number_of_jumps",
-            "change": 1,
-            "operation": "set"
-        },
-        "condition": {
-            "type": "origins:on_block"
-        }
-    },
-    "activating_jump": {
-        "type": "origins:active_self",
-        "key": {
-            "key": "key.jump"
-        },
-        "cooldown": 0,
-        "hud_render": {
-            "should_render": false
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:on_block",
-                    "inverted": true
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_number_of_jumps",
-                    "comparison": ">",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "rend:mana_mana-bar",
-                    "comparison": ">",
-                    "compare_to": 10
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:water",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:fluid_height",
-                    "fluid": "minecraft:lava",
-                    "comparison": "==",
-                    "compare_to": 0
-                },
-                {
-                    "type": "origins:xp_levels",
-                    "comparison": ">=",
-                    "compare_to": 20
-                },
-                {
-                    "type": "origins:dimension",
-                    "dimension": "minecraft:the_nether",
-                    "inverted": true
-                }
-            ]
-        },
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_number_of_jumps",
-                    "change": -1,
-                    "operation": "set"
-                },
-				{
-					"type": "origins:execute_command",
-					"command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
-				},
-                {
-                    "type": "origins:add_velocity",
-                    "set": true,
-					"client": false,
-					"server": true,
-                    "y": 0.5
-                },
-                {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:moving"
-                    },
-                    "if_action": {
-                        "type": "origins:add_velocity",
-                        "space": "local",
-                        "z": 0.4
-                    }
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "rend:mana_mana-bar",
-                    "change": -8
-                }
-            ]
-        }
-    },
-    "fall_half_immunity": {
-        "type": "origins:invulnerability",
-        "damage_condition": {
-            "type": "origins:name",
-            "name": "fall"
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:fall_distance",
-                    "comparison": "<",
-                    "compare_to": 7
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_number_of_jumps",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        }
-    },
-    "fall_half_damage": {
-        "type": "origins:modify_damage_taken",
-        "damage_condition": {
-            "type": "origins:name",
-            "name": "fall"
-        },
-        "condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:fall_distance",
-                    "comparison": ">",
-                    "compare_to": 5
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "*:*_number_of_jumps",
-                    "comparison": "==",
-                    "compare_to": 0
-                }
-            ]
-        },
-        "modifier": {
-            "name": "jump resist",
-            "operation": "multiply_total",
-            "value": -0.5
-        }
+  "hidden": true,
+  "type": "origins:multiple",
+  "number_of_jumps": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
     }
+  },
+  "jump_reset": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_number_of_jumps",
+      "change": 1,
+      "operation": "set"
+    },
+    "condition": {
+      "type": "origins:on_block"
+    }
+  },
+  "activating_jump": {
+    "type": "origins:active_self",
+    "key": {
+      "key": "key.jump"
+    },
+    "cooldown": 0,
+    "hud_render": {
+      "should_render": false
+    },
+    "condition": {
+      "type": "origins:all_of",
+      "conditions": [
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_number_of_jumps",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "rend:mana_mana-bar",
+          "comparison": ">",
+          "compare_to": 10
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_number_of_jumps",
+          "change": -1,
+          "operation": "set"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
+        },
+        {
+          "type": "origins:add_velocity",
+          "set": true,
+          "client": false,
+          "server": true,
+          "y": 0.5
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:moving",
+            "vertically": false
+          },
+          "if_action": {
+            "type": "origins:add_velocity",
+            "space": "local",
+            "z": 0.4
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "rend:mana_mana-bar",
+          "change": -8
+        }
+      ]
+    }
+  },
+  "fall_half_immunity": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:name",
+      "name": "fall"
+    },
+    "condition": {
+      "type": "origins:all_of",
+      "conditions": [
+        {
+          "type": "origins:fall_distance",
+          "comparison": "<",
+          "compare_to": 7
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_number_of_jumps",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "fall_half_damage": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fall"
+    },
+    "condition": {
+      "type": "origins:all_of",
+      "conditions": [
+        {
+          "type": "origins:fall_distance",
+          "comparison": ">",
+          "compare_to": 5
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_number_of_jumps",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    },
+    "modifier": {
+      "name": "jump resist",
+      "operation": "multiply_total_multiplicative",
+      "amount": -0.5
+    }
+  }
 }

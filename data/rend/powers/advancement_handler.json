@@ -29,5 +29,5 @@
     ]
   },
   "interval": 10,
-  "hidden": false
+  "hidden": true
 }

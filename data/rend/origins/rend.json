@@ -2,6 +2,7 @@
   "powers": [
     "rend:setup",
     "rend:carnivore",
+    "rend:mana",
     "rend:double_jump",
     "rend:advancement_handler"
   ],
