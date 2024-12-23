@@ -1,8 +1,8 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:name_of_potion",
-		"minecraft:name_of_potion",
-		"minecraft:name_of_potion"
-	]
+  "replace": false,
+  "values": [
+    "minecraft:name_of_potion",
+    "minecraft:name_of_potion",
+    "minecraft:name_of_potion"
+  ]
 }

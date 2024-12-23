@@ -3,99 +3,99 @@
   "name": "Cursed Imprisonment",
   "description": "Born of the Overworld but shackled to the ruins of the Nether. The dimension erases all beneficial abilites.",
   "nether_spawn": {
-		"type": "origins:modify_player_spawn",
-		"dimension": "minecraft:the_nether",
-		"dimension_distance_multiplier": 0.125,
-		"biome": "minecraft:nether_wastes",
-		"spawn_strategy": "center"
+    "type": "origins:modify_player_spawn",
+    "dimension": "minecraft:the_nether",
+    "dimension_distance_multiplier": 0.125,
+    "biome": "minecraft:nether_wastes",
+    "spawn_strategy": "center"
   },
   "nether_prison": {
-	"type":"origins:action_over_time",
-	"entity_action": {
-		"type": "origins:and",
-		"actions": [
-		{
-			"type": "origins:execute_command",
-			"command": "title @s actionbar {\"text\":\"You are not yet worthy...\",\"color\":\"white\",\"italic\":true}"
-		},
-		{    
-			"type": "origins:damage",
-			"amount": 3,
-			"source": {
-				"name": "onFire",
-				"fire": true,
-				"bypasses_armor": true
-			}
-		}
-		]
-	},
-	"interval": 20,
-	"condition": {
-	  "type": "origins:and",
-	  "conditions": [
-		{
-			"type": "origins:block_in_radius",
-			"block_condition": {
-				"type": "origins:in_tag",
-				"tag": "rend:nether_portal"
-			},
-			"radius": 6,
-			"shape": "star",
-			"comparison": ">=",
-			"compare_to": 1
-		},
-		{      
-			"type": "origins:dimension",
-			"dimension": "minecraft:the_nether",
-			"inverted": false
-		},
-		{
-			"type": "origins:xp_levels",
-			"comparison": "<",
-			"compare_to": 30
-		}
-	]
-	}
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"You are not yet worthy...\",\"color\":\"white\",\"italic\":true}"
+        },
+        {
+          "type": "origins:damage",
+          "amount": 3,
+          "source": {
+            "name": "onFire",
+            "fire": true,
+            "bypasses_armor": true
+          }
+        }
+      ]
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "rend:nether_portal"
+          },
+          "radius": 6,
+          "shape": "star",
+          "comparison": ">=",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": false
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 30
+        }
+      ]
+    }
   },
   "portal_destroy": {
-	"type":"origins:action_over_time",
-	"entity_action": {
-		"type": "origins:and",
-		"actions": [
-			{
-				"type": "origins:explode",
-				"power": 1,
-				"destruction_type": "break",
-				"damage_self": true,
-				"create_fire": false
-			},
-			{
-				"type": "origins:execute_command",
-				"command": "fill ~3 ~3 ~3 ~-3 ~-2 ~-3 air replace nether_portal"
-			}
-		]
-	},
-	"interval": 10,
-	"condition": {
-	  "type": "origins:and",
-	  "conditions": [
-		{
-			"type": "origins:command",
-			"command": "execute at @s if block ~ ~ ~ minecraft:nether_portal",
-			"comparison": "==",
-			"compare_to": 1
-		},
-		{      
-			"type": "origins:dimension",
-			"dimension": "minecraft:the_nether",
-			"inverted": false
-		},
-		{
-			"type": "origins:xp_levels",
-			"comparison": "<",
-			"compare_to": 30
-		}
-	  ]
-	}
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:explode",
+          "power": 1,
+          "destruction_type": "break",
+          "damage_self": true,
+          "create_fire": false
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "fill ~3 ~3 ~3 ~-3 ~-2 ~-3 air replace nether_portal"
+        }
+      ]
+    },
+    "interval": 10,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:command",
+          "command": "execute at @s if block ~ ~ ~ minecraft:nether_portal",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": false
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 30
+        }
+      ]
+    }
   }
 }

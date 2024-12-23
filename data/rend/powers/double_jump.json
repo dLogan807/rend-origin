@@ -46,7 +46,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "rend:mana_mana-bar",
+          "resource": "*:mana_mana-bar",
           "comparison": ">",
           "compare_to": 10
         },
@@ -108,7 +108,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "rend:mana_mana-bar",
+          "resource": "*:mana_mana-bar",
           "change": -8
         }
       ]

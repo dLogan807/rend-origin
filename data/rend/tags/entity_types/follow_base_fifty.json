@@ -1,7 +1,4 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:pillager",
-		"minecraft:ravager"
-	]
+  "replace": false,
+  "values": ["minecraft:pillager", "minecraft:ravager"]
 }

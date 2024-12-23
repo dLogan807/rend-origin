@@ -1,304 +1,304 @@
 {
-	"type": "origins:multiple",
-	"name": "Faded Husk",
-	"description": "Your withered soul blatantly displays your lack of strength, proportionally hindering what armour you're able to wear. You grow stronger as you progress.",
-	"weakness_1-2": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.attack_damage",
-			"operation": "addition",
-			"value": -4
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:xp_levels",
-			"comparison": "<",
-			"compare_to": 5
-		}
-	},
-	"decreased_health_1-2": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.max_health",
-			"value": -8,
-			"operation": "addition"
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:xp_levels",
-			"comparison": "<",
-			"compare_to": 5
-		}
-	},
-	"armour_reduction_1-2": {
-		"type": "origins:conditioned_restrict_armor",
-		"head": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 0
-		},
-		"chest": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 0
-		},
-		"legs": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 0
-		},
-		"feet": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 0
-		},
-		"condition": {
-			"type": "origins:xp_levels",
-			"comparison": "<",
-			"compare_to": 5
-		},
-		"tick_rate": 40
-	},
-	"weakness_3": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.attack_damage",
-			"operation": "addition",
-			"value": -3
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 5
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 10
-				}
-			]
-		}
-	},
-	"decreased_health_3": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.max_health",
-			"value": -6,
-			"operation": "addition"
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 5
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 10
-				}
-			]
-		}
-	},
-	"armour_reduction_3-4": {
-		"type": "origins:conditioned_restrict_armor",
-		"head": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 2
-		},
-		"chest": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 5
-		},
-		"legs": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 4
-		},
-		"feet": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 1
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 5
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 15
-				}
-			]
-		},
-		"tick_rate": 40
-	},
-	"weakness_4": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.attack_damage",
-			"operation": "addition",
-			"value": -2
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 10
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 15
-				}
-			]
-		}
-	},
-	"decreased_health_4": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.max_health",
-			"value": -4,
-			"operation": "addition"
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 10
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 15
-				}
-			]
-		}
-	},
-	"weakness_5": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.attack_damage",
-			"operation": "addition",
-			"value": -1
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:or",
-			"conditions": [
-				{
-					"type": "origins:and",
-				"conditions": [
-					{
-						"type": "origins:xp_levels",
-						"comparison": ">=",
-						"compare_to": 15
-					},
-					{      
-						"type": "origins:xp_levels",
-						"comparison": "<",
-						"compare_to": 20
-					}
-				]
-				},
-				{
-					"type": "origins:dimension",
-					"dimension": "minecraft:the_nether",
-					"inverted": false
-				}
-			]
-		}
-	},
-	"decreased_health_5": {
-		"type": "origins:conditioned_attribute",
-		"modifier": {
-			"attribute": "minecraft:generic.max_health",
-			"value": -2,
-			"operation": "addition"
-		},
-		"tick_rate": 20,
-		"condition": {
-			"type": "origins:or",
-			"conditions": [
-				{
-					"type": "origins:and",
-				"conditions": [
-					{
-						"type": "origins:xp_levels",
-						"comparison": ">=",
-						"compare_to": 15
-					},
-					{      
-						"type": "origins:xp_levels",
-						"comparison": "<",
-						"compare_to": 20
-					}
-				]
-				},
-				{
-					"type": "origins:dimension",
-					"dimension": "minecraft:the_nether",
-					"inverted": false
-				}
-			]
-		}
-	},
-	"armour_reduction_5": {
-		"type": "origins:conditioned_restrict_armor",
-		"head": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 2
-		},
-		"chest": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 6
-		},
-		"legs": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 5
-		},
-		"feet": {
-			"type": "origins:armor_value",
-			"comparison": ">",
-			"compare_to": 2
-		},
-		"condition": {
-			"type": "origins:and",
-			"conditions": [
-				{
-					"type": "origins:xp_levels",
-					"comparison": ">=",
-					"compare_to": 15
-				},
-				{      
-					"type": "origins:xp_levels",
-					"comparison": "<",
-					"compare_to": 20
-				}
-			]
-		},
-		"tick_rate": 40
-	}
+  "type": "origins:multiple",
+  "name": "Faded Husk",
+  "description": "Your withered soul blatantly displays your lack of strength, proportionally hindering what armour you're able to wear. You grow stronger as you progress.",
+  "weakness_1-2": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": -4
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:xp_levels",
+      "comparison": "<",
+      "compare_to": 5
+    }
+  },
+  "decreased_health_1-2": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -8,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:xp_levels",
+      "comparison": "<",
+      "compare_to": 5
+    }
+  },
+  "armour_reduction_1-2": {
+    "type": "origins:conditioned_restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "condition": {
+      "type": "origins:xp_levels",
+      "comparison": "<",
+      "compare_to": 5
+    },
+    "tick_rate": 40
+  },
+  "weakness_3": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": -3
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 5
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 10
+        }
+      ]
+    }
+  },
+  "decreased_health_3": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -6,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 5
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 10
+        }
+      ]
+    }
+  },
+  "armour_reduction_3-4": {
+    "type": "origins:conditioned_restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 2
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 5
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 4
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 1
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 5
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 15
+        }
+      ]
+    },
+    "tick_rate": 40
+  },
+  "weakness_4": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": -2
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 10
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 15
+        }
+      ]
+    }
+  },
+  "decreased_health_4": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -4,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 10
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 15
+        }
+      ]
+    }
+  },
+  "weakness_5": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": -1
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:xp_levels",
+              "comparison": ">=",
+              "compare_to": 15
+            },
+            {
+              "type": "origins:xp_levels",
+              "comparison": "<",
+              "compare_to": 20
+            }
+          ]
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": false
+        }
+      ]
+    }
+  },
+  "decreased_health_5": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -2,
+      "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:xp_levels",
+              "comparison": ">=",
+              "compare_to": 15
+            },
+            {
+              "type": "origins:xp_levels",
+              "comparison": "<",
+              "compare_to": 20
+            }
+          ]
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": false
+        }
+      ]
+    }
+  },
+  "armour_reduction_5": {
+    "type": "origins:conditioned_restrict_armor",
+    "head": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 2
+    },
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 6
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 5
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 2
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 15
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 20
+        }
+      ]
+    },
+    "tick_rate": 40
+  }
 }

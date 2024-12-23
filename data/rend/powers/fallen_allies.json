@@ -1,62 +1,62 @@
-	{
-	"type": "origins:multiple",
-	"name": "Fallen Allies",
-	"description": "Undead who were once part of the Drawl Empire ally with you.",
-	"ally_check": {
-		"type": "origins:action_over_time",
-		"entity_action": {
-			"type": "origins:and",
-			"actions": [
-				{
-					"type": "origins:chance",
-					"action": {
-						"type": "origins:execute_command",
-						"command": "execute as @e[tag=checking] run function rend:add_fallen"
-					},
-					"fail_action": {
-						"type": "origins:execute_command",
-						"command": "execute as @e[tag=checking] run data merge entity @s {Tags:[\"checked\"]}"
-					},
-					"chance": 0.04
-				},
-				{
-					"type": "origins:execute_command",
-					"command": "execute as @e[type=#rend:allies,team=!Zombiemind,distance=..50,tag=!checked,limit=1] run data merge entity @s {Tags:[\"checking\"]}"
-				}
-			]
-		},
-		"interval": 5,
-		"condition": {
-			"type": "origins:dimension",
-			"dimension": "minecraft:the_nether",
-			"inverted": true
-		}
-	},
-	"attack_target": {
-		"type": "origins:target_action_on_hit",
-		"entity_action": {
-			"type": "origins:and",
-			"actions": [
-				{
-					"type": "origins:execute_command",
-					"command": "execute at @e[type=!player,type=!wolf,team=rend] run summon snowball ~ ~2.3 ~ {Invisible:1b,Motion:[0.0,-1.0,0.0],Tags:[\"snowball_anger\"]}"	
-				},
-				{  
-					"type": "origins:execute_command",
-					"command": "function rend:snowball_one"
-				}
-			]
-		},
-		"target_condition": {
-			"type": "origins:command",
-			"command": "scoreboard players get @s rend_current_enemy",
-			"comparison": "<=",
-			"compare_to": 0
-		},
-		"cooldown": 20,
-		"hud_render": {
-			"should_render": false,
-			"bar_index": 5
-		}
-	}
+{
+  "type": "origins:multiple",
+  "name": "Fallen Allies",
+  "description": "Undead who were once part of the Drawl Empire ally with you.",
+  "ally_check": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:chance",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "execute as @e[tag=checking] run function rend:add_fallen"
+          },
+          "fail_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @e[tag=checking] run data merge entity @s {Tags:[\"checked\"]}"
+          },
+          "chance": 0.04
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute as @e[type=#rend:allies,team=!Zombiemind,distance=..50,tag=!checked,limit=1] run data merge entity @s {Tags:[\"checking\"]}"
+        }
+      ]
+    },
+    "interval": 5,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether",
+      "inverted": true
+    }
+  },
+  "attack_target": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @e[type=!player,type=!wolf,team=rend] run summon snowball ~ ~2.3 ~ {Invisible:1b,Motion:[0.0,-1.0,0.0],Tags:[\"snowball_anger\"]}"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:snowball_one"
+        }
+      ]
+    },
+    "target_condition": {
+      "type": "origins:command",
+      "command": "scoreboard players get @s rend_current_enemy",
+      "comparison": "<=",
+      "compare_to": 0
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false,
+      "bar_index": 5
+    }
+  }
 }

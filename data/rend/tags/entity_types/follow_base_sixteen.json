@@ -1,26 +1,26 @@
-	{
-		"replace": false,
-		"values": [
-			"minecraft:cave_spider",
-			"minecraft:creeper",
-			"minecraft:elder_guardian",
-			"minecraft:endermite",
-			"minecraft:evoker",
-			"minecraft:guardian",
-			"minecraft:hoglin",
-			"minecraft:zoglin",
-			"minecraft:magma_cube",
-			"minecraft:phantom",
-			"minecraft:piglin",
-			"minecraft:piglin_brute",
-			"minecraft:silverfish",
-			"minecraft:skeleton",
-			"minecraft:slime",
-			"minecraft:spider",
-			"minecraft:stray",
-			"minecraft:vex",
-			"minecraft:witch",
-			"minecraft:wither_skeleton",
-			"minecraft:iron_golem"
-		]
-	}
+{
+  "replace": false,
+  "values": [
+    "minecraft:cave_spider",
+    "minecraft:creeper",
+    "minecraft:elder_guardian",
+    "minecraft:endermite",
+    "minecraft:evoker",
+    "minecraft:guardian",
+    "minecraft:hoglin",
+    "minecraft:zoglin",
+    "minecraft:magma_cube",
+    "minecraft:phantom",
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:silverfish",
+    "minecraft:skeleton",
+    "minecraft:slime",
+    "minecraft:spider",
+    "minecraft:stray",
+    "minecraft:vex",
+    "minecraft:witch",
+    "minecraft:wither_skeleton",
+    "minecraft:iron_golem"
+  ]
+}

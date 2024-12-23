@@ -1,47 +1,47 @@
 {
-	"type": "origins:multiple",
-	"on_attack": {
-		"type": "origins:self_action_on_hit",
-		"entity_action": {
-			"type": "origins:execute_command",
-			"command": "scoreboard players set @s rend_enemy 1"
-		},
-		"target_condition": {
-			"type": "origins:command",
-			"command": "execute if entity @s[team=rend,type=!player]",
-			"comparison": "==",
-			"compare_to": 1
-		}
-	},
-	"after_death": {
-		"type": "origins:action_over_time",
-		"entity_action": {
-			"type": "origins:and",
-			"actions": [
-				{
-					"type": "origins:execute_command",
-					"command": "scoreboard players set @s rend_enemy 0"
-				},
-				{
-					"type": "origins:execute_command",
-					"command": "scoreboard players set @s rend_enemy_deathcheck 0"
-				}
-			]
-		},
-		"condition": {
-			"type": "origins:command",
-			"command": "execute if entity @s[scores={rend_enemy_deathcheck=1..}]",
-			"comparison": "==",
-			"compare_to": 1
-		},
-		"interval": 20
-	},
-	"scoreboard_fix": {
-		"type": "origins:action_over_time",
-		"entity_action": {
-			"type": "origins:execute_command",
-			"command": "execute as @e[tag=rend_elite_fallen] store result score @s rend_fallen_base_attack run attribute @s minecraft:generic.attack_damage get"
-		},
-		"interval": 10
-	}
+  "type": "origins:multiple",
+  "on_attack": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "scoreboard players set @s rend_enemy 1"
+    },
+    "target_condition": {
+      "type": "origins:command",
+      "command": "execute if entity @s[team=rend,type=!player]",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "after_death": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s rend_enemy 0"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s rend_enemy_deathcheck 0"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:command",
+      "command": "execute if entity @s[scores={rend_enemy_deathcheck=1..}]",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "interval": 20
+  },
+  "scoreboard_fix": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @e[tag=rend_elite_fallen] store result score @s rend_fallen_base_attack run attribute @s minecraft:generic.attack_damage get"
+    },
+    "interval": 10
+  }
 }
