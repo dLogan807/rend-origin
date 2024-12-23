@@ -1,18 +1,18 @@
 {
   "type": "origins:action_over_time",
-  "rising_action": {
+  "entity_action": {
     "type": "origins:if_else_list",
     "actions": [
       {
         "condition": {
           "type": "origins:resource",
-          "resource": "rend:double_jump_number_of_jumps",
+          "resource": "*:double_jump_number_of_jumps",
           "comparison": "<",
           "compare_to": 1
         },
         "action": {
           "type": "origins:grant_advancement",
-          "advancement": "rend:perform_double_jump"
+          "advancement": "*:perform_double_jump"
         }
       },
       {
@@ -23,7 +23,7 @@
         },
         "action": {
           "type": "origins:grant_advancement",
-          "advancement": "rend:reach_level_54"
+          "advancement": "*:reach_level_54"
         }
       }
     ]
