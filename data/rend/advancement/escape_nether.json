@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Free at Last..."
+    },
+    "description": {
+      "text": "Escape the Nether",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:grass_block"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "The Overworld": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:root"
+}

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "title": {
+      "text": "Ascension"
+    },
+    "description": {
+      "text": "Rend, rising from the ashes"
+    },
+    "icon": {
+      "id": "minecraft:ancient_debris"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "Team Rend": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

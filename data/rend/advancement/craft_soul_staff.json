@@ -1,0 +1,31 @@
+{
+  "display": {
+    "title": {
+      "text": "A Very Fancy Stick"
+    },
+    "description": {
+      "text": "Craft a Soul Staff",
+      "color": "dark_purple"
+    },
+    "icon": {
+      "id": "minecraft:netherite_sword",
+      "nbt": "{CustomModelData:439202}"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "Soul Staff Created": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "soul_staff"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  },
+  "parent": "rend:root"
+}

@@ -1,16 +1,9 @@
 {
   "powers": [
     "rend:setup",
-    "rend:cursed_prison",
-    "rend:eighth_sense",
-    "rend:mana",
     "rend:carnivore",
-    "rend:soul_purge",
     "rend:double_jump",
-    "rend:fallen_allies",
-    "rend:soul_staff",
-    "rend:advancement_handler",
-    "rend:transparency"
+    "rend:advancement_handler"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "Spring in Your Step"
+    },
+    "description": {
+      "text": "Perform a double jump",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:feather"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "54 Levels": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:escape_nether"
+}
