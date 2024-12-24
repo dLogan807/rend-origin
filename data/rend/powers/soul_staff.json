@@ -2,6 +2,36 @@
   "type": "origins:multiple",
   "name": "Soul Staff",
   "description": "A weapon of vast potential that harnesses your mana affinity.",
+  "staff_crafting": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "rend:soul_staff/staff_crafting",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["#N#", " / ", " / "],
+      "key": {
+        "#": {
+          "item": "minecraft:netherite_sword"
+        },
+        "N": {
+          "item": "minecraft:nether_star"
+        },
+        "/": {
+          "item": "minecraft:stick"
+        }
+      },
+      "result": {
+        "id": "minecraft:netherite_sword",
+        "components": {
+          "custom_model_data": 439202,
+          "rarity": "epic",
+          "custom_name": "[\"\",{\"text\":\"Soul Staff\",\"italic\":false}]",
+          "lore": ["[\"\",{\"text\":\"test\",\"italic\":false}]"],
+          "unbreakable": {},
+          "custom_data": { "soul_staff": 1 }
+        }
+      }
+    }
+  },
   "staff_used": {
     "type": "origins:active_self",
     "entity_action": {
@@ -509,13 +539,13 @@
     },
     "cooldown": 1,
     "hud_render": {
-      "should_render": false
+      "should_render": true
     },
     "condition": {
       "type": "origins:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-        "type": "origins:nbt",
+        "type": "origins:custom_data",
         "nbt": "{soul_staff: 1b}"
       }
     }
@@ -598,7 +628,7 @@
   "badges": [
     {
       "type": "origins:crafting_recipe",
-      "sprite": "rend:textures/gui/badge/staff_badge.png",
+      "sprite": "rend:textures/gui/badge/soul_staff.png",
       "recipe": {
         "id": "rend:soul_staff",
         "type": "minecraft:crafting_shaped",
@@ -615,7 +645,10 @@
           }
         },
         "result": {
-          "item": "minecraft:knowledge_book"
+          "id": "minecraft:netherite_sword",
+          "components": {
+            "custom_model_data": 439202
+          }
         }
       }
     },

@@ -5,6 +5,7 @@
     "*:carnivore",
     "*:mana",
     "*:double_jump",
+    "*:soul_staff",
     "*:advancement_handler"
   ],
   "icon": {

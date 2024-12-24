@@ -12,6 +12,6 @@ scoreboard objectives add rend_soul_purge_actor dummy
 team add rend
 team join rend @s
 
-power grant @a[team=!rend] rend:on_attacking_fallen
+#power grant @a[team=!rend] rend:on_attacking_fallen
 
 advancement grant @s only rend:root

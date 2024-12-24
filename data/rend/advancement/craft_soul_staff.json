@@ -9,15 +9,17 @@
     },
     "icon": {
       "id": "minecraft:netherite_sword",
-      "nbt": "{CustomModelData:439202}"
+      "components": {
+        "custom_model_data": 439202
+      }
     },
     "frame": "challenge"
   },
   "criteria": {
     "Soul Staff Created": {
-      "trigger": "minecraft:recipe_unlocked",
+      "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe": "soul_staff"
+        "recipe_id": "rend:soul_staff_staff_crafting"
       }
     }
   },
