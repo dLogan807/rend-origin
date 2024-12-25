@@ -30,26 +30,23 @@
   },
   "kill_mana_refill": {
     "type": "origins:self_action_on_kill",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "resource": "rend:mana_mana-bar",
-          "change": 25
-        },
-        {
-          "type": "origins:apply_effect",
-          "effect": {
-            "id": "minecraft:speed",
-            "duration": 100,
-            "amplifier": 0,
-            "show_particles": false,
-            "show_icon": false
-          }
+    "entity_action": [
+      {
+        "type": "origins:change_resource",
+        "resource": "rend:mana_mana-bar",
+        "change": 25
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "id": "minecraft:speed",
+          "duration": 100,
+          "amplifier": 0,
+          "show_particles": false,
+          "show_icon": false
         }
-      ]
-    },
+      }
+    ],
     "cooldown": 5,
     "target_condition": {
       "type": "origins:in_tag",
