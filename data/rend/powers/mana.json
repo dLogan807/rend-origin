@@ -2,11 +2,10 @@
   "type": "origins:multiple",
   "name": "Mana",
   "description": "Harnessing the flow of mana, you're able to make use of a multitude of a abilities. Mana can be replenished by vanquishing evil creatures, granting you a temporary speed boost. It also regenerates slowly whilst around allies.",
-  "mana-bar": {
+  "capacity": {
     "type": "origins:resource",
     "min": 0,
-    "max": 300,
-    "start_value": 0,
+    "max": 100,
     "hud_render": {
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
       "bar_index": 15,
@@ -28,13 +27,13 @@
       }
     }
   },
-  "kill_mana_refill": {
+  "kill_refill": {
     "type": "origins:self_action_on_kill",
     "entity_action": [
       {
         "type": "origins:change_resource",
-        "resource": "rend:mana_mana-bar",
-        "change": 25
+        "resource": "*:*_capacity",
+        "change": 5
       },
       {
         "type": "origins:apply_effect",
@@ -50,7 +49,7 @@
     "cooldown": 5,
     "target_condition": {
       "type": "origins:in_tag",
-      "tag": "rend:no_benefit",
+      "tag": "*:no_benefit",
       "inverted": true
     },
     "condition": {
@@ -73,7 +72,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
-      "resource": "rend:mana_mana-bar",
+      "resource": "*:*_capacity",
       "change": 4
     },
     "interval": 20,

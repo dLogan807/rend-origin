@@ -5,6 +5,7 @@
     "*:carnivore",
     "*:mana",
     "*:double_jump",
+    "*:staff_ability_vortex",
     "*:soul_staff",
     "*:advancement_handler"
   ],

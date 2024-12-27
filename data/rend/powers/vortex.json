@@ -7,7 +7,7 @@
         "type": "origins:spawn_particles",
         "particle": {
           "type": "minecraft:dust",
-          "params": "1 1 1 2"
+          "params": { "color": [1, 1, 1], "scale": 2 }
         },
         "count": 5,
         "speed": 0.1,
@@ -60,7 +60,7 @@
                 "action": {
                   "type": "origins:apply_effect",
                   "effect": {
-                    "effect": "minecraft:levitation",
+                    "id": "minecraft:levitation",
                     "duration": 5,
                     "amplifier": -3,
                     "show_particles": false,
@@ -276,14 +276,14 @@
       },
       {
         "type": "origins:execute_command",
-        "command": "resource change @a[team=rend,limit=1] rend:soul_staff_vortex-handler -1"
+        "command": "resource change @a[team=rend,limit=1] rend:staff_ability_vortex_vortex_handler -1"
       }
     ]
   },
   "interval": 1,
   "condition": {
     "type": "origins:command",
-    "command": "execute as @a[team=rend,limit=1] run resource get @s rend:soul_staff_vortex-handler",
+    "command": "execute as @a[team=rend,limit=1] run resource get @s rend:staff_ability_vortex_vortex_handler",
     "comparison": ">",
     "compare_to": 0
   }

@@ -1,4 +1,4 @@
-scoreboard objectives add staff_ability dummy
+#scoreboard objectives add staff_ability dummy
 scoreboard objectives add fireball_check dummy
 scoreboard objectives add xp_level dummy
 scoreboard objectives add pos dummy

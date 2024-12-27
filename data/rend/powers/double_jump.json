@@ -46,9 +46,9 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:mana_mana-bar",
-          "comparison": ">",
-          "compare_to": 10
+          "resource": "*:mana_capacity",
+          "comparison": ">=",
+          "compare_to": 3
         },
         {
           "type": "origins:fluid_height",
@@ -74,45 +74,42 @@
         }
       ]
     },
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_number_of_jumps",
-          "change": -1,
-          "operation": "set"
+    "entity_action": [
+      {
+        "type": "origins:change_resource",
+        "resource": "*:*_number_of_jumps",
+        "change": -1,
+        "operation": "set"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
+      },
+      {
+        "type": "origins:add_velocity",
+        "set": true,
+        "client": false,
+        "server": true,
+        "y": 0.5
+      },
+      {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:moving",
+          "vertically": false
         },
-        {
-          "type": "origins:execute_command",
-          "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
-        },
-        {
+        "if_action": {
           "type": "origins:add_velocity",
-          "set": true,
-          "client": false,
-          "server": true,
-          "y": 0.5
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:moving",
-            "vertically": false
-          },
-          "if_action": {
-            "type": "origins:add_velocity",
-            "space": "local",
-            "z": 0.4
-          }
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:mana_mana-bar",
-          "change": -8
+          "space": "local",
+          "z": 0.4
         }
-      ]
-    }
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "*:mana_capacity",
+        "change": -3
+      }
+    ]
   },
   "fall_half_immunity": {
     "type": "origins:invulnerability",

@@ -32,401 +32,26 @@
       }
     }
   },
-  "staff_used": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=0}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": ">=",
-                "compare_to": 150
-              },
-              {
-                "type": "origins:command",
-                "command": "execute at @s if entity @e[type=item,nbt={Item:{id:\"minecraft:bone\"}},distance=..3]",
-                "comparison": "==",
-                "compare_to": 1
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "function rend:fallen_resurrection"
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=1}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": ">=",
-                "compare_to": 40
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:raycast",
-            "distance": 50,
-            "entity": true,
-            "shape_type": "visual",
-            "fluid_handling": "none",
-            "bientity_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "execute as @s at @s positioned ^-0.2 ^1.8 ^0.5 run function rend:magic_circle_displacement"
-                  }
-                },
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "function rend:player_dis"
-                  }
-                },
-                {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "function rend:displacement"
-                  }
-                }
-              ]
-            },
-            "command_along_ray": "particle minecraft:reverse_portal",
-            "command_step": 1,
-            "command_along_ray_only_on_hit": true
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=2}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": ">=",
-                "compare_to": 50
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "resource change @s rend:mana_mana-bar -50"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "scoreboard players set @s fireball_check 1"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute as @s at @s positioned ^ ^2.5 ^2.5 run function rend:magic_circle_fireball"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute as @s at @s positioned ^ ^2.5 ^2.5 run function rend:magic_circle_fireball"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute as @s at @s positioned ^ ^2.5 ^2.5 run function rend:magic_circle_fireball"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "playsound minecraft:item.firecharge.use player @a ~ ~ ~"
-              }
-            ]
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=3}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": ">=",
-                "compare_to": 40
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:raycast",
-            "distance": 70,
-            "entity": true,
-            "shape_type": "visual",
-            "fluid_handling": "none",
-            "hit_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "resource": "rend:soul_staff_vortex-handler",
-                  "change": 100,
-                  "operation": "set"
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "resource change @s rend:mana_mana-bar -50"
-                }
-              ]
-            },
-            "command_at_hit": "function rend:vortex",
-            "command_along_ray": "particle minecraft:cloud",
-            "command_step": 1,
-            "command_along_ray_only_on_hit": false
-          }
-        }
-      ]
-    },
-    "cooldown": 200,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0
-    },
-    "key": {
-      "key": "key.use",
-      "continuous": false
-    },
-    "condition": {
-      "type": "origins:all_of",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": ">=",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:any_of",
-          "conditions": [
-            {
-              "type": "origins:all_of",
-              "conditions": [
-                {
-                  "type": "origins:command",
-                  "command": "execute if entity @s[scores={staff_ability=0}]",
-                  "comparison": "==",
-                  "compare_to": 1
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "rend:mana_mana-bar",
-                  "comparison": ">=",
-                  "compare_to": 150
-                },
-                {
-                  "type": "origins:command",
-                  "command": "execute at @s if entity @e[type=item,nbt={Item:{id:\"minecraft:bone\"}},distance=..3]",
-                  "comparison": "==",
-                  "compare_to": 1
-                }
-              ]
-            },
-            {
-              "type": "origins:all_of",
-              "conditions": [
-                {
-                  "type": "origins:command",
-                  "command": "execute if entity @s[scores={staff_ability=1}]",
-                  "comparison": "==",
-                  "compare_to": 1
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "rend:mana_mana-bar",
-                  "comparison": ">=",
-                  "compare_to": 40
-                }
-              ]
-            },
-            {
-              "type": "origins:all_of",
-              "conditions": [
-                {
-                  "type": "origins:command",
-                  "command": "execute if entity @s[scores={staff_ability=2}]",
-                  "comparison": "==",
-                  "compare_to": 1
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "rend:mana_mana-bar",
-                  "comparison": ">=",
-                  "compare_to": 50
-                }
-              ]
-            },
-            {
-              "type": "origins:all_of",
-              "conditions": [
-                {
-                  "type": "origins:command",
-                  "command": "execute if entity @s[scores={staff_ability=3}]",
-                  "comparison": "==",
-                  "compare_to": 1
-                },
-                {
-                  "type": "origins:resource",
-                  "resource": "rend:mana_mana-bar",
-                  "comparison": ">=",
-                  "compare_to": 50
-                }
-              ]
-            }
-          ]
-        }
-      ]
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 1000
+  },
+  "selected_ability": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 4,
+    "max_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_selected_ability",
+      "operation": "set",
+      "change": 0
     }
   },
-  "insufficient_mana": {
+  "need_xp": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=0}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": "<",
-                "compare_to": 150
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=1}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": "<",
-                "compare_to": 40
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=2}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": "<",
-                "compare_to": 50
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:all_of",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=3}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              {
-                "type": "origins:resource",
-                "resource": "rend:mana_mana-bar",
-                "comparison": "<",
-                "compare_to": 40
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
-          }
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\":\"20 XP levels needed!\",\"color\":\"red\"}"
     },
     "condition": {
       "type": "origins:all_of",
@@ -439,50 +64,36 @@
             "nbt": "{soul_staff: 1b}"
           }
         },
-        {
-          "type": "origins:resource",
-          "resource": "rend:soul_staff_staff_used",
-          "comparison": "==",
-          "compare_to": 0
-        }
+        { "type": "origins:xp_levels", "comparison": "<", "compare_to": 20 }
       ]
     },
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.use",
-      "continuous": false
-    }
+    "key": "key.use"
   },
   "change_ability": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:xp_levels",
+        "comparison": ">=",
+        "compare_to": 20
+      },
+      "if_action": [
         {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:execute_command",
-              "command": "scoreboard players add @s staff_ability 1"
-            },
-            {
-              "type": "origins:execute_command",
-              "command": "execute if entity @s[scores={staff_ability=5..}] run scoreboard players set @s staff_ability 0"
-            }
-          ]
+          "type": "origins:change_resource",
+          "resource": "*:*_selected_ability",
+          "operation": "add",
+          "change": 1
         },
         {
           "type": "origins:if_else_list",
           "actions": [
             {
               "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=0}]",
+                "type": "origins:resource",
+                "resource": "*:*_selected_ability",
                 "comparison": "==",
-                "compare_to": 1
+                "compare_to": 0
               },
               "action": {
                 "type": "origins:execute_command",
@@ -491,8 +102,8 @@
             },
             {
               "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=1}]",
+                "type": "origins:resource",
+                "resource": "*:*_selected_ability",
                 "comparison": "==",
                 "compare_to": 1
               },
@@ -503,10 +114,10 @@
             },
             {
               "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=2}]",
+                "type": "origins:resource",
+                "resource": "*:*_selected_ability",
                 "comparison": "==",
-                "compare_to": 1
+                "compare_to": 2
               },
               "action": {
                 "type": "origins:execute_command",
@@ -515,35 +126,23 @@
             },
             {
               "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=3}]",
+                "type": "origins:resource",
+                "resource": "*:*_selected_ability",
                 "comparison": "==",
-                "compare_to": 1
+                "compare_to": 3
               },
               "action": {
                 "type": "origins:execute_command",
                 "command": "title @s actionbar {\"text\":\"Vortex\",\"italic\":true}"
               }
-            },
-            {
-              "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[scores={staff_ability=4}]",
-                "comparison": "==",
-                "compare_to": 1
-              },
-              "action": {
-                "type": "origins:execute_command",
-                "command": "title @s actionbar {\"text\":\"<<Not Yet Implemented>>\",\"italic\":true}"
-              }
             }
           ]
         }
-      ]
-    },
-    "cooldown": 1,
-    "hud_render": {
-      "should_render": false
+      ],
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "title @s actionbar {\"text\":\"20 XP levels needed!\",\"color\":\"red\"}"
+      }
     },
     "condition": {
       "type": "origins:equipped_item",
@@ -554,81 +153,6 @@
       }
     },
     "key": "key.origins.primary_active"
-  },
-  "fireball": {
-    "type": "origins:fire_projectile",
-    "entity_type": "minecraft:fireball",
-    "cooldown": 20,
-    "divergence": 0,
-    "tag": "{Tags:[\"rend_fireball\"],ExplosionPower:3b}",
-    "hud_render": {
-      "should_render": false
-    },
-    "key": {
-      "key": "key.use",
-      "continuous": false
-    },
-    "condition": {
-      "type": "origins:command",
-      "command": "execute if entity @s[scores={fireball_check=1}]",
-      "comparison": "==",
-      "compare_to": 1
-    }
-  },
-  "fireball_handler": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "scoreboard players set @s fireball_check 0"
-    },
-    "interval": 5,
-    "condition": {
-      "type": "origins:any_of",
-      "conditions": [
-        {
-          "type": "origins:command",
-          "command": "execute if entity @e[tag=rend_fireball,distance=..30,sort=nearest,limit=1] if score @s fireball_check matches 1",
-          "comparison": "==",
-          "compare_to": 1
-        },
-        {
-          "type": "origins:resource",
-          "resource": "rend:soul_staff_staff_used",
-          "comparison": ">",
-          "compare_to": 0
-        }
-      ]
-    }
-  },
-  "vortex-handler": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 100,
-    "min_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=vortex_position]"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=rend_vortex_1]"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=rend_vortex_2]"
-        }
-      ]
-    }
-  },
-  "scoreboard_fix": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "execute as @e[tag=rend_elite_fallen] store result score @s rend_fallen_base_attack run attribute @s minecraft:generic.attack_damage get"
-    },
-    "interval": 10
   },
   "badges": [
     {
