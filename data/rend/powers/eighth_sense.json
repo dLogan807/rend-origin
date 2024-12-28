@@ -1,6 +1,6 @@
 {
   "name": "8th Sense",
-  "description": "Creatures sense your weakened state and take the opportunity to pursue you over greater distances, imbuing extra strength into their attacks.",
+  "description": "Creatures sense your weakened state and pursue you over greater distances, imbuing extra strength into their attacks.",
   "type": "origins:multiple",
   "modify_follow_range": {
     "type": "origins:action_over_time",
@@ -8,85 +8,45 @@
       "type": "origins:area_of_effect",
       "radius": 50,
       "bientity_action": {
-        "type": "origins:if_else_list",
+        "type": "origins:and",
         "actions": [
           {
-            "condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[type=#rend:follow_base_sixteen]",
-                "comparison": "==",
-                "compare_to": 1
-              }
-            },
+            "type": "origins:target_action",
             "action": {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:execute_command",
-                "command": "attribute @s minecraft:generic.follow_range base set 28"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[type=#rend:follow_base_forty]",
-                "comparison": "==",
-                "compare_to": 1
-              }
-            },
-            "action": {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:execute_command",
-                "command": "attribute @s minecraft:generic.follow_range base set 50"
-              }
-            }
-          },
-          {
-            "condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[type=#rend:follow_base_fifty]",
-                "comparison": "==",
-                "compare_to": 1
-              }
-            },
-            "action": {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:execute_command",
-                "command": "attribute @s minecraft:generic.follow_range base set 60"
-              }
+              "type": "origins:execute_command",
+              "command": "attribute @s minecraft:generic.follow_range modifier add rend:eighth_sense_range 0.4 add_multiplied_base"
             }
           }
         ]
       },
       "bientity_condition": {
-        "type": "origins:and",
+        "type": "origins:all_of",
         "conditions": [
           {
             "type": "origins:can_see"
           },
           {
+            "type": "target_condition",
+            "condition": {
+              "type": "origins:in_tag",
+              "tag": "rend:hostile"
+            }
+          },
+          {
             "type": "origins:target_condition",
             "condition": {
               "type": "origins:command",
-              "command": "execute if entity @s[type=#rend:follow_base_all]",
+              "command": "execute if entity @s[nbt={attributes:[{modifiers:[{id:\"rend:eighth_sense_range\"}]}]}]",
               "comparison": "==",
-              "compare_to": 1
+              "compare_to": 0
             }
           }
         ]
       }
     },
-    "interval": 60,
+    "interval": 50,
     "condition": {
-      "type": "origins:or",
+      "type": "origins:any_of",
       "conditions": [
         {
           "type": "origins:xp_levels",
@@ -106,18 +66,16 @@
     "bientity_condition": {
       "type": "origins:actor_condition",
       "condition": {
-        "type": "origins:command",
-        "command": "execute if entity @s[type=#rend:follow_base_all]",
-        "comparison": "==",
-        "compare_to": 1
+        "type": "origins:in_tag",
+        "tag": "rend:hostile"
       }
     },
     "modifier": {
-      "operation": "addition",
+      "operation": "add_base_early",
       "value": 1
     },
     "condition": {
-      "type": "origins:or",
+      "type": "origins:any_of",
       "conditions": [
         {
           "type": "origins:xp_levels",

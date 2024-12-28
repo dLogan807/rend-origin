@@ -8,7 +8,8 @@
     "*:staff_ability_vortex",
     "*:soul_staff",
     "*:advancement_handler",
-    "*:soul_purge"
+    "*:soul_purge",
+    "*:eighth_sense"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
