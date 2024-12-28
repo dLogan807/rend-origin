@@ -17,14 +17,14 @@
           "type": "origins:apply_effect",
           "effects": [
             {
-              "effect": "minecraft:regeneration",
+              "id": "minecraft:regeneration",
               "duration": 30,
               "amplifier": 5,
               "show_particles": false,
               "show_icon": false
             },
             {
-              "effect": "minecraft:resistance",
+              "id": "minecraft:resistance",
               "duration": 3,
               "amplifier": 5,
               "show_particles": false,
@@ -117,13 +117,6 @@
                 }
               },
               {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute if entity @s[type=player] run gamerule showDeathMessages false"
-                }
-              },
-              {
                 "type": "origins:if_else_list",
                 "actions": [
                   {
@@ -139,13 +132,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 19,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 19
                       }
                     }
                   },
@@ -162,13 +150,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 17,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 17
                       }
                     }
                   },
@@ -185,13 +168,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 15,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 15
                       }
                     }
                   },
@@ -208,13 +186,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 13,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 13
                       }
                     }
                   },
@@ -231,13 +204,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 11,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 11
                       }
                     }
                   },
@@ -254,13 +222,8 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 9,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 9
                       }
                     }
                   },
@@ -277,39 +240,12 @@
                       "type": "origins:target_action",
                       "action": {
                         "type": "origins:damage",
-                        "amount": 7,
-                        "source": {
-                          "name": "onFire",
-                          "magic": true,
-                          "bypasses_armor": true,
-                          "unblockable": true
-                        }
+                        "damage_type": "rend:soul_purge",
+                        "amount": 7
                       }
                     }
                   }
                 ]
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:health",
-                    "comparison": "<=",
-                    "compare_to": 0
-                  },
-                  "if_action": {
-                    "type": "origins:execute_command",
-                    "command": "execute if entity @s[type=player] run tellraw @a [{\"text\":\"\",\"extra\":[{\"selector\":\"@s\"}]},{\"text\":\" was torn to shreds by \",\"extra\":[{\"selector\":\"@a[sort=nearest,limit=1,scores={rend_soul_purge_actor=1}]\"}]},{\"text\":\"'s soul\"}]"
-                  }
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute if entity @s[type=player] run gamerule showDeathMessages true"
-                }
               },
               {
                 "type": "origins:if_else_list",

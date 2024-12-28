@@ -7,7 +7,8 @@
     "*:double_jump",
     "*:staff_ability_vortex",
     "*:soul_staff",
-    "*:advancement_handler"
+    "*:advancement_handler",
+    "*:soul_purge"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
