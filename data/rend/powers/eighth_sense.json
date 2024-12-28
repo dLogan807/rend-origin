@@ -44,7 +44,7 @@
         ]
       }
     },
-    "interval": 50,
+    "interval": 100,
     "condition": {
       "type": "origins:any_of",
       "conditions": [
