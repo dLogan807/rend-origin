@@ -2,6 +2,8 @@
   "powers": [
     "*:setup",
     "*:cursed_prison",
+    "*:faded_husk",
+    "*:transparency",
     "*:carnivore",
     "*:eighth_sense",
     "*:mana",

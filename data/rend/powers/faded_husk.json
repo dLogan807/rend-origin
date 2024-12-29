@@ -1,12 +1,13 @@
 {
   "type": "origins:multiple",
   "name": "Faded Husk",
-  "description": "Your withered soul blatantly displays your lack of strength, proportionally hindering what armour you're able to wear. You grow stronger as you progress.",
+  "description": "Your withered soul blatantly displays your lack of strength, proportionally hindering what armour you're able to wear.",
   "weakness_1-2": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
+      "operation": "add_value",
       "value": -4
     },
     "tick_rate": 20,
@@ -19,9 +20,10 @@
   "decreased_health_1-2": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
       "value": -8,
-      "operation": "addition"
+      "operation": "add_value"
     },
     "tick_rate": 20,
     "condition": {
@@ -62,8 +64,9 @@
   "weakness_3": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
+      "operation": "add_value",
       "value": -3
     },
     "tick_rate": 20,
@@ -86,9 +89,10 @@
   "decreased_health_3": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
       "value": -6,
-      "operation": "addition"
+      "operation": "add_value"
     },
     "tick_rate": 20,
     "condition": {
@@ -149,8 +153,9 @@
   "weakness_4": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
+      "operation": "add_value",
       "value": -2
     },
     "tick_rate": 20,
@@ -173,9 +178,10 @@
   "decreased_health_4": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
       "value": -4,
-      "operation": "addition"
+      "operation": "add_value"
     },
     "tick_rate": 20,
     "condition": {
@@ -197,8 +203,9 @@
   "weakness_5": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
+      "operation": "add_value",
       "value": -1
     },
     "tick_rate": 20,
@@ -231,9 +238,10 @@
   "decreased_health_5": {
     "type": "origins:conditioned_attribute",
     "modifier": {
+      "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
       "value": -2,
-      "operation": "addition"
+      "operation": "add_value"
     },
     "tick_rate": 20,
     "condition": {
@@ -305,7 +313,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "Scales with XP levels."
+      "text": "You grow stronger the more XP you possess."
     }
   ]
 }
