@@ -1,0 +1,7 @@
+{
+  "message_id": "cursed_prison",
+  "death_message_type": "default",
+  "exhaustion": 0.1,
+  "scaling": "never",
+  "effects": "burning"
+}

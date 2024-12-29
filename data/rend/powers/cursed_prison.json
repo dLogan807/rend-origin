@@ -21,7 +21,7 @@
         {
           "type": "origins:damage",
           "amount": 3,
-          "damage_type": "minecraft:on_fire"
+          "damage_type": "rend:cursed_prison"
         }
       ]
     },
@@ -36,9 +36,7 @@
             "tag": "rend:nether_portal"
           },
           "radius": 6,
-          "shape": "star",
-          "comparison": ">=",
-          "compare_to": 1
+          "shape": "star"
         },
         {
           "type": "origins:dimension",
@@ -48,7 +46,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": "<",
-          "compare_to": 30
+          "compare_to": 20
         }
       ]
     }
@@ -60,7 +58,13 @@
       "actions": [
         {
           "type": "origins:explode",
-          "power": 1
+          "power": 1,
+          "damage_self": false
+        },
+        {
+          "type": "origins:damage",
+          "damage_type": "rend:cursed_prison_explode",
+          "amount": 10
         }
       ]
     },
@@ -69,11 +73,13 @@
       "type": "origins:all_of",
       "conditions": [
         {
-          "type": "origins:in_block",
+          "type": "origins:block_in_radius",
           "block_condition": {
             "type": "origins:block",
             "block": "minecraft:nether_portal"
-          }
+          },
+          "radius": 1,
+          "shape": "cube"
         },
         {
           "type": "origins:dimension",
@@ -82,7 +88,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": "<",
-          "compare_to": 30
+          "compare_to": 20
         }
       ]
     }

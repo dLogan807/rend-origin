@@ -14,7 +14,7 @@
             "type": "origins:target_action",
             "action": {
               "type": "origins:execute_command",
-              "command": "attribute @s minecraft:generic.follow_range modifier add rend:eighth_sense_range 0.4 add_multiplied_base"
+              "command": "attribute @s minecraft:generic.follow_range modifier add rend:eighth_sense_range 0.5 add_multiplied_base"
             }
           }
         ]
