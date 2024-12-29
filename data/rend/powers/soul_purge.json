@@ -1,6 +1,6 @@
 {
   "name": "Soul purge",
-  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be launched back and does damage depending on your level. All levels are lost. Does not function whilst in the Nether.",
+  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged.",
   "type": "origins:multiple",
   "on_death": {
     "type": "origins:prevent_death",
@@ -367,5 +367,17 @@
         }
       ]
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Ineffective in The Nether."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "Damage scales with XP level."
+    }
+  ]
 }

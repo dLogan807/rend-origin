@@ -92,5 +92,12 @@
         }
       ]
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "20XP levels needed to escape."
+    }
+  ]
 }

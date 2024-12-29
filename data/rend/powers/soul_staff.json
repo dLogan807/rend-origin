@@ -185,6 +185,11 @@
       "type": "origins:keybind",
       "sprite": "origins:textures/gui/badge/toggle.png",
       "text": "Switch staff ablity with [Active Power (Primary)]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Unusable in The Nether."
     }
   ]
 }

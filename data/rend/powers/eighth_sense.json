@@ -89,5 +89,12 @@
         }
       ]
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Always active in The Nether."
+    }
+  ]
 }

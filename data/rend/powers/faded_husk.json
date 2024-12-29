@@ -300,5 +300,12 @@
       ]
     },
     "tick_rate": 40
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "Scales with XP levels."
+    }
+  ]
 }

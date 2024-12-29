@@ -1,5 +1,6 @@
 {
-  "hidden": true,
+  "name": "Air Step",
+  "description": "Harness mana to bound through the air.",
   "type": "origins:multiple",
   "number_of_jumps": {
     "type": "origins:resource",
@@ -24,13 +25,8 @@
   },
   "activating_jump": {
     "type": "origins:active_self",
-    "key": {
-      "key": "key.jump"
-    },
-    "cooldown": 0,
-    "hud_render": {
-      "should_render": false
-    },
+    "key": "key.jump",
+    "cooldown": 1,
     "condition": {
       "type": "origins:all_of",
       "conditions": [
@@ -161,5 +157,12 @@
       "operation": "multiply_total_multiplicative",
       "amount": -0.5
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Unusable in The Nether."
+    }
+  ]
 }

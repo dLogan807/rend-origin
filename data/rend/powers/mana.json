@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Mana",
-  "description": "Harnessing the flow of mana, you're able to make use of a multitude of a abilities. Mana can be replenished by vanquishing evil creatures, granting you a temporary speed boost. It also regenerates slowly whilst around allies.",
+  "description": "Harnessing the flow of mana, you're able to make use of a multitude of a abilities. Vanquishing evil creatures replenishes mana, also granting you a temporary speed boost. Regenerates slowly around allies.",
   "capacity": {
     "type": "origins:resource",
     "min": 0,
@@ -39,7 +39,7 @@
         "type": "origins:apply_effect",
         "effect": {
           "id": "minecraft:speed",
-          "duration": 100,
+          "duration": 150,
           "amplifier": 0,
           "show_particles": false,
           "show_icon": false
@@ -68,12 +68,70 @@
       ]
     }
   },
+  "golden_apple_refill": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_capacity",
+      "change": 6
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "condition": {
+      "type": "origins:all_of",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    }
+  },
+  "enchanted_golden_apple_refill": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_capacity",
+      "change": 50
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:enchanted_golden_apple"
+      }
+    },
+    "condition": {
+      "type": "origins:all_of",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    }
+  },
   "near_allies": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_capacity",
-      "change": 4
+      "change": 2
     },
     "interval": 20,
     "condition": {
@@ -82,5 +140,17 @@
       "comparison": "==",
       "compare_to": 1
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Mana cannot be utilised in The Nether"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "20XP levels needed to utilise any mana-based abilities."
+    }
+  ]
 }
