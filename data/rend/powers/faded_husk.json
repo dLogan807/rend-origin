@@ -8,7 +8,7 @@
       "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "add_value",
-      "value": -4
+      "amount": -4
     },
     "tick_rate": 20,
     "condition": {
@@ -22,7 +22,7 @@
     "modifier": {
       "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
-      "value": -8,
+      "amount": -8,
       "operation": "add_value"
     },
     "tick_rate": 20,
@@ -67,7 +67,7 @@
       "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "add_value",
-      "value": -3
+      "amount": -3
     },
     "tick_rate": 20,
     "condition": {
@@ -91,7 +91,7 @@
     "modifier": {
       "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
-      "value": -6,
+      "amount": -6,
       "operation": "add_value"
     },
     "tick_rate": 20,
@@ -156,7 +156,7 @@
       "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "add_value",
-      "value": -2
+      "amount": -2
     },
     "tick_rate": 20,
     "condition": {
@@ -180,7 +180,7 @@
     "modifier": {
       "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
-      "value": -4,
+      "amount": -4,
       "operation": "add_value"
     },
     "tick_rate": 20,
@@ -206,7 +206,7 @@
       "id": "rend:reduced_attack_damage",
       "attribute": "minecraft:generic.attack_damage",
       "operation": "add_value",
-      "value": -1
+      "amount": -1
     },
     "tick_rate": 20,
     "condition": {
@@ -240,7 +240,7 @@
     "modifier": {
       "id": "rend:reduced_health",
       "attribute": "minecraft:generic.max_health",
-      "value": -2,
+      "amount": -2,
       "operation": "add_value"
     },
     "tick_rate": 20,
