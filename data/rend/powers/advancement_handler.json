@@ -6,13 +6,13 @@
       {
         "condition": {
           "type": "origins:resource",
-          "resource": "*:double_jump_number_of_jumps",
+          "resource": "*:air_step_number_of_jumps",
           "comparison": "<",
           "compare_to": 1
         },
         "action": {
           "type": "origins:grant_advancement",
-          "advancement": "*:perform_double_jump"
+          "advancement": "*:perform_air_step"
         }
       },
       {

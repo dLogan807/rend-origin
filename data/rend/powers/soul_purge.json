@@ -83,18 +83,18 @@
           "command": "scoreboard players set @s rend_soul_purge_actor 1"
         },
         {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:soul_purge_calc"
+          }
+        },
+        {
           "type": "origins:area_of_effect",
           "radius": 10,
           "bientity_action": {
             "type": "origins:and",
             "actions": [
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "function rend:soul_purge_calc"
-                }
-              },
               {
                 "type": "origins:target_action",
                 "action": {
