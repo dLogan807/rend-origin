@@ -1,0 +1,460 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "image_counter": {
+    "type": "origins:resource",
+    "min": 1,
+    "max": 30,
+    "max_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_image_counter",
+      "operation": "set",
+      "change": 1
+    }
+  },
+  "increment_animation": {
+    "type": "origins:action_over_time",
+    "interval": 4,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_image_counter",
+      "operation": "add",
+      "change": 1
+    }
+  },
+  "portal_1": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_1",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "portal_2": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_2",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 2
+    }
+  },
+  "portal_3": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_3",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 3
+    }
+  },
+  "portal_4": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_4",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 4
+    }
+  },
+  "portal_5": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_5",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 5
+    }
+  },
+  "portal_6": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_6",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 6
+    }
+  },
+  "portal_7": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_7",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 7
+    }
+  },
+  "portal_8": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_8",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 8
+    }
+  },
+  "portal_9": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_9",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 9
+    }
+  },
+  "portal_10": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_10",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 10
+    }
+  },
+  "portal_11": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_11",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 11
+    }
+  },
+  "portal_12": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_12",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 12
+    }
+  },
+  "portal_13": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_13",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 13
+    }
+  },
+  "portal_14": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_14",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 14
+    }
+  },
+  "portal_15": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_15",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 15
+    }
+  },
+  "portal_16": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_16",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 16
+    }
+  },
+  "portal_17": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_17",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 17
+    }
+  },
+  "portal_18": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_18",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 18
+    }
+  },
+  "portal_19": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_19",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 19
+    }
+  },
+  "portal_20": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_20",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 20
+    }
+  },
+  "portal_21": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_21",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 21
+    }
+  },
+  "portal_22": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_22",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 22
+    }
+  },
+  "portal_23": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_23",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 23
+    }
+  },
+  "portal_24": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_24",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 24
+    }
+  },
+  "portal_25": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_25",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 25
+    }
+  },
+  "portal_26": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_26",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 26
+    }
+  },
+  "portal_27": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_27",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 27
+    }
+  },
+  "portal_28": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_28",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": "==",
+      "compare_to": 28
+    }
+  },
+  "portal_29": {
+    "type": "origins:overlay",
+    "hidden": true,
+    "sprite": "*:portal_29",
+    "strength": 0.6,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_image_counter",
+      "comparison": ">=",
+      "compare_to": 29
+    }
+  }
+}

@@ -30,6 +30,11 @@
         {
           "type": "origins:execute_command",
           "command": "spawnpoint"
+        },
+        {
+          "type": "origins:revoke_power",
+          "power": "*:nether_portal_overlay",
+          "source": "*:soul_purge"
         }
       ]
     },
@@ -159,6 +164,11 @@
                       "show_icon": false,
                       "show_particles": false
                     }
+                  },
+                  {
+                    "type": "origins:grant_power",
+                    "power": "rend:nether_portal_overlay",
+                    "source": "*:soul_purge"
                   }
                 ]
               }
