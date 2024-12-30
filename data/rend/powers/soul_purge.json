@@ -1,7 +1,179 @@
 {
   "name": "Soul purge",
-  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged.",
+  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged. You may not be stable enough to remain free of your shackles.",
   "type": "origins:multiple",
+  "dimension_instability": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_dimension_instability",
+          "change": 0,
+          "operation": "set"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute in minecraft:the_nether run spreadplayers ~ ~ 500 1000 under 90 false @s"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.portal.travel"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:portal ~ ~ ~ 1.5 .9 1.5 0.3 70 normal @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "spawnpoint"
+        }
+      ]
+    },
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 7,
+      "should_render": true,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_dimension_instability",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+  "teleport_timer": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_dimension_instability",
+          "change": 2,
+          "operation": "add"
+        },
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 10
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 20
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 30
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 36
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 40
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 42
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 46
+                  },
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_dimension_instability",
+                    "comparison": "==",
+                    "compare_to": 48
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "spreadplayers ~ ~ 5 10 false @s"
+                  },
+                  {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.enderman.teleport",
+                    "category": "players",
+                    "volume": 0.6
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:portal ~ ~ ~ .1 .9 .1 0.3 50 normal @a"
+                  }
+                ]
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_dimension_instability",
+                "comparison": "==",
+                "compare_to": 4
+              },
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.portal.ambient",
+                    "category": "players",
+                    "volume": 3,
+                    "pitch": 0.1
+                  },
+                  {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                      "id": "minecraft:nausea",
+                      "duration": 250,
+                      "show_icon": false,
+                      "show_particles": false
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dimension_instability",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
   "on_death": {
     "type": "origins:prevent_death",
     "entity_action": {
@@ -34,7 +206,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "rend:soul_purge_purge",
+          "resource": "*:*_purge",
           "change": 1
         },
         {
@@ -44,6 +216,16 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:item.trident.thunder"
+        },
+        {
+          "type": "origins:random_chance",
+          "chance": 0.5,
+          "success_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_dimension_instability",
+            "change": 2,
+            "operation": "set"
+          }
         }
       ]
     },
@@ -83,11 +265,8 @@
           "command": "scoreboard players set @s rend_soul_purge_actor 1"
         },
         {
-          "type": "origins:actor_action",
-          "action": {
-            "type": "origins:execute_command",
-            "command": "function rend:soul_purge_calc"
-          }
+          "type": "origins:execute_command",
+          "command": "function rend:soul_purge_calc"
         },
         {
           "type": "origins:area_of_effect",

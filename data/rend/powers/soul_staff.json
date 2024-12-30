@@ -182,10 +182,20 @@
       }
     },
     {
-      "type": "origins:keybind",
-      "sprite": "origins:textures/gui/badge/toggle.png",
-      "text": "Switch staff ablity with [Active Power (Primary)]"
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": ["Use staff with [", { "keybind": "key.use" }, "]."]
     },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": [
+        "Switch staff ability with [",
+        { "keybind": "key.origins.primary_active" },
+        "]."
+      ]
+    },
+
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",

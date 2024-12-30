@@ -161,6 +161,11 @@
   "badges": [
     {
       "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": ["Use with [", { "keybind": "key.jump" }, "] while in the air."]
+    },
+    {
+      "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
       "text": "Unusable in The Nether."
     }
