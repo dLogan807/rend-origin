@@ -1,8 +1,5 @@
-#Create storage location
-data modify storage rend soul_purge set value {"amount":0}
-
 #Get current level
-scoreboard players operation @s rend_soul_purge_damage = @s rend_level
+execute store result score @s rend_soul_purge_damage run data get entity @s XpLevel
 #Divide current level by 3 and store result in storage
 scoreboard players operation @s rend_soul_purge_damage /= @s rend_damage_mod
 #Cap damage

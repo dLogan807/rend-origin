@@ -1,0 +1,1 @@
+$xp set @s $(num_levels) levels

@@ -35,6 +35,10 @@
           "type": "origins:revoke_power",
           "power": "*:nether_portal_overlay",
           "source": "*:soul_purge"
+        },
+        {
+          "type": "origins:grant_advancement",
+          "advancement": "*:from_bad_to_worse"
         }
       ]
     },
@@ -276,7 +280,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge_calc"
+          "command": "function rend:soul_purge_damage_calc"
         },
         {
           "type": "origins:area_of_effect",
@@ -552,7 +556,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "xp set @s 0 levels"
+          "command": "function rend:soul_purge_xp_loss"
         }
       ]
     }
@@ -566,7 +570,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "Damage scales with XP level."
+      "text": "Damage scales with XP level. 80% of XP levels are lost."
     }
   ]
 }

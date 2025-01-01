@@ -1,0 +1,21 @@
+{
+  "display": {
+    "title": {
+      "text": "From Bad to Worse"
+    },
+    "description": {
+      "text": "Cheat death... at a cost.",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:iron_bars"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:escape_nether"
+}
