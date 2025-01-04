@@ -3,6 +3,7 @@
     "*:setup",
     "*:cursed_prison",
     "*:faded_husk",
+    "*:agile_physique",
     "*:transparency",
     "*:carnivore",
     "*:eighth_sense",
@@ -11,8 +12,7 @@
     "*:staff_ability_vortex",
     "*:soul_staff",
     "*:advancement_handler",
-    "*:soul_purge",
-    "*:agile_physique"
+    "*:soul_purge"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
