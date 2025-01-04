@@ -5,7 +5,11 @@ This is currently in development and not recommend for use. A custom resource pa
 
 ![](https://progress-bar.xyz/75/?title=Estimated+Progress)
 
+### Important Notes
+
 Minor issues may arise if more than one Rend is present in a world due to some calculations using global storage.
+
+After switching to another origin, run `/function rend:remove_all_modifiers` to remove attribute modifiers set by this origin.
 
 ### Lore
 
