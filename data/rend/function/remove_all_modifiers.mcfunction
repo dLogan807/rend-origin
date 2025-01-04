@@ -1,0 +1,4 @@
+execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:armour_movement_inhibition"}]}]}] run attribute @s generic.movement_speed modifier remove rend:armour_movement_inhibition
+execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:attack_speed_bonus"}]}]}] run attribute @s generic.attack_speed modifier remove rend:attack_speed_bonus
+execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:max_health_reduction"}]}]}] run attribute @s generic.max_health modifier remove rend:max_health_reduction
+execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:attack_damage_reduction"}]}]}] run attribute @s generic.attack_damage modifier remove rend:attack_damage_reduction

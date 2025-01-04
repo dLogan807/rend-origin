@@ -2,14 +2,6 @@
   "type": "origins:multiple",
   "name": "Faded Husk",
   "description": "Your withered soul blatantly displays your lack of strength and affects your health and attack damage.",
-  "health_and_damage_reduction": {
-    "type": "origins:action_over_time",
-    "interval": 20,
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "function rend:faded_husk/set_weakness_attributes"
-    }
-  },
   "badges": [
     {
       "type": "origins:tooltip",
