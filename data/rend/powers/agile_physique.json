@@ -4,7 +4,7 @@
   "description": "You struggle to utilise armour at lower levels of strength. Axes are always of reduced effectiveness. However, your attack speed is increased at higher levels.",
   "armour_inhibitor": {
     "type": "origins:action_over_time",
-    "interval": 30,
+    "interval": 20,
     "entity_action": {
       "type": "origins:and",
       "actions": [
