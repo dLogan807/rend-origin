@@ -145,7 +145,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Mana cannot be utilised in The Nether"
+      "text": "Mana cannot be utilised in The Nether."
     },
     {
       "type": "origins:tooltip",

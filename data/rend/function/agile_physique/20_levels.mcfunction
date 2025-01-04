@@ -1,0 +1,3 @@
+execute if entity @s[scores={rend_armour_points=..10}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.1 add_multiplied_total
+execute if entity @s[scores={rend_armour_points=..15}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.3 add_multiplied_total
+execute if entity @s[scores={rend_armour_points=..20}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.5 add_multiplied_total

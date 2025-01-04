@@ -280,7 +280,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge_damage_calc"
+          "command": "function rend:soul_purge/damage_calc"
         },
         {
           "type": "origins:area_of_effect",
@@ -292,7 +292,7 @@
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:execute_command",
-                  "command": "function rend:soul_purge_damage with storage minecraft:rend soul_purge"
+                  "command": "function rend:soul_purge/damage with storage minecraft:rend soul_purge"
                 }
               },
               {
@@ -556,7 +556,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge_xp_loss"
+          "command": "function rend:soul_purge/xp_loss"
         }
       ]
     }

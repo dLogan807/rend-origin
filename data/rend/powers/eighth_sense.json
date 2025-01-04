@@ -72,8 +72,9 @@
     },
     "modifier": {
       "operation": "add_base_early",
-      "value": 1
+      "amount": 1
     },
+
     "condition": {
       "type": "origins:any_of",
       "conditions": [
