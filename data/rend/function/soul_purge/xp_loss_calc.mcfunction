@@ -2,7 +2,7 @@
 execute store result score @s rend_xp_level run data get entity @s XpLevel 100
 
 #Find 80% of current xp level
-scoreboard players set @s rend_xp_percent_reduction 8000
+scoreboard players set @s rend_xp_percent_reduction 8500
 scoreboard players operation @s rend_xp_percent_reduction *= @s rend_xp_level
 scoreboard players operation @s rend_xp_percent_reduction /= @s rend_xp_subtract_denominator
 

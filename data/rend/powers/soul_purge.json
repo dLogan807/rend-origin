@@ -2,6 +2,40 @@
   "name": "Soul purge",
   "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged. You may not be stable enough to remain free of your shackles.",
   "type": "origins:multiple",
+  "prevent_teleport_on_second_death": {
+    "type": "origins:action_on_death",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_dimension_instability",
+        "comparison": ">=",
+        "compare_to": 0
+      }
+    },
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_dimension_instability",
+            "change": 0,
+            "operation": "set"
+          }
+        },
+        {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:revoke_power",
+            "power": "*:nether_portal_overlay",
+            "source": "*:soul_purge"
+          }
+        }
+      ]
+    }
+  },
   "dimension_instability": {
     "type": "origins:resource",
     "min": 0,
@@ -292,7 +326,7 @@
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:execute_command",
-                  "command": "function rend:soul_purge/damage with storage minecraft:rend soul_purge"
+                  "command": "function rend:soul_purge/damage_entity with storage minecraft:rend soul_purge"
                 }
               },
               {
@@ -556,7 +590,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge/xp_loss"
+          "command": "function rend:soul_purge/xp_loss_calc"
         }
       ]
     }
@@ -570,7 +604,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "Damage scales with XP level. 80% of XP levels are lost."
+      "text": "Damage scales with XP level. 85% of XP levels are lost."
     }
   ]
 }
