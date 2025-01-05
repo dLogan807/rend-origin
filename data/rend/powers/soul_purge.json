@@ -599,7 +599,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "20 XP levels required. Damage scales with XP level. 85% of levels are lost."
+      "text": "At least 20 XP levels required. Damage scales with XP level. 85% of levels are lost."
     },
     {
       "type": "origins:tooltip",
