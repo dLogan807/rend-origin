@@ -97,7 +97,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "20XP levels needed to escape."
+      "text": "20 XP levels needed to escape."
     }
   ]
 }
