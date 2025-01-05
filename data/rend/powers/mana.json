@@ -144,13 +144,13 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Mana cannot be utilised in The Nether."
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "20 XP levels needed to utilise any mana-based abilities."
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "20XP levels needed to utilise any mana-based abilities."
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Mana cannot be utilised in The Nether."
     }
   ]
 }

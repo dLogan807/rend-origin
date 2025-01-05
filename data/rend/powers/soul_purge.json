@@ -598,13 +598,13 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Ineffective in The Nether."
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "20 XP levels required. Damage scales with XP level. 85% of levels are lost."
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "Damage scales with XP level. 85% of XP levels are lost."
+      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "text": "Ineffective in The Nether."
     }
   ]
 }
