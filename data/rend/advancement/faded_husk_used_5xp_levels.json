@@ -1,0 +1,22 @@
+{
+  "display": {
+    "title": {
+      "text": "All According to Plan"
+    },
+    "description": {
+      "text": "Use at least 5 XP levels in one usage of invisibility.",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:potion",
+      "components": { "minecraft:potion_contents": "invisibility" }
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "Used 5XP levels": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:root"
+}

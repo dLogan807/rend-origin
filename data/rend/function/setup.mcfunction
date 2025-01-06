@@ -24,6 +24,11 @@ scoreboard objectives add rend_xp_percent_reduction dummy
 scoreboard objectives add rend_xp_subtract_denominator dummy
 scoreboard players set @s rend_xp_subtract_denominator 10000
 
+#Faded Husk advancement
+scoreboard objectives add rend_starting_xp_levels dummy
+scoreboard objectives add rend_ending_xp_levels dummy
+scoreboard objectives add rend_used_xp_levels dummy
+
 #Create storage location
 data modify storage rend soul_purge set value {"amount":0,"num_levels":0}
 

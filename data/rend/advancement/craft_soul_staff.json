@@ -26,5 +26,5 @@
   "rewards": {
     "experience": 200
   },
-  "parent": "rend:root"
+  "parent": "rend:escape_nether"
 }

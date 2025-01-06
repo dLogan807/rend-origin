@@ -91,6 +91,10 @@
             "resource": "*:*_invisibility_active",
             "operation": "set",
             "change": 1
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute store result score @s rend_starting_xp_levels run xp query @s levels"
           }
         ]
       },
@@ -152,6 +156,10 @@
         {
           "type": "origins:trigger_cooldown",
           "power": "*:*_invisibility_cooldown"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:faded_husk/xp_usage_advancement"
         }
       ]
     }

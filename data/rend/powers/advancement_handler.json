@@ -19,15 +19,14 @@
         "condition": {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 54
+          "compare_to": 50
         },
         "action": {
           "type": "origins:grant_advancement",
-          "advancement": "*:reach_level_54"
+          "advancement": "*:reach_level_50"
         }
       }
     ]
   },
-  "interval": 10,
   "hidden": true
 }
