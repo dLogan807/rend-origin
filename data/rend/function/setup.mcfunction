@@ -7,6 +7,7 @@ scoreboard objectives add rend_enemy_deathcheck deathCount
 scoreboard objectives add rend_fallen_base_attack dummy
 
 scoreboard objectives add rend_xp_level dummy
+scoreboard objectives add rend_xp_points dummy
 scoreboard objectives add rend_in_nether dummy
 scoreboard objectives add rend_armour_points dummy
 

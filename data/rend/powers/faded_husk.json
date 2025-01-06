@@ -1,13 +1,65 @@
 {
   "type": "origins:multiple",
   "name": "Faded Husk",
-  "description": "Your withered soul blatantly displays your lack of strength and affects your health and attack damage. Use this to your advantage to become invisible.",
+  "description": "Your withered soul blatantly displays your lack of strength and affects your health and attack damage. Use this to your advantage to become wholly invisible.",
+  "xp_available": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "xp_checker": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute store result score @s rend_xp_points run xp query @s points"
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:any_of",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": "!=",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:command",
+                "command": "execute if entity @s[scores={rend_xp_points=0}]",
+                "comparison": "!=",
+                "compare_to": 1
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_xp_available",
+            "operation": "set",
+            "change": 1
+          },
+          "else_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_xp_available",
+            "operation": "set",
+            "change": 0
+          }
+        }
+      ]
+    },
+    "interval": 30
+  },
   "toggle_invisibility": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:if_else",
       "condition": {
-        "type": "origins:and",
+        "type": "origins:all_of",
         "conditions": [
           {
             "type": "origins:resource",
@@ -63,33 +115,24 @@
       }
     },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:all_of",
       "conditions": [
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<=",
-          "compare_to": 10
-        },
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:xp_points",
-              "comparison": ">",
-              "compare_to": 0
-            },
-            {
-              "type": "origins:xp_levels",
-              "comparison": ">",
-              "compare_to": 0
-            }
-          ]
-        },
         {
           "type": "origins:resource",
           "resource": "*:*_invisibility_cooldown",
           "comparison": "==",
           "compare_to": 0
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<=",
+          "compare_to": 15
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_xp_available",
+          "comparison": "==",
+          "compare_to": 1
         }
       ]
     },
@@ -98,7 +141,20 @@
   "invisibility_active": {
     "type": "origins:resource",
     "min": 0,
-    "max": 1
+    "max": 1,
+    "min_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:clear_effect",
+          "effect": "minecraft:invisibility"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_invisibility_cooldown"
+        }
+      ]
+    }
   },
   "invisibility_cooldown": {
     "type": "origins:cooldown",
@@ -147,65 +203,46 @@
     "entity_action": {
       "type": "origins:if_else",
       "condition": {
-        "type": "origins:or",
+        "type": "origins:all_of",
         "conditions": [
           {
-            "type": "origins:xp_points",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:resource",
+            "resource": "*:*_xp_available",
+            "comparison": "==",
+            "compare_to": 1
           },
           {
             "type": "origins:xp_levels",
-            "comparison": ">",
-            "compare_to": 0
+            "comparison": "<=",
+            "compare_to": 15
           }
         ]
       },
       "if_action": {
-        "type": "origins:add_xp",
-        "points": -1
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:xp_levels",
+          "comparison": ">",
+          "compare_to": 10
+        },
+        "if_action": { "type": "origins:add_xp", "points": -2 },
+        "else_action": { "type": "origins:add_xp", "points": -1 }
       },
       "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:clear_effect",
-            "effect": "minecraft:invisibility"
-          },
-          {
-            "type": "origins:trigger_cooldown",
-            "power": "*:*_invisibility_cooldown"
-          },
-          {
-            "type": "origins:change_resource",
-            "resource": "*:*_invisibility_active",
-            "operation": "set",
-            "change": 0
-          }
-        ]
+        "type": "origins:change_resource",
+        "resource": "*:*_invisibility_active",
+        "operation": "set",
+        "change": 0
       }
     }
   },
   "visible_when_hit": {
     "type": "origins:self_action_when_hit",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:clear_effect",
-          "effect": "minecraft:invisibility"
-        },
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_invisibility_cooldown"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_invisibility_active",
-          "operation": "set",
-          "change": 0
-        }
-      ]
+      "type": "origins:change_resource",
+      "resource": "*:*_invisibility_active",
+      "operation": "set",
+      "change": 0
     },
     "condition": {
       "type": "origins:resource",
@@ -220,12 +257,11 @@
       "sprite": "rend:textures/gui/badge/xp_orb.png",
       "text": "Scales with XP levels."
     },
-
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "Drains XP. Below 10 levels, use [",
+        "Drains XP. At or below 15 levels, use [",
         { "keybind": "key.origins.primary_active" },
         "] to toggle invisibility."
       ]
