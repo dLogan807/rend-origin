@@ -573,15 +573,6 @@
                 ]
               }
             ]
-          },
-          "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
-              "type": "origins:command",
-              "command": "execute if entity @s[team=!rend]",
-              "comparison": "==",
-              "compare_to": 1
-            }
           }
         },
         {
