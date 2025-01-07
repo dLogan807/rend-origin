@@ -225,7 +225,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Unusable in The Nether."
+      "text": "Unusable in the Nether."
     }
   ]
 }

@@ -7,6 +7,11 @@
     "*:transparency",
     "*:carnivore",
     "*:eighth_sense",
+    "*:mana",
+    "*:air_step",
+    "*:soul_staff",
+    "*:staff_ability_vortex",
+    "*:soul_purge",
     "*:advancement_handler"
   ],
   "icon": {
@@ -16,11 +21,5 @@
   "impact": 3,
   "name": "Rend",
   "description": "Subclass of an ancient species. Millenia of isolation has drastically weakened them.",
-  "upgrades": [
-    {
-      "condition": "rend:escape_nether",
-      "origin": "rend:rend_escaped_nether",
-      "announcement": "You have escaped the Nether! New powers are now available"
-    }
-  ]
+  "unchoosable": true
 }

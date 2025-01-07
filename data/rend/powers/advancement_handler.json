@@ -5,10 +5,24 @@
     "actions": [
       {
         "condition": {
-          "type": "origins:resource",
-          "resource": "*:air_step_number_of_jumps",
-          "comparison": "<",
-          "compare_to": 7
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:power_active",
+              "power": "*:air_step"
+            },
+            {
+              "type": "origins:advancement",
+              "advancement": "*:perform_air_step",
+              "inverted": true
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:air_step_number_of_jumps",
+              "comparison": "<",
+              "compare_to": 7
+            }
+          ]
         },
         "action": {
           "type": "origins:grant_advancement",
@@ -17,9 +31,19 @@
       },
       {
         "condition": {
-          "type": "origins:xp_levels",
-          "comparison": ">=",
-          "compare_to": 50
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:advancement",
+              "advancement": "*:reach_level_50",
+              "inverted": true
+            },
+            {
+              "type": "origins:xp_levels",
+              "comparison": ">=",
+              "compare_to": 50
+            }
+          ]
         },
         "action": {
           "type": "origins:grant_advancement",

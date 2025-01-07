@@ -277,7 +277,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Always slightly weakened in The Nether."
+      "text": "Always slightly weakened in the Nether."
     }
   ]
 }

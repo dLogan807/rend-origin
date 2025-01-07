@@ -595,7 +595,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Ineffective in The Nether."
+      "text": "Ineffective in the Nether."
     }
   ]
 }

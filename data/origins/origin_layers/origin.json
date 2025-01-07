@@ -1,4 +1,4 @@
 {
   "replace": false,
-  "origins": ["rend:rend"]
+  "origins": ["rend:rend", "rend:rend_escaped_nether"]
 }

@@ -67,7 +67,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "No attack speed bonus in The Nether."
+      "text": "No attack speed bonus in the Nether."
     }
   ]
 }
