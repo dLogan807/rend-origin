@@ -8,7 +8,7 @@
           "type": "origins:resource",
           "resource": "*:air_step_number_of_jumps",
           "comparison": "<",
-          "compare_to": 1
+          "compare_to": 7
         },
         "action": {
           "type": "origins:grant_advancement",
