@@ -202,6 +202,7 @@
   },
   "drain_xp": {
     "type": "origins:action_over_time",
+    "interval": 30,
     "condition": {
       "type": "origins:resource",
       "resource": "*:*_invisibility_active",
