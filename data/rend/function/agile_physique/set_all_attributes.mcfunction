@@ -1,6 +1,7 @@
 #Get current xp level and armour points
 execute store result score @s rend_xp_level run data get entity @s XpLevel
 execute store result score @s rend_armour_points run attribute @s generic.armor get 1
+execute if items entity @s weapon.* minecraft:shield run scoreboard players operation @s rend_armour_points += @s rend_shield_armour_points
 
 #Clear attribute modifiers
 function rend:remove_all_modifiers

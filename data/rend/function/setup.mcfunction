@@ -9,7 +9,11 @@ scoreboard objectives add rend_fallen_base_attack dummy
 scoreboard objectives add rend_xp_level dummy
 scoreboard objectives add rend_xp_points dummy
 scoreboard objectives add rend_in_nether dummy
+
+#Agile physique
 scoreboard objectives add rend_armour_points dummy
+scoreboard objectives add rend_shield_armour_points dummy
+scoreboard players set @s rend_shield_armour_points 2
 
 #Soul purge damage scores
 scoreboard objectives add rend_soul_purge_actor dummy
