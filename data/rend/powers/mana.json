@@ -133,21 +133,36 @@
       "resource": "*:*_capacity",
       "change": 1
     },
-    "interval": 25,
+    "interval": 70,
     "condition": {
-      "type": "origins:or",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:command",
-          "command": "execute if entity @a[team=!rend,distance=..5]",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
         },
         {
-          "type": "origins:command",
-          "command": "execute if entity @e[team=rend,distance=1..5]",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:command",
+              "command": "execute if entity @a[team=!rend,distance=..5]",
+              "comparison": "==",
+              "compare_to": 1
+            },
+            {
+              "type": "origins:command",
+              "command": "execute if entity @e[team=rend,distance=1..5]",
+              "comparison": "==",
+              "compare_to": 1
+            }
+          ]
         }
       ]
     }

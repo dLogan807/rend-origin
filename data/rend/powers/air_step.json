@@ -21,6 +21,12 @@
           },
           {
             "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
             "resource": "*:*_number_of_jumps",
             "comparison": "<",
             "compare_to": 7
