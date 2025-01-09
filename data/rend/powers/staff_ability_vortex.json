@@ -38,7 +38,22 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
     },
     "key": "key.use",
     "condition": {
@@ -56,6 +71,11 @@
           "type": "origins:xp_levels",
           "comparison": ">=",
           "compare_to": 20
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
         },
         {
           "type": "origins:resource",
