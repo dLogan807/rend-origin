@@ -36,7 +36,7 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 1000
+    "cooldown": 10000
   },
   "selected_ability": {
     "type": "origins:resource",
