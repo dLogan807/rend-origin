@@ -1,278 +1,269 @@
 {
-  "type": "origins:action_over_time",
+  "type": "origins:multiple",
   "hidden": true,
-  "entity_action": {
-    "type": "origins:and",
-    "actions": [
-      {
-        "type": "origins:spawn_particles",
-        "particle": {
-          "type": "minecraft:dust",
-          "params": { "color": [1, 1, 1], "scale": 2 }
-        },
-        "count": 5,
-        "speed": 0.02,
-        "force": true,
-        "spread": {
-          "x": 4.0,
-          "y": 2.0,
-          "z": 4.0
-        }
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "function rend:vortex/rotate_circles"
-      },
-      {
-        "type": "origins:play_sound",
-        "sound": "minecraft:block.chorus_flower.grow"
-      },
-      {
-        "type": "origins:area_of_effect",
-        "radius": 7,
-        "shape": "sphere",
-        "bientity_action": {
-          "type": "origins:and",
-          "actions": [
-            {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:execute_command",
-                "command": "execute store result score #targetX pos as @s run data get entity @s Pos[0] 1"
-              }
-            },
-            {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:execute_command",
-                "command": "execute store result score #targetZ pos as @s run data get entity @s Pos[2] 1"
-              }
-            },
-            {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:apply_effect",
-                "effect": {
-                  "id": "minecraft:levitation",
-                  "duration": 5,
-                  "amplifier": -1,
-                  "show_particles": false,
-                  "show_icon": false
-                }
-              }
-            },
-            {
-              "type": "origins:if_else_list",
-              "actions": [
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos = #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": 0.7,
-
-                      "z": -0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos = #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": -0.7,
-
-                      "z": 0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetZ pos < #vortexZ pos if score #targetX pos = #vortexX pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "z": 0.7,
-
-                      "x": 0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetZ pos > #vortexZ pos if score #targetX pos = #vortexX pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "z": -0.7,
-
-                      "x": -0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos < #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": 0.7,
-
-                      "z": 0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos > #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": 0.7,
-
-                      "z": -0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos < #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": -0.7,
-
-                      "z": 0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                },
-                {
-                  "condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                      "type": "origins:command",
-                      "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos > #vortexZ pos",
-                      "comparison": "==",
-                      "compare_to": 1
-                    }
-                  },
-                  "action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:add_velocity",
-                      "x": -0.7,
-
-                      "z": -0.6,
-                      "space": "world",
-                      "client": true,
-                      "server": true
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "bientity_condition": {
-          "type": "origins:target_condition",
-          "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @s[tag=!rend_vortex_inner,tag=!rend_vortex_outer]",
-            "comparison": "==",
-            "compare_to": 1
+  "do_vortex": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:spawn_particles",
+          "particle": {
+            "type": "minecraft:dust",
+            "params": { "color": [1, 1, 1], "scale": 2 }
+          },
+          "count": 5,
+          "speed": 0.02,
+          "force": true,
+          "spread": {
+            "x": 4.0,
+            "y": 2.0,
+            "z": 4.0
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:vortex/rotate_circles"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.chorus_flower.grow"
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 7,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute store result score #targetX pos as @s run data get entity @s Pos[0] 1"
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute store result score #targetZ pos as @s run data get entity @s Pos[2] 1"
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "id": "minecraft:levitation",
+                    "duration": 5,
+                    "amplifier": -1,
+                    "show_particles": false,
+                    "show_icon": false
+                  }
+                }
+              },
+              {
+                "type": "origins:if_else_list",
+                "actions": [
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos = #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": 0.7,
+                        "z": -0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos = #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": -0.7,
+                        "z": 0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetZ pos < #vortexZ pos if score #targetX pos = #vortexX pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "z": 0.7,
+                        "x": 0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetZ pos > #vortexZ pos if score #targetX pos = #vortexX pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "z": -0.7,
+                        "x": -0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos < #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": 0.7,
+                        "z": 0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos > #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": 0.7,
+                        "z": -0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos < #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": -0.7,
+                        "z": 0.6
+                      }
+                    }
+                  },
+                  {
+                    "condition": {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos > #vortexZ pos",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    },
+                    "action": {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:add_velocity",
+                        "x": -0.7,
+                        "z": -0.6
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:command",
+              "command": "execute if entity @s[tag=!rend_vortex_inner,tag=!rend_vortex_outer]",
+              "comparison": "==",
+              "compare_to": 1
+            }
+          }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_timer",
+          "change": -1
         }
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "resource change @a[team=rend,limit=1] rend:staff_ability_vortex_timer -1"
-      }
-    ]
+      ]
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_timer",
+      "comparison": ">",
+      "compare_to": 0
+    }
   },
-  "interval": 1,
-  "condition": {
-    "type": "origins:command",
-    "command": "execute as @a[team=rend,limit=1] run resource get @s rend:staff_ability_vortex_timer",
-    "comparison": ">",
-    "compare_to": 0
+  "timer": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 200,
+    "start_value": 200,
+    "min_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[tag=rend_vortex_outer,limit=1,sort=nearest]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    }
   }
 }

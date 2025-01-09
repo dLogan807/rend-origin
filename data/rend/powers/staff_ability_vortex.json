@@ -19,14 +19,7 @@
         {
           "type": "origins:change_resource",
           "resource": "*:mana_capacity",
-          "change": -15,
-          "operation": "add"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_timer",
-          "change": 150,
-          "operation": "set"
+          "change": -20
         }
       ],
       "command_at_hit": "function rend:vortex/vortex",
@@ -146,20 +139,5 @@
       ]
     },
     "key": "key.use"
-  },
-  "timer": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 150,
-    "min_action": [
-      {
-        "type": "origins:execute_command",
-        "command": "kill @e[tag=rend_vortex_inner]"
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "kill @e[tag=rend_vortex_outer]"
-      }
-    ]
   }
 }
