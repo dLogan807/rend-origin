@@ -116,6 +116,11 @@
           }
         },
         {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
           "type": "origins:xp_levels",
           "comparison": ">=",
           "compare_to": 20
