@@ -31,43 +31,27 @@
   },
   "jump_reset": {
     "type": "origins:action_over_time",
-    "interval": 35,
+    "interval": 30,
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_number_of_jumps",
-          "change": 1,
-          "operation": "add"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:*_first_jump",
-          "change": 1,
-          "operation": "set"
-        }
-      ]
+      "type": "origins:change_resource",
+      "resource": "*:*_number_of_jumps",
+      "change": 1,
+      "operation": "add"
     },
     "condition": {
       "type": "origins:on_block"
     }
   },
-  "first_jump": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1,
-    "start_value": 1
-  },
   "activating_jump": {
     "type": "origins:active_self",
     "key": "key.jump",
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:on_block",
-          "inverted": true
+          "type": "origins:fall_distance",
+          "comparison": ">",
+          "compare_to": 1.5
         },
         {
           "type": "origins:resource",
@@ -106,63 +90,48 @@
       ]
     },
     "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "*:*_first_jump",
-        "comparison": "==",
-        "compare_to": 1
-      },
-      "if_action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_first_jump",
-        "change": 0,
-        "operation": "set"
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:play_sound",
-            "sound": "minecraft:entity.rabbit.jump",
-            "pitch": 0
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.rabbit.jump",
+          "pitch": 0
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_number_of_jumps",
+          "change": -1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
+        },
+        {
+          "type": "origins:add_velocity",
+          "set": true,
+          "client": false,
+          "server": true,
+          "y": 0.5
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:moving",
+            "vertically": false
           },
-          {
-            "type": "origins:change_resource",
-            "resource": "*:*_number_of_jumps",
-            "change": -1,
-            "operation": "add"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
-          },
-          {
+          "if_action": {
             "type": "origins:add_velocity",
-            "set": true,
-            "client": false,
-            "server": true,
-            "y": 0.5
-          },
-          {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:moving",
-              "vertically": false
-            },
-            "if_action": {
-              "type": "origins:add_velocity",
-              "space": "local",
-              "z": 0.4
-            }
-          },
-          {
-            "type": "origins:change_resource",
-            "resource": "*:mana_capacity",
-            "change": -1
+            "space": "local",
+            "z": 0.4
           }
-        ]
-      }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:mana_capacity",
+          "change": -1
+        }
+      ]
     }
   },
   "fall_half_immunity": {
