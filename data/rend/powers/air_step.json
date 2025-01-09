@@ -35,7 +35,7 @@
       }
     }
   },
-  "jump_reset": {
+  "jump_regen": {
     "type": "origins:action_over_time",
     "interval": 30,
     "entity_action": {
