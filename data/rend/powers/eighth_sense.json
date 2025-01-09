@@ -1,6 +1,6 @@
 {
   "name": "8th Sense",
-  "description": "Creatures sense your weakened state and pursue you over greater distances, imbuing extra strength into their attacks.",
+  "description": "Creatures sense your dangerous potential and pursue you over greater distances, imbuing extra strength into their attacks.",
   "type": "origins:multiple",
   "modify_follow_range": {
     "type": "origins:action_over_time",
@@ -44,22 +44,7 @@
         ]
       }
     },
-    "interval": 100,
-    "condition": {
-      "type": "origins:any_of",
-      "conditions": [
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": false
-        }
-      ]
-    }
+    "interval": 100
   },
   "modify_entity_attack": {
     "type": "origins:modify_damage_taken",
@@ -73,29 +58,6 @@
     "modifier": {
       "operation": "add_base_early",
       "amount": 1
-    },
-
-    "condition": {
-      "type": "origins:any_of",
-      "conditions": [
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": false
-        }
-      ]
     }
-  },
-  "badges": [
-    {
-      "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
-      "text": "Always active in the Nether."
-    }
-  ]
+  }
 }

@@ -31,7 +31,7 @@
   },
   "jump_reset": {
     "type": "origins:action_over_time",
-    "interval": 50,
+    "interval": 35,
     "entity_action": {
       "type": "origins:and",
       "actions": [
