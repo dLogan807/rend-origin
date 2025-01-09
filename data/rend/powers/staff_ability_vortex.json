@@ -24,7 +24,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "*:*_vortex_handler",
+          "resource": "*:*_timer",
           "change": 100,
           "operation": "set"
         }
@@ -122,22 +122,18 @@
     },
     "key": "key.use"
   },
-  "vortex_handler": {
+  "timer": {
     "type": "origins:resource",
     "min": 0,
     "max": 100,
     "min_action": [
       {
         "type": "origins:execute_command",
-        "command": "kill @e[tag=vortex_position]"
+        "command": "kill @e[tag=rend_vortex_inner]"
       },
       {
         "type": "origins:execute_command",
-        "command": "kill @e[tag=rend_vortex_1]"
-      },
-      {
-        "type": "origins:execute_command",
-        "command": "kill @e[tag=rend_vortex_2]"
+        "command": "kill @e[tag=rend_vortex_outer]"
       }
     ]
   }

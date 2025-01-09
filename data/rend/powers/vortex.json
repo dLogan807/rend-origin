@@ -29,7 +29,8 @@
       },
       {
         "type": "origins:area_of_effect",
-        "radius": 8,
+        "radius": 7,
+        "shape": "sphere",
         "bientity_action": {
           "type": "origins:and",
           "actions": [
@@ -269,7 +270,7 @@
           "type": "origins:target_condition",
           "condition": {
             "type": "origins:command",
-            "command": "execute if entity @s[tag=!vortex_position,tag=!magic_circle_vortex_1,tag=!magic_circle_vortex_2]",
+            "command": "execute if entity @s[tag=!rend_vortex_inner,tag=!rend_vortex_outer]",
             "comparison": "==",
             "compare_to": 1
           }
@@ -277,14 +278,14 @@
       },
       {
         "type": "origins:execute_command",
-        "command": "resource change @a[team=rend,limit=1] rend:staff_ability_vortex_vortex_handler -1"
+        "command": "resource change @a[team=rend,limit=1] rend:staff_ability_vortex_timer -1"
       }
     ]
   },
   "interval": 1,
   "condition": {
     "type": "origins:command",
-    "command": "execute as @a[team=rend,limit=1] run resource get @s rend:staff_ability_vortex_vortex_handler",
+    "command": "execute as @a[team=rend,limit=1] run resource get @s rend:staff_ability_vortex_timer",
     "comparison": ">",
     "compare_to": 0
   }
