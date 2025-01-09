@@ -25,7 +25,9 @@
           "custom_model_data": 439202,
           "rarity": "epic",
           "custom_name": "[\"\",{\"text\":\"Soul Staff\",\"italic\":false}]",
-          "lore": ["[\"\",{\"text\":\"test\",\"italic\":false}]"],
+          "lore": [
+            "[\"\",{\"text\":\"A tool of great potential.\",\"italic\":false}]"
+          ],
           "unbreakable": {},
           "custom_data": { "soul_staff": 1 }
         }
