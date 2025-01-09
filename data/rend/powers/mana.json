@@ -131,14 +131,25 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_capacity",
-      "change": 2
+      "change": 1
     },
-    "interval": 20,
+    "interval": 25,
     "condition": {
-      "type": "origins:command",
-      "command": "execute at @s if entity @a[team=!rend,distance=..5]",
-      "comparison": "==",
-      "compare_to": 1
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:command",
+          "command": "execute if entity @a[team=!rend,distance=..5]",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[team=rend,distance=1..5]",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
     }
   },
   "badges": [
