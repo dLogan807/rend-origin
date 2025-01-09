@@ -21,7 +21,7 @@
       },
       {
         "type": "origins:execute_command",
-        "command": "function rend:vortex_circles"
+        "command": "function rend:vortex/rotate_circles"
       },
       {
         "type": "origins:play_sound",
