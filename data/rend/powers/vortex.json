@@ -11,7 +11,7 @@
           "params": { "color": [1, 1, 1], "scale": 2 }
         },
         "count": 5,
-        "speed": 0.1,
+        "speed": 0.02,
         "force": true,
         "spread": {
           "x": 4.0,
@@ -49,6 +49,19 @@
               }
             },
             {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "id": "minecraft:levitation",
+                  "duration": 5,
+                  "amplifier": -1,
+                  "show_particles": false,
+                  "show_icon": false
+                }
+              }
+            },
+            {
               "type": "origins:if_else_list",
               "actions": [
                 {
@@ -65,12 +78,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": 1,
-                      "y": 0.08,
+                      "x": 0.7,
+
+                      "z": -0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -88,12 +101,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": -1,
-                      "y": 0.08,
+                      "x": -0.7,
+
+                      "z": 0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -111,12 +124,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "z": 1,
-                      "y": 0.08,
+                      "z": 0.7,
+
+                      "x": 0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -134,12 +147,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "z": -1,
-                      "y": 0.08,
+                      "z": -0.7,
+
+                      "x": -0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -157,13 +170,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": 1,
-                      "y": 0.08,
-                      "z": 1,
+                      "x": 0.7,
+
+                      "z": 0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -181,13 +193,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": 1,
-                      "y": 0.08,
-                      "z": -1,
+                      "x": 0.7,
+
+                      "z": -0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -205,13 +216,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": -1,
-                      "y": 0.08,
-                      "z": 1,
+                      "x": -0.7,
+
+                      "z": 0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 },
@@ -229,13 +239,12 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:add_velocity",
-                      "x": -1,
-                      "y": 0.08,
-                      "z": -1,
+                      "x": -0.7,
+
+                      "z": -0.6,
                       "space": "world",
                       "client": true,
-                      "server": true,
-                      "set": true
+                      "server": true
                     }
                   }
                 }
