@@ -111,7 +111,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "execute at @s run particle minecraft:cloud ~ ~1 ~ .01 .01 .01 0.1 5 force"
+          "command": "function rend:air_step_circle"
         },
         {
           "type": "origins:add_velocity",
