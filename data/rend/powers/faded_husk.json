@@ -87,6 +87,10 @@
             }
           },
           {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:visibility 0.1 @s"
+          },
+          {
             "type": "origins:change_resource",
             "resource": "*:*_invisibility_active",
             "operation": "set",
@@ -104,6 +108,10 @@
           {
             "type": "origins:clear_effect",
             "effect": "minecraft:invisibility"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scale reset pehkui:visibility @s"
           },
           {
             "type": "origins:trigger_cooldown",
@@ -154,6 +162,10 @@
           "effect": "minecraft:invisibility"
         },
         {
+          "type": "origins:execute_command",
+          "command": "scale reset pehkui:visibility @s"
+        },
+        {
           "type": "origins:trigger_cooldown",
           "power": "*:*_invisibility_cooldown"
         },
@@ -183,6 +195,10 @@
           {
             "type": "origins:clear_effect",
             "effect": "minecraft:invisibility"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scale reset pehkui:visibility @s"
           },
           {
             "type": "origins:change_resource",

@@ -5,6 +5,10 @@ This is currently in development and not recommend for use. A custom resource pa
 
 ![](https://progress-bar.xyz/75/?title=Estimated+Progress)
 
+### Dependencies
+
+This datapack requires [Pehkui](https://modrinth.com/mod/pehkui) for some powers.
+
 ### Important Notes
 
 Minor issues may arise if more than one Rend is present in a world due to some calculations using global storage.
