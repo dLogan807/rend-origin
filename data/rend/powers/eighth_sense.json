@@ -2,49 +2,22 @@
   "name": "8th Sense",
   "description": "Creatures sense your dangerous potential and pursue you over greater distances, imbuing extra strength into their attacks.",
   "type": "origins:multiple",
-  "modify_follow_range": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:area_of_effect",
-      "radius": 50,
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:execute_command",
-              "command": "attribute @s minecraft:generic.follow_range modifier add rend:eighth_sense_range 0.5 add_multiplied_base"
-            }
-          }
-        ]
-      },
-      "bientity_condition": {
-        "type": "origins:all_of",
-        "conditions": [
-          {
-            "type": "origins:can_see"
-          },
-          {
-            "type": "target_condition",
-            "condition": {
-              "type": "origins:in_tag",
-              "tag": "rend:hostile"
-            }
-          },
-          {
-            "type": "origins:target_condition",
-            "condition": {
-              "type": "origins:command",
-              "command": "execute if entity @s[nbt={attributes:[{modifiers:[{id:\"rend:eighth_sense_range\"}]}]}]",
-              "comparison": "==",
-              "compare_to": 0
-            }
-          }
-        ]
-      }
-    },
-    "interval": 100
+  "modify_target_range": {
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_chosen": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:visibility 1.5 @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale persist set pehkui:visibility true @s"
+        }
+      ]
+    }
   },
   "modify_entity_attack": {
     "type": "origins:modify_damage_taken",

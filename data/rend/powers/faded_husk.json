@@ -88,7 +88,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "scale set pehkui:visibility 0.1 @s"
+            "command": "scale set pehkui:visibility 0.05 @s"
           },
           {
             "type": "origins:change_resource",
@@ -111,7 +111,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "scale reset pehkui:visibility @s"
+            "command": "scale set pehkui:visibility 1.5 @s"
           },
           {
             "type": "origins:trigger_cooldown",
@@ -163,7 +163,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "scale reset pehkui:visibility @s"
+          "command": "scale set pehkui:visibility 1.5 @s"
         },
         {
           "type": "origins:trigger_cooldown",
@@ -198,7 +198,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "scale reset pehkui:visibility @s"
+            "command": "scale set pehkui:visibility 1.5 @s"
           },
           {
             "type": "origins:change_resource",

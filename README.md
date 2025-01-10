@@ -11,9 +11,9 @@ This datapack requires [Pehkui](https://modrinth.com/mod/pehkui) for some powers
 
 ### Important Notes
 
-Minor issues may arise if more than one Rend is present in a world due to some calculations using global storage.
+Minor issues may arise if more than one Rend is present in a world due to some calculations using global storage for macros.
 
-After switching to another origin, run `/function rend:remove_all_modifiers` to remove attribute modifiers set by this origin.
+After switching to another origin, run `/function rend:remove_all_modifiers` and `/scale reset pehkui:visibility @s` to remove attribute modifiers set by this origin.
 
 ### Lore
 
