@@ -18,9 +18,9 @@
             },
             {
               "type": "origins:resource",
-              "resource": "*:air_step_number_of_jumps",
+              "resource": "*:air_step_jumps_at_20_xp",
               "comparison": "<",
-              "compare_to": 7
+              "compare_to": 1
             }
           ]
         },
