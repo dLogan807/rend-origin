@@ -480,7 +480,7 @@
       "actions": [
         {
           "type": "origins:play_sound",
-          "sound": "minecraft:entity.rabbit.jump",
+          "sound": "minecraft:entity.breeze.land",
           "pitch": 0
         },
         {
