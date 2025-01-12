@@ -2,11 +2,11 @@
   "name": "Air Step",
   "description": "Harness mana to bound through the air.",
   "type": "origins:multiple",
-  "number_of_jumps": {
+  "jumps_at_20_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 7,
-    "start_value": 7,
+    "max": 1,
+    "start_value": 1,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
@@ -20,6 +20,11 @@
             "compare_to": 20
           },
           {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 24
+          },
+          {
             "type": "origins:resource",
             "resource": "rend:mana_capacity",
             "comparison": ">",
@@ -27,7 +32,230 @@
           },
           {
             "type": "origins:resource",
-            "resource": "*:*_number_of_jumps",
+            "resource": "*:*_jumps_at_20_xp",
+            "comparison": "<",
+            "compare_to": 1
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_24_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 2,
+    "start_value": 2,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 24
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 28
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_24_xp",
+            "comparison": "<",
+            "compare_to": 2
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_28_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3,
+    "start_value": 3,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 28
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 32
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_28_xp",
+            "comparison": "<",
+            "compare_to": 3
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_32_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 4,
+    "start_value": 4,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 32
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 36
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_32_xp",
+            "comparison": "<",
+            "compare_to": 4
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_36_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 5,
+    "start_value": 5,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 36
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 40
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_36_xp",
+            "comparison": "<",
+            "compare_to": 5
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_40_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 6,
+    "start_value": 3,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 40
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 44
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_40_xp",
+            "comparison": "<",
+            "compare_to": 6
+          }
+        ]
+      }
+    }
+  },
+  "jumps_at_44_xp": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 7,
+    "start_value": 3,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 44
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_44_xp",
             "comparison": "<",
             "compare_to": 7
           }
@@ -39,10 +267,51 @@
     "type": "origins:action_over_time",
     "interval": 30,
     "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_number_of_jumps",
-      "change": 1,
-      "operation": "add"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_20_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_24_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_28_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_32_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_36_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_40_xp",
+          "change": 1,
+          "operation": "add"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_jumps_at_44_xp",
+          "change": 1,
+          "operation": "add"
+        }
+      ]
     },
     "condition": {
       "type": "origins:on_block"
@@ -60,16 +329,127 @@
           "compare_to": 1.5
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_number_of_jumps",
-          "comparison": ">",
-          "compare_to": 0
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 44
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_44_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 40
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_40_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 36
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_36_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 32
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_32_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 28
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_28_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 24
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_24_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 20
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_20_xp",
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "origins:resource",
           "resource": "*:mana_capacity",
-          "comparison": ">=",
-          "compare_to": 1
+          "comparison": ">",
+          "compare_to": 0
         },
         {
           "type": "origins:fluid_height",
@@ -104,10 +484,51 @@
           "pitch": 0
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_number_of_jumps",
-          "change": -1,
-          "operation": "add"
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_20_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_24_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_28_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_32_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_36_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_40_xp",
+              "change": -1,
+              "operation": "add"
+            },
+            {
+              "type": "origins:change_resource",
+              "resource": "*:*_jumps_at_44_xp",
+              "change": -1,
+              "operation": "add"
+            }
+          ]
         },
         {
           "type": "origins:execute_command",
@@ -155,10 +576,121 @@
           "compare_to": 7
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_number_of_jumps",
-          "comparison": "==",
-          "compare_to": 0
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 44
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_44_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 40
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_40_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 36
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_36_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 32
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_32_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 28
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_28_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 24
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_24_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 20
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_20_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -170,7 +702,7 @@
       "tag": "minecraft:is_fall"
     },
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:fall_distance",
@@ -178,10 +710,121 @@
           "compare_to": 5
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_number_of_jumps",
-          "comparison": "==",
-          "compare_to": 0
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 44
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_44_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 40
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_40_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 36
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_36_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 32
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_32_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 28
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_28_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 24
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_24_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            },
+            {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:xp_levels",
+                  "comparison": ">=",
+                  "compare_to": 20
+                },
+                {
+                  "type": "origins:resource",
+                  "resource": "*:*_jumps_at_20_xp",
+                  "comparison": "==",
+                  "compare_to": 0
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -196,6 +839,11 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": ["Use with [", { "keybind": "key.jump" }, "] while in the air."]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "text": "Scales with XP levels:\n20 = 1 jump\n24 = 2 jumps\n28 = 3 jumps\n32 = 4 jumps\n36 = 5 jumps\n40 = 6 jumps\n44 = 7 jumps"
     },
     {
       "type": "origins:tooltip",
