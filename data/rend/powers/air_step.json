@@ -326,7 +326,7 @@
         {
           "type": "origins:fall_distance",
           "comparison": ">",
-          "compare_to": 1.5
+          "compare_to": 1
         },
         {
           "type": "origins:or",
