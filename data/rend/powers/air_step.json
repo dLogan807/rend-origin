@@ -15,6 +15,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 20
@@ -24,12 +35,7 @@
             "comparison": "<",
             "compare_to": 24
           },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
-          },
+
           {
             "type": "origins:resource",
             "resource": "*:*_jumps_at_20_xp",
@@ -53,6 +59,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 24
@@ -61,12 +78,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 28
-          },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -91,6 +102,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 28
@@ -99,12 +121,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 32
-          },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -129,6 +145,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 32
@@ -137,12 +164,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 36
-          },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -167,6 +188,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 36
@@ -175,12 +207,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 40
-          },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -205,6 +231,17 @@
         "type": "origins:and",
         "conditions": [
           {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "rend:mana_capacity",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 40
@@ -213,12 +250,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 44
-          },
-          {
-            "type": "origins:resource",
-            "resource": "rend:mana_capacity",
-            "comparison": ">",
-            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -243,15 +274,20 @@
         "type": "origins:and",
         "conditions": [
           {
-            "type": "origins:xp_levels",
-            "comparison": ">=",
-            "compare_to": 44
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
           },
           {
             "type": "origins:resource",
             "resource": "rend:mana_capacity",
             "comparison": ">",
             "compare_to": 0
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 44
           },
           {
             "type": "origins:resource",
