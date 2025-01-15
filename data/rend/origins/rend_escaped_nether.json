@@ -11,6 +11,7 @@
     "*:air_step",
     "*:soul_staff",
     "*:staff_ability_vortex",
+    "*:staff_ability_resurrect_fallen",
     "*:soul_purge",
     "*:advancement_handler"
   ],
@@ -20,6 +21,6 @@
   "order": 10,
   "impact": 3,
   "name": "Rend",
-  "description": "Subclass of an ancient species. Millenia of isolation has drastically weakened them.",
+  "description": "Wretched remains of an ancient species following a failed Nether invasion. Millenia of isolation has drastically weakened them.",
   "unchoosable": true
 }

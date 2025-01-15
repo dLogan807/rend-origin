@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "elite_weapon_switch": {
+  "weapon_switch": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:if_else",

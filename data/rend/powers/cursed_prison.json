@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Cursed Imprisonment",
-  "description": "Born of the Overworld but shackled to the ruins of the Nether. The dimension erases all beneficial abilites.",
+  "description": "Born of the Overworld but shackled to the ruins of the Nether. The dimension curbs all beneficial abilites.",
   "nether_spawn": {
     "type": "origins:modify_player_spawn",
     "dimension": "minecraft:the_nether",

@@ -15,7 +15,7 @@
   "order": 10,
   "impact": 3,
   "name": "Rend",
-  "description": "Subclass of an ancient species. Millenia of isolation has drastically weakened them.",
+  "description": "Wretched remains of an ancient species following a failed Nether invasion. Millenia of isolation has drastically weakened them.",
   "upgrades": [
     {
       "condition": "rend:escape_nether",
