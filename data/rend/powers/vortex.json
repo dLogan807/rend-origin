@@ -37,17 +37,31 @@
             "type": "origins:and",
             "actions": [
               {
-                "type": "origins:target_action",
+                "type": "origins:actor_action",
                 "action": {
                   "type": "origins:execute_command",
-                  "command": "execute store result score #targetX pos as @s run data get entity @s Pos[0] 1"
+                  "command": "execute store result score #rend_vortex_x rend_vortex_pos_x as @s run data get entity @s Pos[0] 1"
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute store result score #rend_vortex_z rend_vortex_pos_z as @s run data get entity @s Pos[2] 1"
                 }
               },
               {
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:execute_command",
-                  "command": "execute store result score #targetZ pos as @s run data get entity @s Pos[2] 1"
+                  "command": "execute store result score @s rend_vortex_pos_x as @s run data get entity @s Pos[0] 1"
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute store result score @s rend_vortex_pos_z as @s run data get entity @s Pos[2] 1"
                 }
               },
               {
@@ -71,7 +85,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos = #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z = #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -90,7 +104,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos = #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z = #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -109,7 +123,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetZ pos < #vortexZ pos if score #targetX pos = #vortexX pos",
+                        "command": "execute if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z if score @s rend_vortex_pos_x = #rend_vortex_x rend_vortex_pos_x",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -128,7 +142,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetZ pos > #vortexZ pos if score #targetX pos = #vortexX pos",
+                        "command": "execute if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z if score @s rend_vortex_pos_x = #rend_vortex_x rend_vortex_pos_x",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -147,7 +161,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos < #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -166,7 +180,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos < #vortexX pos if score #targetZ pos > #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -185,7 +199,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos < #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }
@@ -204,7 +218,7 @@
                       "type": "origins:target_condition",
                       "condition": {
                         "type": "origins:command",
-                        "command": "execute if score #targetX pos > #vortexX pos if score #targetZ pos > #vortexZ pos",
+                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z",
                         "comparison": "==",
                         "compare_to": 1
                       }

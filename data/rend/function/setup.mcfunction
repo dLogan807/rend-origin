@@ -1,6 +1,6 @@
 #scoreboard objectives add staff_ability dummy
-scoreboard objectives add fireball_check dummy
-scoreboard objectives add pos dummy
+scoreboard objectives add rend_vortex_pos_x dummy
+scoreboard objectives add rend_vortex_pos_z dummy
 scoreboard objectives add rend_enemy dummy
 scoreboard objectives add rend_current_enemy dummy
 scoreboard objectives add rend_enemy_deathcheck deathCount
