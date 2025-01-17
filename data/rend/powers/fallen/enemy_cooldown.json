@@ -1,0 +1,33 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "period": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 100,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set @s rend_enemy 0"
+        },
+        {
+          "type": "origins:remove_power",
+          "power": "*:fallen/enemy_cooldown"
+        }
+      ]
+    },
+    "hud_render": { "should_render": false }
+  },
+  "timer": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_period",
+      "operation": "add",
+      "change": 1
+    },
+    "interval": 30
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": "origins:target_action_on_hit",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "function rend:fallen/set_new_target"
+      },
+      {
+        "type": "origins:grant_power",
+        "power": "*:fallen/enemy_cooldown",
+        "source": "rend:fallen/set_target"
+      }
+    ]
+  },
+  "target_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:command",
+            "command": "execute unless score @s rend_current_enemy matches 0..",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          {
+            "type": "origins:scoreboard",
+            "objective": "rend_current_enemy",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      },
+      {
+        "type": "origins:command",
+        "command": "execute if entity @s[team=!rend,type=!minecraft:armor_stand]",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    ]
+  },
+  "cooldown": 1
+}

@@ -12,7 +12,7 @@
       "hit_action": [
         {
           "type": "origins:change_resource",
-          "resource": "*:soul_staff_cooldown",
+          "resource": "*:soul_staff/soul_staff_cooldown",
           "change": 9000,
           "operation": "set"
         },
@@ -72,13 +72,13 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:soul_staff_cooldown",
+          "resource": "*:soul_staff/soul_staff_cooldown",
           "comparison": "==",
           "compare_to": 0
         },
         {
           "type": "origins:resource",
-          "resource": "*:soul_staff_selected_ability",
+          "resource": "*:soul_staff/soul_staff_selected_ability",
           "comparison": "==",
           "compare_to": 3
         },
@@ -120,7 +120,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:soul_staff_selected_ability",
+          "resource": "*:soul_staff/soul_staff_selected_ability",
           "comparison": "==",
           "compare_to": 3
         },
@@ -132,7 +132,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:soul_staff_cooldown",
+          "resource": "*:soul_staff/soul_staff_cooldown",
           "comparison": "==",
           "compare_to": 0
         }

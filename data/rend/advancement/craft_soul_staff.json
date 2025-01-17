@@ -19,7 +19,7 @@
     "Soul Staff Created": {
       "trigger": "minecraft:recipe_crafted",
       "conditions": {
-        "recipe_id": "rend:soul_staff_staff_crafting"
+        "recipe_id": "rend:soul_staff/soul_staff_staff_crafting"
       }
     }
   },

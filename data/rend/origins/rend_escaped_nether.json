@@ -9,9 +9,10 @@
     "*:eighth_sense",
     "*:mana",
     "*:air_step",
-    "*:soul_staff",
-    "*:staff_ability_vortex",
-    "*:staff_ability_resurrect_fallen",
+    "*:soul_staff/soul_staff",
+    "*:soul_staff/staff_ability_vortex",
+    "*:soul_staff/staff_ability_resurrect_fallen",
+    "*:fallen/set_target",
     "*:soul_purge",
     "*:advancement_handler"
   ],

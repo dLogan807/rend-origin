@@ -1,0 +1,41 @@
+{
+  "type": "origins:multiple",
+  "set_enemy_when_attacked": {
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute if entity @s[team=!rend] run scoreboard players set @s rend_enemy 1"
+    },
+    "damage_condition": {
+      "type": "origins:attacker",
+      "entity_condition": {
+        "type": "origins:command",
+        "command": "execute unless entity @s[team=rend]",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    },
+    "cooldown": 20
+  },
+  "weapon_switch": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @e[scores={rend_enemy=1},distance=..16]",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function rend:fallen/can_attack"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "function rend:fallen/prevent_attack"
+      }
+    },
+    "interval": 30
+  }
+}
