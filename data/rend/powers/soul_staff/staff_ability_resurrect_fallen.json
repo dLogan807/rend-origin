@@ -8,7 +8,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "execute at @e[type=armor_stand,limit=3,distance=..3] run summon skeleton ~ ~ ~ {Team:\"rend\",Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F]}"
+          "command": "execute at @e[type=armor_stand,limit=3,distance=..3] run summon skeleton ~ ~ ~ {Team:\"rend\",Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}"
         },
         {
           "type": "origins:execute_command",
