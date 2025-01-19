@@ -74,8 +74,19 @@
     "entity_action": {
       "type": "origins:if_else",
       "condition": {
-        "type": "origins:command",
-        "command": "execute if entity @e[scores={rend_enemy=1},distance=..16]",
+        "type": "origins:entity_in_radius",
+        "radius": 16,
+        "shape": "sphere",
+        "bientity_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:in_entity_set",
+              "set": "*:fallen/summoner_fallen_enemies"
+            },
+            { "type": "origins:can_see" }
+          ]
+        },
         "comparison": ">",
         "compare_to": 0
       },
