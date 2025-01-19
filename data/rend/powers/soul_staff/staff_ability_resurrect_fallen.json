@@ -7,23 +7,82 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "execute at @e[type=armor_stand,limit=3,distance=..3] run summon skeleton ~ ~ ~ {Team:\"rend\",Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "execute as @e[tag=rend_fallen,tag=!rend_finished_summon] run function rend:fallen/setup"
+          "type": "origins:area_of_effect",
+          "radius": 5,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:spawn_entity",
+                  "entity_type": "minecraft:skeleton",
+                  "tag": "{Team:\"rend\",Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
+                  "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:add_to_entity_set",
+                          "set": "*:fallen/summoner"
+                        },
+                        {
+                          "type": "origins:execute_command",
+                          "command": "function rend:fallen/summon_effects"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:change_resource",
+                  "resource": "*:mana_capacity",
+                  "operation": "add",
+                  "change": -10
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "kill @s"
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              { "type": "origins:can_see" },
+              {
+                "type": "origins:actor_condition",
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:mana_capacity",
+                  "comparison": ">=",
+                  "compare_to": 10
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:armor_stand"
+                }
+              }
+            ]
+          }
         },
         {
           "type": "origins:change_resource",
           "resource": "*:soul_staff/soul_staff_cooldown",
           "change": 9800,
           "operation": "set"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:mana_capacity",
-          "change": -25
         }
       ]
     },
@@ -86,7 +145,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": ">=",
-          "compare_to": 25
+          "compare_to": 10
         }
       ]
     }
@@ -128,7 +187,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": "<",
-          "compare_to": 25
+          "compare_to": 10
         },
         {
           "type": "origins:resource",

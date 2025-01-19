@@ -60,13 +60,8 @@
   "prevent_friendly_damage": {
     "type": "origins:modify_damage_taken",
     "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "type": "origins:command",
-        "command": "execute if entity @s[team=rend,type=skeleton]",
-        "comparison": "==",
-        "compare_to": 1
-      }
+      "type": "origins:in_entity_set",
+      "set": "*:fallen/summoner_summoned_fallen"
     },
     "modifier": {
       "id": "rend:fallen/fallen_prevent_friendly_damage",
