@@ -1,0 +1,17 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "function rend:vortex/outer_circle"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "tp @s ~ ~ ~ ~.7 ~"
+      }
+    ]
+  },
+  "interval": 1
+}

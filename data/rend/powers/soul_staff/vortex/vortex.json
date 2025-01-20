@@ -1,6 +1,33 @@
 {
   "type": "origins:multiple",
-  "hidden": true,
+  "outer_circle": {
+    "type": "origine:entity_set"
+  },
+  "spawn_outer_circle": {
+    "type": "action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:spawn_entity",
+      "entity_type": "minecraft:armor_stand",
+      "tag": "{Tags:[\"rend_vortex_outer\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:add_to_entity_set",
+            "set": "*:soul_staff/vortex/vortex_outer_circle"
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:grant_power",
+              "power": "*:soul_staff/vortex/outer_circle",
+              "source": "*:vortex_spawn_outer_circle"
+            }
+          }
+        ]
+      }
+    }
+  },
   "do_vortex": {
     "type": "origins:action_over_time",
     "entity_action": {
@@ -23,7 +50,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:vortex/rotate_circles"
+          "command": "function rend:vortex/inner_circle"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~ ~ ~-.9 ~"
         },
         {
           "type": "origins:play_sound",
@@ -270,8 +301,19 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "kill @e[tag=rend_vortex_outer,limit=1,sort=nearest]"
+          "type": "origins:area_of_effect",
+          "radius": 2,
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "kill @s"
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:in_entity_set",
+            "set": "*:soul_staff/vortex/vortex_outer_circle"
+          }
         },
         {
           "type": "origins:execute_command",
