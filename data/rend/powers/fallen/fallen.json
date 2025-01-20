@@ -41,19 +41,26 @@
     }
   },
   "set_enemy_when_attacked": {
-    "type": "origins:attacker_action_when_hit",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "execute if entity @s[team=!rend] run scoreboard players set @s rend_enemy 1"
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+      "type": "origins:add_to_entity_set",
+      "set": "*:fallen/summoner_fallen_enemies",
+      "time_limit": 3000
     },
-    "damage_condition": {
-      "type": "origins:attacker",
-      "entity_condition": {
-        "type": "origins:command",
-        "command": "execute unless entity @s[team=rend]",
-        "comparison": "==",
-        "compare_to": 1
-      }
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_entity_set",
+          "set": "*:fallen/summoner_summoner",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_entity_set",
+          "set": "*:fallen/summoner_summoned_fallen",
+          "inverted": true
+        }
+      ]
     },
     "cooldown": 20
   },

@@ -1,8 +1,8 @@
+advancement grant @s only rend:root
+
 #scoreboard objectives add staff_ability dummy
 scoreboard objectives add rend_vortex_pos_x dummy
 scoreboard objectives add rend_vortex_pos_z dummy
-scoreboard objectives add rend_enemy dummy
-scoreboard objectives add rend_current_enemy dummy
 scoreboard objectives add rend_enemy_deathcheck deathCount
 scoreboard objectives add rend_fallen_base_attack dummy
 
@@ -33,12 +33,16 @@ scoreboard objectives add rend_starting_xp_levels dummy
 scoreboard objectives add rend_ending_xp_levels dummy
 scoreboard objectives add rend_used_xp_levels dummy
 
-#Create storage location
-data modify storage rend soul_purge set value {"amount":0,"num_levels":0}
+#Dynamic team creation:
 
-team add rend
-team join rend @s
+#Increment global rend team counter
+scoreboard objectives add rend_team dummy
+scoreboard players add #rend_global_team_counter rend_team 1
+scoreboard players operation @s rend_team = #rend_global_team_counter rend_team
 
-#power grant @a[team=!rend] rend:on_attacking_fallen
-
-advancement grant @s only rend:root
+#Create team storage location
+data modify storage rend team set value {"name": "rend","counter": 0}
+#Store current team
+execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team
+#Assign to new team and create storage locations for the namespace
+function rend:set_team_and_storage with storage minecraft:rend team

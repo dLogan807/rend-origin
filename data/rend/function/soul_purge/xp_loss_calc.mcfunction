@@ -7,7 +7,7 @@ scoreboard players operation @s rend_xp_percent_reduction *= @s rend_xp_level
 scoreboard players operation @s rend_xp_percent_reduction /= @s rend_xp_subtract_denominator
 
 #Store result of subtracting the % loss of xp levels (divided by 100)
-execute store result storage rend soul_purge.num_levels int 0.01 run scoreboard players operation @s rend_xp_level -= @s rend_xp_percent_reduction 
+$execute store result storage $(name)$(counter) soul_purge.num_levels int 0.01 run scoreboard players operation @s rend_xp_level -= @s rend_xp_percent_reduction 
 
 #Set new xp value
-function rend:soul_purge/set_xp_levels with storage minecraft:rend soul_purge
+$function rend:soul_purge/set_xp_levels with storage $(name)$(counter) soul_purge

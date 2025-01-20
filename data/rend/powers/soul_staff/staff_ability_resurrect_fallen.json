@@ -18,7 +18,7 @@
                 "action": {
                   "type": "origins:spawn_entity",
                   "entity_type": "minecraft:skeleton",
-                  "tag": "{Team:\"rend\",Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
+                  "tag": "{Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
                   "bientity_action": {
                     "type": "origins:target_action",
                     "action": {
@@ -26,7 +26,7 @@
                       "actions": [
                         {
                           "type": "origins:add_to_entity_set",
-                          "set": "*:fallen/summoner"
+                          "set": "*:fallen/summoner_summoned_fallen"
                         },
                         {
                           "type": "origins:execute_command",

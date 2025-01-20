@@ -267,7 +267,7 @@
         },
         {
           "type": "origins:random_chance",
-          "chance": 0.5,
+          "chance": 0.4,
           "success_action": {
             "type": "origins:change_resource",
             "resource": "*:*_dimension_instability",
@@ -314,7 +314,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge/damage_calc"
+          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:soul_purge/damage_calc with storage minecraft:rend team"
         },
         {
           "type": "origins:area_of_effect",
@@ -581,7 +585,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:soul_purge/xp_loss_calc"
+          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:soul_purge/xp_loss_calc with storage minecraft:rend team"
         }
       ]
     }
