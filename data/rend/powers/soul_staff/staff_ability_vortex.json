@@ -9,19 +9,40 @@
       "entity": true,
       "shape_type": "collider",
       "fluid_handling": "source_only",
-      "hit_action": [
-        {
-          "type": "origins:change_resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "change": 9000,
-          "operation": "set"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:mana_capacity",
-          "change": -20
-        }
-      ],
+      "hit_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "*:soul_staff/soul_staff_cooldown",
+            "change": 9000,
+            "operation": "set"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:mana_capacity",
+            "change": -20
+          },
+          {
+            "type": "origins:spawn_entity",
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{Tags:[\"rend_vortex_outer\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}"
+          },
+          {
+            "type": "origins:spawn_entity",
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:grant_power",
+                "power": "*:vortex",
+                "source": "*:staff_ability_vortex_activation"
+              }
+            }
+          }
+        ]
+      },
       "command_at_hit": "function rend:vortex/vortex",
       "command_along_ray": "particle minecraft:cloud",
       "command_step": 1,
