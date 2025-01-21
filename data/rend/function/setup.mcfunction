@@ -42,7 +42,7 @@ scoreboard players operation @s rend_team = #rend_global_team_counter rend_team
 
 #Create team storage location
 data modify storage rend team set value {"name": "rend","counter": 0}
-#Store current team
+#Store current team number
 execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team
 #Assign to new team and create storage locations for the namespace
 function rend:set_team_and_storage with storage minecraft:rend team
