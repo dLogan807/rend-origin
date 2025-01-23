@@ -14,7 +14,7 @@
         "actions": [
           {
             "type": "origins:add_to_entity_set",
-            "set": "*:soul_staff/vortex/outer_circle"
+            "set": "*:soul_staff/vortex/vortex_outer_circle"
           },
           {
             "type": "origins:target_action",
@@ -312,7 +312,7 @@
           },
           "bientity_condition": {
             "type": "origins:in_entity_set",
-            "set": "*:soul_staff/vortex/outer_circle"
+            "set": "*:soul_staff/vortex/vortex_outer_circle"
           }
         },
         {

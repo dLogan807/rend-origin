@@ -109,7 +109,7 @@
     },
     "key": "key.use",
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",
@@ -157,7 +157,7 @@
       "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
     },
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",

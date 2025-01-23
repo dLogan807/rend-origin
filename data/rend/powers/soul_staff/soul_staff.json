@@ -56,7 +56,7 @@
       "command": "title @s actionbar {\"text\":\"20 XP levels needed!\",\"color\":\"red\"}"
     },
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",
@@ -87,7 +87,7 @@
       "command": "title @s actionbar {\"text\":\"Cannot use in the Nether\",\"color\":\"red\"}"
     },
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",

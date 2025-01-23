@@ -22,21 +22,18 @@
             "type": "origins:change_resource",
             "resource": "*:mana_capacity",
             "change": -20
-          },
-          {
-            "type": "origins:spawn_entity",
-            "entity_type": "minecraft:armor_stand",
-            "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
-            "bientity_action": {
-              "type": "origins:target_action",
-              "action": {
-                "type": "origins:grant_power",
-                "power": "*:soul_staff/vortex/vortex",
-                "source": "*:soul_staff/staff_ability_vortex_activation"
-              }
-            }
           }
         ]
+      },
+      "block_action": {
+        "type": "origins:spawn_entity",
+        "entity_type": "minecraft:armor_stand",
+        "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+        "entity_action": {
+          "type": "origins:grant_power",
+          "power": "*:soul_staff/vortex/vortex",
+          "source": "*:soul_staff/staff_ability_vortex_activation"
+        }
       },
       "command_at_hit": "function rend:vortex/vortex",
       "command_along_ray": "particle minecraft:cloud",
@@ -66,7 +63,7 @@
     },
     "key": "key.use",
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",
@@ -114,7 +111,7 @@
       "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
     },
     "condition": {
-      "type": "origins:all_of",
+      "type": "origins:and",
       "conditions": [
         {
           "type": "origins:equipped_item",
