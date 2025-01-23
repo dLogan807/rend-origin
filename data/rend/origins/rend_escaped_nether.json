@@ -1,6 +1,5 @@
 {
   "powers": [
-    "*:setup",
     "*:cursed_prison",
     "*:faded_husk",
     "*:agile_physique",
