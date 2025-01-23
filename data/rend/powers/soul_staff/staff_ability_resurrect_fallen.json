@@ -20,20 +20,20 @@
                   "entity_type": "minecraft:skeleton",
                   "tag": "{Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
                   "bientity_action": {
-                    "type": "origins:target_action",
-                    "action": {
-                      "type": "origins:and",
-                      "actions": [
-                        {
-                          "type": "origins:add_to_entity_set",
-                          "set": "*:fallen/summoner_summoned_fallen"
-                        },
-                        {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:add_to_entity_set",
+                        "set": "*:fallen/summoner_summoned_fallen"
+                      },
+                      {
+                        "type": "origins:target_action",
+                        "action": {
                           "type": "origins:execute_command",
                           "command": "function rend:fallen/summon_effects"
                         }
-                      ]
-                    }
+                      }
+                    ]
                   }
                 }
               },
