@@ -70,20 +70,11 @@
           "radius": 5,
           "shape": "sphere",
           "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:add_to_entity_set",
-                "set": "*:fallen/summoner_summoned_fallen"
-              },
-              {
-                "type": "origins:invert",
-                "action": {
-                  "type": "origins:add_to_entity_set",
-                  "set": "*:fallen/fallen_summoner"
-                }
-              }
-            ]
+            "type": "origins:invert",
+            "action": {
+              "type": "origins:add_to_entity_set",
+              "set": "*:fallen/fallen_summoner"
+            }
           },
           "bientity_condition": {
             "type": "origins:and",

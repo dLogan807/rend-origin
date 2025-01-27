@@ -1,5 +1,8 @@
 {
   "type": "origins:multiple",
+  "summoner": {
+    "type": "origins:entity_set"
+  },
   "enemies": {
     "type": "origins:entity_set"
   },
