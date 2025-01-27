@@ -33,6 +33,9 @@ scoreboard objectives add rend_starting_xp_levels dummy
 scoreboard objectives add rend_ending_xp_levels dummy
 scoreboard objectives add rend_used_xp_levels dummy
 
+#Fallen
+scoreboard objectives add rend_fallen_use_bow dummy
+
 #Dynamic team creation:
 
 #Increment global rend team counter

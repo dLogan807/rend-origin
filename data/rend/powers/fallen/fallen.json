@@ -1,5 +1,8 @@
 {
   "type": "origins:multiple",
+  "enemies": {
+    "type": "origins:entity_set"
+  },
   "chance_for_armour": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
@@ -43,22 +46,34 @@
   "set_enemy_when_attacked": {
     "type": "origins:action_when_hit",
     "bientity_action": {
-      "type": "origins:add_to_entity_set",
-      "set": "*:fallen/summoner_fallen_enemies",
-      "time_limit": 3000
-    },
-    "bientity_condition": {
       "type": "origins:and",
-      "conditions": [
+      "actions": [
         {
-          "type": "origins:in_entity_set",
-          "set": "*:fallen/summoner_summoner",
-          "inverted": true
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation #rend_fallen_attacker rend_team = @s rend_team"
+          }
         },
         {
-          "type": "origins:in_entity_set",
-          "set": "*:fallen/summoner_summoned_fallen",
-          "inverted": true
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:command",
+              "command": "execute if score #rend_fallen_attacker rend_team = @s rend_team",
+              "comparison": "==",
+              "compare_to": 0
+            }
+          },
+          "if_action": {
+            "type": "origins:invert",
+            "action": {
+              "type": "origins:add_to_entity_set",
+              "set": "*:fallen/fallen_enemies",
+              "time_limit": 3000
+            }
+          }
         }
       ]
     },
@@ -66,9 +81,31 @@
   },
   "prevent_friendly_damage": {
     "type": "origins:modify_damage_taken",
+    "attacker_action": {
+      "type": "origins:execute_command",
+      "command": "scoreboard players operation #rend_fallen_attacker rend_team = @s rend_team"
+    },
     "bientity_condition": {
-      "type": "origins:in_entity_set",
-      "set": "*:fallen/summoner_summoned_fallen"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player",
+            "inverted": true
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if score #rend_fallen_attacker rend_team = @s rend_team",
+            "comparison": "==",
+            "compare_to": 1
+          }
+        }
+      ]
     },
     "modifier": {
       "id": "rend:fallen/fallen_prevent_friendly_damage",
@@ -89,7 +126,7 @@
           "conditions": [
             {
               "type": "origins:in_entity_set",
-              "set": "*:fallen/summoner_fallen_enemies"
+              "set": "*:fallen/fallen_enemies"
             },
             { "type": "origins:can_see" }
           ]
@@ -98,14 +135,47 @@
         "compare_to": 0
       },
       "if_action": {
-        "type": "origins:execute_command",
-        "command": "function rend:fallen/can_attack"
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:entity_in_radius",
+              "radius": 5,
+              "shape": "sphere",
+              "bientity_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_entity_set",
+                    "set": "*:fallen/fallen_enemies"
+                  },
+                  { "type": "origins:can_see" }
+                ]
+              },
+              "comparison": ">",
+              "compare_to": 0
+            },
+            "if_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend_fallen_use_bow 0"
+            },
+            "else_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend_fallen_use_bow 1"
+            }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function rend:fallen/can_attack"
+          }
+        ]
       },
       "else_action": {
         "type": "origins:execute_command",
         "command": "function rend:fallen/prevent_attack"
       }
     },
-    "interval": 30
+    "interval": 20
   }
 }

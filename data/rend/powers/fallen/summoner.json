@@ -1,9 +1,6 @@
 {
   "type": "origins:multiple",
   "hidden": true,
-  "summoner": {
-    "type": "origins:entity_set"
-  },
   "summoned_fallen": {
     "type": "origins:entity_set",
     "action_on_add": {
@@ -36,28 +33,17 @@
       ]
     }
   },
-  "fallen_enemies": { "type": "origins:entity_set" },
-  "set_as_summoner": {
-    "type": "origins:action_on_callback",
-    "entity_action_gained": {
-      "type": "origins:selector_action",
-      "selector": "@s",
-      "bientity_action": {
-        "type": "origins:add_to_entity_set",
-        "set": "*:fallen/summoner_summoner"
-      }
-    },
-    "execute_chosen_when_orb": true
-  },
   "set_target": {
-    "type": "origins:action_when_hit",
+    "type": "origins:action_on_hit",
     "bientity_action": {
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:add_to_entity_set",
-          "set": "*:fallen/summoner_fallen_enemies",
-          "time_limit": 3000
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation #rend_attacking rend_team = @s rend_team"
+          }
         },
         {
           "type": "origins:target_action",
@@ -65,29 +51,36 @@
             "type": "origins:and",
             "actions": [
               {
-                "type": "origins:execute_command",
-                "command": "function rend:fallen/set_new_target"
-              },
-              {
                 "type": "origins:area_of_effect",
                 "radius": 16,
                 "shape": "sphere",
                 "bientity_action": {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:damage",
-                    "damage_type": "generic",
-                    "amount": 0
-                  }
+                  "type": "origins:damage",
+                  "damage_type": "generic",
+                  "amount": 0
                 },
                 "bientity_condition": {
                   "type": "origins:and",
                   "conditions": [
+                    { "type": "origins:can_see" },
                     {
-                      "type": "origins:in_entity_set",
-                      "set": "*:fallen/summoner_summoned_fallen"
-                    },
-                    { "type": "origins:can_see" }
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:skeleton"
+                          },
+                          {
+                            "type": "origins:command",
+                            "command": "execute if score #rend_attacking rend_team = @s rend_team",
+                            "comparison": "==",
+                            "compare_to": 1
+                          }
+                        ]
+                      }
+                    }
                   ]
                 }
               }
@@ -107,10 +100,9 @@
         {
           "type": "origins:target_condition",
           "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @s[type=!minecraft:armor_stand]",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:armor_stand",
+            "inverted": true
           }
         }
       ]

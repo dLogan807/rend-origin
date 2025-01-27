@@ -1,4 +1,4 @@
 attribute @s minecraft:generic.attack_damage base set 2
 execute unless items entity @s weapon.mainhand * run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={"minecraft:sharpness":3s}] 1 
-execute if entity @e[scores={rend_enemy=1},distance=5..16] if items entity @s weapon.mainhand minecraft:iron_sword run item replace entity @s weapon.mainhand with minecraft:bow[enchantments={"minecraft:power":3s}] 1
-execute if entity @e[scores={rend_enemy=1},distance=..4] if items entity @s weapon.mainhand minecraft:bow run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={"minecraft:sharpness":3s}] 1
+execute if entity @s[scores={rend_fallen_use_bow=1}] if items entity @s weapon.mainhand minecraft:iron_sword run item replace entity @s weapon.mainhand with minecraft:bow[enchantments={"minecraft:power":3s}] 1
+execute if entity @s[scores={rend_fallen_use_bow=0}] if items entity @s weapon.mainhand minecraft:bow run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={"minecraft:sharpness":3s}] 1

@@ -16,25 +16,19 @@
               {
                 "type": "origins:target_action",
                 "action": {
-                  "type": "origins:spawn_entity",
-                  "entity_type": "minecraft:skeleton",
-                  "tag": "{Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
-                  "bientity_action": {
-                    "type": "origins:and",
-                    "actions": [
-                      {
-                        "type": "origins:add_to_entity_set",
-                        "set": "*:fallen/summoner_summoned_fallen"
-                      },
-                      {
-                        "type": "origins:target_action",
-                        "action": {
-                          "type": "origins:execute_command",
-                          "command": "function rend:fallen/summon_effects"
-                        }
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:spawn_entity",
+                      "entity_type": "minecraft:skeleton",
+                      "tag": "{Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
+                      "entity_action": {
+                        "type": "origins:execute_command",
+                        "command": "function rend:fallen/summon_effects"
                       }
-                    ]
-                  }
+                    },
+                    { "type": "origins:execute_command", "command": "kill @s" }
+                  ]
                 }
               },
               {
@@ -44,13 +38,6 @@
                   "resource": "*:mana_capacity",
                   "operation": "add",
                   "change": -10
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "kill @s"
                 }
               }
             ]
@@ -73,6 +60,56 @@
                 "condition": {
                   "type": "origins:entity_type",
                   "entity_type": "minecraft:armor_stand"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 5,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_to_entity_set",
+                "set": "*:fallen/summoner_summoned_fallen"
+              },
+              {
+                "type": "origins:invert",
+                "action": {
+                  "type": "origins:add_to_entity_set",
+                  "set": "*:fallen/fallen_summoner"
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              { "type": "origins:can_see" },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:skeleton"
+                    },
+                    {
+                      "type": "origins:command",
+                      "command": "execute if entity @s[tag=rend_fallen]",
+                      "comparison": "==",
+                      "compare_to": 1
+                    },
+                    {
+                      "type": "origins:power_active",
+                      "power": "*:fallen/fallen",
+                      "inverted": true
+                    }
+                  ]
                 }
               }
             ]
