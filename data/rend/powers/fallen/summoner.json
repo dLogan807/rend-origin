@@ -24,8 +24,8 @@
               },
               {
                 "type": "origins:grant_power",
-                "power": "rend:fallen/fallen",
-                "source": "rend:fallen/summoner"
+                "power": "*:fallen/fallen",
+                "source": "*:fallen/summoner"
               }
             ]
           }
@@ -62,7 +62,6 @@
                 "bientity_condition": {
                   "type": "origins:and",
                   "conditions": [
-                    { "type": "origins:can_see" },
                     {
                       "type": "origins:target_condition",
                       "condition": {
@@ -80,7 +79,8 @@
                           }
                         ]
                       }
-                    }
+                    },
+                    { "type": "origins:can_see" }
                   ]
                 }
               }
