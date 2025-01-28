@@ -141,6 +141,14 @@
         "type": "origins:and",
         "actions": [
           {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.attack_damage base set 2"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute unless items entity @s weapon.mainhand * run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={\"minecraft:sharpness\":3s}] 1 "
+          },
+          {
             "type": "origins:if_else",
             "condition": {
               "type": "origins:entity_in_radius",
@@ -161,16 +169,12 @@
             },
             "if_action": {
               "type": "origins:execute_command",
-              "command": "scoreboard players set @s rend_fallen_use_bow 0"
+              "command": "execute if items entity @s weapon.mainhand minecraft:iron_sword run item replace entity @s weapon.mainhand with minecraft:bow[enchantments={\"minecraft:power\":3s}] 1"
             },
             "else_action": {
               "type": "origins:execute_command",
-              "command": "scoreboard players set @s rend_fallen_use_bow 1"
+              "command": "execute if items entity @s weapon.mainhand minecraft:bow run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={\"minecraft:sharpness\":3s}] 1"
             }
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "function rend:fallen/can_attack"
           }
         ]
       },
