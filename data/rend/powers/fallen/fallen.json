@@ -1,14 +1,7 @@
 {
   "type": "origins:multiple",
   "summoner": {
-    "type": "origins:entity_set",
-    "action_on_add": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:execute_command",
-        "command": "say I am the summoner"
-      }
-    }
+    "type": "origins:entity_set"
   },
   "chance_for_armour": {
     "type": "origins:action_on_callback",
