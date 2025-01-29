@@ -1,0 +1,1 @@
+$scoreboard players set @s rend$(counter)_enemy $(enemy_boolean)
