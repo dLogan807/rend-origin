@@ -148,6 +148,10 @@
       "amount": 0
     }
   },
+  "weapon_switch_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 20
+  },
   "weapon_switch": {
     "type": "origins:action_over_time",
     "entity_action": {
@@ -191,34 +195,99 @@
               {
                 "type": "origins:if_else",
                 "condition": {
-                  "type": "origins:entity_in_radius",
-                  "radius": 4,
-                  "shape": "sphere",
-                  "bientity_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "origins:target_condition",
-                        "condition": {
-                          "type": "origins:command",
-                          "command": "function rend:fallen/is_an_enemy with storage rend team",
-                          "comparison": "==",
-                          "compare_to": 1
-                        }
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:fallen/fallen_weapon_switch_cooldown",
+                      "comparison": "==",
+                      "compare_to": 0
+                    },
+                    {
+                      "type": "origins:entity_in_radius",
+                      "radius": 4,
+                      "shape": "sphere",
+                      "bientity_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:command",
+                              "command": "function rend:fallen/is_an_enemy with storage rend team",
+                              "comparison": "==",
+                              "compare_to": 1
+                            }
+                          },
+                          { "type": "origins:can_see" }
+                        ]
                       },
-                      { "type": "origins:can_see" }
-                    ]
-                  },
-                  "comparison": ">",
-                  "compare_to": 0
+                      "comparison": ">",
+                      "compare_to": 0
+                    }
+                  ]
                 },
                 "if_action": {
-                  "type": "origins:execute_command",
-                  "command": "execute unless items entity @s weapon.mainhand minecraft:iron_sword run item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={\"minecraft:sharpness\":3s}] 1"
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:iron_sword"
+                      },
+                      "inverted": true
+                    }
+                  },
+                  "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:trigger_cooldown",
+                        "power": "*:fallen/fallen_weapon_switch_cooldown"
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "item replace entity @s weapon.mainhand with minecraft:iron_sword[enchantments={\"minecraft:sharpness\":3s}] 1"
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:item.armor.equip_iron"
+                      }
+                    ]
+                  }
                 },
                 "else_action": {
-                  "type": "origins:execute_command",
-                  "command": "execute unless items entity @s weapon.mainhand minecraft:bow run item replace entity @s weapon.mainhand with minecraft:bow[enchantments={\"minecraft:power\":3s}] 1"
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "item": "minecraft:bow"
+                      },
+                      "inverted": true
+                    }
+                  },
+                  "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:trigger_cooldown",
+                        "power": "*:fallen/fallen_weapon_switch_cooldown"
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "item replace entity @s weapon.mainhand with minecraft:bow[enchantments={\"minecraft:power\":3s}] 1"
+                      },
+                      {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:item.armor.equip_elytra"
+                      }
+                    ]
+                  }
                 }
               }
             ]
