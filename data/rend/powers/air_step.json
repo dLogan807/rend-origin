@@ -308,44 +308,37 @@
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_20_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_24_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_28_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_32_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_36_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_40_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         },
         {
           "type": "origins:change_resource",
           "resource": "*:*_jumps_at_44_xp",
-          "change": 1,
-          "operation": "add"
+          "change": 1
         }
       ]
     },
@@ -360,9 +353,8 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:fall_distance",
-          "comparison": ">",
-          "compare_to": 1
+          "type": "origins:on_block",
+          "inverted": true
         },
         {
           "type": "origins:or",
@@ -525,44 +517,37 @@
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_20_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_24_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_28_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_32_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_36_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_40_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             },
             {
               "type": "origins:change_resource",
               "resource": "*:*_jumps_at_44_xp",
-              "change": -1,
-              "operation": "add"
+              "change": -1
             }
           ]
         },
@@ -573,8 +558,6 @@
         {
           "type": "origins:add_velocity",
           "set": true,
-          "client": false,
-          "server": true,
           "y": 0.5
         },
         {
