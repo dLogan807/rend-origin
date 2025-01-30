@@ -194,10 +194,20 @@
                 {
                   "type": "origins:target_condition",
                   "condition": {
-                    "type": "origins:command",
-                    "command": "function rend:fallen/is_an_enemy with storage rend team",
-                    "comparison": "==",
-                    "compare_to": 1
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:in_tag",
+                        "tag": "*:inanimate",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:command",
+                        "command": "function rend:fallen/is_an_enemy with storage rend team",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    ]
                   }
                 },
                 { "type": "origins:can_see" }

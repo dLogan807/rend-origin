@@ -150,6 +150,6 @@
         }
       ]
     },
-    "cooldown": 20
+    "cooldown": 100
   }
 }
