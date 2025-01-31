@@ -71,8 +71,16 @@
           "source": "*:soul_purge"
         },
         {
-          "type": "origins:grant_advancement",
-          "advancement": "*:from_bad_to_worse"
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:advancement",
+            "advancement": "*:from_bad_to_worse",
+            "inverted": true
+          },
+          "if_action": {
+            "type": "origins:grant_advancement",
+            "advancement": "*:from_bad_to_worse"
+          }
         }
       ]
     },
@@ -97,8 +105,7 @@
         {
           "type": "origins:change_resource",
           "resource": "*:*_dimension_instability",
-          "change": 2,
-          "operation": "add"
+          "change": 2
         },
         {
           "type": "origins:if_else_list",
@@ -267,7 +274,7 @@
         },
         {
           "type": "origins:random_chance",
-          "chance": 0.4,
+          "chance": 0.0,
           "success_action": {
             "type": "origins:change_resource",
             "resource": "*:*_dimension_instability",
@@ -330,7 +337,7 @@
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:execute_command",
-                  "command": "function rend:soul_purge/damage_entity with storage minecraft:rend soul_purge"
+                  "command": "function rend:soul_purge/damage_entity_with_storage with storage minecraft:rend team"
                 }
               },
               {

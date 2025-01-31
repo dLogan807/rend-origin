@@ -1,0 +1,1 @@
+$function rend:soul_purge/damage_entity with storage minecraft:$(name)$(counter) soul_purge
