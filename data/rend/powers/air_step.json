@@ -353,6 +353,12 @@
       "type": "origins:and",
       "conditions": [
         {
+          "type": "origins:command",
+          "command": "execute if block ~ ~-1.2 ~ #rend:effective_air",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
           "type": "origins:on_block",
           "inverted": true
         },
