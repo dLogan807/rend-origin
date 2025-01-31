@@ -1,0 +1,20 @@
+{
+  "display": {
+    "title": {
+      "text": "Old Friend"
+    },
+    "description": {
+      "text": "Summon a Fallen Warrior",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:bone"
+    }
+  },
+  "criteria": {
+    "summon a fallen": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:craft_soul_staff"
+}

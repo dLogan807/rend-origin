@@ -34,10 +34,27 @@
               {
                 "type": "origins:actor_action",
                 "action": {
-                  "type": "origins:change_resource",
-                  "resource": "*:mana_capacity",
-                  "operation": "add",
-                  "change": -10
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "*:mana_capacity",
+                      "operation": "add",
+                      "change": -10
+                    },
+                    {
+                      "type": "origins:if_else",
+                      "condition": {
+                        "type": "origins:advancement",
+                        "advancement": "*:old_friend",
+                        "inverted": true
+                      },
+                      "if_action": {
+                        "type": "origins:grant_advancement",
+                        "advancement": "*:old_friend"
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -82,6 +99,32 @@
                   "type": "origins:add_to_entity_set",
                   "set": "*:fallen/fallen_summoner"
                 }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:advancement",
+                        "advancement": "*:fallen_army",
+                        "inverted": true
+                      },
+                      {
+                        "type": "origins:entity_set_size",
+                        "set": "*:fallen/summoner_summoned_fallen",
+                        "comparison": ">=",
+                        "compare_to": 20
+                      }
+                    ]
+                  },
+                  "if_action": {
+                    "type": "origins:grant_advancement",
+                    "advancement": "*:fallen_army"
+                  }
+                }
               }
             ]
           },
@@ -118,12 +161,12 @@
         {
           "type": "origins:change_resource",
           "resource": "*:soul_staff/soul_staff_cooldown",
-          "change": 9800,
+          "change": 9200,
           "operation": "set"
         }
       ]
     },
-    "cooldown": 200,
+    "cooldown": 800,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",

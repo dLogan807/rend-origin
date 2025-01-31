@@ -8,32 +8,6 @@
           "type": "origins:and",
           "conditions": [
             {
-              "type": "origins:power_active",
-              "power": "*:air_step"
-            },
-            {
-              "type": "origins:advancement",
-              "advancement": "*:perform_air_step",
-              "inverted": true
-            },
-            {
-              "type": "origins:resource",
-              "resource": "*:air_step_jumps_at_20_xp",
-              "comparison": "<",
-              "compare_to": 1
-            }
-          ]
-        },
-        "action": {
-          "type": "origins:grant_advancement",
-          "advancement": "*:perform_air_step"
-        }
-      },
-      {
-        "condition": {
-          "type": "origins:and",
-          "conditions": [
-            {
               "type": "origins:advancement",
               "advancement": "*:reach_level_50",
               "inverted": true

@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "A Motley Crew"
+    },
+    "description": {
+      "text": "Have 20 Fallen currently summoned",
+      "color": "dark_purple"
+    },
+    "icon": {
+      "id": "minecraft:skeleton_skull"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "summoned 20 fallen": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 200
+  },
+  "parent": "rend:old_friend"
+}
