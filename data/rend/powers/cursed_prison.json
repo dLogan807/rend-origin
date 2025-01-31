@@ -141,6 +141,11 @@
       "type": "origins:tooltip",
       "sprite": "rend:textures/gui/badge/xp_orb.png",
       "text": "20 XP levels needed to escape."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "rend:textures/gui/badge/zombified_piglin.png",
+      "text": "Zombified Piglin are wary of you growing stronger to escape, becoming hostile when mining Nether Quartz Ore."
     }
   ]
 }
