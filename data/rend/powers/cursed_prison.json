@@ -98,6 +98,11 @@
       "type": "origins:block",
       "block": "minecraft:nether_quartz_ore"
     },
+    "condition": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:invisibility",
+      "inverted": true
+    },
     "entity_action": {
       "type": "origins:and",
       "actions": [
