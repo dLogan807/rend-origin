@@ -108,7 +108,7 @@
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "title @s actionbar {\"text\":\"Insufficient mana!\",\"color\":\"red\"}"
+      "command": "title @s actionbar {\"text\":\"Insufficient mana\",\"color\":\"red\"}"
     },
     "condition": {
       "type": "origins:and",
