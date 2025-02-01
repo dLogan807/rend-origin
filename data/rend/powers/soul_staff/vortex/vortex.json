@@ -50,7 +50,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:vortex/inner_circle"
+          "command": "execute positioned ~ ~1 ~ run function rend:vortex/inner_circle"
         },
         {
           "type": "origins:execute_command",
@@ -62,7 +62,7 @@
         },
         {
           "type": "origins:area_of_effect",
-          "radius": 7,
+          "radius": 6,
           "shape": "sphere",
           "bientity_action": {
             "type": "origins:and",

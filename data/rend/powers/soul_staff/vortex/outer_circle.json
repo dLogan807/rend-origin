@@ -5,7 +5,7 @@
     "actions": [
       {
         "type": "origins:execute_command",
-        "command": "function rend:vortex/outer_circle"
+        "command": "execute positioned ~ ~1.3 ~ run function rend:vortex/outer_circle"
       },
       {
         "type": "origins:execute_command",
