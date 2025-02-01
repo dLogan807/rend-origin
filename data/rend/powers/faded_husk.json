@@ -182,7 +182,12 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 1
+      "bar_index": 1,
+      "condition": {
+        "type": "origins:xp_levels",
+        "comparison": "<=",
+        "compare_to": 15
+      }
     }
   },
   "reset_cooldown_on_death": {
