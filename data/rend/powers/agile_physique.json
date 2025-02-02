@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Agile Physique",
-  "description": "You struggle to utilise armour at lower levels of strength. Axes are always of reduced effectiveness. However, your attack speed is increased at higher levels.",
+  "description": "You have a light and nimble body but aren't particularly strong",
   "armour_inhibitor": {
     "type": "origins:action_over_time",
     "interval": 20,
@@ -61,13 +61,23 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": "Scales with XP levels."
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": "No attack speed bonus in the Nether."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/armor.png",
+      "text": "You struggle to utilise armour at lower levels of strength."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+      "text": "Axes are always of reduced effectiveness. However, your attack speed is increased at higher levels."
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Faded Husk",
-  "description": "Your withered soul blatantly displays your lack of strength and affects your health and attack damage. Use this to your advantage to become wholly invisible.",
+  "description": "Your withered soul blatantly displays your lack of strength, affecting your health and attack damage.",
   "xp_available": {
     "type": "origins:resource",
     "min": 0,
@@ -284,21 +284,21 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": "Scales with XP levels."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "Drains XP. At or below 15 levels, use [",
+        "At or below 15 levels, use [",
         { "keybind": "key.origins.primary_active" },
-        "] to toggle invisibility."
+        "] to toggle invisibility. Drains XP."
       ]
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": "Always slightly weakened in the Nether."
     }
   ]

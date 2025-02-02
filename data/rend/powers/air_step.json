@@ -606,12 +606,12 @@
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
-      "text": "Scales with XP levels:\n20 = 1 jump\n24 = 2 jumps\n28 = 3 jumps\n32 = 4 jumps\n36 = 5 jumps\n40 = 6 jumps\n44 = 7 jumps"
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
+      "text": "Scales with XP levels:\n- 20 = 1 jump\n- 24 = 2 jumps\n- 28 = 3 jumps\n- 32 = 4 jumps\n- 36 = 5 jumps\n- 40 = 6 jumps\n- 44 = 7 jumps"
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": "Unusable in the Nether."
     }
   ]

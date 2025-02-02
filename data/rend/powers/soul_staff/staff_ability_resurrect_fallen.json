@@ -39,7 +39,6 @@
                     {
                       "type": "origins:change_resource",
                       "resource": "*:mana_capacity",
-                      "operation": "add",
                       "change": -10
                     },
                     {

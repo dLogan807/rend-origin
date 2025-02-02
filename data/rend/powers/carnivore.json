@@ -3,7 +3,7 @@
   "description": "With few exceptions, you're only able to consume meat.",
   "type": "origins:prevent_item_use",
   "item_condition": {
-    "type": "origins:all_of",
+    "type": "origins:and",
     "conditions": [
       {
         "type": "origins:ingredient",
@@ -41,7 +41,7 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/golden_apple.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/golden_apple.png",
       "text": "Golden apples may be consumed, restoring some mana."
     }
   ]

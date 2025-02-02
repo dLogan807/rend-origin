@@ -1,6 +1,6 @@
 {
   "name": "Soul purge",
-  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged. You may not be stable enough to remain free of your shackles.",
+  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged.",
   "type": "origins:multiple",
   "prevent_teleport_on_second_death": {
     "type": "origins:action_on_death",
@@ -604,12 +604,17 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": "At least 20 XP levels required. Damage scales with XP level. 85% of levels are lost."
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/portal.png",
+      "text": "You may not be stable enough to remain free of your shackles..."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": "Ineffective in the Nether."
     }
   ]

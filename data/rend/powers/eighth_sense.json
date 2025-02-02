@@ -24,8 +24,7 @@
     "bientity_condition": {
       "type": "origins:actor_condition",
       "condition": {
-        "type": "origins:in_tag",
-        "tag": "rend:hostile"
+        "type": "origins:exists"
       }
     },
     "modifier": {

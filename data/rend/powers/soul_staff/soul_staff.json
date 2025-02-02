@@ -118,7 +118,6 @@
         {
           "type": "origins:change_resource",
           "resource": "*:*_selected_ability",
-          "operation": "add",
           "change": 1
         },
         {
@@ -193,9 +192,9 @@
   "badges": [
     {
       "type": "origins:crafting_recipe",
-      "sprite": "rend:textures/gui/badge/soul_staff.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/soul_staff.png",
       "recipe": {
-        "id": "rend:soul_staff",
+        "id": "*:soul_staff",
         "type": "minecraft:crafting_shaped",
         "pattern": ["#N#", " / ", " / "],
         "key": {
@@ -234,7 +233,7 @@
 
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/cursed_prison.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": "Unusable in the Nether."
     }
   ]

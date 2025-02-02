@@ -144,13 +144,13 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/xp_orb.png",
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": "20 XP levels needed to escape."
     },
     {
       "type": "origins:tooltip",
-      "sprite": "rend:textures/gui/badge/zombified_piglin.png",
-      "text": "Zombified Piglin are wary of you growing stronger to escape, becoming hostile when mining Nether Quartz Ore."
+      "sprite": "*:textures/gui/community/leopardx/badge/zombified_piglin.png",
+      "text": "Nearby Zombified Piglin become hostile on mining Nether Quartz Ore."
     }
   ]
 }
