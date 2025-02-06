@@ -8,7 +8,10 @@
       "color": "dark_purple"
     },
     "icon": {
-      "id": "minecraft:skeleton_skull"
+      "id": "minecraft:armor_stand",
+      "components": {
+        "custom_model_data": 439203
+      }
     },
     "frame": "challenge"
   },

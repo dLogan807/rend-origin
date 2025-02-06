@@ -1,6 +1,40 @@
 {
   "type": "origins:multiple",
-  "hidden": true,
+  "name": "Fallen Summoning",
+  "description": "Tether past allies to the mortal plane.",
+  "tether_body_crafting": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "*:soul_staff/staff_ability_summon_fallen_tether_body_crafting",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["#o#", "///", "/ /"],
+      "key": {
+        "o": {
+          "item": "minecraft:skeleton_skull"
+        },
+        "/": {
+          "item": "minecraft:bone"
+        },
+        "#": {
+          "item": "minecraft:string"
+        }
+      },
+      "result": {
+        "id": "minecraft:armor_stand",
+        "components": {
+          "custom_model_data": 439203,
+          "rarity": "uncommon",
+          "custom_name": "[\"\",{\"text\":\"Fallen Tether Body\",\"italic\":false}]",
+          "custom_data": { "fallen_tether_body": 1 },
+          "entity_data": {
+            "id": "minecraft:armor_stand",
+            "Tags": ["fallen_tether_body"],
+            "Invulnerable": 1
+          }
+        }
+      }
+    }
+  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
@@ -277,5 +311,35 @@
       ]
     },
     "key": "key.use"
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "*:textures/gui/community/leopardx/badge/fallen_tether.png",
+      "prefix": "Fallen Tether",
+      "suffix": "\nObtain skulls by killing Skeletons.",
+      "recipe": {
+        "id": "*:fallen_tether_body",
+        "type": "minecraft:crafting_shaped",
+        "pattern": ["#o#", "///", "/ /"],
+        "key": {
+          "o": {
+            "item": "minecraft:skeleton_skull"
+          },
+          "/": {
+            "item": "minecraft:bone"
+          },
+          "#": {
+            "item": "minecraft:string"
+          }
+        },
+        "result": {
+          "id": "minecraft:armor_stand",
+          "components": {
+            "custom_model_data": 439203
+          }
+        }
+      }
+    }
+  ]
 }

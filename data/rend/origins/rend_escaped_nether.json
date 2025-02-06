@@ -10,7 +10,7 @@
     "*:air_step",
     "*:soul_staff/soul_staff",
     "*:soul_staff/staff_ability_vortex",
-    "*:soul_staff/staff_ability_resurrect_fallen",
+    "*:soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
     "*:soul_purge",
     "*:advancement_handler"

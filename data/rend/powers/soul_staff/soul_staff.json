@@ -193,6 +193,7 @@
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/soul_staff.png",
+      "prefix": "Soul Staff",
       "recipe": {
         "id": "*:soul_staff",
         "type": "minecraft:crafting_shaped",
