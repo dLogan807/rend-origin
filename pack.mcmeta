@@ -1,6 +1,17 @@
 {
-  "pack": {
-    "pack_format": 48,
-    "description": "Adds the Rend origin!"
-  }
+	"pack": {
+		"pack_format": 48,
+		"description": "Adds the Rend origin!"
+	},
+	"overlays": {
+		"entries": [
+			{
+				"directory": "animated_java",
+				"formats": {
+					"min_inclusive": 48,
+					"max_inclusive": 56
+				}
+			}
+		]
+	}
 }

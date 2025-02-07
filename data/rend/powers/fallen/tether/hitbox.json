@@ -1,0 +1,273 @@
+{
+  "type": "origins:multiple",
+  "model_root": {
+    "type": "origins:entity_set"
+  },
+  "initial_invulnerability_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 6
+  },
+  "store_model": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute store result storage minecraft:rend tether_position.y_use double 0.001 run scoreboard players get @s rend_tether_summon_y"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:fallen/tether_hitbox_tp_return with storage rend tether_position"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:fallen/tether/hitbox_initial_invulnerability_cooldown"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+            "type": "origins:area_of_effect",
+            "radius": 2,
+            "bientity_condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:item_display"
+                  },
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{Tags:['aj.rend_fallen_tether.root']}"
+                  },
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{Tags:['rend_tether_placed']}",
+                    "inverted": true
+                  }
+                ]
+              }
+            },
+            "bientity_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:add_to_entity_set",
+                  "set": "*:fallen/tether/hitbox_model_root"
+                },
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add rend_tether_placed"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "move_to_ground": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:action_on_entity_set",
+      "set": "*:fallen/tether/hitbox_model_root",
+      "bientity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+          {
+            "condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:raycast",
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "direction": {
+                      "y": -1.0
+                    },
+                    "space": "world",
+                    "block_distance": 0.3,
+                    "block_condition": {
+                      "type": "origins:in_tag",
+                      "tag": "rend:effective_air",
+                      "inverted": true
+                    },
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:raycast",
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "direction": {
+                      "y": -1.0
+                    },
+                    "space": "world",
+                    "block_distance": 0.1,
+                    "block_condition": {
+                      "type": "origins:in_tag",
+                      "tag": "rend:effective_air",
+                      "inverted": true
+                    },
+                    "inverted": true
+                  }
+                ]
+              }
+            },
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tp @s ~ ~-0.3 ~"
+                  }
+                },
+                {
+                  "type": "origins:actor_action",
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tp @s ~ ~-0.3 ~"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:raycast",
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "direction": {
+                      "y": -1.0
+                    },
+                    "space": "world",
+                    "block_distance": 0.3,
+                    "block_condition": {
+                      "type": "origins:in_tag",
+                      "tag": "rend:effective_air",
+                      "inverted": true
+                    }
+                  },
+                  {
+                    "type": "origins:raycast",
+                    "entity": false,
+                    "shape_type": "collider",
+                    "fluid_handling": "none",
+                    "direction": {
+                      "y": -1.0
+                    },
+                    "space": "world",
+                    "block_distance": 0.1,
+                    "block_condition": {
+                      "type": "origins:in_tag",
+                      "tag": "rend:effective_air",
+                      "inverted": true
+                    },
+                    "inverted": true
+                  }
+                ]
+              }
+            },
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tp @s ~ ~-0.1 ~"
+                  }
+                },
+                {
+                  "type": "origins:actor_action",
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tp @s ~ ~-0.1 ~"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "interval": 1
+  },
+  "initial_invulnerability": {
+    "type": "origins:modify_damage_taken",
+    "bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    },
+    "modifier": {
+      "id": "rend:fallen/tether_hitbox_initial_invulnerability_cooldown",
+      "operation": "set_total",
+      "amount": -1
+    }
+  },
+  "drop_when_hit": {
+    "type": "origins:action_when_damage_taken",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:fallen/tether/hitbox_model_root",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function animated_java:rend_fallen_tether/remove/this"
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.skeleton.hurt",
+          "pitch": 0.8
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "summon item ~ ~0.5 ~ {Item:{id:\"minecraft:armor_stand\",count:1,components:{\"minecraft:custom_model_data\":439203,\"minecraft:rarity\":\"uncommon\",\"minecraft:custom_name\":'{\"text\":\"Fallen Tether\",\"italic\":false}',\"minecraft:custom_data\":{fallen_tether:1b},\"minecraft:entity_data\":{id:\"minecraft:armor_stand\",Tags:[\"fallen_tether\"],Invisible:1b}}}}"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @e[type=minecraft:experience_orb,distance=..1,limit=1]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ -66 ~"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "cooldown": 1
+  }
+}
