@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "apoli:replaced_loot_table",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:skeleton_skull"
+        }
+      ]
+    }
+  ]
+}

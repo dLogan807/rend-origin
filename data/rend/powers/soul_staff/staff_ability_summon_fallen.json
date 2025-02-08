@@ -2,6 +2,12 @@
   "type": "origins:multiple",
   "name": "Fallen Summoning",
   "description": "Tether past allies to the mortal plane.",
+  "skeleton_skull_drop": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:entities/skeleton": "rend:entities/skeleton_drops_head"
+    }
+  },
   "tether_body_crafting": {
     "type": "origins:recipe",
     "recipe": {
