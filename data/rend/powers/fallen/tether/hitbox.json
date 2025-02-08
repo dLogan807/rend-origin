@@ -96,11 +96,6 @@
                     },
                     "space": "world",
                     "block_distance": 0.3,
-                    "block_condition": {
-                      "type": "origins:in_tag",
-                      "tag": "rend:effective_air",
-                      "inverted": true
-                    },
                     "inverted": true
                   },
                   {
@@ -113,11 +108,6 @@
                     },
                     "space": "world",
                     "block_distance": 0.1,
-                    "block_condition": {
-                      "type": "origins:in_tag",
-                      "tag": "rend:effective_air",
-                      "inverted": true
-                    },
                     "inverted": true
                   }
                 ]
@@ -158,12 +148,7 @@
                       "y": -1.0
                     },
                     "space": "world",
-                    "block_distance": 0.3,
-                    "block_condition": {
-                      "type": "origins:in_tag",
-                      "tag": "rend:effective_air",
-                      "inverted": true
-                    }
+                    "block_distance": 0.3
                   },
                   {
                     "type": "origins:raycast",
@@ -175,11 +160,6 @@
                     },
                     "space": "world",
                     "block_distance": 0.1,
-                    "block_condition": {
-                      "type": "origins:in_tag",
-                      "tag": "rend:effective_air",
-                      "inverted": true
-                    },
                     "inverted": true
                   }
                 ]
