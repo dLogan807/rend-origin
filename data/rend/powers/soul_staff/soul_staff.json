@@ -193,7 +193,11 @@
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/soul_staff.png",
-      "prefix": "Soul Staff",
+      "prefix": [
+        "Soul Staff\n§7Use with [",
+        { "keybind": "key.use", "color": "gray" },
+        "§7]."
+      ],
       "recipe": {
         "id": "*:soul_staff",
         "type": "minecraft:crafting_shaped",
@@ -219,11 +223,6 @@
     },
     {
       "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/badge/active.png",
-      "text": ["Use staff with [", { "keybind": "key.use" }, "]."]
-    },
-    {
-      "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/toggle.png",
       "text": [
         "Switch staff ability with [",
@@ -231,7 +230,6 @@
         "]."
       ]
     },
-
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",

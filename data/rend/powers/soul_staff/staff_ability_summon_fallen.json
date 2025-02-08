@@ -8,10 +8,10 @@
       "minecraft:entities/skeleton": "rend:entities/skeleton_drops_head"
     }
   },
-  "tether_body_crafting": {
+  "tether_crafting": {
     "type": "origins:recipe",
     "recipe": {
-      "id": "*:soul_staff/staff_ability_summon_fallen_tether_body_crafting",
+      "id": "*:soul_staff/fallen_tether",
       "type": "minecraft:crafting_shaped",
       "pattern": ["#o#", "///", "/ /"],
       "key": {
@@ -379,10 +379,9 @@
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/fallen_tether.png",
-      "prefix": "Fallen Tether",
-      "suffix": "\nObtain skulls by killing Skeletons.",
+      "prefix": "Fallen Tether\n§7Obtain skulls by killing Skeletons.",
       "recipe": {
-        "id": "*:fallen_tether_body",
+        "id": "*:fallen_tether",
         "type": "minecraft:crafting_shaped",
         "pattern": ["#o#", "///", "/ /"],
         "key": {
