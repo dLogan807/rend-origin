@@ -35,7 +35,7 @@
         {
           "type": "origins:change_resource",
           "resource": "*:*_capacity",
-          "change": 5
+          "change": 4
         },
         {
           "type": "origins:apply_effect",
@@ -86,7 +86,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_capacity",
-      "change": 10
+      "change": 5
     },
     "item_condition": {
       "type": "origins:ingredient",
@@ -115,7 +115,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_capacity",
-      "change": 50
+      "change": 100
     },
     "item_condition": {
       "type": "origins:ingredient",
