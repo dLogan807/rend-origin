@@ -11,7 +11,7 @@
   "tether_crafting": {
     "type": "origins:recipe",
     "recipe": {
-      "id": "*:soul_staff/fallen_tether",
+      "id": "*:fallen_tether",
       "type": "minecraft:crafting_shaped",
       "pattern": ["#o#", "///", "/ /"],
       "key": {

@@ -3,8 +3,7 @@ execute store result score @s aj.id run scoreboard players add aj.last_id aj.id 
 execute on passengers if entity @s[tag=aj.global.data] run function animated_java:rend_fallen_tether/zzz/1
 tag @s remove aj.new
 execute if data storage aj:temp args.variant run function animated_java:rend_fallen_tether/zzz/2
-execute unless data storage aj:temp args.animation run function animated_java:rend_fallen_tether/set_default_pose
-execute if data storage aj:temp args.animation run function animated_java:rend_fallen_tether/zzz/3 with storage aj:temp args
+function animated_java:rend_fallen_tether/set_default_pose
 tp @s ~ ~ ~ ~ ~
 execute at @s on passengers run tp @s ~ ~ ~ ~ ~
 data modify entity @s teleport_duration set value 1

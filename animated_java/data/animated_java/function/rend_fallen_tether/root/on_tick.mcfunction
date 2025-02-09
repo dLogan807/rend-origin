@@ -2,6 +2,5 @@
 execute unless entity @s[tag=aj.rend_fallen_tether.root] run return 0
 execute unless score @s aj.is_rig_loaded matches 1 run function #animated_java:global/root/on_load
 function #animated_java:rend_fallen_tether/as_root/pre_tick
-execute if entity @s[tag=aj.rend_fallen_tether.animation.animation_model_new.playing] run function animated_java:rend_fallen_tether/animations/animation_model_new/zzz/on_tick
 execute at @s on passengers run tp @s ~ ~ ~ ~ ~
 function #animated_java:rend_fallen_tether/as_root/post_tick
