@@ -36,7 +36,7 @@ scoreboard objectives add rend_used_xp_levels dummy
 #Fallen
 scoreboard objectives add rend_enemy dummy
 scoreboard objectives add rend_tether_summon_y dummy
-data modify storage minecraft:rend tether_position set value {"y_store": 0.0, "y_use": 0.0}
+data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "current_animation": 0}
 
 #Cursed Prison UUID storage
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}

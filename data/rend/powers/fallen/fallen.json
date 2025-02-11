@@ -1,8 +1,5 @@
 {
   "type": "origins:multiple",
-  "summoner": {
-    "type": "origins:entity_set"
-  },
   "chance_for_armour": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
@@ -108,14 +105,6 @@
           }
         }
       ]
-    },
-    "bientity_condition": {
-      "type": "origins:invert",
-      "condition": {
-        "type": "origins:in_entity_set",
-        "set": "*:fallen/fallen_summoner",
-        "inverted": true
-      }
     }
   },
   "store_rend_team": {

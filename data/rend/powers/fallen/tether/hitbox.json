@@ -3,6 +3,9 @@
   "model_root": {
     "type": "origins:entity_set"
   },
+  "summoner": {
+    "type": "origins:entity_set"
+  },
   "initial_invulnerability_cooldown": {
     "type": "origins:cooldown",
     "cooldown": 6
@@ -14,11 +17,11 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "execute store result storage minecraft:rend tether_position.y_use double 0.001 run scoreboard players get @s rend_tether_summon_y"
+          "command": "execute store result storage minecraft:rend tether.y_use double 0.001 run scoreboard players get @s rend_tether_summon_y"
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:fallen/tether_hitbox_tp_return with storage rend tether_position"
+          "command": "function rend:fallen/tether_hitbox_tp_return with storage rend tether"
         },
         {
           "type": "origins:trigger_cooldown",
@@ -195,10 +198,21 @@
     "bientity_condition": {
       "type": "origins:target_condition",
       "condition": {
-        "type": "origins:resource",
-        "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
-        "comparison": ">",
-        "compare_to": 0
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:fallen/tether/hitbox_do_animation",
+            "comparison": "==",
+            "compare_to": 1
+          }
+        ]
       }
     },
     "modifier": {
@@ -243,11 +257,98 @@
       ]
     },
     "condition": {
-      "type": "origins:resource",
-      "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
-      "comparison": "==",
-      "compare_to": 0
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:fallen/tether/hitbox_initial_invulnerability_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:fallen/tether/hitbox_do_animation",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
     },
     "cooldown": 1
+  },
+  "do_animation": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:action_on_entity_set",
+      "set": "*:fallen/tether/hitbox_model_root",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "function animated_java:rend_fallen_tether/animations/rise_test/play"
+        }
+      }
+    }
+  },
+  "animation_complete": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:fallen/tether/hitbox_summoner",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+            }
+          }
+        },
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:fallen/tether/hitbox_model_root",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:spawn_entity",
+                  "entity_type": "minecraft:skeleton",
+                  "tag": "{Tags:[\"rend_fallen\"],CustomName:'{\"text\":\"Fallen Warrior\"}',PersistenceRequired:1b,HandDropChances:[0.000F,0.000F],ArmorDropChances:[0.000F,0.000F,0.000F,0.000F]}",
+                  "entity_action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:execute_command",
+                        "command": "function rend:fallen/after_summon"
+                      },
+                      {
+                        "type": "origins:grant_power",
+                        "power": "*:fallen/fallen",
+                        "source": "*:fallen/tether/hitbxo"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "function animated_java:rend_fallen_tether/remove/this"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    }
   }
 }
