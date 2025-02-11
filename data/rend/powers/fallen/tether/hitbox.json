@@ -304,8 +304,29 @@
           "bientity_action": {
             "type": "origins:target_action",
             "action": {
-              "type": "origins:execute_command",
-              "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "scoreboard players operation #rend_doing_summon rend_team = @s rend_team"
+                },
+                {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:advancement",
+                    "advancement": "*:old_friend",
+                    "inverted": true
+                  },
+                  "if_action": {
+                    "type": "origins:grant_advancement",
+                    "advancement": "*:old_friend"
+                  }
+                }
+              ]
             }
           }
         },
@@ -331,7 +352,27 @@
                       {
                         "type": "origins:grant_power",
                         "power": "*:fallen/fallen",
-                        "source": "*:fallen/tether/hitbxo"
+                        "source": "*:fallen/tether/hitbox"
+                      },
+                      {
+                        "type": "origins:selector_action",
+                        "selector": "@a",
+                        "bientity_action": {
+                          "type": "origins:invert",
+                          "action": {
+                            "type": "add_to_entity_set",
+                            "set": "*:fallen/summoner_summoned_fallen"
+                          }
+                        },
+                        "bientity_condition": {
+                          "type": "origins:target_condition",
+                          "condition": {
+                            "type": "origins:command",
+                            "command": "execute if score #rend_doing_summon rend_enemy = @s rend_team",
+                            "comparison": "==",
+                            "compare_to": 1
+                          }
+                        }
                       }
                     ]
                   }

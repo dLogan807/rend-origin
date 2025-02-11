@@ -1,6 +1,35 @@
 {
   "type": "origins:multiple",
   "hidden": true,
+  "summoned_fallen": {
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:advancement",
+              "advancement": "*:fallen_army",
+              "inverted": true
+            },
+            {
+              "type": "origins:entity_set_size",
+              "set": "*:fallen/summoner_summoned_fallen",
+              "comparison": ">=",
+              "compare_to": 20
+            }
+          ]
+        },
+        "if_action": {
+          "type": "origins:grant_advancement",
+          "advancement": "*:fallen_army"
+        }
+      }
+    }
+  },
   "set_target": {
     "type": "origins:action_on_hit",
     "bientity_action": {
