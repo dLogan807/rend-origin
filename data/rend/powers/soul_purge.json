@@ -1,5 +1,5 @@
 {
-  "name": "Soul purge",
+  "name": "Soul Purge",
   "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged.",
   "type": "origins:multiple",
   "prevent_teleport_on_second_death": {
