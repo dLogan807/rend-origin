@@ -4,31 +4,46 @@
   "summoned_fallen": {
     "type": "origins:entity_set",
     "action_on_add": {
-      "type": "origins:actor_action",
-      "action": {
-        "type": "origins:if_else",
-        "condition": {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:advancement",
-              "advancement": "*:fallen_army",
-              "inverted": true
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:advancement",
+                  "advancement": "*:fallen_army",
+                  "inverted": true
+                },
+                {
+                  "type": "origins:entity_set_size",
+                  "set": "*:fallen/summoner_summoned_fallen",
+                  "comparison": ">=",
+                  "compare_to": 20
+                }
+              ]
             },
-            {
-              "type": "origins:entity_set_size",
-              "set": "*:fallen/summoner_summoned_fallen",
-              "comparison": ">=",
-              "compare_to": 20
+            "if_action": {
+              "type": "origins:grant_advancement",
+              "advancement": "*:fallen_army"
             }
-          ]
+          }
         },
-        "if_action": {
-          "type": "origins:grant_advancement",
-          "advancement": "*:fallen_army"
+        {
+          "type": "origins:invert",
+          "action": {
+            "type": "add_to_entity_set",
+            "set": "*:fallen/fallen_summoner"
+          }
         }
-      }
+      ]
     }
+  },
+  "enemies": {
+    "type": "origins:entity_set"
   },
   "set_target": {
     "type": "origins:action_on_hit",
@@ -38,128 +53,75 @@
         {
           "type": "origins:actor_action",
           "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "data modify storage minecraft:rend team.enemy_boolean set value 1"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "scoreboard players operation #rend_doing_attack rend_enemy = @s rend_team"
-              }
-            ]
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation #rend_doing_attack rend_team = @s rend_team"
           }
+        },
+        {
+          "type": "add_to_entity_set",
+          "set": "*:fallen/summoner_enemies",
+          "time_limit": 3600
         },
         {
           "type": "origins:target_action",
           "action": {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:power_active",
-              "power": "*:fallen/enemy"
-            },
-            "if_action": {
-              "type": "origins:change_resource",
-              "resource": "*:fallen/enemy_timer",
-              "operation": "set",
-              "change": 0
-            },
-            "else_action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[type=skeleton,tag=rend_fallen] if score #rend_doing_attack rend_enemy = @s rend_team",
-                "comparison": "==",
-                "compare_to": 0
-              },
-              "if_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:grant_power",
-                    "power": "*:fallen/enemy",
-                    "source": "*:fallen/summoner_set_target"
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "function rend:fallen/set_enemy_score with storage minecraft:rend team"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "type": "origins:target_action",
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:area_of_effect",
-                "radius": 16,
-                "shape": "sphere",
-                "bientity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 20,
+            "shape": "sphere",
+            "bientity_action": {
+              "type": "origins:and",
+              "actions": [
+                {
                   "type": "origins:damage",
                   "damage_type": "generic",
                   "amount": 0
-                },
-                "bientity_condition": {
-                  "type": "origins:and",
-                  "conditions": [
-                    {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                          {
-                            "type": "origins:entity_type",
-                            "entity_type": "minecraft:skeleton"
-                          },
-                          {
-                            "type": "origins:command",
-                            "command": "execute if score #rend_doing_attack rend_enemy = @s rend_team",
-                            "comparison": "==",
-                            "compare_to": 1
-                          }
-                        ]
-                      }
-                    },
-                    { "type": "origins:can_see" }
-                  ]
                 }
-              }
-            ]
+              ]
+            },
+            "bientity_condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:skeleton"
+                      },
+                      {
+                        "type": "origins:command",
+                        "command": "execute if score #rend_doing_attack rend_team = @s rend_team",
+                        "comparison": "==",
+                        "compare_to": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           }
         }
       ]
     },
     "bientity_condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:target_condition",
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:entity_type",
-                "entity_type": "minecraft:armor_stand",
-                "inverted": true
-              },
-              {
-                "type": "origins:nbt",
-                "nbt": "{Tags:['fallen_tether_hitbox']}",
-                "inverted": true
-              }
-            ]
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:armor_stand",
+            "inverted": true
+          },
+          {
+            "type": "origins:nbt",
+            "nbt": "{Tags:['fallen_tether_hitbox']}",
+            "inverted": true
           }
-        }
-      ]
+        ]
+      }
     },
     "cooldown": 100
   }

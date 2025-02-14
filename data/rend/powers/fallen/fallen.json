@@ -1,5 +1,11 @@
 {
   "type": "origins:multiple",
+  "summoner": {
+    "type": "origins:entity_set"
+  },
+  "enemies": {
+    "type": "origins:entity_set"
+  },
   "chance_for_armour": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
@@ -48,79 +54,127 @@
         {
           "type": "origins:target_action",
           "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "data modify storage minecraft:rend team.enemy_boolean set value 1"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "scoreboard players operation #rend_attacked_fallen rend_enemy = @s rend_team"
-              }
-            ]
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation #rend.attacked_fallen rend_team = @s rend_team"
           }
         },
         {
-          "type": "origins:actor_action",
-          "action": {
-            "type": "origins:if_else",
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:actor_condition",
             "condition": {
               "type": "origins:command",
-              "command": "execute if score #rend_attacked_fallen rend_enemy = @s rend_team",
+              "command": "execute if score #rend.attacked_fallen rend_team = @s rend_team",
               "comparison": "==",
               "compare_to": 0
-            },
-            "if_action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:power_active",
-                "power": "*:fallen/enemy"
-              },
-              "if_action": {
-                "type": "origins:change_resource",
-                "resource": "*:fallen/enemy_timer",
-                "operation": "set",
-                "change": 0
-              },
-              "else_action": {
-                "type": "origins:and",
-                "actions": [
-                  {
-                    "type": "origins:grant_power",
-                    "power": "*:fallen/enemy",
-                    "source": "*:fallen/fallen_set_enemy_when_attacked"
-                  },
-                  {
-                    "type": "origins:execute_command",
-                    "command": "function rend:fallen/set_enemy_score with storage minecraft:rend team"
-                  }
-                ]
-              }
             }
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:invert",
+                "action": {
+                  "type": "add_to_entity_set",
+                  "set": "*:fallen/fallen_enemies",
+                  "time_limit": 3600
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:selector_action",
+                  "selector": "@a",
+                  "bientity_action": {
+                    "type": "origins:invert",
+                    "action": {
+                      "type": "add_to_entity_set",
+                      "set": "*:fallen/summoner_enemies",
+                      "time_limit": 3600
+                    }
+                  },
+                  "bientity_condition": {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:command",
+                      "command": "execute if score #rend.attacked_fallen rend_team = @s rend_team",
+                      "comparison": "==",
+                      "compare_to": 1
+                    }
+                  }
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:area_of_effect",
+                  "radius": 20,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:damage",
+                    "damage_type": "generic",
+                    "amount": 0
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:and",
+                          "conditions": [
+                            {
+                              "type": "origins:entity_type",
+                              "entity_type": "minecraft:skeleton"
+                            },
+                            {
+                              "type": "origins:command",
+                              "command": "execute if score #rend.attacked_fallen rend_team = @s rend_team",
+                              "comparison": "==",
+                              "compare_to": 1
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
           }
         }
       ]
-    }
-  },
-  "store_rend_team": {
-    "type": "origins:self_action_on_hit",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
-    }
+    },
+    "cooldown": 100
   },
   "prevent_damaging_non_enemies": {
     "type": "origins:modify_damage_dealt",
-    "target_condition": {
-      "type": "origins:command",
-      "command": "function rend:fallen/is_an_enemy with storage rend team",
-      "comparison": "==",
-      "compare_to": 0
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_entity_set",
+          "set": "*:fallen/fallen_enemies",
+          "inverted": true
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:skeleton"
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{Tags: ['rend_fallen']}"
+              }
+            ]
+          },
+          "inverted": true
+        }
+      ]
     },
     "modifier": {
       "id": "rend:fallen/fallen_prevent_damaging_non_enemies",
@@ -134,6 +188,15 @@
       "type": "origins:and",
       "conditions": [
         {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:command",
+            "command": "function rend:fallen/record_attacked_team",
+            "comparison": "==",
+            "compare_to": 1
+          }
+        },
+        {
           "type": "origins:actor_condition",
           "condition": {
             "type": "origins:entity_type",
@@ -145,7 +208,7 @@
           "type": "origins:actor_condition",
           "condition": {
             "type": "origins:command",
-            "command": "execute if score #rend_attacked_fallen rend_enemy = @s rend_team",
+            "command": "execute if score #rend_attacked_fallen rend_team = @s rend_team",
             "comparison": "==",
             "compare_to": 1
           }
@@ -169,35 +232,20 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+          "command": "execute store result storage minecraft:rend fallen.counter int 1 run scoreboard players get @s rend_team"
         },
         {
           "type": "origins:if_else",
           "condition": {
             "type": "origins:entity_in_radius",
-            "radius": 16,
+            "radius": 20,
             "shape": "sphere",
             "bientity_condition": {
               "type": "origins:and",
               "conditions": [
                 {
-                  "type": "origins:target_condition",
-                  "condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "origins:in_tag",
-                        "tag": "*:inanimate",
-                        "inverted": true
-                      },
-                      {
-                        "type": "origins:command",
-                        "command": "function rend:fallen/is_an_enemy with storage rend team",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    ]
-                  }
+                  "type": "origins:in_entity_set",
+                  "set": "*:fallen/fallen_enemies"
                 },
                 { "type": "origins:can_see" }
               ]
@@ -224,13 +272,8 @@
                     "type": "origins:and",
                     "conditions": [
                       {
-                        "type": "origins:target_condition",
-                        "condition": {
-                          "type": "origins:command",
-                          "command": "function rend:fallen/is_an_enemy with storage rend team",
-                          "comparison": "==",
-                          "compare_to": 1
-                        }
+                        "type": "origins:in_entity_set",
+                        "set": "*:fallen/fallen_enemies"
                       },
                       { "type": "origins:can_see" }
                     ]
@@ -266,7 +309,8 @@
                   },
                   {
                     "type": "origins:play_sound",
-                    "sound": "minecraft:item.armor.equip_iron"
+                    "sound": "minecraft:item.armor.equip_iron",
+                    "category": "hostile"
                   }
                 ]
               }
@@ -297,7 +341,8 @@
                   },
                   {
                     "type": "origins:play_sound",
-                    "sound": "minecraft:item.armor.equip_elytra"
+                    "sound": "minecraft:item.armor.equip_elytra",
+                    "category": "hostile"
                   }
                 ]
               }
@@ -317,8 +362,18 @@
               }
             },
             "if_action": {
-              "type": "origins:execute_command",
-              "command": "item replace entity @s weapon.mainhand with minecraft:air 1"
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "item replace entity @s weapon.mainhand with minecraft:air 1"
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:item.armor.equip_leather",
+                  "category": "hostile"
+                }
+              ]
             }
           }
         }
