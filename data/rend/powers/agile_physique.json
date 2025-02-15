@@ -1,7 +1,16 @@
 {
   "type": "origins:multiple",
   "name": "Agile Physique",
-  "description": "You have a light and nimble body but aren't particularly strong",
+  "description": "You have a light and nimble body but aren't particularly strong, having one less heart.",
+  "health_limit": {
+    "type": "origins:attribute",
+    "modifier": {
+      "id": "*:agile_physique_health_limit",
+      "attribute": "minecraft:generic.max_health",
+      "amount": -2,
+      "operation": "add_value"
+    }
+  },
   "armour_inhibitor": {
     "type": "origins:action_over_time",
     "interval": 20,
@@ -43,7 +52,7 @@
         "id": "rend:axe_attack_speed",
         "attribute": "minecraft:generic.attack_speed",
         "operation": "add_value",
-        "amount": -0.4
+        "amount": -0.5
       }
     ],
     "tick_rate": 30,
@@ -77,7 +86,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-      "text": "Axes are always of reduced effectiveness. However, your attack speed is increased at higher levels."
+      "text": "Your attack speed is increased at higher levels. Axes are always of reduced effectiveness."
     }
   ]
 }

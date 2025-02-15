@@ -270,7 +270,14 @@
         },
         {
           "type": "origins:play_sound",
-          "sound": "minecraft:item.trident.thunder"
+          "sound": "minecraft:item.trident.thunder",
+          "category": "players"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:mana_capacity",
+          "change": 0,
+          "operation": "set"
         },
         {
           "type": "origins:random_chance",

@@ -133,6 +133,7 @@
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 0,
+      "order": 1,
       "condition": {
         "type": "origins:and",
         "conditions": [

@@ -5,12 +5,13 @@
   "jumps_at_20_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 1,
+    "max": 7,
     "start_value": 1,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_01.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -34,13 +35,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 24
-          },
-
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_20_xp",
-            "comparison": "<",
-            "compare_to": 1
           }
         ]
       }
@@ -49,12 +43,13 @@
   "jumps_at_24_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 2,
+    "max": 7,
     "start_value": 2,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_02.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -78,12 +73,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 28
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_24_xp",
-            "comparison": "<",
-            "compare_to": 2
           }
         ]
       }
@@ -92,12 +81,13 @@
   "jumps_at_28_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 3,
+    "max": 7,
     "start_value": 3,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_03.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -121,12 +111,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 32
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_28_xp",
-            "comparison": "<",
-            "compare_to": 3
           }
         ]
       }
@@ -135,12 +119,13 @@
   "jumps_at_32_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 4,
+    "max": 7,
     "start_value": 4,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_04.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -164,12 +149,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 36
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_32_xp",
-            "comparison": "<",
-            "compare_to": 4
           }
         ]
       }
@@ -178,12 +157,13 @@
   "jumps_at_36_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 5,
+    "max": 7,
     "start_value": 5,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_05.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -207,12 +187,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 40
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_36_xp",
-            "comparison": "<",
-            "compare_to": 5
           }
         ]
       }
@@ -221,12 +195,13 @@
   "jumps_at_40_xp": {
     "type": "origins:resource",
     "min": 0,
-    "max": 6,
+    "max": 7,
     "start_value": 6,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_06.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -250,12 +225,6 @@
             "type": "origins:xp_levels",
             "comparison": "<",
             "compare_to": 44
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_40_xp",
-            "comparison": "<",
-            "compare_to": 6
           }
         ]
       }
@@ -268,8 +237,9 @@
     "start_value": 7,
     "hud_render": {
       "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
-      "bar_index": 23,
+      "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_07.png",
+      "bar_index": 0,
+      "order": 2,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -288,12 +258,6 @@
             "type": "origins:xp_levels",
             "comparison": ">=",
             "compare_to": 44
-          },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_44_xp",
-            "comparison": "<",
-            "compare_to": 7
           }
         ]
       }
@@ -306,39 +270,102 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_20_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_20_xp",
+            "comparison": "<",
+            "compare_to": 1
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_20_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_24_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_24_xp",
+            "comparison": "<",
+            "compare_to": 2
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_24_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_28_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_28_xp",
+            "comparison": "<",
+            "compare_to": 3
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_28_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_32_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_32_xp",
+            "comparison": "<",
+            "compare_to": 4
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_32_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_36_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_36_xp",
+            "comparison": "<",
+            "compare_to": 5
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_36_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_40_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_40_xp",
+            "comparison": "<",
+            "compare_to": 6
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_40_xp",
+            "change": 1
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_jumps_at_44_xp",
-          "change": 1
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_jumps_at_44_xp",
+            "comparison": "<",
+            "compare_to": 7
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_44_xp",
+            "change": 1
+          }
         }
       ]
     },
@@ -353,10 +380,15 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:command",
-          "command": "execute if block ~ ~-1.1 ~ #rend:effective_air",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:raycast",
+          "entity": false,
+          "shape_type": "collider",
+          "direction": {
+            "y": -1.0
+          },
+          "space": "world",
+          "block_distance": 3.1,
+          "inverted": true
         },
         {
           "type": "origins:on_block",
@@ -527,7 +559,8 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:entity.breeze.land",
-          "pitch": 0
+          "pitch": 0,
+          "category": "players"
         },
         {
           "type": "origins:and",
