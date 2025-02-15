@@ -179,7 +179,7 @@
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_capacity",
-      "change": 75
+      "change": 60
     },
     "condition": {
       "type": "origins:and",

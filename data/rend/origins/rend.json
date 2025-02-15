@@ -15,12 +15,12 @@
   "order": 10,
   "impact": 3,
   "name": "Rend",
-  "description": "Wretched remains of an ancient species following a failed Nether invasion. Millenia of isolation has drastically weakened them.",
+  "description": "Wretched remains of an ancient species sealed in the Nether following a failed invasion. Millenia of isolation has drastically weakened them.",
   "upgrades": [
     {
       "condition": "rend:escape_nether",
       "origin": "rend:rend_escaped_nether",
-      "announcement": "You have escaped the Nether! New powers are now available"
+      "announcement": "You have broken free of the Nether! New powers are now available"
     }
   ]
 }

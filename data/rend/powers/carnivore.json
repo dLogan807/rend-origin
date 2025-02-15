@@ -6,6 +6,9 @@
     "type": "origins:and",
     "conditions": [
       {
+        "type": "origins:food"
+      },
+      {
         "type": "origins:ingredient",
         "ingredient": {
           "tag": "origins:ignore_diet"
@@ -16,16 +19,6 @@
         "type": "origins:ingredient",
         "ingredient": {
           "tag": "origins:meat"
-        },
-        "inverted": true
-      },
-      {
-        "type": "origins:food"
-      },
-      {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "item": "minecraft:golden_apple"
         },
         "inverted": true
       },
@@ -42,7 +35,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/golden_apple.png",
-      "text": "Golden apples may be consumed, restoring some mana."
+      "text": "Enchanted Golden Apples may be consumed."
     }
   ]
 }
