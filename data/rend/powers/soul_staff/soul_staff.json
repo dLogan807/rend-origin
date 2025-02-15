@@ -6,6 +6,7 @@
     "type": "origins:recipe",
     "recipe": {
       "id": "rend:soul_staff/staff_crafting",
+      "category": "equipment",
       "type": "minecraft:crafting_shaped",
       "pattern": ["#N#", " / ", " / "],
       "key": {
@@ -29,7 +30,7 @@
             "[\"\",{\"text\":\"A tool of great potential.\",\"italic\":false}]"
           ],
           "unbreakable": {},
-          "custom_data": { "soul_staff": 1 }
+          "custom_data": { "soul_staff": true }
         }
       }
     }

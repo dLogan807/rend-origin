@@ -28,6 +28,69 @@
       }
     }
   },
+  "potion_crafting": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "rend:mana/potion_crafting",
+      "type": "minecraft:crafting_shaped",
+      "pattern": ["#", "L", "O"],
+      "key": {
+        "#": {
+          "item": "minecraft:blaze_powder"
+        },
+        "L": {
+          "item": "minecraft:lapis_lazuli"
+        },
+        "O": {
+          "item": "minecraft:glass_bottle"
+        }
+      },
+      "result": {
+        "id": "minecraft:potion",
+        "components": {
+          "custom_model_data": 439207,
+          "custom_name": "{\"italic\":false,\"text\":\"Potion of Mana\"}",
+          "lore": [
+            "[{\"text\":\"\"}]",
+            "[{\"color\":\"dark_purple\",\"italic\":false,\"text\":\"When Applied: \"}]",
+            "[{\"color\":\"blue\",\"italic\":false,\"text\":\"+15% Mana\"}]"
+          ],
+          "potion_contents": {
+            "potion": "water",
+            "custom_name": "mana_potion"
+          },
+          "custom_data": { "mana_potion": true }
+        }
+      }
+    }
+  },
+  "potion_refill": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:mana_capacity",
+      "change": 15
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    }
+  },
   "kill_refill": {
     "type": "origins:self_action_on_kill",
     "entity_action": {
@@ -65,35 +128,6 @@
           "inverted": true
         }
       ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": ">=",
-          "compare_to": 20
-        }
-      ]
-    }
-  },
-  "golden_apple_refill": {
-    "type": "origins:action_on_item_use",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_capacity",
-      "change": 5
-    },
-    "item_condition": {
-      "type": "origins:ingredient",
-      "ingredient": {
-        "item": "minecraft:golden_apple"
-      }
     },
     "condition": {
       "type": "origins:and",
@@ -172,7 +206,34 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
-      "text": "Replenishes after:\n- Resting\n- Vanquishing hostile creatures, also granting a temporary speed boost\n- Consuming Golden Apples"
+      "text": "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing hostile creatures\n- Enchanted Golden Apples"
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "*:textures/gui/community/leopardx/badge/mana_potion.png",
+      "prefix": ["Potion of Mana\n§5When Applied:\n§1+15% Mana"],
+      "recipe": {
+        "id": "rend:mana/potion_crafting",
+        "type": "minecraft:crafting_shaped",
+        "pattern": ["#", "L", "O"],
+        "key": {
+          "#": {
+            "item": "minecraft:blaze_powder"
+          },
+          "L": {
+            "item": "minecraft:lapis_lazuli"
+          },
+          "O": {
+            "item": "minecraft:glass_bottle"
+          }
+        },
+        "result": {
+          "id": "minecraft:potion",
+          "components": {
+            "custom_model_data": 439207
+          }
+        }
+      }
     },
     {
       "type": "origins:tooltip",
