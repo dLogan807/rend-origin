@@ -57,74 +57,89 @@
   "toggle_invisibility": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:all_of",
-        "conditions": [
-          {
-            "type": "origins:resource",
-            "resource": "*:*_invisibility_active",
-            "comparison": "==",
-            "compare_to": 0
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:all_of",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_invisibility_active",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_invisibility_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
           },
-          {
-            "type": "origins:resource",
-            "resource": "*:*_invisibility_cooldown",
-            "comparison": "==",
-            "compare_to": 0
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "id": "minecraft:invisibility",
+                  "show_particles": false,
+                  "duration": -1
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:visibility 0.2 @s"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_invisibility_active",
+                "operation": "set",
+                "change": 1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute store result score @s rend_starting_xp_levels run xp query @s levels"
+              }
+            ]
+          },
+          "else_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:clear_effect",
+                "effect": "minecraft:invisibility"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:visibility 1.5 @s"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_invisibility_cooldown"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_invisibility_active",
+                "operation": "set",
+                "change": 0
+              }
+            ]
           }
-        ]
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:apply_effect",
-            "effect": {
-              "id": "minecraft:invisibility",
-              "show_particles": false,
-              "duration": -1
-            }
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "scale set pehkui:visibility 0.2 @s"
-          },
-          {
-            "type": "origins:change_resource",
-            "resource": "*:*_invisibility_active",
-            "operation": "set",
-            "change": 1
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "execute store result score @s rend_starting_xp_levels run xp query @s levels"
-          }
-        ]
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:clear_effect",
-            "effect": "minecraft:invisibility"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "scale set pehkui:visibility 1.5 @s"
-          },
-          {
-            "type": "origins:trigger_cooldown",
-            "power": "*:*_invisibility_cooldown"
-          },
-          {
-            "type": "origins:change_resource",
-            "resource": "*:*_invisibility_active",
-            "operation": "set",
-            "change": 0
-          }
-        ]
-      }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:white_smoke ~ ~ ~ .3 1 .3 0 20 normal"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.candle.extinguish",
+          "pitch": 2,
+          "category": "players"
+        }
+      ]
     },
     "condition": {
       "type": "origins:all_of",

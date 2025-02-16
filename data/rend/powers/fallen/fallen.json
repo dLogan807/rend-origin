@@ -247,7 +247,15 @@
                   "type": "origins:in_entity_set",
                   "set": "*:fallen/fallen_enemies"
                 },
-                { "type": "origins:can_see" }
+                { "type": "origins:can_see" },
+                {
+                  "type": "target_condition",
+                  "condition": {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:invisibility"
+                  },
+                  "inverted": true
+                }
               ]
             },
             "comparison": ">",

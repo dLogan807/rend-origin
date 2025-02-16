@@ -6,6 +6,7 @@
     "*:agile_physique",
     "*:transparency",
     "*:carnivore",
+    "*:critical_strike",
     "*:eighth_sense",
     "*:advancement_handler"
   ],
@@ -15,7 +16,7 @@
   "order": 10,
   "impact": 3,
   "name": "Rend",
-  "description": "Wretched remains of an ancient species sealed in the Nether following a failed invasion. Millenia of isolation has drastically weakened them.",
+  "description": "Wretched remains of an ancient species sealed away in the Nether following a failed invasion. Millenia of isolation and dormancy has drastically weakened them.",
   "upgrades": [
     {
       "condition": "rend:escape_nether",

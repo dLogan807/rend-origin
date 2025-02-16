@@ -1,0 +1,6 @@
+{
+  "message_id": "mana_potion_explode",
+  "death_message_type": "default",
+  "exhaustion": 0.1,
+  "scaling": "never"
+}

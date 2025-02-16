@@ -1,0 +1,121 @@
+{
+  "type": "origins:multiple",
+  "begin_drinking": {
+    "type": "origins:action_on_item_use",
+    "trigger": "start",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "rend:rend_escaped_nether",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          }
+        ],
+        "inverted": true
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "title @s actionbar {\"text\":\"You sense you can't contain the potion's energy\",\"color\":\"red\"}"
+      }
+    },
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    }
+  },
+  "consume": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "rend:rend_escaped_nether",
+            "layer": "origins:origin"
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          },
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:mana_capacity",
+        "change": 15
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:damage",
+            "damage_type": "rend:mana_potion_explode",
+            "amount": 12
+          },
+          {
+            "type": "origins:area_of_effect",
+            "radius": 3,
+            "shape": "sphere",
+            "bientity_action": {
+              "type": "origins:damage",
+              "damage_type": "rend:mana_potion_explode",
+              "amount": 8
+            }
+          },
+          {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.glass.break",
+            "pitch": 0.5,
+            "volume": 1,
+            "category": "players"
+          },
+          {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.generic.explode",
+            "pitch": 1.5,
+            "volume": 0.1,
+            "category": "players"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:soul_fire_flame ~ ~1 ~ .9 .9 .9 0.30 20 normal @a"
+          },
+          {
+            "type": "origins:add_velocity",
+            "space": "local",
+            "z": -2
+          },
+          {
+            "type": "origins:add_velocity",
+            "y": 0.5
+          }
+        ]
+      }
+    },
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    }
+  }
+}

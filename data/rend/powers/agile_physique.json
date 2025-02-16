@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Agile Physique",
-  "description": "You have a light and nimble body but aren't particularly strong, having one less heart.",
+  "description": "You have a light and nimble body but aren't particularly strong.",
   "health_limit": {
     "type": "origins:attribute",
     "modifier": {
@@ -67,6 +67,37 @@
       }
     }
   },
+  "increased_damage_from_behind": {
+    "type": "origins:modify_damage_taken",
+    "self_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:crit ~ ~1 ~ .1 .1 .1 0.20 10 normal @a"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.player.attack.crit",
+          "pitch": 2,
+          "category": "hostile"
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:relative_rotation",
+      "axes": ["x", "z"],
+      "actor_rotation": "body",
+      "target_rotation": "body",
+      "comparison": ">=",
+      "compare_to": 0.9
+    },
+    "modifier": {
+      "id": "*:agile_physique_increased_behind_damage",
+      "amount": 1.5,
+      "operation": "multiply_base_additive"
+    }
+  },
   "badges": [
     {
       "type": "origins:tooltip",
@@ -75,8 +106,8 @@
     },
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "No attack speed bonus in the Nether."
+      "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
+      "text": "You have one less heart and take more damage from behind."
     },
     {
       "type": "origins:tooltip",
@@ -87,6 +118,11 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
       "text": "Your attack speed is increased at higher levels. Axes are always of reduced effectiveness."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
+      "text": "No attack speed bonus in the Nether."
     }
   ]
 }

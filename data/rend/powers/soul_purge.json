@@ -1,6 +1,6 @@
 {
   "name": "Soul Purge",
-  "description": "On the brink of death, expel your lifeforce. Causes all nearby foes to be hurled away and damaged.",
+  "description": "On the brink of death, expel your lifeforce. All nearby creatures are violently hurled away.",
   "type": "origins:multiple",
   "prevent_teleport_on_second_death": {
     "type": "origins:action_on_death",
