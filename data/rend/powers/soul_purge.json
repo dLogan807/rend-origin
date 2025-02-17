@@ -281,7 +281,7 @@
         },
         {
           "type": "origins:random_chance",
-          "chance": 0.4,
+          "chance": 0.33,
           "success_action": {
             "type": "origins:change_resource",
             "resource": "*:*_dimension_instability",

@@ -102,6 +102,16 @@
               {
                 "type": "origins:execute_command",
                 "command": "execute store result score @s rend_starting_xp_levels run xp query @s levels"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:white_smoke ~ ~ ~ .3 1 .3 0 20 normal"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.candle.extinguish",
+                "pitch": 2,
+                "category": "players"
               }
             ]
           },
@@ -128,16 +138,6 @@
               }
             ]
           }
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "particle minecraft:white_smoke ~ ~ ~ .3 1 .3 0 20 normal"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:block.candle.extinguish",
-          "pitch": 2,
-          "category": "players"
         }
       ]
     },
@@ -187,6 +187,16 @@
         {
           "type": "origins:execute_command",
           "command": "function rend:faded_husk/xp_usage_advancement"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:white_smoke ~ ~ ~ .3 1 .3 0 20 normal"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.candle.extinguish",
+          "pitch": 2,
+          "category": "players"
         }
       ]
     }
@@ -283,6 +293,21 @@
   },
   "visible_when_hit": {
     "type": "origins:self_action_when_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_invisibility_active",
+      "operation": "set",
+      "change": 0
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_invisibility_active",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "visible_on_hit": {
+    "type": "origins:self_action_on_hit",
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "*:*_invisibility_active",

@@ -240,7 +240,8 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:entity.skeleton.hurt",
-          "pitch": 0.8
+          "pitch": 0.8,
+          "volume": 0.5
         },
         {
           "type": "origins:execute_command",

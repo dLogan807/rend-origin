@@ -92,7 +92,7 @@
       "order": 2,
       "bar_index": 1
     },
-    "cooldown": 300
+    "cooldown": 500
   },
   "sneak_detection": {
     "type": "origins:active_self",
