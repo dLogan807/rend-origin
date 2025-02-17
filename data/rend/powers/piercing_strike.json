@@ -1,19 +1,19 @@
 {
   "type": "origins:multiple",
-  "name": "Critical Strike",
-  "description": "Trained in the art of exploiting your foes' weaknesses.",
-  "critical_strike": {
+  "name": "Piercing Strike",
+  "description": "Trained in the art of exploiting your foes' weaknesses, you deal more damage when attacking from behind.",
+  "piercing_strike": {
     "type": "origins:modify_damage_dealt",
     "self_action": {
       "type": "origins:trigger_cooldown",
-      "power": "*:*_critical_cooldown"
+      "power": "*:*_cooldown"
     },
     "target_action": {
       "type": "origins:and",
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:crit ~ ~1 ~ .1 .1 .1 0.20 10 normal @a"
+          "command": "particle minecraft:crit ~ ~1 ~ .1 .1 .1 0.20 15"
         },
         {
           "type": "origins:play_sound",
@@ -29,12 +29,16 @@
         {
           "type": "origins:relative_rotation",
           "axes": ["x", "z"],
-          "actor_rotation": "head",
+          "actor_rotation": "body",
           "target_rotation": "body",
           "comparison": ">=",
           "compare_to": 0.8
         },
-        { "type": "origins:distance", "comparison": "<=", "compare_to": 2 }
+        {
+          "type": "origins:distance",
+          "comparison": "<=",
+          "compare_to": 4
+        }
       ]
     },
     "condition": {
@@ -48,22 +52,39 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:*_critical_cooldown",
+          "resource": "*:*_cooldown",
           "comparison": "==",
           "compare_to": 0
         },
         {
-          "type": "origins:on_block"
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "*:swords"
+                }
+              },
+              {
+                "type": "origins:custom_data",
+                "nbt": "{soul_staff: 1b}",
+                "inverted": true
+              }
+            ]
+          }
         }
       ]
     },
     "modifier": {
-      "id": "*:agile_physique_critical_strike",
-      "amount": 1.5,
+      "id": "*:agile_physique_piercing_strike",
+      "amount": 2,
       "operation": "multiply_base_additive"
     }
   },
-  "critical_cooldown": {
+  "cooldown": {
     "type": "origins:cooldown",
     "hud_render": {
       "should_render": true,
@@ -97,17 +118,22 @@
       "resource": "*:*_is_sneaking",
       "change": -1
     },
-    "interval": 3
+    "interval": 5
   },
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+      "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "When behind a target, hold [",
+        "When within 4 blocks behind a target, hold [",
         { "keybind": "key.sneak" },
-        "] and strike to deal significant damage. Must be grounded and within 2 blocks."
+        "] and strike to deal 3x damage."
       ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
+      "text": "Sword required (Soul Staff excluded)."
     }
   ]
 }

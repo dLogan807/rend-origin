@@ -6,7 +6,7 @@
     "*:agile_physique",
     "*:transparency",
     "*:carnivore",
-    "*:critical_strike",
+    "*:piercing_strike",
     "*:eighth_sense",
     "*:advancement_handler"
   ],

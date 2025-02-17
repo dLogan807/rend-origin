@@ -1,0 +1,37 @@
+{
+  "type": "origins:multiple",
+  "disable_ai": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:execute_command",
+      "command": "data merge entity @s {NoAI:1b}"
+    }
+  },
+  "duration": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 8,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "data merge entity @s {NoAI:0b}"
+        },
+        {
+          "type": "origins:remove_power",
+          "power": "*:*"
+        }
+      ]
+    }
+  },
+  "decrement": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_duration",
+      "change": 1
+    },
+    "interval": 1
+  }
+}

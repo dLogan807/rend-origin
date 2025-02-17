@@ -1,0 +1,1 @@
+$tp @a[team=rend$(counter),distance=..10] ~ ~1 ~ facing entity @s

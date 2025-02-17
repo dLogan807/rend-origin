@@ -74,7 +74,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:crit ~ ~1 ~ .1 .1 .1 0.20 10 normal @a"
+          "command": "particle minecraft:crit ~ ~1 ~ .1 .1 .1 0.20 15"
         },
         {
           "type": "origins:play_sound",

@@ -16,6 +16,8 @@ A custom resource pack is highly recommended and will be linked here once comple
 
 After switching to another origin, run `/function rend:remove_all_modifiers` and `/scale reset pehkui:visibility @s` to remove attribute modifiers set by this origin.
 
+Due to a bug with Origins alpha 12, attribute modifiers added through powers will apply when unintended.
+
 ### Lore
 
 A specialised subclass of an ancient race. Not excelling in physical strength
