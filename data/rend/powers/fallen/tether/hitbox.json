@@ -207,10 +207,21 @@
             "compare_to": 0
           },
           {
-            "type": "origins:resource",
-            "resource": "*:fallen/tether/hitbox_do_animation",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:fallen/tether/hitbox_do_animation",
+                "comparison": "==",
+                "compare_to": 1
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:fallen/tether/hitbox_animation_complete",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
           }
         ]
       }
@@ -353,6 +364,11 @@
                       {
                         "type": "origins:grant_power",
                         "power": "*:fallen/fallen",
+                        "source": "*:fallen/tether/hitbox"
+                      },
+                      {
+                        "type": "origins:grant_power",
+                        "power": "*:fallen/upgrade_on_kill",
                         "source": "*:fallen/tether/hitbox"
                       },
                       {
