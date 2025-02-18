@@ -99,7 +99,11 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "particle minecraft:soul_fire_flame ~ ~1 ~ .9 .9 .9 0.30 20 normal @a"
+            "command": "particle minecraft:soul_fire_flame ~ ~1 ~ .9 .9 .9 0.30 20"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:explosion ~ ~1 ~ .1 .3 .1 0.05 1"
           },
           {
             "type": "origins:add_velocity",

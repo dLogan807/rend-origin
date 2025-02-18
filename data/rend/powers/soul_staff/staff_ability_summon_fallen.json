@@ -269,6 +269,11 @@
           }
         }
       }
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/armor.png",
+      "text": "After slaying an evil entity, a Fallen heals and is granted improved armour."
     }
   ]
 }

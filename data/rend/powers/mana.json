@@ -172,7 +172,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
-      "text": "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing hostile creatures\n- Enchanted Golden Apples"
+      "text": "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing evil entities\n- Enchanted Golden Apples"
     },
     {
       "type": "origins:crafting_recipe",
