@@ -38,7 +38,7 @@ scoreboard objectives add rend_tether_summon_y dummy
 data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "current_animation": 0}
 data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0}
 
-#Cursed Prison UUID storage
+#Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
 #Dynamic team creation:

@@ -1,5 +1,42 @@
 {
   "type": "origins:multiple",
+  "times_upgraded": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 5,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "item replace entity @s armor.head with minecraft:iron_helmet[trim={material:\"minecraft:amethyst\",pattern:\"minecraft:wild\"},enchantments={protection:3},unbreakable={}] 1"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "item modify entity @s armor.head [{function:\"enchant_randomly\",\"options\":\"#minecraft:on_mob_spawn_equipment\"}]"
+        },
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:fallen/fallen_summoner",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:advancement",
+                "advancement": "*:fallen_upgrade_to_leader",
+                "inverted": true
+              },
+              "if_action": {
+                "type": "origins:grant_advancement",
+                "advancement": "*:fallen_upgrade_to_leader"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
   "upgrade_armour": {
     "type": "origins:self_action_on_kill",
     "entity_action": {
@@ -16,6 +53,11 @@
             "duration": 150,
             "amplifier": 2
           }
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_times_upgraded",
+          "change": 1
         },
         {
           "type": "origins:execute_command",

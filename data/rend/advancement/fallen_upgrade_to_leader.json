@@ -1,0 +1,26 @@
+{
+  "display": {
+    "title": {
+      "text": "Another Bout?"
+    },
+    "description": {
+      "text": "Have a Fallen performs 5 kills.",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:iron_helmet",
+      "components": {
+        "trim": {
+          "material": "minecraft:amethyst",
+          "pattern": "minecraft:wild"
+        }
+      }
+    }
+  },
+  "criteria": {
+    "upgrade fallen 5 times": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:old_friend"
+}
