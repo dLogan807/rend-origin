@@ -45,10 +45,7 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:resource",
-          "resource": "*:*_is_sneaking",
-          "comparison": ">=",
-          "compare_to": 1
+          "type": "origins:sneaking"
         },
         {
           "type": "origins:resource",
@@ -93,32 +90,6 @@
       "bar_index": 1
     },
     "cooldown": 500
-  },
-  "sneak_detection": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_is_sneaking",
-      "change": 1
-    },
-    "key": {
-      "key": "key.sneak",
-      "continuous": true
-    }
-  },
-  "is_sneaking": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 2
-  },
-  "reset_is_sneaking": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_is_sneaking",
-      "change": -1
-    },
-    "interval": 5
   },
   "badges": [
     {
