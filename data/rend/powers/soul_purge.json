@@ -324,10 +324,6 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "scoreboard players set @s rend_soul_purge_actor 1"
-        },
-        {
-          "type": "origins:execute_command",
           "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
         },
         {
@@ -395,8 +391,6 @@
                         "x": -2,
                         "y": 0.8,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -418,8 +412,6 @@
                         "x": 2,
                         "y": 0.8,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -441,8 +433,6 @@
                         "z": -2,
                         "y": 0.8,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -464,8 +454,6 @@
                         "z": 2,
                         "y": 0.8,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -488,8 +476,6 @@
                         "y": 0.8,
                         "z": -2,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -512,8 +498,6 @@
                         "y": 0.8,
                         "z": 2,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -536,8 +520,6 @@
                         "y": 0.8,
                         "z": -2,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -560,8 +542,6 @@
                         "y": 0.8,
                         "z": 2,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -582,8 +562,6 @@
                         "type": "origins:add_velocity",
                         "y": 0.8,
                         "space": "world",
-                        "client": true,
-                        "server": true,
                         "set": true
                       }
                     }
@@ -591,11 +569,15 @@
                 ]
               }
             ]
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:in_tag",
+              "tag": "*:inanimate",
+              "inverted": true
+            }
           }
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players set @s rend_soul_purge_actor 0"
         },
         {
           "type": "origins:execute_command",
@@ -622,7 +604,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "Ineffective in the Nether."
+      "text": "Unusable in the Nether."
     }
   ]
 }

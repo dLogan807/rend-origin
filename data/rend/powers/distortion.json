@@ -114,15 +114,6 @@
                                   }
                                 },
                                 {
-                                  "type": "origins:apply_effect",
-                                  "effect": {
-                                    "id": "minecraft:nausea",
-                                    "duration": 140,
-                                    "show_particles": false,
-                                    "show_icon": false
-                                  }
-                                },
-                                {
                                   "type": "origins:change_resource",
                                   "resource": "*:mana_capacity",
                                   "change": -10

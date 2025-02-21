@@ -1,1 +1,1 @@
-$damage @s $(amount) rend:soul_purge by @a[scores={rend_soul_purge_actor=1},limit=1,sort=nearest]
+$damage @s $(amount) rend:soul_purge by @a[team=rend$(team_counter),limit=1]

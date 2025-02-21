@@ -95,6 +95,11 @@
         }
       ]
     },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "rend:soul_purge",
+      "inverted": true
+    },
     "condition": {
       "type": "origins:and",
       "conditions": [

@@ -279,6 +279,11 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/triangle_up.png",
       "text": "Fallen gain an unbreakable helmet after 5 kills, allowing indefinite sun exposure."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
+      "text": "If a Fallen's summoner dies, their tether to this plane is weakened, damaging them."
     }
   ]
 }
