@@ -11,7 +11,7 @@
     },
     "show_toast": false,
     "announce_to_chat": false,
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    "background": "minecraft:textures/block/chiseled_nether_bricks.png"
   },
   "criteria": {
     "Team Rend": {
