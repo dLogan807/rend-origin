@@ -18,18 +18,5 @@
         }
       ]
     }
-  },
-  "modify_entity_attack": {
-    "type": "origins:modify_damage_taken",
-    "bientity_condition": {
-      "type": "origins:actor_condition",
-      "condition": {
-        "type": "origins:exists"
-      }
-    },
-    "modifier": {
-      "operation": "add_base_early",
-      "amount": 1
-    }
   }
 }
