@@ -1,0 +1,1 @@
+$function animated_java:rend_fallen_tether/animations/rise_$(animation_num)/play

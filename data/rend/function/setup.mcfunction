@@ -35,8 +35,12 @@ scoreboard objectives add rend_used_xp_levels dummy
 
 #Fallen
 scoreboard objectives add rend_tether_summon_y dummy
-data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "current_animation": 0}
+data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "animation_num": 0}
 data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0}
+scoreboard objectives add rend_tether_animation_num dummy
+scoreboard objectives add rend_tether_last_animation dummy
+scoreboard players set #rend_global rend_tether_last_animation 1
+scoreboard players set #rend_global rend_tether_animation_num 0
 
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
@@ -45,8 +49,8 @@ data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
 #Increment global rend team counter
 scoreboard objectives add rend_team dummy
-scoreboard players add #rend_global_team_counter rend_team 1
-scoreboard players operation @s rend_team = #rend_global_team_counter rend_team
+scoreboard players add #rend_global rend_team 1
+scoreboard players operation @s rend_team = #rend_global rend_team
 
 #Create team storage location
 data modify storage minecraft:rend team set value {"name": "rend", "counter": 0}
