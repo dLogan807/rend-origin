@@ -6,8 +6,16 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "apoli:replaced_loot_table",
-          "weight": 10
+          "value": "apoli:replaced_loot_table"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 9
         },
         {
           "type": "minecraft:item",
