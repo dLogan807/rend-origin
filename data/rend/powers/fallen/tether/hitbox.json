@@ -256,7 +256,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "summon item ~ ~0.5 ~ {Item:{id:\"minecraft:armor_stand\",count:1,components:{\"minecraft:custom_model_data\":439203,\"minecraft:rarity\":\"uncommon\",\"minecraft:custom_name\":'{\"text\":\"Fallen Tether\",\"italic\":false}',\"minecraft:custom_data\":{fallen_tether:1b},\"minecraft:entity_data\":{id:\"minecraft:armor_stand\",Tags:[\"fallen_tether\"],Invisible:1b}}}}"
+          "command": "summon item ~ ~0.5 ~ {Item:{id:\"minecraft:armor_stand\",count:1,components:{\"minecraft:custom_model_data\":439203,\"minecraft:rarity\":\"uncommon\",\"minecraft:custom_name\":'{\"text\":\"Fallen Tether Doll\",\"italic\":false}',\"minecraft:custom_data\":{fallen_tether:1b},\"minecraft:entity_data\":{id:\"minecraft:armor_stand\",Tags:[\"fallen_tether\"],Invisible:1b}}}}"
         },
         {
           "type": "origins:execute_command",

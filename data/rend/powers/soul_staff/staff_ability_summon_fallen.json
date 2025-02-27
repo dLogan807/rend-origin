@@ -30,7 +30,7 @@
         "components": {
           "custom_model_data": 439203,
           "rarity": "uncommon",
-          "custom_name": "[{\"text\":\"Fallen Tether\",\"italic\":false}]",
+          "custom_name": "[{\"text\":\"Fallen Tether Doll\",\"italic\":false}]",
           "custom_data": { "fallen_tether": true },
           "entity_data": {
             "id": "minecraft:armor_stand",
@@ -254,7 +254,7 @@
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/fallen_tether.png",
-      "prefix": "Fallen Tether\n§7Obtain skulls by killing Skeletons.",
+      "prefix": "Fallen Tether Doll\n§7Obtain skulls by killing Skeletons.",
       "recipe": {
         "id": "*:fallen_tether",
         "type": "minecraft:crafting_shaped",
