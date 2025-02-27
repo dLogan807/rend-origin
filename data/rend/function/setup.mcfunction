@@ -39,7 +39,7 @@ data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.
 data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0}
 scoreboard objectives add rend_tether_animation_num dummy
 scoreboard objectives add rend_tether_last_animation dummy
-scoreboard players set #rend_global rend_tether_last_animation 1
+scoreboard players set #rend_global rend_tether_last_animation 2
 scoreboard players set #rend_global rend_tether_animation_num 0
 
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)

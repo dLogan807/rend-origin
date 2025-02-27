@@ -10,3 +10,4 @@ $data merge entity $(bone_right_lower_leg) { transformation: [1f,0f,0f,-0.124999
 $data merge entity $(bone_right_leg) { transformation: [1f,0f,0f,-0.12499999999999996f,0f,2.220446049250313e-16f,1f,0.06875f,0f,-1f,2.220446049250313e-16f,-0.375f,0f,0f,0f,1f], start_interpolation: 0, interpolation_duration: 1 }
 $data merge entity $(bone_left_lower_leg) { transformation: [1f,0f,0f,0.12500000000000006f,0f,2.220446049250313e-16f,1f,0.06874999999999992f,0f,-1f,2.220446049250313e-16f,0f,0f,0f,0f,1f], start_interpolation: 0, interpolation_duration: 1 }
 $data merge entity $(bone_left_leg) { transformation: [1f,0f,0f,0.12500000000000006f,0f,2.220446049250313e-16f,1f,0.06875f,0f,-1f,2.220446049250313e-16f,-0.375f,0f,0f,0f,1f], start_interpolation: 0, interpolation_duration: 1 }
+execute on vehicle unless entity @s[tag=aj.transforms_only] at @s run function animated_java:rend_fallen_tether/animations/rise_1/zzz/frames/zzz/0

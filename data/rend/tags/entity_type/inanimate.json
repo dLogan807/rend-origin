@@ -6,6 +6,8 @@
     "minecraft:item_frame",
     "minecraft:item_display",
     "minecraft:glow_item_frame",
-    "minecraft:marker"
+    "minecraft:marker",
+    "minecraft:arrow",
+    "minecraft:spectral_arrow"
   ]
 }

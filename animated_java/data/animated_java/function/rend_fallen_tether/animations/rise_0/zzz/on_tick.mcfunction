@@ -4,5 +4,5 @@ execute if score @s aj.tween_duration matches 1.. run return 1
 execute if score @s aj.tween_duration matches 0 on passengers run data modify entity @s interpolation_duration set value 1
 execute store result storage aj:temp frame int 1 run scoreboard players get @s aj.rise_0.frame
 function animated_java:rend_fallen_tether/animations/rise_0/zzz/apply_frame with storage aj:temp
-execute if score @s aj.rise_0.frame matches 102.. run return run function animated_java:rend_fallen_tether/animations/rise_0/pause
+execute if score @s aj.rise_0.frame matches 106.. run return run function animated_java:rend_fallen_tether/animations/rise_0/pause
 scoreboard players add @s aj.rise_0.frame 1

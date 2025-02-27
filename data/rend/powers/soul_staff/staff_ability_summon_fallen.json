@@ -47,6 +47,14 @@
       "type": "origins:and",
       "actions": [
         {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "summon area_effect_cloud ~ ~ ~ {Particle:{type:\"entity_effect\"},Radius:5f,RadiusPerTick:-1f,Duration:30,potion_contents:{custom_color:3946304}}"
+        },
+        {
           "type": "origins:area_of_effect",
           "radius": 5,
           "shape": "sphere",

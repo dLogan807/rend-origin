@@ -13,6 +13,10 @@
         "type": "origins:and",
         "actions": [
           {
+            "type": "origins:swing_hand",
+            "hand": "MAIN_HAND"
+          },
+          {
             "type": "origins:change_resource",
             "resource": "*:soul_staff/soul_staff_cooldown",
             "change": 9000,
