@@ -94,10 +94,12 @@
           "compare_to": 0
         },
         {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_selected_ability",
-          "comparison": "==",
-          "compare_to": 3
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{vortex_tome: 1b}"
+          }
         },
         {
           "type": "origins:resource",
@@ -136,10 +138,12 @@
           "compare_to": 20
         },
         {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_selected_ability",
-          "comparison": "==",
-          "compare_to": 3
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{vortex_tome: 1b}"
+          }
         },
         {
           "type": "origins:resource",

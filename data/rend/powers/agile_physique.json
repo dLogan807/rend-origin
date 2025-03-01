@@ -114,7 +114,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
-      "text": "You:\n- Have one less heart\n- Take 0.5 hearts more damage from all sources\n- Take 2x damage from behind"
+      "text": "Your body is somewhat frail:\n- One less heart\n- 0.5 hearts more damage from all sources\n- 2x damage taken from behind"
     },
     {
       "type": "origins:tooltip",

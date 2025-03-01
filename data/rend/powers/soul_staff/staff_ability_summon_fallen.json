@@ -2,6 +2,12 @@
   "type": "origins:multiple",
   "name": "Fallen Summoning",
   "description": "Tether past allies to the mortal plane.",
+  "tome": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/jungle_temple": "rend:chests/fallen_summoning_tome"
+    }
+  },
   "skeleton_skull_drop": {
     "type": "origins:replace_loot_table",
     "replace": {
@@ -89,7 +95,7 @@
                     {
                       "type": "origins:change_resource",
                       "resource": "*:mana_capacity",
-                      "change": -10
+                      "change": -15
                     }
                   ]
                 }
@@ -106,7 +112,7 @@
                   "type": "origins:resource",
                   "resource": "*:mana_capacity",
                   "comparison": ">=",
-                  "compare_to": 10
+                  "compare_to": 15
                 }
               },
               {
@@ -171,9 +177,17 @@
           }
         },
         {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{fallen_summoning_tome: 1b}"
+          }
+        },
+        {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 20
+          "compare_to": 30
         },
         {
           "type": "origins:dimension",
@@ -188,18 +202,51 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_selected_ability",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": ">=",
-          "compare_to": 10
+          "compare_to": 15
         }
       ]
     }
+  },
+  "need_xp": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\":\"30 XP levels needed\",\"color\":\"red\"}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{fallen_summoning_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 30
+        }
+      ]
+    },
+    "key": "key.use"
   },
   "insufficient_mana": {
     "type": "origins:active_self",
@@ -219,6 +266,14 @@
           }
         },
         {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{fallen_summoning_tome: 1b}"
+          }
+        },
+        {
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether",
           "inverted": true
@@ -226,19 +281,13 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_selected_ability",
-          "comparison": "==",
-          "compare_to": 0
+          "compare_to": 30
         },
         {
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": "<",
-          "compare_to": 10
+          "compare_to": 15
         },
         {
           "type": "origins:resource",
@@ -252,9 +301,14 @@
   },
   "badges": [
     {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/fallen_summoning.png",
+      "text": "§eTome of Fallen Summoning\n§fCan be found in Jungle Temples."
+    },
+    {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/fallen_tether.png",
-      "prefix": "Fallen Tether Doll\n§7Obtain skulls by killing Skeletons.",
+      "prefix": "§eFallen Tether Doll\n§7Obtain skulls by killing Skeletons.",
       "recipe": {
         "id": "*:fallen_tether",
         "type": "minecraft:crafting_shaped",
