@@ -82,7 +82,7 @@
       "prefix": [
         "§dSoul Staff\n§7Use with [",
         { "keybind": "key.use", "color": "gray" },
-        "§7]."
+        "§7].\nHold spell tomes in your offhand."
       ],
       "recipe": {
         "id": "*:soul_staff",

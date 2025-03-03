@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 2
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -31,18 +31,18 @@
             {
               "function": "minecraft:set_custom_data",
               "tag": {
-                "fallen_summoning_tome": true
+                "vortex_tome": true
               }
             },
             {
               "function": "minecraft:set_custom_model_data",
-              "value": 439210
+              "value": 439211
             },
             {
               "function": "minecraft:set_name",
               "entity": "this",
               "name": {
-                "text": "Tome of Fallen Summoning",
+                "text": "Tome of Create Vortex",
                 "type": "text",
                 "color": "yellow",
                 "italic": false
@@ -54,24 +54,24 @@
               "entity": "this",
               "lore": [
                 {
-                  "text": "Bind allies of the past to",
+                  "text": "Disturb and accelerate",
                   "type": "text",
                   "color": "gray"
                 },
                 {
-                  "text": "tethers in the mortal plane.",
+                  "text": "air at your whim.",
                   "type": "text",
                   "color": "gray"
                 },
                 { "text": "" },
                 {
-                  "text": "Mana: -15% per nearby tether",
+                  "text": "Mana: -20%",
                   "type": "text",
                   "italic": false,
                   "color": "blue"
                 },
                 {
-                  "text": "XP Level: 40",
+                  "text": "XP Level: 30",
                   "type": "text",
                   "italic": false,
                   "color": "green"

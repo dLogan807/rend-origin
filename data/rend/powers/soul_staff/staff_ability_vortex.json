@@ -1,6 +1,19 @@
 {
   "type": "origins:multiple",
-  "hidden": true,
+  "name": "Create Vortex",
+  "description": "Call forth a howling tornado.",
+  "tome_vault": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome/trial_vault"
+    }
+  },
+  "tome_ominous_vault": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/vortex_tome/trial_ominous_vault"
+    }
+  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
@@ -78,9 +91,17 @@
           }
         },
         {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{vortex_tome: 1b}"
+          }
+        },
+        {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 20
+          "compare_to": 30
         },
         {
           "type": "origins:dimension",
@@ -92,14 +113,6 @@
           "resource": "*:soul_staff/soul_staff_cooldown",
           "comparison": "==",
           "compare_to": 0
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
-          }
         },
         {
           "type": "origins:resource",
@@ -128,6 +141,14 @@
           }
         },
         {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{vortex_tome: 1b}"
+          }
+        },
+        {
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether",
           "inverted": true
@@ -135,15 +156,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
-          }
+          "compare_to": 30
         },
         {
           "type": "origins:resource",
@@ -160,5 +173,12 @@
       ]
     },
     "key": "key.use"
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
+      "text": "§eTome of Create Vortex\n§fCan be found in Trail Chamber vaults."
+    }
+  ]
 }
