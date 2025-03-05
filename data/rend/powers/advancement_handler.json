@@ -9,19 +9,24 @@
           "conditions": [
             {
               "type": "origins:advancement",
-              "advancement": "*:reach_level_50",
+              "advancement": "*:reach_level_55",
               "inverted": true
             },
             {
               "type": "origins:xp_levels",
               "comparison": ">=",
-              "compare_to": 50
+              "compare_to": 55
+            },
+            {
+              "type": "origins:dimension",
+              "dimension": "minecraft:the_nether",
+              "inverted": true
             }
           ]
         },
         "action": {
           "type": "origins:grant_advancement",
-          "advancement": "*:reach_level_50"
+          "advancement": "*:reach_level_55"
         }
       }
     ]

@@ -9,6 +9,27 @@
     "biome": "minecraft:nether_wastes",
     "spawn_strategy": "center"
   },
+  "prevent_nether_xp_gain": {
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+      "operation": "set_total",
+      "amount": 0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    }
+  },
   "nether_prison": {
     "type": "origins:action_over_time",
     "entity_action": {
@@ -145,7 +166,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "20 XP levels needed to escape."
+      "text": "20 XP levels needed to escape.\nYour body cannot maintain further XP gain past 20 levels in this dimension."
     },
     {
       "type": "origins:tooltip",
