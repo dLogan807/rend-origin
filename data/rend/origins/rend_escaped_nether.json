@@ -1,5 +1,6 @@
 {
   "powers": [
+    "*:advancement_handler",
     "*:cursed_prison",
     "*:faded_husk",
     "*:agile_physique",
@@ -7,6 +8,7 @@
     "*:carnivore",
     "*:piercing_strike",
     "*:eighth_sense",
+    "*:soul_purge",
     "*:mana",
     "*:air_step",
     "*:distortion",
@@ -14,8 +16,7 @@
     "*:soul_staff/staff_ability_vortex",
     "*:soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
-    "*:soul_purge",
-    "*:advancement_handler"
+    "*:soul_staff/staff_ability_explosion"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"

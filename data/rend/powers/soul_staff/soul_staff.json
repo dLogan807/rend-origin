@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "name": "Soul Staff",
+  "name": "§d   ~ ~ ~ SPELLS ~ ~ ~\n\n§f§nSoul Staff",
   "description": "A conduit for your mana, allowing you to harness spell tomes.",
   "staff_crafting": {
     "type": "origins:recipe",

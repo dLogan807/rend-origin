@@ -2,9 +2,9 @@
 
 A 1.21.1 Minecraft datapack adding a custom origin for use with [Origins 1.13.0 alpha 12](https://modrinth.com/mod/origins). It is intended to provide a polished and fully furnished experience, but drastically alter how you approach the game.
 
-This is currently in development and not recommend for use. Multiple Rend are able to exist in a world without issue.
+This is currently in development and not recommend for use. Multiple Rend should be able to exist in a world without issue.
 
-![](https://progress-bar.xyz/80/?title=Estimated+Progress)
+![](https://progress-bar.xyz/90/?title=Estimated+Progress)
 
 ### Dependencies
 

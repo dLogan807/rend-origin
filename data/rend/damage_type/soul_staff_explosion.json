@@ -1,0 +1,7 @@
+{
+  "message_id": "soul_staff_explosion",
+  "death_message_type": "default",
+  "exhaustion": 0.3,
+  "scaling": "never",
+  "effects": "burning"
+}

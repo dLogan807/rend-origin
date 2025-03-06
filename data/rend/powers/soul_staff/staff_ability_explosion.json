@@ -1,17 +1,11 @@
 {
   "type": "origins:multiple",
-  "name": "Create Vortex",
-  "description": "Call forth a howling whirlwind.",
-  "tome_vault": {
+  "name": "Explosion",
+  "description": "Initiate a cataclysmic explosion. Not to be underestimated.",
+  "tome": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome/trial_vault"
-    }
-  },
-  "tome_ominous_vault": {
-    "type": "origins:replace_loot_table",
-    "replace": {
-      "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/vortex_tome/trial_ominous_vault"
+      "minecraft:chests/nether_bridge": "rend:chests/explosion_tome"
     }
   },
   "activation": {
@@ -32,7 +26,7 @@
           {
             "type": "origins:change_resource",
             "resource": "*:soul_staff/soul_staff_cooldown",
-            "change": 9000,
+            "change": 9900,
             "operation": "set"
           },
           {
@@ -43,20 +37,24 @@
         ]
       },
       "block_action": {
-        "type": "origins:spawn_entity",
-        "entity_type": "minecraft:armor_stand",
-        "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
-        "entity_action": {
-          "type": "origins:grant_power",
-          "power": "*:soul_staff/vortex/vortex",
-          "source": "*:soul_staff/staff_ability_vortex_activation"
-        }
+        "type": "origins:offset",
+        "action": {
+          "type": "origins:spawn_entity",
+          "entity_type": "minecraft:armor_stand",
+          "tag": "{NoGravity:1b}",
+          "entity_action": {
+            "type": "origins:grant_power",
+            "power": "*:soul_staff/explosion/raise_and_rotate",
+            "source": "*:soul_staff/staff_ability_explosion_activation"
+          }
+        },
+        "y": 3
       },
       "command_along_ray": "particle minecraft:cloud",
       "command_step": 1,
       "command_along_ray_only_on_hit": false
     },
-    "cooldown": 1000,
+    "cooldown": 100,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
@@ -95,13 +93,13 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
+            "nbt": "{explosion_tome: 1b}"
           }
         },
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 30
+          "compare_to": 55
         },
         {
           "type": "origins:dimension",
@@ -127,7 +125,7 @@
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "title @s actionbar {\"text\":\"30 XP levels needed\",\"color\":\"red\"}"
+      "command": "title @s actionbar {\"text\":\"55 XP levels needed\",\"color\":\"red\"}"
     },
     "condition": {
       "type": "origins:and",
@@ -145,7 +143,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
+            "nbt": "{explosion_tome: 1b}"
           }
         },
         {
@@ -156,7 +154,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": "<",
-          "compare_to": 30
+          "compare_to": 55
         }
       ]
     },
@@ -184,7 +182,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
+            "nbt": "{explosion_tome: 1b}"
           }
         },
         {
@@ -195,7 +193,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 30
+          "compare_to": 55
         },
         {
           "type": "origins:resource",
@@ -216,8 +214,8 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
-      "text": "§eTome of Create Vortex\n§fCan be found in Trail Chamber vaults."
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/explosion.png",
+      "text": "§eTome of Explosion\n§fCan be found in nether structures."
     }
   ]
 }

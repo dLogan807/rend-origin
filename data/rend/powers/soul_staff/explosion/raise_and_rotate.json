@@ -1,0 +1,80 @@
+{
+  "type": "origins:multiple",
+  "this_circle_num": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 6
+  },
+  "raise_amount": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 15,
+    "max_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_this_circle_num",
+        "comparison": "<",
+        "compare_to": 6
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute store result score #rend_global rend_explosion_circle_num run resource get @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num"
+          },
+          {
+            "type": "origins:spawn_entity",
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{NoGravity:1b}",
+            "entity_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:grant_power",
+                  "power": "*:soul_staff/explosion/raise_and_rotate",
+                  "source": "*:*"
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "resource operation @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num += #rend_global rend_explosion_circle_num"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_this_circle_num",
+                  "change": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "raise": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_raise_amount",
+          "operation": "add",
+          "change": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~0.3 ~"
+        }
+      ]
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_raise_amount",
+      "comparison": "<",
+      "compare_to": 15
+    }
+  }
+}
