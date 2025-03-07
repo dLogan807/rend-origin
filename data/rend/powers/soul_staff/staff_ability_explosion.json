@@ -8,6 +8,31 @@
       "minecraft:chests/nether_bridge": "rend:chests/explosion_tome"
     }
   },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 0,
+      "order": 1,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
@@ -19,6 +44,10 @@
       "hit_action": {
         "type": "origins:and",
         "actions": [
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+          },
           {
             "type": "origins:swing_hand",
             "hand": "MAIN_HAND"
@@ -41,11 +70,21 @@
         "action": {
           "type": "origins:spawn_entity",
           "entity_type": "minecraft:armor_stand",
-          "tag": "{NoGravity:1b}",
+          "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion]}",
           "entity_action": {
-            "type": "origins:grant_power",
-            "power": "*:soul_staff/explosion/raise_and_rotate",
-            "source": "*:soul_staff/staff_ability_explosion_activation"
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:grant_power",
+                "power": "*:soul_staff/explosion/root",
+                "source": "*:soul_staff/staff_ability_explosion_activation"
+              },
+              {
+                "type": "origins:grant_power",
+                "power": "*:soul_staff/explosion/raise_and_rotate",
+                "source": "*:soul_staff/staff_ability_explosion_activation"
+              }
+            ]
           }
         },
         "y": 3
@@ -54,32 +93,20 @@
       "command_step": 1,
       "command_along_ray_only_on_hit": false
     },
-    "cooldown": 100,
     "hud_render": {
-      "should_render": true,
-      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0,
-      "order": 1,
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:xp_levels",
-            "comparison": ">=",
-            "compare_to": 20
-          },
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
-          }
-        ]
-      }
+      "should_render": false
     },
+    "cooldown": 20,
     "key": "key.use",
     "condition": {
       "type": "origins:and",
       "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
         {
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",

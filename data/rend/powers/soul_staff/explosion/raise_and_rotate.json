@@ -3,53 +3,163 @@
   "this_circle_num": {
     "type": "origins:resource",
     "min": 0,
-    "max": 6
+    "max": 5
+  },
+  "child_circle": {
+    "type": "origins:entity_set"
+  },
+  "destroy": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "fill ~ ~1 ~ ~ ~-1 ~ air replace light"
+        },
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:*_child_circle",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_destroy",
+              "change": 1
+            }
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    }
+  },
+  "failsafe_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 310
+  },
+  "failsafe_start": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_failsafe_cooldown"
+    }
+  },
+  "failsafe_check": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_failsafe_cooldown",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_destroy",
+        "change": 1
+      }
+    },
+    "interval": 20
   },
   "raise_amount": {
     "type": "origins:resource",
     "min": 0,
     "max": 15,
     "max_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:resource",
-        "resource": "*:*_this_circle_num",
-        "comparison": "<",
-        "compare_to": 6
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:execute_command",
-            "command": "execute store result score #rend_global rend_explosion_circle_num run resource get @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.amethyst_block.fall",
+          "category": "players",
+          "volume": 3,
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.candle.extinguish",
+          "category": "players",
+          "volume": 3,
+          "pitch": 0
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.bell.resonate",
+          "category": "players",
+          "volume": 3,
+          "pitch": 2
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.beacon.power_select",
+          "category": "players",
+          "volume": 3,
+          "pitch": 2
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.copper_trapdoor.open",
+          "category": "players",
+          "volume": 3,
+          "pitch": 2
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_this_circle_num",
+            "comparison": "<",
+            "compare_to": 5
           },
-          {
-            "type": "origins:spawn_entity",
-            "entity_type": "minecraft:armor_stand",
-            "tag": "{NoGravity:1b}",
-            "entity_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:grant_power",
-                  "power": "*:soul_staff/explosion/raise_and_rotate",
-                  "source": "*:*"
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute store result score #rend_global rend_explosion_circle_num run resource get @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num"
+              },
+              {
+                "type": "origins:spawn_entity",
+                "entity_type": "minecraft:armor_stand",
+                "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion]}",
+                "entity_action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:grant_power",
+                      "power": "*:soul_staff/explosion/raise_and_rotate",
+                      "source": "*:*"
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "resource operation @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num += #rend_global rend_explosion_circle_num"
+                    },
+                    {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_this_circle_num",
+                      "change": 1
+                    }
+                  ]
                 },
-                {
-                  "type": "origins:execute_command",
-                  "command": "resource operation @s rend:soul_staff/explosion/raise_and_rotate_this_circle_num += #rend_global rend_explosion_circle_num"
-                },
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:*_this_circle_num",
-                  "change": 1
+                "bientity_action": {
+                  "type": "origins:add_to_entity_set",
+                  "set": "*:*_child_circle"
                 }
-              ]
-            }
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute if block ~ ~ ~ #minecraft:air run setblock ~ ~ ~ minecraft:light[level=15]"
+        }
+      ]
     }
   },
   "raise": {
@@ -76,5 +186,121 @@
       "comparison": "<",
       "compare_to": 15
     }
+  },
+  "rotate": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_raise_amount",
+            "comparison": ">",
+            "compare_to": 7
+          },
+          "if_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+              {
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:*_this_circle_num",
+                  "comparison": "==",
+                  "compare_to": 2
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute positioned ~ ~ ~ run function rend:explosion/small_circle"
+                }
+              },
+              {
+                "condition": {
+                  "type": "origins:or",
+                  "conditions": [
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:*_this_circle_num",
+                      "comparison": "==",
+                      "compare_to": 1
+                    },
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:*_this_circle_num",
+                      "comparison": "==",
+                      "compare_to": 3
+                    },
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:*_this_circle_num",
+                      "comparison": "==",
+                      "compare_to": 5
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute positioned ~ ~ ~ run function rend:explosion/medium_circle"
+                }
+              },
+              {
+                "condition": {
+                  "type": "origins:or",
+                  "conditions": [
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:*_this_circle_num",
+                      "comparison": "==",
+                      "compare_to": 0
+                    },
+                    {
+                      "type": "origins:resource",
+                      "resource": "*:*_this_circle_num",
+                      "comparison": "==",
+                      "compare_to": 4
+                    }
+                  ]
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "execute positioned ~ ~ ~ run function rend:explosion/big_circle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~ ~ ~.6 ~"
+        }
+      ]
+    },
+    "interval": 2
+  },
+  "particles": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition{from_color:[0.537,0.984,0.941],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition{from_color:[0.549,0.953,0.506],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition{from_color:[0.878,0.404,0.894],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust_color_transition{from_color:[0.984,0.996,0.384],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+        }
+      ]
+    },
+    "interval": 10
   }
 }
