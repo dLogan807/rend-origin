@@ -8,7 +8,7 @@
   },
   "explode_timer": {
     "type": "origins:cooldown",
-    "cooldown": 300
+    "cooldown": 500
   },
   "start": {
     "type": "origins:action_on_callback",
@@ -43,6 +43,41 @@
           "command": "tp @s ~ ~15 ~"
         }
       ]
+    }
+  },
+  "duration_sound_effects": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.campfire.crackle",
+          "category": "players",
+          "pitch": 2,
+          "volume": 3
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.blastfurnace.fire_crackle",
+          "category": "players",
+          "pitch": 0,
+          "volume": 3
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:ambient.nether_wastes.additions",
+          "category": "players",
+          "pitch": 0,
+          "volume": 3
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_explode_timer",
+      "comparison": ">",
+      "compare_to": 100
     }
   },
   "eye_contact_bar": {
@@ -89,6 +124,7 @@
                 },
                 {
                   "type": "origins:relative_rotation",
+                  "axes": ["x", "z"],
                   "actor_rotation": "body",
                   "target_rotation": "head",
                   "comparison": ">=",
@@ -105,7 +141,7 @@
                   "action": {
                     "type": "origins:change_resource",
                     "resource": "*:*_eye_contact_bar",
-                    "change": 10
+                    "change": 2
                   }
                 },
                 {
@@ -113,7 +149,7 @@
                   "action": {
                     "type": "origins:change_resource",
                     "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
-                    "change": 10
+                    "change": 2
                   }
                 }
               ]
@@ -164,6 +200,10 @@
           }
         },
         {
+          "type": "origins:execute_command",
+          "command": "stopsound @s player"
+        },
+        {
           "type": "origins:play_sound",
           "sound": "minecraft:block.candle.extinguish",
           "category": "players",
@@ -191,42 +231,132 @@
       ]
     }
   },
-  "on_explode": {
-    "type": "origins:action_over_time",
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_explode_timer",
-      "comparison": "==",
-      "compare_to": 0
-    },
-    "entity_action": {
+  "play_intitial_sound": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.trial_spawner.ominous_activate",
+      "category": "players",
+      "pitch": 0,
+      "volume": 3
+    }
+  },
+  "explosion_effects": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:action_on_entity_set",
-          "set": "*:*_child",
-          "bientity_action": {
-            "type": "target_action",
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:soul_staff/explosion/circle_explode",
-                  "change": 1
-                },
-                {
-                  "type": "origins:change_resource",
-                  "resource": "*:soul_staff/explosion/circle_destroy",
-                  "change": 1
-                }
-              ]
-            }
-          }
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion_emitter ~ ~-5 ~ 2 2 2 0.5 5 force @a"
         },
         {
           "type": "origins:execute_command",
-          "command": "kill @s"
+          "command": "particle minecraft:flame ~ ~-5 ~ 1 1 1 1 100 force @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion_emitter ~ ~ ~ 2 2 2 0.5 10 force @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flame ~ ~ ~ 1 1 1 1 1000 force @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:explosion_emitter ~ ~5 ~ 2 2 2 0.5 5 force @a"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:flame ~ ~5 ~ 1 1 1 1 100 force @a"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "category": "players",
+          "pitch": 0.5,
+          "volume": 4
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 1,
+          "action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.generic.explode",
+            "category": "players",
+            "pitch": 0,
+            "volume": 4
+          }
+        }
+      ]
+    }
+  },
+  "explosion_sequence": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_explosion_effects",
+                "change": 1
+              },
+              {
+                "type": "origins:action_on_entity_set",
+                "set": "*:*_child",
+                "bientity_action": {
+                  "type": "target_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:change_resource",
+                        "resource": "*:soul_staff/explosion/circle_explode",
+                        "change": 1
+                      },
+                      {
+                        "type": "origins:change_resource",
+                        "resource": "*:soul_staff/explosion/circle_destroy",
+                        "change": 1
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @s"
+              }
+            ]
+          },
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_explode_timer",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        },
+        {
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_play_intitial_sound",
+            "change": 1
+          },
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_explode_timer",
+            "comparison": "<",
+            "compare_to": 15
+          }
         }
       ]
     }

@@ -126,7 +126,7 @@
           }
         }
       },
-      "command_along_ray": "particle minecraft:cloud",
+      "command_along_ray": "particle minecraft:flame",
       "command_step": 1,
       "command_along_ray_only_on_hit": false
     },
