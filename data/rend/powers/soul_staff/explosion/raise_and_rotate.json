@@ -38,6 +38,164 @@
       ]
     }
   },
+  "explode": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:*_child_circle",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_explode",
+              "change": 1
+            }
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_this_circle_num",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_this_circle_num",
+                "comparison": "==",
+                "compare_to": 2
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_this_circle_num",
+                "comparison": "==",
+                "compare_to": 4
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:area_of_effect",
+                "shape": "sphere",
+                "radius": 10,
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "damage_type": "rend:soul_staff_explosion",
+                    "amount": 80
+                  }
+                },
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "*:inanimate",
+                    "inverted": true
+                  }
+                }
+              },
+              {
+                "type": "origins:area_of_effect",
+                "shape": "sphere",
+                "radius": 15,
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "damage_type": "rend:soul_staff_explosion",
+                    "amount": 40
+                  }
+                },
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "*:inanimate",
+                    "inverted": true
+                  }
+                }
+              },
+              {
+                "type": "origins:area_of_effect",
+                "shape": "sphere",
+                "radius": 20,
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "damage_type": "rend:soul_staff_explosion",
+                    "amount": 20
+                  }
+                },
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "*:inanimate",
+                    "inverted": true
+                  }
+                }
+              },
+              {
+                "type": "origins:area_of_effect",
+                "shape": "sphere",
+                "radius": 25,
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "damage_type": "rend:soul_staff_explosion",
+                    "amount": 10
+                  }
+                },
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "*:inanimate",
+                    "inverted": true
+                  }
+                }
+              },
+              {
+                "type": "origins:area_of_effect",
+                "shape": "sphere",
+                "radius": 30,
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "damage_type": "rend:soul_staff_explosion",
+                    "amount": 5
+                  }
+                },
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "*:inanimate",
+                    "inverted": true
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
   "failsafe_cooldown": {
     "type": "origins:cooldown",
     "cooldown": 310
@@ -301,6 +459,29 @@
         }
       ]
     },
-    "interval": 10
+    "interval": 7
+  },
+  "warn_players": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 30,
+      "shape": "sphere",
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player"
+        }
+      },
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"The air tingles ominously\",\"color\":\"red\"}"
+        }
+      }
+    },
+    "interval": 20
   }
 }

@@ -1,17 +1,197 @@
 {
   "type": "origins:multiple",
+  "child": {
+    "type": "origins:entity_set"
+  },
+  "caster": {
+    "type": "origins:entity_set"
+  },
   "explode_timer": {
     "type": "origins:cooldown",
     "cooldown": 300
   },
-  "start_countdown": {
+  "start": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
-      "type": "origins:trigger_cooldown",
-      "power": "*:*_explode_timer"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_explode_timer"
+        },
+        {
+          "type": "origins:spawn_entity",
+          "entity_type": "minecraft:armor_stand",
+          "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion]}",
+          "entity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:grant_power",
+                "power": "*:soul_staff/explosion/raise_and_rotate",
+                "source": "*:soul_staff/staff_ability_explosion_activation"
+              }
+            ]
+          },
+          "bientity_action": {
+            "type": "origins:add_to_entity_set",
+            "set": "*:*_child"
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~15 ~"
+        }
+      ]
     }
   },
-  "explode": {
+  "eye_contact_bar": {
+    "type": "origins:resource",
+    "max": 100,
+    "min": 0,
+    "start_value": 100,
+    "min_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_only_destroy",
+      "change": 1
+    }
+  },
+  "detect_eye_contact": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:action_on_entity_set",
+      "set": "*:*_caster",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "execute store result storage minecraft:rend explosion.counter int 1 run scoreboard players get @s rend_team"
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function rend:explosion/face_player with storage rend explosion"
+            }
+          },
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:can_see"
+                },
+                {
+                  "type": "origins:relative_rotation",
+                  "actor_rotation": "body",
+                  "target_rotation": "head",
+                  "comparison": ">=",
+                  "compare_to": -0.8,
+                  "inverted": true
+                }
+              ]
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:actor_action",
+                  "action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_eye_contact_bar",
+                    "change": 10
+                  }
+                },
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                    "change": 10
+                  }
+                }
+              ]
+            },
+            "else_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:actor_action",
+                  "action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_eye_contact_bar",
+                    "change": -20
+                  }
+                },
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                    "change": -20
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "only_destroy": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:action_on_entity_set",
+          "set": "*:*_child",
+          "bientity_action": {
+            "type": "target_action",
+            "action": {
+              "type": "origins:change_resource",
+              "resource": "*:soul_staff/explosion/raise_and_rotate_destroy",
+              "change": 1
+            }
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.candle.extinguish",
+          "category": "players",
+          "volume": 3,
+          "pitch": 0
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.bell.resonate",
+          "category": "players",
+          "volume": 3,
+          "pitch": 0
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.beacon.power_select",
+          "category": "players",
+          "volume": 3,
+          "pitch": 0
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
+        }
+      ]
+    }
+  },
+  "on_explode": {
     "type": "origins:action_over_time",
     "condition": {
       "type": "origins:resource",
@@ -23,13 +203,30 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "say boom!"
+          "type": "origins:action_on_entity_set",
+          "set": "*:*_child",
+          "bientity_action": {
+            "type": "target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:soul_staff/explosion/raise_and_rotate_explode",
+                  "change": 1
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:soul_staff/explosion/raise_and_rotate_destroy",
+                  "change": 1
+                }
+              ]
+            }
+          }
         },
         {
-          "type": "origins:change_resource",
-          "resource": "*:soul_staff/explosion/raise_and_rotate_destroy",
-          "change": 1
+          "type": "origins:execute_command",
+          "command": "kill @s"
         }
       ]
     }

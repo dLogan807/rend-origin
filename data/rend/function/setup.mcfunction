@@ -44,6 +44,7 @@ scoreboard players set #rend_global rend_tether_animation_num 0
 
 #Explosion
 scoreboard objectives add rend_explosion_circle_num dummy
+data modify storage minecraft:rend explosion set value {"counter": 0}
 
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}

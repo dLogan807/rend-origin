@@ -87,25 +87,7 @@
     },
     "cooldown": 20,
     "hud_render": {
-      "should_render": true,
-      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0,
-      "order": 1,
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:xp_levels",
-            "comparison": ">=",
-            "compare_to": 20
-          },
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
-          }
-        ]
-      }
+      "should_render": false
     },
     "key": "key.use",
     "condition": {
