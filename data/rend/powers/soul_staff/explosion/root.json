@@ -28,7 +28,7 @@
             "actions": [
               {
                 "type": "origins:grant_power",
-                "power": "*:soul_staff/explosion/raise_and_rotate",
+                "power": "*:soul_staff/explosion/circle",
                 "source": "*:soul_staff/staff_ability_explosion_activation"
               }
             ]
@@ -158,7 +158,7 @@
             "type": "target_action",
             "action": {
               "type": "origins:change_resource",
-              "resource": "*:soul_staff/explosion/raise_and_rotate_destroy",
+              "resource": "*:soul_staff/explosion/circle_destroy",
               "change": 1
             }
           }
@@ -212,12 +212,12 @@
               "actions": [
                 {
                   "type": "origins:change_resource",
-                  "resource": "*:soul_staff/explosion/raise_and_rotate_explode",
+                  "resource": "*:soul_staff/explosion/circle_explode",
                   "change": 1
                 },
                 {
                   "type": "origins:change_resource",
-                  "resource": "*:soul_staff/explosion/raise_and_rotate_destroy",
+                  "resource": "*:soul_staff/explosion/circle_destroy",
                   "change": 1
                 }
               ]
