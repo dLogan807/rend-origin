@@ -19,7 +19,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
+          "name": "minecraft:enchanted_book",
           "weight": 1,
           "functions": [
             {

@@ -15,11 +15,11 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 8
+          "weight": 7
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
+          "name": "minecraft:enchanted_book",
           "weight": 1,
           "functions": [
             {
