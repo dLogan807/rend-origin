@@ -198,7 +198,7 @@
                     "type": "origins:play_sound",
                     "sound": "minecraft:block.portal.ambient",
                     "category": "players",
-                    "volume": 3,
+                    "volume": 2,
                     "pitch": 0.1
                   },
                   {
@@ -337,236 +337,17 @@
             "type": "origins:and",
             "actions": [
               {
+                "type": "origins:add_velocity",
+                "set": true,
+                "z": 3,
+                "y": 0.8
+              },
+              {
                 "type": "origins:target_action",
                 "action": {
                   "type": "origins:execute_command",
                   "command": "function rend:soul_purge/damage_entity_with_storage with storage minecraft:rend team"
                 }
-              },
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #playerX pos as @s run data get entity @s Pos[0] 1"
-                }
-              },
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #playerZ pos as @s run data get entity @s Pos[2] 1"
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #targetX pos as @s run data get entity @s Pos[0] 1"
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #targetZ pos as @s run data get entity @s Pos[2] 1"
-                }
-              },
-              {
-                "type": "origins:if_else_list",
-                "actions": [
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos < #playerX pos if score #targetZ pos = #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -2,
-                        "y": 0.8,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos > #playerX pos if score #targetZ pos = #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 2,
-                        "y": 0.8,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetZ pos < #playerZ pos if score #targetX pos = #playerX pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "z": -2,
-                        "y": 0.8,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetZ pos > #playerZ pos if score #targetX pos = #playerX pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "z": 2,
-                        "y": 0.8,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos < #playerX pos if score #targetZ pos < #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -2,
-                        "y": 0.8,
-                        "z": -2,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos < #playerX pos if score #targetZ pos > #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -2,
-                        "y": 0.8,
-                        "z": 2,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos > #playerX pos if score #targetZ pos < #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 2,
-                        "y": 0.8,
-                        "z": -2,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos > #playerX pos if score #targetZ pos > #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 2,
-                        "y": 0.8,
-                        "z": 2,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score #targetX pos = #playerX pos if score #targetZ pos = #playerZ pos",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "y": 0.8,
-                        "space": "world",
-                        "set": true
-                      }
-                    }
-                  }
-                ]
               }
             ]
           },
@@ -578,10 +359,6 @@
               "inverted": true
             }
           }
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
         },
         {
           "type": "origins:execute_command",
