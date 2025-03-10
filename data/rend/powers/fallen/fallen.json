@@ -4,7 +4,14 @@
     "type": "origins:entity_set"
   },
   "enemies": {
-    "type": "origins:entity_set"
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:invert",
+      "action": {
+        "type": "origins:add_to_entity_set",
+        "set": "*:fallen/forgive_dead_players_attacked_fallen"
+      }
+    }
   },
   "chance_for_armour": {
     "type": "origins:action_on_callback",

@@ -1,0 +1,23 @@
+{
+  "type": "origins:multiple",
+  "attacked_fallen": {
+    "type": "origins:entity_set"
+  },
+  "remove_from_fallen_sets": {
+    "type": "origins:action_on_death",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:action_on_entity_set",
+        "set": "*:*_attacked_fallen",
+        "bientity_action": {
+          "type": "origins:invert",
+          "action": {
+            "type": "origins:remove_from_entity_set",
+            "set": "*:fallen/fallen_enemies"
+          }
+        }
+      }
+    }
+  }
+}

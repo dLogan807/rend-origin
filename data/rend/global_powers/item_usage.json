@@ -1,4 +1,0 @@
-{
-  "entity_types": ["minecraft:player"],
-  "powers": ["rend:fallen/tether/placement", "rend:mana_potion_drink"]
-}
