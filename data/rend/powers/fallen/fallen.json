@@ -6,10 +6,20 @@
   "enemies": {
     "type": "origins:entity_set",
     "action_on_add": {
-      "type": "origins:invert",
-      "action": {
-        "type": "origins:add_to_entity_set",
-        "set": "*:fallen/forgive_dead_players_attacked_fallen"
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player"
+        }
+      },
+      "if_action": {
+        "type": "origins:invert",
+        "action": {
+          "type": "origins:add_to_entity_set",
+          "set": "*:fallen/forgive_dead_players_attacked_fallen"
+        }
       }
     }
   },
