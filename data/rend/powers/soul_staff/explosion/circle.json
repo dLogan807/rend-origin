@@ -549,7 +549,7 @@
       ]
     }
   },
-  "particles": {
+  "area_warn_particles": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:and",

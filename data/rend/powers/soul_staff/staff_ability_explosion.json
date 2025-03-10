@@ -41,7 +41,7 @@
     "entity_action": {
       "type": "origins:raycast",
       "distance": 70,
-      "entity": true,
+      "entity": false,
       "shape_type": "collider",
       "fluid_handling": "source_only",
       "hit_action": {

@@ -45,6 +45,19 @@
       ]
     }
   },
+  "draw_in": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "shape": "sphere",
+      "radius": 30,
+      "bientity_action": {
+        "type": "origins:add_velocity",
+        "z": -0.01
+      }
+    },
+    "interval": 1
+  },
   "duration_sound_effects": {
     "type": "origins:action_over_time",
     "entity_action": {
