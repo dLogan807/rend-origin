@@ -44,7 +44,7 @@
     "entity_action": {
       "type": "origins:raycast",
       "distance": 70,
-      "entity": true,
+      "entity": false,
       "shape_type": "collider",
       "fluid_handling": "source_only",
       "hit_action": {
@@ -72,13 +72,17 @@
         ]
       },
       "block_action": {
-        "type": "origins:spawn_entity",
-        "entity_type": "minecraft:armor_stand",
-        "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
-        "entity_action": {
-          "type": "origins:grant_power",
-          "power": "*:soul_staff/vortex/vortex",
-          "source": "*:soul_staff/staff_ability_vortex_activation"
+        "type": "origins:offset",
+        "y": 5,
+        "action": {
+          "type": "origins:spawn_entity",
+          "entity_type": "minecraft:armor_stand",
+          "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+          "entity_action": {
+            "type": "origins:grant_power",
+            "power": "*:soul_staff/vortex/vortex",
+            "source": "*:soul_staff/staff_ability_vortex_activation"
+          }
         }
       },
       "command_along_ray": "particle minecraft:cloud",

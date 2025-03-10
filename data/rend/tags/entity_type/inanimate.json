@@ -7,7 +7,6 @@
     "minecraft:item_display",
     "minecraft:glow_item_frame",
     "minecraft:marker",
-    "minecraft:arrow",
-    "minecraft:spectral_arrow"
+    "minecraft:experience_orb"
   ]
 }

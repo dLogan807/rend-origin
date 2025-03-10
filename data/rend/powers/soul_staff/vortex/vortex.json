@@ -39,18 +39,17 @@
             "type": "minecraft:dust",
             "params": { "color": [1, 1, 1], "scale": 2 }
           },
-          "count": 5,
+          "count": 3,
           "speed": 0.02,
-          "force": true,
           "spread": {
-            "x": 4.0,
+            "x": 6.0,
             "y": 2.0,
-            "z": 4.0
+            "z": 6.0
           }
         },
         {
           "type": "origins:execute_command",
-          "command": "execute positioned ~ ~1 ~ run function rend:vortex/inner_circle"
+          "command": "execute positioned ~ ~-4 ~ run function rend:vortex/inner_circle"
         },
         {
           "type": "origins:execute_command",
@@ -64,218 +63,53 @@
         },
         {
           "type": "origins:area_of_effect",
-          "radius": 6,
-          "shape": "sphere",
+          "radius": 8,
+          "shape": "cube",
           "bientity_action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #rend_vortex_x rend_vortex_pos_x as @s run data get entity @s Pos[0] 1"
-                }
-              },
-              {
-                "type": "origins:actor_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score #rend_vortex_z rend_vortex_pos_z as @s run data get entity @s Pos[2] 1"
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score @s rend_vortex_pos_x as @s run data get entity @s Pos[0] 1"
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:execute_command",
-                  "command": "execute store result score @s rend_vortex_pos_z as @s run data get entity @s Pos[2] 1"
-                }
-              },
-              {
-                "type": "origins:target_action",
-                "action": {
-                  "type": "origins:apply_effect",
-                  "effect": {
-                    "id": "minecraft:levitation",
-                    "duration": 5,
-                    "amplifier": -1,
-                    "show_particles": false,
-                    "show_icon": false
-                  }
-                }
-              },
-              {
-                "type": "origins:if_else_list",
-                "actions": [
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z = #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 0.7,
-                        "z": -0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z = #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -0.7,
-                        "z": 0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z if score @s rend_vortex_pos_x = #rend_vortex_x rend_vortex_pos_x",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "z": 0.7,
-                        "x": 0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z if score @s rend_vortex_pos_x = #rend_vortex_x rend_vortex_pos_x",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "z": -0.7,
-                        "x": -0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 0.7,
-                        "z": 0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x < #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": 0.7,
-                        "z": -0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z < #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -0.7,
-                        "z": 0.6
-                      }
-                    }
-                  },
-                  {
-                    "condition": {
-                      "type": "origins:target_condition",
-                      "condition": {
-                        "type": "origins:command",
-                        "command": "execute if score @s rend_vortex_pos_x > #rend_vortex_x rend_vortex_pos_x if score @s rend_vortex_pos_z > #rend_vortex_z rend_vortex_pos_z",
-                        "comparison": "==",
-                        "compare_to": 1
-                      }
-                    },
-                    "action": {
-                      "type": "origins:target_action",
-                      "action": {
-                        "type": "origins:add_velocity",
-                        "x": -0.7,
-                        "z": -0.6
-                      }
-                    }
-                  }
-                ]
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:target_condition",
+              "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:player"
               }
-            ]
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:add_velocity",
+                  "x": 0.03,
+                  "z": -0.2
+                },
+                {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                      "id": "minecraft:levitation",
+                      "duration": 20,
+                      "amplifier": 1,
+                      "show_particles": false,
+                      "show_icon": false
+                    }
+                  }
+                }
+              ]
+            },
+            "else_action": {
+              "type": "origins:add_velocity",
+              "x": 0.1,
+              "y": 0.15,
+              "z": -0.35
+            }
           },
           "bientity_condition": {
             "type": "origins:target_condition",
             "condition": {
-              "type": "origins:command",
-              "command": "execute if entity @s[tag=!rend_vortex_inner,tag=!rend_vortex_outer]",
-              "comparison": "==",
-              "compare_to": 1
+              "type": "origins:in_tag",
+              "tag": "*:inanimate",
+              "inverted": true
             }
           }
         },
@@ -297,8 +131,8 @@
   "timer": {
     "type": "origins:resource",
     "min": 0,
-    "max": 200,
-    "start_value": 200,
+    "max": 300,
+    "start_value": 300,
     "min_action": {
       "type": "origins:and",
       "actions": [
