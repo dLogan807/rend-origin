@@ -28,6 +28,12 @@ scoreboard objectives add rend_xp_percent_reduction dummy
 scoreboard objectives add rend_xp_subtract_denominator dummy
 scoreboard players set @s rend_xp_subtract_denominator 10000
 
+#Soul purge max tp height
+data modify storage minecraft:rend soul_purge set value {"max_height": 0}
+scoreboard objectives add rend.soul_purge.current_height dummy
+scoreboard objectives add rend.soul_purge.height_mod dummy
+scoreboard players set @s rend.soul_purge.height_mod 10
+
 #Faded Husk advancement
 scoreboard objectives add rend_starting_xp_levels dummy
 scoreboard objectives add rend_ending_xp_levels dummy

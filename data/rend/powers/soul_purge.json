@@ -169,7 +169,11 @@
                 "actions": [
                   {
                     "type": "origins:execute_command",
-                    "command": "spreadplayers ~ ~ 5 10 false @s"
+                    "command": "function rend:soul_purge/store_height"
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function rend:soul_purge/random_tp with storage rend soul_purge"
                   },
                   {
                     "type": "origins:play_sound",
@@ -252,7 +256,7 @@
             },
             {
               "id": "minecraft:resistance",
-              "duration": 3,
+              "duration": 80,
               "amplifier": 5,
               "show_particles": false,
               "show_icon": false
