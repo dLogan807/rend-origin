@@ -70,7 +70,7 @@
                   {
                     "type": "origins:hardness",
                     "comparison": "<",
-                    "compare_to": 10
+                    "compare_to": 5
                   }
                 ]
               },
@@ -90,7 +90,7 @@
                   {
                     "type": "origins:hardness",
                     "comparison": "<",
-                    "compare_to": 10
+                    "compare_to": 5
                   }
                 ]
               },
@@ -134,7 +134,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:block{block_state:dirt} ~5 ~ ~ 0.1 0.1 0.1 0 10 normal @a"
+          "command": "particle minecraft:white_ash ~ ~ ~ 0.1 0.1 0.1 0 10 normal @a"
         },
         {
           "type": "origins:play_sound",
@@ -150,6 +150,18 @@
             "space": "local_horizontal_normalized",
             "y": 0.8,
             "z": 0.5
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:advancement",
+            "advancement": "*:use_claws",
+            "inverted": true
+          },
+          "if_action": {
+            "type": "origins:grant_advancement",
+            "advancement": "*:use_claws"
           }
         }
       ]

@@ -1,0 +1,20 @@
+{
+  "display": {
+    "title": {
+      "text": "One Wrong Step..."
+    },
+    "description": {
+      "text": "Use your claws to leap while clinging",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:rabbit_foot"
+    }
+  },
+  "criteria": {
+    "use claws": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:root"
+}
