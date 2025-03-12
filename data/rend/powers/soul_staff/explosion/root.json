@@ -4,14 +4,7 @@
     "type": "origins:entity_set"
   },
   "caster": {
-    "type": "origins:entity_set",
-    "action_on_add": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:execute_command",
-        "command": "say  I am the caster - added to set"
-      }
-    }
+    "type": "origins:entity_set"
   },
   "explode_timer": {
     "type": "origins:cooldown",

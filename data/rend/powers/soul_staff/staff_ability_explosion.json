@@ -9,14 +9,7 @@
     }
   },
   "root": {
-    "type": "origins:entity_set",
-    "action_on_add": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:execute_command",
-        "command": "say  I am the spell - added to set"
-      }
-    }
+    "type": "origins:entity_set"
   },
   "cooldown": {
     "type": "origins:cooldown",
@@ -80,10 +73,6 @@
           {
             "type": "origins:execute_command",
             "command": "scoreboard players operation #rend.explosion_caster rend_team = @s rend_team"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "say entity action running"
           }
         ]
       },
@@ -94,57 +83,48 @@
           "type": "origins:offset",
           "y": 3,
           "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "say block action running"
-              },
-              {
-                "type": "origins:spawn_entity",
-                "entity_type": "minecraft:armor_stand",
-                "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion_root]}",
-                "entity_action": {
-                  "type": "origins:and",
-                  "actions": [
-                    {
-                      "type": "origins:grant_power",
-                      "power": "*:soul_staff/explosion/root",
-                      "source": "*:soul_staff/staff_ability_explosion_activation"
-                    },
-                    {
-                      "type": "origins:selector_action",
-                      "selector": "@a",
-                      "bientity_action": {
-                        "type": "origins:and",
-                        "actions": [
-                          {
-                            "type": "origins:invert",
-                            "action": {
-                              "type": "add_to_entity_set",
-                              "set": "*:soul_staff/staff_ability_explosion_root"
-                            }
-                          },
-                          {
-                            "type": "add_to_entity_set",
-                            "set": "*:soul_staff/explosion/root_caster"
-                          }
-                        ]
-                      },
-                      "bientity_condition": {
-                        "type": "origins:target_condition",
-                        "condition": {
-                          "type": "origins:command",
-                          "command": "execute if score #rend.explosion_caster rend_team = @s rend_team",
-                          "comparison": "==",
-                          "compare_to": 1
+            "type": "origins:spawn_entity",
+            "entity_type": "minecraft:armor_stand",
+            "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion_root]}",
+            "entity_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:grant_power",
+                  "power": "*:soul_staff/explosion/root",
+                  "source": "*:soul_staff/staff_ability_explosion_activation"
+                },
+                {
+                  "type": "origins:selector_action",
+                  "selector": "@a",
+                  "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:invert",
+                        "action": {
+                          "type": "add_to_entity_set",
+                          "set": "*:soul_staff/staff_ability_explosion_root"
                         }
+                      },
+                      {
+                        "type": "add_to_entity_set",
+                        "set": "*:soul_staff/explosion/root_caster"
                       }
+                    ]
+                  },
+                  "bientity_condition": {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:command",
+                      "command": "execute if score #rend.explosion_caster rend_team = @s rend_team",
+                      "comparison": "==",
+                      "compare_to": 1
                     }
-                  ]
+                  }
                 }
-              }
-            ]
+              ]
+            }
           }
         }
       },
