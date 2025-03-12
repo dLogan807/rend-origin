@@ -1,0 +1,196 @@
+{
+  "name": "Claws",
+  "description": "You can cling to walls that aren't too tough.",
+  "type": "origins:multiple",
+  "is_clinging": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1
+  },
+  "release_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 40,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "order": 2,
+      "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_release_cooldown",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+  "detect_clinging": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_is_clinging",
+      "operation": "set",
+      "change": 1
+    },
+    "falling_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_is_clinging",
+      "operation": "set",
+      "change": 0
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:leaves",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:hardness",
+                    "comparison": "<",
+                    "compare_to": 10
+                  }
+                ]
+              },
+              "offset_x": 0.1,
+              "offset_z": 0.1
+            },
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:leaves",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:hardness",
+                    "comparison": "<",
+                    "compare_to": 10
+                  }
+                ]
+              },
+              "offset_x": -0.1,
+              "offset_z": -0.1
+            }
+          ]
+        },
+        {
+          "type": "origins:raycast",
+          "entity": false,
+          "shape_type": "collider",
+          "direction": {
+            "y": -1.0
+          },
+          "space": "world",
+          "block_distance": 3.0,
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "slow_fall": {
+    "type": "origins:modify_falling",
+    "velocity": -0.01,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_is_clinging",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "spring": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_release_cooldown"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "particle minecraft:block{block_state:dirt} ~5 ~ ~ 0.1 0.1 0.1 0 10 normal @a"
+        },
+        {
+          "type": "origins:play_sound",
+          "category": "players",
+          "sound": "minecraft:entity.goat.screaming.long_jump",
+          "volume": 0.7
+        },
+        {
+          "type": "origins:side",
+          "side": "client",
+          "action": {
+            "type": "origins:add_velocity",
+            "space": "local_horizontal_normalized",
+            "y": 0.8,
+            "z": 0.5
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_release_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_is_clinging",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    },
+    "cooldown": 20,
+    "key": "key.jump"
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": [
+        "Hold [",
+        { "keybind": "key.sneak" },
+        "] to cling to walls.\nWhile clinging, press [",
+        { "keybind": "key.jump" },
+        "] to leap."
+      ]
+    }
+  ]
+}
