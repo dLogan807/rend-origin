@@ -1,5 +1,6 @@
 {
   "powers": [
+    "*:teardown",
     "*:advancement_handler",
     "*:cursed_prison",
     "*:faded_husk",
@@ -18,7 +19,7 @@
     "*:soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
     "*:soul_staff/staff_ability_explosion",
-    "*:soul_staff/explosion/dehabilitation"
+    "*:soul_staff/explosion/exhaustion"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"

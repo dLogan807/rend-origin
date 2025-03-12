@@ -14,9 +14,9 @@ A custom resource pack is highly recommended and will be linked here once comple
 
 ### Important Notes
 
-After switching to another origin, run `/function rend:remove_all_modifiers` and `/scale reset pehkui:visibility @s` to remove attribute modifiers set by this origin.
+If a Fallen Tether Doll has not placed correctly, attempting to place another at the same location will fix this.
 
-Due to a bug with Origins alpha 12, attribute modifiers added through powers will apply when unintended.
+Due to a bug with Origins alpha 12, attribute modifiers added through powers will apply inconsistently.
 
 ### Lore
 

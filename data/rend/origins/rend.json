@@ -1,6 +1,7 @@
 {
   "powers": [
     "*:setup",
+    "*:teardown",
     "*:cursed_prison",
     "*:faded_husk",
     "*:agile_physique",
