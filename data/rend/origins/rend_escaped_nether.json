@@ -17,7 +17,8 @@
     "*:soul_staff/staff_ability_vortex",
     "*:soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
-    "*:soul_staff/staff_ability_explosion"
+    "*:soul_staff/staff_ability_explosion",
+    "*:soul_staff/explosion/dehabilitation"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"

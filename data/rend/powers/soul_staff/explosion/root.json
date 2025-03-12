@@ -4,7 +4,14 @@
     "type": "origins:entity_set"
   },
   "caster": {
-    "type": "origins:entity_set"
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "say  I am the caster - added to set"
+      }
+    }
   },
   "explode_timer": {
     "type": "origins:cooldown",
@@ -54,6 +61,14 @@
       "bientity_action": {
         "type": "origins:add_velocity",
         "z": -0.01
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:in_tag",
+          "tag": "rend:inanimate",
+          "inverted": true
+        }
       }
     },
     "interval": 1
@@ -342,6 +357,18 @@
                         "change": 1
                       }
                     ]
+                  }
+                }
+              },
+              {
+                "type": "origins:action_on_entity_set",
+                "set": "*:*_caster",
+                "bientity_action": {
+                  "type": "target_action",
+                  "action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:soul_staff/staff_ability_explosion_success",
+                    "change": 1
                   }
                 }
               },
