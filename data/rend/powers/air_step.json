@@ -380,6 +380,12 @@
       "type": "origins:and",
       "conditions": [
         {
+          "type": "origins:resource",
+          "resource": "*:claws_is_clinging",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
           "type": "origins:raycast",
           "entity": false,
           "shape_type": "collider",
