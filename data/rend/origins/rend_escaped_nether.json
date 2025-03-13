@@ -18,6 +18,7 @@
     "*:soul_staff/staff_ability_vortex",
     "*:soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
+    "*:soul_staff/staff_ability_tp_fallen",
     "*:soul_staff/staff_ability_explosion",
     "*:soul_staff/explosion/exhaustion"
   ],

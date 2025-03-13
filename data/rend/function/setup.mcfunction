@@ -42,11 +42,15 @@ scoreboard objectives add rend_used_xp_levels dummy
 #Fallen
 scoreboard objectives add rend_tether_summon_y dummy
 data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "animation_num": 0}
-data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0}
+data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0, "x_centre": 0.0, "z_centre": 0.0, "max_height": 0.0}
 scoreboard objectives add rend_tether_animation_num dummy
 scoreboard objectives add rend_tether_last_animation dummy
 scoreboard players set #rend_global rend_tether_last_animation 2
 scoreboard players set #rend_global rend_tether_animation_num 0
+
+scoreboard objectives add rend.fallen.current_height dummy
+scoreboard objectives add rend.fallen.height_mod dummy
+scoreboard players set #rend_global rend.fallen.height_mod 3
 
 #Explosion
 scoreboard objectives add rend_explosion_circle_num dummy
