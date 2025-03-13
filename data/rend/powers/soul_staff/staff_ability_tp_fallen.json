@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Apparate Fallen",
-  "description": "Teleport five Fallen to your location.",
+  "description": "Teleport up to five Fallen to your location.",
   "tome_vault": {
     "type": "origins:replace_loot_table",
     "replace": {
