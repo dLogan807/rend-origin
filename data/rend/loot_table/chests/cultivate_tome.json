@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 2
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -31,18 +31,18 @@
             {
               "function": "minecraft:set_custom_data",
               "tag": {
-                "explosion_tome": true
+                "cultivate_tome": true
               }
             },
             {
               "function": "minecraft:set_custom_model_data",
-              "value": 439212
+              "value": 439214
             },
             {
               "function": "minecraft:set_name",
               "entity": "this",
               "name": {
-                "text": "Tome of Explosion",
+                "text": "Tome of Cultivation",
                 "type": "text",
                 "color": "yellow",
                 "italic": false
@@ -54,24 +54,24 @@
               "entity": "this",
               "lore": [
                 {
-                  "text": "Obliterate all with a",
+                  "text": "Gently encourage plants",
                   "type": "text",
                   "color": "gray"
                 },
                 {
-                  "text": "magnificent explosion.",
+                  "text": "to flourish.",
                   "type": "text",
                   "color": "gray"
                 },
                 { "text": "" },
                 {
-                  "text": "Mana: -100%",
+                  "text": "Mana: -15%",
                   "type": "text",
                   "italic": false,
                   "color": "blue"
                 },
                 {
-                  "text": "XP Level: 55",
+                  "text": "XP Level: 30",
                   "type": "text",
                   "italic": false,
                   "color": "green"

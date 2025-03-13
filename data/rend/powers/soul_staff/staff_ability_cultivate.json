@@ -1,11 +1,35 @@
 {
   "type": "origins:multiple",
-  "name": "Apparate Fallen",
-  "description": "Teleport up to five Fallen to your location.",
-  "tome": {
+  "name": "Cultivate",
+  "description": "Grow nearby crops and some plants.",
+  "tome_plains": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/desert_pyramid": "rend:chests/fallen_tp_tome"
+      "minecraft:chests/village/village_plains_house": "rend:chests/cultivate_tome"
+    }
+  },
+  "tome_desert": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/village/village_desert_house": "rend:chests/cultivate_tome"
+    }
+  },
+  "tome_savanna": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/village/village_savanna_house": "rend:chests/cultivate_tome"
+    }
+  },
+  "snowy_plains": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/village/village_snowy_house": "rend:chests/cultivate_tome"
+    }
+  },
+  "taiga_plains": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/village/village_taiga_house": "rend:chests/cultivate_tome"
     }
   },
   "cooldown": {
@@ -55,63 +79,51 @@
         {
           "type": "origins:change_resource",
           "resource": "*:mana_capacity",
-          "change": -10
+          "change": -15
         },
         {
           "type": "origins:execute_command",
-          "command": "function rend:fallen/store_tp_values"
+          "command": "particle minecraft:happy_villager ~ ~ ~ 3.5 3.5 3.5 0 50 normal @a"
         },
         {
-          "type": "origins:execute_command",
-          "command": "function rend:fallen/tp_fallen with storage rend fallen"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players operation #rend.fallen_tper rend_team = @s rend_team"
-        },
-        {
-          "type": "origins:area_of_effect",
-          "radius": 10,
-          "bientity_action": {
-            "type": "origins:delay",
-            "ticks": 5,
-            "action": {
-              "type": "origins:target_action",
-              "action": {
+          "type": "origins:block_action_at",
+          "block_action": {
+            "type": "origins:area_of_effect",
+            "radius": 7,
+            "block_action": {
+              "type": "origins:chance",
+              "chance": 0.8,
+              "success_action": {
                 "type": "origins:and",
                 "actions": [
                   {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:entity.enderman.teleport",
-                    "category": "hostile",
-                    "volume": 0.6
+                    "type": "origins:bonemeal"
                   },
                   {
-                    "type": "origins:execute_command",
-                    "command": "particle minecraft:portal ~ ~ ~ .1 .9 .1 0.3 50 normal @a"
+                    "type": "origins:chance",
+                    "chance": 0.4,
+                    "success_action": {
+                      "type": "origins:delay",
+                      "ticks": 10,
+                      "action": {
+                        "type": "origins:bonemeal"
+                      }
+                    }
                   }
                 ]
               }
-            }
-          },
-          "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
+            },
+            "block_condition": {
               "type": "origins:and",
               "conditions": [
                 {
-                  "type": "origins:entity_type",
-                  "entity_type": "minecraft:skeleton"
+                  "type": "origins:in_tag",
+                  "tag": "rend:bonemeal_usable"
                 },
                 {
-                  "type": "origins:nbt",
-                  "nbt": "{Tags:['rend_fallen']}"
-                },
-                {
-                  "type": "origins:command",
-                  "command": "execute if score #rend.fallen_tper rend_team = @s rend_team",
-                  "comparison": "==",
-                  "compare_to": 1
+                  "type": "origins:light_level",
+                  "comparison": ">=",
+                  "compare_to": 9
                 }
               ]
             }
@@ -146,7 +158,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{fallen_tp_tome: 1b}"
+            "nbt": "{cultivate_tome: 1b}"
           }
         },
         {
@@ -169,7 +181,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": ">=",
-          "compare_to": 10
+          "compare_to": 15
         }
       ]
     }
@@ -196,7 +208,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{fallen_tp_tome: 1b}"
+            "nbt": "{cultivate_tome: 1b}"
           }
         },
         {
@@ -235,7 +247,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{fallen_tp_tome: 1b}"
+            "nbt": "{cultivate_tome: 1b}"
           }
         },
         {
@@ -252,7 +264,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": "<",
-          "compare_to": 10
+          "compare_to": 15
         },
         {
           "type": "origins:resource",
@@ -267,8 +279,13 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/fallen_tp.png",
-      "text": "§eTome of Apparate Fallen\n§fCan be found in Desert Pyramids."
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/cultivation.png",
+      "text": "§eTome of Cultivation\n§fCan be found in all manner of villages."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/community/silent/badge/icons/sun_icon.png",
+      "text": "Light level of 9 needed."
     }
   ]
 }
