@@ -378,7 +378,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/explosion.png",
-      "text": "§eTome of Explosion\n§fCan be found in nether structures."
+      "text": "§eTome of Explosion\n§fCan be found in Nether Fortresses."
     },
     {
       "type": "origins:tooltip",
