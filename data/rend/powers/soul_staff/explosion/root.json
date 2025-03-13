@@ -116,88 +116,102 @@
     "type": "origins:action_over_time",
     "interval": 10,
     "entity_action": {
-      "type": "origins:action_on_entity_set",
-      "set": "*:*_caster",
-      "bientity_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:target_action",
-            "action": {
-              "type": "origins:execute_command",
-              "command": "execute store result storage minecraft:rend explosion.counter int 1 run scoreboard players get @s rend_team"
-            }
-          },
-          {
-            "type": "origins:actor_action",
-            "action": {
-              "type": "origins:execute_command",
-              "command": "function rend:explosion/face_player with storage rend explosion"
-            }
-          },
-          {
-            "type": "origins:if_else",
-            "condition": {
-              "type": "origins:and",
-              "conditions": [
-                {
-                  "type": "origins:can_see"
-                },
-                {
-                  "type": "origins:relative_rotation",
-                  "axes": ["x", "z"],
-                  "actor_rotation": "body",
-                  "target_rotation": "head",
-                  "comparison": ">=",
-                  "compare_to": -0.8,
-                  "inverted": true
-                }
-              ]
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:entity_set_size",
+        "set": "*:*_caster",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:action_on_entity_set",
+        "set": "*:*_caster",
+        "bientity_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:execute_command",
+                "command": "execute store result storage minecraft:rend explosion.counter int 1 run scoreboard players get @s rend_team"
+              }
             },
-            "if_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_eye_contact_bar",
-                    "change": 2
-                  }
-                },
-                {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
-                    "change": 2
-                  }
-                }
-              ]
+            {
+              "type": "origins:actor_action",
+              "action": {
+                "type": "origins:execute_command",
+                "command": "function rend:explosion/face_player with storage rend explosion"
+              }
             },
-            "else_action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_eye_contact_bar",
-                    "change": -20
+            {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:can_see"
+                  },
+                  {
+                    "type": "origins:relative_rotation",
+                    "axes": ["x", "z"],
+                    "actor_rotation": "body",
+                    "target_rotation": "head",
+                    "comparison": ">=",
+                    "compare_to": -0.8,
+                    "inverted": true
                   }
-                },
-                {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:change_resource",
-                    "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
-                    "change": -20
+                ]
+              },
+              "if_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_eye_contact_bar",
+                      "change": 2
+                    }
+                  },
+                  {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:change_resource",
+                      "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "change": 2
+                    }
                   }
-                }
-              ]
+                ]
+              },
+              "else_action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:actor_action",
+                    "action": {
+                      "type": "origins:change_resource",
+                      "resource": "*:*_eye_contact_bar",
+                      "change": -20
+                    }
+                  },
+                  {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:change_resource",
+                      "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "change": -20
+                    }
+                  }
+                ]
+              }
             }
-          }
-        ]
+          ]
+        }
+      },
+      "else_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_only_destroy",
+        "change": 1
       }
     }
   },

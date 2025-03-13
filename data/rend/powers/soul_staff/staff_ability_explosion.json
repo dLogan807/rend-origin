@@ -269,6 +269,21 @@
       }
     }
   },
+  "destory_on_leave": {
+    "type": "origins:action_on_callback",
+    "entity_action_removed": {
+      "type": "origins:action_on_entity_set",
+      "set": "*:*_root",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:change_resource",
+          "resource": "*:soul_staff/explosion/root_only_destroy",
+          "change": 1
+        }
+      }
+    }
+  },
   "need_xp": {
     "type": "origins:active_self",
     "entity_action": {
