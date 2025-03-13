@@ -60,19 +60,9 @@
             {
               "type": "origins:block_collision",
               "block_condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:leaves",
-                    "inverted": true
-                  },
-                  {
-                    "type": "origins:hardness",
-                    "comparison": "<",
-                    "compare_to": 5
-                  }
-                ]
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
               },
               "offset_x": 0.1,
               "offset_z": 0.1
@@ -80,19 +70,9 @@
             {
               "type": "origins:block_collision",
               "block_condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:in_tag",
-                    "tag": "minecraft:leaves",
-                    "inverted": true
-                  },
-                  {
-                    "type": "origins:hardness",
-                    "comparison": "<",
-                    "compare_to": 5
-                  }
-                ]
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
               },
               "offset_x": -0.1,
               "offset_z": -0.1
@@ -134,7 +114,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:white_ash ~ ~ ~ 0.1 0.1 0.1 0 10 normal @a"
+          "command": "particle minecraft:white_ash ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
         },
         {
           "type": "origins:play_sound",
@@ -146,10 +126,18 @@
           "type": "origins:side",
           "side": "client",
           "action": {
-            "type": "origins:add_velocity",
-            "space": "local_horizontal_normalized",
-            "y": 0.8,
-            "z": 0.5
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "y": 0.8
+              },
+              {
+                "type": "origins:add_velocity",
+                "space": "local_horizontal_normalized",
+                "z": 0.6
+              }
+            ]
           }
         },
         {
