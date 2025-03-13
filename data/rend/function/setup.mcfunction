@@ -50,7 +50,7 @@ scoreboard players set #rend_global rend_tether_animation_num 0
 
 scoreboard objectives add rend.fallen.current_height dummy
 scoreboard objectives add rend.fallen.height_mod dummy
-scoreboard players set #rend_global rend.fallen.height_mod 3
+scoreboard players set @s rend.fallen.height_mod 6
 
 #Explosion
 scoreboard objectives add rend_explosion_circle_num dummy

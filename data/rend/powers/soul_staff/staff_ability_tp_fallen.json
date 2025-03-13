@@ -71,23 +71,27 @@
         },
         {
           "type": "origins:area_of_effect",
-          "radius": 5,
+          "radius": 10,
           "bientity_action": {
-            "type": "origins:target_action",
+            "type": "origins:delay",
+            "ticks": 5,
             "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:play_sound",
-                  "sound": "minecraft:entity.enderman.teleport",
-                  "category": "hostile",
-                  "volume": 0.6
-                },
-                {
-                  "type": "origins:execute_command",
-                  "command": "particle minecraft:portal ~ ~ ~ .1 .9 .1 0.3 50 normal @a"
-                }
-              ]
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.enderman.teleport",
+                    "category": "hostile",
+                    "volume": 0.6
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:portal ~ ~ ~ .1 .9 .1 0.3 50 normal @a"
+                  }
+                ]
+              }
             }
           },
           "bientity_condition": {
