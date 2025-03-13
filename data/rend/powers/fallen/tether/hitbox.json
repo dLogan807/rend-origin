@@ -10,6 +10,32 @@
     "type": "origins:cooldown",
     "cooldown": 6
   },
+  "destroy_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 1200
+  },
+  "start_destroy_cooldown": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_destroy_cooldown"
+    }
+  },
+  "performance_destroy": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:damage",
+      "damage_type": "generic",
+      "amount": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_destroy_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
   "store_model": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
@@ -256,7 +282,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "summon item ~ ~0.5 ~ {Item:{id:\"minecraft:armor_stand\",count:1,components:{\"minecraft:custom_model_data\":439203,\"minecraft:rarity\":\"uncommon\",\"minecraft:custom_name\":'{\"text\":\"Fallen Tether Doll\",\"italic\":false}',\"minecraft:custom_data\":{fallen_tether:1b},\"minecraft:entity_data\":{id:\"minecraft:armor_stand\",Tags:[\"fallen_tether\"],Invisible:1b}}}}"
+          "command": "function rend:fallen/summon_doll_item"
         },
         {
           "type": "origins:execute_command",

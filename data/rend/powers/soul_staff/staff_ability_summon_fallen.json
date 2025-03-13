@@ -37,6 +37,10 @@
           "custom_model_data": 439203,
           "rarity": "uncommon",
           "custom_name": "[{\"text\":\"Fallen Tether Doll\",\"italic\":false}]",
+          "lore": [
+            "[{\"color\":\"red\",\"italic\":false,\"text\":\"Caution: \"},{\"color\":\"gray\",\"italic\":false,\"text\":\"This will return to an\"}]",
+            "[{\"color\":\"gray\",\"italic\":false,\"text\":\"item a minute after placing.\"}]"
+          ],
           "custom_data": { "fallen_tether": true },
           "entity_data": {
             "id": "minecraft:armor_stand",
