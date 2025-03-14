@@ -3,15 +3,26 @@
   "disable_ai": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
-      "type": "origins:execute_command",
-      "command": "data merge entity @s {NoAI:1b}"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "data merge entity @s {NoAI:1b}"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_duration"
+        }
+      ]
     }
   },
   "duration": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 8,
-    "max_action": {
+    "type": "origins:cooldown",
+    "cooldown": 8
+  },
+  "decrement": {
+    "type": "origins:action_over_time",
+    "rising_action": {
       "type": "origins:and",
       "actions": [
         {
@@ -23,15 +34,13 @@
           "power": "*:*"
         }
       ]
-    }
-  },
-  "decrement": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_duration",
-      "change": 1
     },
-    "interval": 1
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_duration",
+      "comparison": "==",
+      "compare_to": 0
+    },
+    "interval": 2
   }
 }
