@@ -251,7 +251,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 30
+          "compare_to": 20
         },
         {
           "type": "origins:dimension",
@@ -275,7 +275,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "30 XP levels required."
+      "text": "20 XP levels required."
     },
     {
       "type": "origins:tooltip",
