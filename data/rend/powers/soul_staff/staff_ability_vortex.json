@@ -147,8 +147,20 @@
   "need_xp": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "title @s actionbar {\"text\":\"35 XP levels needed\",\"color\":\"red\"}"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"35 XP levels needed\",\"color\":\"red\"}"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:ui.toast.out",
+          "category": "players",
+          "volume": 0.6,
+          "pitch": 2
+        }
+      ]
     },
     "condition": {
       "type": "origins:and",
@@ -186,8 +198,20 @@
   "insufficient_mana": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "title @s actionbar {\"text\":\"Insufficient mana\",\"color\":\"red\"}"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"Insufficient mana\",\"color\":\"red\"}"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:ui.toast.out",
+          "category": "players",
+          "volume": 0.6,
+          "pitch": 2
+        }
+      ]
     },
     "condition": {
       "type": "origins:and",
