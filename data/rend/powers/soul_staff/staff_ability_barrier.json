@@ -1,0 +1,271 @@
+{
+  "type": "origins:multiple",
+  "name": "Barrier",
+  "description": "Create a barrier around yourself that deflects all projectiles.",
+  "tome_bridge": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/bastion_bridge": "rend:chests/barrier_tome"
+    }
+  },
+  "tome_treasure": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/bastion_treasure": "rend:chests/barrier_tome"
+    }
+  },
+  "tome_hoglin_stable": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/bastion_hoglin_stable": "rend:chests/barrier_tome"
+    }
+  },
+  "tome_other": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/bastion_other": "rend:chests/barrier_tome"
+    }
+  },
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 300,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 0,
+      "order": 2
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 600,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 0,
+      "order": 1,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  },
+  "activation": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "*:*_cooldown"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:soul_staff/soul_staff_cooldown",
+          "change": 9400,
+          "operation": "set"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:mana_capacity",
+          "change": -25
+        },
+        {
+          "type": "origins:grant_power",
+          "power": "*:soul_staff/barrier",
+          "source": "*:*"
+        }
+      ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{barrier_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 30
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:soul_staff/soul_staff_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana_capacity",
+          "comparison": ">=",
+          "compare_to": 25
+        }
+      ]
+    }
+  },
+  "need_xp": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"30 XP levels needed\",\"color\":\"red\"}"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:ui.toast.out",
+          "category": "players",
+          "volume": 0.6,
+          "pitch": 2
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{barrier_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 30
+        }
+      ]
+    },
+    "key": "key.use"
+  },
+  "insufficient_mana": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "title @s actionbar {\"text\":\"Insufficient mana\",\"color\":\"red\"}"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:ui.toast.out",
+          "category": "players",
+          "volume": 0.6,
+          "pitch": 2
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{barrier_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 30
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana_capacity",
+          "comparison": "<",
+          "compare_to": 25
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:soul_staff/soul_staff_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    },
+    "key": "key.use"
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/barrier.png",
+      "text": "§eTome of Conjure Barrier\n§fCan be found in Bastion Remnants."
+    }
+  ]
+}

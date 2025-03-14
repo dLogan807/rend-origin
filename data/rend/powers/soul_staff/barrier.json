@@ -1,0 +1,97 @@
+{
+  "type": "origins:multiple",
+  "start": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:soul_staff/staff_ability_barrier_duration"
+    }
+  },
+  "do_barrier": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 2.5,
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "tag @s add rend.reflected"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.breeze.deflect",
+                      "category": "neutral",
+                      "pitch": 1.5,
+                      "volume": 0.5
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "particle minecraft:enchanted_hit ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:add_velocity",
+                "set": true,
+                "z": 0.5
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:in_tag",
+                  "tag": "minecraft:impact_projectiles"
+                },
+                {
+                  "type": "origins:nbt",
+                  "nbt": "{Tags: ['rend.reflected']}",
+                  "inverted": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "if_action": {
+            "type": "origins:remove_power",
+            "power": "*:*"
+          },
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:soul_staff/staff_ability_barrier_duration",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        }
+      ]
+    }
+  },
+  "visuals": {
+    "type": "origins:particle",
+    "particle": "minecraft:enchanted_hit",
+    "count": 10,
+    "spread": {
+      "x": 1.25,
+      "y": 0.5,
+      "z": 1.25
+    },
+    "frequency": 5
+  }
+}

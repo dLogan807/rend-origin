@@ -1,0 +1,87 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "apoli:replaced_loot_table"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantment_glint_override": true
+              }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "barrier_tome": true
+              }
+            },
+            {
+              "function": "minecraft:set_custom_model_data",
+              "value": 439215
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {
+                "text": "Tome of Conjure Barrier",
+                "type": "text",
+                "color": "yellow",
+                "italic": false
+              },
+              "target": "custom_name"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "Weave a barrier around",
+                  "type": "text",
+                  "color": "gray"
+                },
+                {
+                  "text": "yourself.",
+                  "type": "text",
+                  "color": "gray"
+                },
+                { "text": "" },
+                {
+                  "text": "Mana: -25%",
+                  "type": "text",
+                  "italic": false,
+                  "color": "blue"
+                },
+                {
+                  "text": "XP Level: 25",
+                  "type": "text",
+                  "italic": false,
+                  "color": "green"
+                }
+              ],
+              "mode": "insert"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
