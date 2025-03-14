@@ -566,6 +566,7 @@
           "type": "origins:play_sound",
           "sound": "minecraft:entity.breeze.land",
           "pitch": 0,
+          "volume": 0.7,
           "category": "players"
         },
         {
@@ -625,7 +626,7 @@
           },
           "if_action": {
             "type": "origins:add_velocity",
-            "space": "local",
+            "space": "local_horizontal",
             "z": 0.4
           }
         },
