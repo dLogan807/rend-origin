@@ -2,25 +2,34 @@
   "type": "origins:multiple",
   "name": "Agile Physique",
   "description": "You have a light and nimble body but aren't particularly strong.",
-  "health_limit": {
-    "type": "origins:attribute",
-    "modifier": {
-      "id": "*:agile_physique_health_limit",
-      "attribute": "minecraft:generic.max_health",
-      "amount": -2,
-      "operation": "add_value"
-    }
-  },
-  "increase_damage_taken": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "operation": "add_base_early",
-      "amount": 1
+  "set_and_fix_attributes": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:remove_power",
+          "power": "*:attribute_modifiers"
+        },
+        {
+          "type": "origins:grant_power",
+          "power": "*:attribute_modifiers",
+          "source": "*:*"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:agile_physique/remove_erroneous_attributes"
+        }
+      ]
+    },
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "function rend:agile_physique/remove_erroneous_attributes"
     }
   },
   "armour_inhibitor": {
     "type": "origins:action_over_time",
-    "interval": 20,
+    "interval": 40,
     "entity_action": {
       "type": "origins:and",
       "actions": [
@@ -46,32 +55,11 @@
       ]
     }
   },
-  "axe_limit": {
-    "type": "origins:conditioned_attribute",
-    "modifiers": [
-      {
-        "id": "rend:axe_attack_damage",
-        "attribute": "minecraft:generic.attack_damage",
-        "operation": "add_value",
-        "amount": -5
-      },
-      {
-        "id": "rend:axe_attack_speed",
-        "attribute": "minecraft:generic.attack_speed",
-        "operation": "add_value",
-        "amount": -0.5
-      }
-    ],
-    "tick_rate": 30,
-    "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "mainhand",
-      "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "tag": "rend:axes"
-        }
-      }
+  "increase_damage_taken": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "add_base_early",
+      "amount": 1
     }
   },
   "increased_damage_from_behind": {
