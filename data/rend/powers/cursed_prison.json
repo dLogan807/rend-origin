@@ -52,8 +52,7 @@
       "conditions": [
         {
           "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": false
+          "dimension": "minecraft:the_nether"
         },
         {
           "type": "origins:xp_levels",
@@ -66,8 +65,7 @@
             "type": "origins:block",
             "block": "minecraft:nether_portal"
           },
-          "radius": 5,
-          "shape": "star"
+          "radius": 5
         }
       ]
     }

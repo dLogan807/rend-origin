@@ -1,5 +1,14 @@
 {
   "type": "origins:multiple",
+  "hidden": true,
+  "weakened_check": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 4,
+    "hud_render": {
+      "should_render": false
+    }
+  },
   "transparency_1": {
     "type": "origins:model_color",
     "alpha": 0.2,
@@ -40,107 +49,97 @@
       "compare_to": 4
     }
   },
-  "weakened_check": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 4,
-    "hud_render": {
-      "should_render": false
-    }
-  },
   "update_weakness_checker": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:if_else",
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
+              },
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">",
+                "compare_to": 30
+              }
+            ]
           },
-          {
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "rend:transparency_weakened_check",
+            "change": 0,
+            "operation": "set"
+          }
+        },
+        {
+          "condition": {
             "type": "origins:xp_levels",
-            "comparison": ">=",
+            "comparison": "<=",
+            "compare_to": 7
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "rend:transparency_weakened_check",
+            "change": 1,
+            "operation": "set"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:xp_levels",
+            "comparison": "<=",
+            "compare_to": 14
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "rend:transparency_weakened_check",
+            "change": 2,
+            "operation": "set"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:xp_levels",
+            "comparison": "<=",
             "compare_to": 20
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "rend:transparency_weakened_check",
+            "change": 3,
+            "operation": "set"
           }
-        ]
-      },
-      "if_action": {
-        "type": "origins:change_resource",
-        "resource": "rend:transparency_weakened_check",
-        "change": 0,
-        "operation": "set"
-      },
-      "else_action": {
-        "type": "origins:if_else_list",
-        "actions": [
-          {
-            "condition": {
-              "type": "origins:xp_levels",
-              "comparison": "<",
-              "compare_to": 5
-            },
-            "action": {
-              "type": "origins:change_resource",
-              "resource": "rend:transparency_weakened_check",
-              "change": 1,
-              "operation": "set"
-            }
+        },
+        {
+          "condition": {
+            "type": "origins:any_of",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": "<=",
+                "compare_to": 30
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether"
+              }
+            ]
           },
-          {
-            "condition": {
-              "type": "origins:xp_levels",
-              "comparison": "<",
-              "compare_to": 10
-            },
-            "action": {
-              "type": "origins:change_resource",
-              "resource": "rend:transparency_weakened_check",
-              "change": 2,
-              "operation": "set"
-            }
-          },
-          {
-            "condition": {
-              "type": "origins:xp_levels",
-              "comparison": "<",
-              "compare_to": 15
-            },
-            "action": {
-              "type": "origins:change_resource",
-              "resource": "rend:transparency_weakened_check",
-              "change": 3,
-              "operation": "set"
-            }
-          },
-          {
-            "condition": {
-              "type": "origins:any_of",
-              "conditions": [
-                {
-                  "type": "origins:xp_levels",
-                  "comparison": "<",
-                  "compare_to": 20
-                },
-                {
-                  "type": "origins:dimension",
-                  "dimension": "minecraft:the_nether"
-                }
-              ]
-            },
-            "action": {
-              "type": "origins:change_resource",
-              "resource": "rend:transparency_weakened_check",
-              "change": 4,
-              "operation": "set"
-            }
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "rend:transparency_weakened_check",
+            "change": 4,
+            "operation": "set"
           }
-        ]
-      }
+        }
+      ]
     },
-    "interval": 20
-  },
-  "hidden": true
+    "interval": 40
+  }
 }

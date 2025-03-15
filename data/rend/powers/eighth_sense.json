@@ -4,7 +4,6 @@
   "type": "origins:multiple",
   "modify_target_range": {
     "type": "origins:action_on_callback",
-    "execute_chosen_when_orb": true,
     "entity_action_chosen": {
       "type": "origins:and",
       "actions": [
