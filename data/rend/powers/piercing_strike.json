@@ -77,7 +77,7 @@
     },
     "modifier": {
       "id": "*:agile_physique_piercing_strike",
-      "amount": 2,
+      "amount": 3,
       "operation": "multiply_base_additive"
     }
   },
@@ -98,7 +98,7 @@
       "text": [
         "When within 4 blocks behind a target, hold [",
         { "keybind": "key.sneak" },
-        "] and strike to deal 3x damage."
+        "] and strike to deal 4x damage."
       ]
     },
     {
