@@ -8,13 +8,16 @@
       "id": "rend:soul_staff/staff_crafting",
       "category": "equipment",
       "type": "minecraft:crafting_shaped",
-      "pattern": ["#N#", " / ", " / "],
+      "pattern": ["#H#", "0/0", " / "],
       "key": {
         "#": {
-          "item": "minecraft:netherite_sword"
+          "item": "minecraft:amethyst_shard"
         },
-        "N": {
-          "item": "minecraft:nether_star"
+        "H": {
+          "item": "minecraft:heart_of_the_sea"
+        },
+        "0": {
+          "item": "minecraft:netherite_ingot"
         },
         "/": {
           "item": "minecraft:stick"
@@ -99,13 +102,16 @@
       "recipe": {
         "id": "*:soul_staff",
         "type": "minecraft:crafting_shaped",
-        "pattern": ["#N#", " / ", " / "],
+        "pattern": ["#H#", "0/0", " / "],
         "key": {
           "#": {
-            "item": "minecraft:netherite_sword"
+            "item": "minecraft:amethyst_shard"
           },
-          "N": {
-            "item": "minecraft:nether_star"
+          "H": {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          "0": {
+            "item": "minecraft:netherite_ingot"
           },
           "/": {
             "item": "minecraft:stick"
