@@ -5,7 +5,7 @@
   "tome": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/nether_bridge": "rend:chests/explosion_tome"
+      "minecraft:chests/nether_bridge": "rend:chests/explosion_tome/normal"
     }
   },
   "root": {

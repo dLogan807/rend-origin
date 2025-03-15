@@ -1,7 +1,7 @@
 {
   "powers": [
     "*:teardown",
-    "*:advancement_handler",
+    "*:xp_level_advancement",
     "*:cursed_prison",
     "*:faded_husk",
     "*:agile_physique",
