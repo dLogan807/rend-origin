@@ -78,17 +78,6 @@
               "offset_z": -0.1
             }
           ]
-        },
-        {
-          "type": "origins:raycast",
-          "entity": false,
-          "shape_type": "collider",
-          "direction": {
-            "y": -1.0
-          },
-          "space": "world",
-          "block_distance": 3.0,
-          "inverted": true
         }
       ]
     }
@@ -114,7 +103,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "particle minecraft:white_ash ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
+          "command": "particle minecraft:ash ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
         },
         {
           "type": "origins:play_sound",
@@ -130,7 +119,8 @@
             "actions": [
               {
                 "type": "origins:add_velocity",
-                "y": 0.8
+                "y": 0.8,
+                "set": true
               },
               {
                 "type": "origins:add_velocity",
