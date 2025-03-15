@@ -267,103 +267,166 @@
     "type": "origins:action_over_time",
     "interval": 30,
     "entity_action": {
-      "type": "origins:and",
+      "type": "origins:if_else_list",
       "actions": [
         {
-          "type": "origins:if_else",
           "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_20_xp",
-            "comparison": "<",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_44_xp",
+                "comparison": "<",
+                "compare_to": 7
+              },
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 44
+              }
+            ]
           },
-          "if_action": {
+          "action": {
             "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_20_xp",
+            "resource": "*:*_jumps_at_44_xp",
             "change": 1
           }
         },
         {
-          "type": "origins:if_else",
           "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_24_xp",
-            "comparison": "<",
-            "compare_to": 2
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 40
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_40_xp",
+                "comparison": "<",
+                "compare_to": 6
+              }
+            ]
           },
-          "if_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_24_xp",
-            "change": 1
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_28_xp",
-            "comparison": "<",
-            "compare_to": 3
-          },
-          "if_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_28_xp",
-            "change": 1
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_32_xp",
-            "comparison": "<",
-            "compare_to": 4
-          },
-          "if_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_32_xp",
-            "change": 1
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_36_xp",
-            "comparison": "<",
-            "compare_to": 5
-          },
-          "if_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_36_xp",
-            "change": 1
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_40_xp",
-            "comparison": "<",
-            "compare_to": 6
-          },
-          "if_action": {
+          "action": {
             "type": "origins:change_resource",
             "resource": "*:*_jumps_at_40_xp",
             "change": 1
           }
         },
         {
-          "type": "origins:if_else",
           "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_jumps_at_44_xp",
-            "comparison": "<",
-            "compare_to": 7
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 36
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_36_xp",
+                "comparison": "<",
+                "compare_to": 5
+              }
+            ]
           },
-          "if_action": {
+          "action": {
             "type": "origins:change_resource",
-            "resource": "*:*_jumps_at_44_xp",
+            "resource": "*:*_jumps_at_36_xp",
+            "change": 1
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 32
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_32_xp",
+                "comparison": "<",
+                "compare_to": 4
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_32_xp",
+            "change": 1
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 28
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_28_xp",
+                "comparison": "<",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_28_xp",
+            "change": 1
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 24
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_24_xp",
+                "comparison": "<",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_24_xp",
+            "change": 1
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 20
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:*_jumps_at_20_xp",
+                "comparison": "<",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_jumps_at_20_xp",
             "change": 1
           }
         }
@@ -380,10 +443,38 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:resource",
-          "resource": "*:claws_is_clinging",
-          "comparison": "==",
-          "compare_to": 0
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:sneaking"
+            },
+            {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:block_collision",
+                  "block_condition": {
+                    "type": "origins:hardness",
+                    "comparison": "<",
+                    "compare_to": 5
+                  },
+                  "offset_x": 0.1,
+                  "offset_z": 0.1
+                },
+                {
+                  "type": "origins:block_collision",
+                  "block_condition": {
+                    "type": "origins:hardness",
+                    "comparison": "<",
+                    "compare_to": 5
+                  },
+                  "offset_x": -0.1,
+                  "offset_z": -0.1
+                }
+              ]
+            }
+          ],
+          "inverted": true
         },
         {
           "type": "origins:raycast",

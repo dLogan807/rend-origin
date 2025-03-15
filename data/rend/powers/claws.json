@@ -2,11 +2,6 @@
   "name": "Claws",
   "description": "You can cling to walls that aren't too tough.",
   "type": "origins:multiple",
-  "is_clinging": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1
-  },
   "release_cooldown": {
     "type": "origins:cooldown",
     "cooldown": 40,
@@ -17,21 +12,9 @@
       "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png"
     }
   },
-  "detect_clinging": {
-    "type": "origins:action_over_time",
-    "interval": 1,
-    "rising_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_is_clinging",
-      "operation": "set",
-      "change": 1
-    },
-    "falling_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_is_clinging",
-      "operation": "set",
-      "change": 0
-    },
+  "slow_fall": {
+    "type": "origins:modify_falling",
+    "velocity": -0.01,
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -80,16 +63,6 @@
           ]
         }
       ]
-    }
-  },
-  "slow_fall": {
-    "type": "origins:modify_falling",
-    "velocity": -0.01,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_is_clinging",
-      "comparison": "==",
-      "compare_to": 1
     }
   },
   "spring": {
@@ -154,10 +127,48 @@
           "compare_to": 0
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_is_clinging",
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:water",
           "comparison": "==",
-          "compare_to": 1
+          "compare_to": 0
+        },
+        {
+          "type": "origins:fluid_height",
+          "fluid": "minecraft:lava",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
+              },
+              "offset_x": 0.1,
+              "offset_z": 0.1
+            },
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
+              },
+              "offset_x": -0.1,
+              "offset_z": -0.1
+            }
+          ]
         }
       ]
     },
