@@ -139,7 +139,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 30
+          "compare_to": 25
         },
         {
           "type": "origins:dimension",
@@ -168,7 +168,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"30 XP levels needed\",\"color\":\"red\"}"
+          "command": "title @s actionbar {\"text\":\"25 XP levels needed\",\"color\":\"red\"}"
         },
         {
           "type": "origins:play_sound",
@@ -206,7 +206,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": "<",
-          "compare_to": 30
+          "compare_to": 25
         }
       ]
     },
@@ -257,7 +257,7 @@
         {
           "type": "origins:xp_levels",
           "comparison": ">=",
-          "compare_to": 30
+          "compare_to": 25
         },
         {
           "type": "origins:resource",
