@@ -58,7 +58,7 @@
   "increase_damage_taken": {
     "type": "origins:modify_damage_taken",
     "modifier": {
-      "operation": "add_base_early",
+      "operation": "add_base_late",
       "amount": 1
     }
   },
@@ -75,7 +75,7 @@
           "type": "origins:play_sound",
           "sound": "minecraft:entity.player.attack.crit",
           "pitch": 2,
-          "category": "hostile"
+          "category": "players"
         }
       ]
     },
@@ -89,7 +89,7 @@
     },
     "modifier": {
       "id": "*:agile_physique_increased_behind_damage",
-      "amount": 1,
+      "amount": 0.5,
       "operation": "multiply_base_additive"
     }
   },
@@ -102,7 +102,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
-      "text": "Your body is fairly frail:\n- One less heart\n- 0.5 hearts more damage from all sources\n- 2x damage taken from behind"
+      "text": "Your body is fairly frail:\n- One less heart\n- 0.5 hearts more damage from all sources\n- 1.5x damage taken from behind"
     },
     {
       "type": "origins:tooltip",
