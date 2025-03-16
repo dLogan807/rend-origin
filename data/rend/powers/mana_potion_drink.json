@@ -78,9 +78,19 @@
             "radius": 3,
             "shape": "sphere",
             "bientity_action": {
-              "type": "origins:damage",
-              "damage_type": "rend:mana_potion_explode",
-              "amount": 8
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:damage",
+                  "damage_type": "rend:mana_potion_explode",
+                  "amount": 8
+                },
+                {
+                  "type": "origins:add_velocity",
+                  "y": 0.5,
+                  "z": 1
+                }
+              ]
             }
           },
           {
@@ -107,7 +117,7 @@
           },
           {
             "type": "origins:add_velocity",
-            "space": "local",
+            "space": "local_horizontal_normalized",
             "z": -2
           },
           {

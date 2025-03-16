@@ -36,6 +36,15 @@
       ]
     }
   },
+  "shake_while_unstable": {
+    "type": "origins:shaking",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_dimension_instability",
+      "comparison": ">",
+      "compare_to": 2
+    }
+  },
   "dimension_instability": {
     "type": "origins:resource",
     "min": 0,
