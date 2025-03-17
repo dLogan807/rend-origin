@@ -9,46 +9,6 @@
       "should_render": false
     }
   },
-  "transparency_1": {
-    "type": "origins:model_color",
-    "alpha": 0.2,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
-      "comparison": "==",
-      "compare_to": 1
-    }
-  },
-  "transparency_2": {
-    "type": "origins:model_color",
-    "alpha": 0.4,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
-      "comparison": "==",
-      "compare_to": 2
-    }
-  },
-  "transparency_3": {
-    "type": "origins:model_color",
-    "alpha": 0.6,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
-      "comparison": "==",
-      "compare_to": 3
-    }
-  },
-  "transparency_4": {
-    "type": "origins:model_color",
-    "alpha": 0.8,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
-      "comparison": "==",
-      "compare_to": 4
-    }
-  },
   "update_weakness_checker": {
     "type": "origins:action_over_time",
     "entity_action": {
@@ -118,7 +78,7 @@
         },
         {
           "condition": {
-            "type": "origins:any_of",
+            "type": "origins:or",
             "conditions": [
               {
                 "type": "origins:xp_levels",
@@ -141,5 +101,45 @@
       ]
     },
     "interval": 40
+  },
+  "transparency_1": {
+    "type": "origins:model_color",
+    "alpha": 0.2,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "rend:transparency_weakened_check",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "transparency_2": {
+    "type": "origins:model_color",
+    "alpha": 0.4,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "rend:transparency_weakened_check",
+      "comparison": "==",
+      "compare_to": 2
+    }
+  },
+  "transparency_3": {
+    "type": "origins:model_color",
+    "alpha": 0.6,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "rend:transparency_weakened_check",
+      "comparison": "==",
+      "compare_to": 3
+    }
+  },
+  "transparency_4": {
+    "type": "origins:model_color",
+    "alpha": 0.8,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "rend:transparency_weakened_check",
+      "comparison": "==",
+      "compare_to": 4
+    }
   }
 }

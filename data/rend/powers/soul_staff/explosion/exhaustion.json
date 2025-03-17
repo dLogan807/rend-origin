@@ -3,7 +3,7 @@
   "hidden": true,
   "timer": {
     "type": "origins:cooldown",
-    "cooldown": 15000,
+    "cooldown": 9600,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
@@ -11,13 +11,13 @@
       "order": 0
     }
   },
-  "prevent_sprint": {
-    "type": "origins:prevent_sprinting",
-    "condition": {
-      "type": "origins:resource",
+  "mitigate_callback_trigger": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:change_resource",
       "resource": "*:*_timer",
-      "comparison": ">",
-      "compare_to": 0
+      "change": 9600,
+      "operation": "set"
     }
   },
   "decrease_break_speed": {
@@ -39,7 +39,7 @@
     "modifier": {
       "id": "*:*",
       "operation": "multiply_base_additive",
-      "amount": 0.5
+      "amount": 1
     },
     "condition": {
       "type": "origins:resource",

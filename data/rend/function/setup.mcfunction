@@ -1,14 +1,9 @@
+#Grant player advancement tree
 advancement grant @s only rend:root
 
-#scoreboard objectives add staff_ability dummy
-scoreboard objectives add rend_vortex_pos_x dummy
-scoreboard objectives add rend_vortex_pos_z dummy
-scoreboard objectives add rend_enemy_deathcheck deathCount
-scoreboard objectives add rend_fallen_base_attack dummy
-
-scoreboard objectives add rend_xp_level dummy
-scoreboard objectives add rend_xp_points dummy
-scoreboard objectives add rend_in_nether dummy
+#Track player xp
+scoreboard objectives add rend.xp_level level
+scoreboard objectives add rend.xp_points xp
 
 #Agile physique
 scoreboard objectives add rend_armour_points dummy
@@ -19,9 +14,9 @@ scoreboard players set @s rend_shield_armour_points 2
 scoreboard objectives add rend_soul_purge_actor dummy
 scoreboard objectives add rend_soul_purge_damage dummy
 scoreboard objectives add rend_damage_mod dummy
-scoreboard players set @s rend_damage_mod 3
+scoreboard players set @s rend_damage_mod 2
 scoreboard objectives add rend_damage_max dummy
-scoreboard players set @s rend_damage_max 18
+scoreboard players set @s rend_damage_max 30
 
 #Soul purge xp % reduction scores
 scoreboard objectives add rend_xp_percent_reduction dummy

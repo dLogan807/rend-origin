@@ -38,7 +38,7 @@
                 "id": "attack_damage",
                 "type": "generic.attack_damage",
                 "amount": -0.5,
-                "operation": "add_multiplied_total",
+                "operation": "add_multiplied_base",
                 "slot": "mainhand"
               }
             ]

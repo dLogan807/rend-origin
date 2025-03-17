@@ -91,6 +91,15 @@
     },
     "cooldown": 500
   },
+  "mitigate_callback_trigger": {
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+      "type": "origins:change_resource",
+      "resource": "*:*_cooldown",
+      "change": 500,
+      "operation": "set"
+    }
+  },
   "badges": [
     {
       "type": "origins:tooltip",

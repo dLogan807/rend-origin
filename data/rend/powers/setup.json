@@ -4,6 +4,5 @@
     "type": "origins:execute_command",
     "command": "function rend:setup"
   },
-  "execute_chosen_when_orb": true,
   "hidden": true
 }
