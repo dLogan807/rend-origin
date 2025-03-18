@@ -27,32 +27,12 @@
       "command": "function rend:agile_physique/remove_erroneous_attributes"
     }
   },
-  "armour_inhibitor": {
+  "set_scaled_modifiers": {
     "type": "origins:action_over_time",
     "interval": 40,
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether"
-          },
-          "if_action": {
-            "type": "origins:execute_command",
-            "command": "scoreboard players set @s rend_in_nether 1"
-          },
-          "else_action": {
-            "type": "origins:execute_command",
-            "command": "scoreboard players set @s rend_in_nether 0"
-          }
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function rend:agile_physique/set_all_attributes"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "function rend:agile_physique/set_modifiers"
     }
   },
   "increase_damage_taken": {

@@ -2,6 +2,14 @@
   "type": "origins:multiple",
   "name": "Faded Husk",
   "description": "Your withered soul blatantly displays your lack of strength, affecting your health and attack damage.",
+  "set_scaled_modifiers": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function rend:faded_husk/calculate_and_set_modifiers"
+    }
+  },
   "toggle_invisibility": {
     "type": "origins:active_self",
     "entity_action": {
@@ -308,7 +316,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "Scales with XP levels."
+      "text": "Scales with XP levels. Regular strength at 30 levels."
     },
     {
       "type": "origins:tooltip",
