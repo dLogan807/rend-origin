@@ -1,2 +1,2 @@
-execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:attack_speed_bonus"}]}]}] run attribute @s generic.attack_speed modifier remove rend:attack_speed_bonus
-execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:move_speed_bonus"}]}]}] run attribute @s generic.movement_speed modifier remove rend:move_speed_bonus
+attribute @s generic.attack_speed modifier remove rend:attack_speed_bonus
+attribute @s generic.movement_speed modifier remove rend:move_speed_bonus

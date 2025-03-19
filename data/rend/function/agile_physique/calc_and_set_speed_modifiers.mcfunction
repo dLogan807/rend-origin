@@ -11,4 +11,4 @@ scoreboard players operation @s rend.agile_phys.speed_calc = @s rend.agile_phys.
 scoreboard players operation @s rend.agile_phys.speed_calc *= @s rend.agile_phys.SPEED_GRADIENT
 execute store result storage minecraft:rend agile_phys.speed_bonus_modifier double 0.001 run scoreboard players operation @s rend.agile_phys.speed_calc += @s rend.agile_phys.SPEED_Y_MOD
 
-function rend:agile_physique/set_speed_modifiers with storage minecraft:rend agile_phys
+function rend:agile_physique/set_speed_bonus_modifiers with storage minecraft:rend agile_phys
