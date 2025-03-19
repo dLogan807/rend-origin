@@ -40,8 +40,8 @@ scoreboard players set @s rend.agile_phys.SHIELD_POINTS 2
 scoreboard objectives add rend.agile_phys.armour_prev_xp_level dummy
 scoreboard players set @s rend.agile_phys.armour_prev_xp_level -1
 
-scoreboard objectives add rend.agile_phys.ONE_HUNDRED dummy
-scoreboard players set @s rend.agile_phys.ONE_HUNDRED -100
+scoreboard objectives add rend.agile_phys.NEG_ONE_HUNDRED dummy
+scoreboard players set @s rend.agile_phys.NEG_ONE_HUNDRED -100
 scoreboard objectives add rend.agile_phys.TOTAL_ARMOUR_POINTS dummy
 scoreboard players set @s rend.agile_phys.TOTAL_ARMOUR_POINTS 22
 scoreboard objectives add rend.agile_phys.armour_numerator dummy

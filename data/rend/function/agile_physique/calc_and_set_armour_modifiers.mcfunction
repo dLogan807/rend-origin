@@ -12,15 +12,16 @@ execute if entity @s[scores={rend.agile_phys.armour_points=0}] if entity @s[nbt=
 execute if entity @s[scores={rend.xp_level=30..}] if entity @s[nbt={attributes:[{modifiers:[{id:"rend:armour_movement_inhibition"}]}]}] run return run attribute @s generic.movement_speed modifier remove rend:armour_movement_inhibition
 
 #Set scaled momement detriment for xp level and armour points (y=-(100/22+c)x+c), c=xp level, x=armour points
-scoreboard players operation @s rend.agile_phys.armour_numerator = @s rend.agile_phys.ONE_HUNDRED
+scoreboard players operation @s rend.agile_phys.armour_numerator = @s rend.agile_phys.NEG_ONE_HUNDRED
 scoreboard players operation @s rend.agile_phys.armour_denominator = @s rend.agile_phys.TOTAL_ARMOUR_POINTS
 scoreboard players operation @s rend.agile_phys.armour_denominator += @s rend.xp_level
 scoreboard players operation @s rend.agile_phys.armour_numerator /= @s rend.agile_phys.armour_denominator
 scoreboard players operation @s rend.agile_phys.armour_numerator *= @s rend.agile_phys.armour_points
 scoreboard players operation @s rend.agile_phys.armour_numerator += @s rend.xp_level
 
-#Return if modifier is positive
-execute if entity @s[scores={rend.agile_phys.armour_numerator=0..}] run return run execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:armour_movement_inhibition"}]}]}] run return run attribute @s generic.movement_speed modifier remove rend:armour_movement_inhibition
-execute store result storage minecraft:rend agile_phys.armour_speed_modifier double 0.01 run scoreboard players get @s rend.agile_phys.armour_numerator
+#Return if move speed reduction is > -10%
+execute if entity @s[scores={rend.agile_phys.armour_numerator=-10..}] run return run execute if entity @s[nbt={attributes:[{modifiers:[{id:"rend:armour_movement_inhibition"}]}]}] run return run attribute @s generic.movement_speed modifier remove rend:armour_movement_inhibition
 
+#Store and set modifier
+execute store result storage minecraft:rend agile_phys.armour_speed_modifier double 0.01 run scoreboard players get @s rend.agile_phys.armour_numerator
 function rend:agile_physique/set_armour_speed_modifier with storage minecraft:rend agile_phys
