@@ -1,4 +1,0 @@
-execute if entity @s[scores={rend.agile_phys.armour_points=..6}] run return 1 
-execute if entity @s[scores={rend.agile_phys.armour_points=..10,rend.agile_phys.armour_points=7..}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.1 add_multiplied_base
-execute if entity @s[scores={rend.agile_phys.armour_points=..15}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.3 add_multiplied_base
-execute if entity @s[scores={rend.agile_phys.armour_points=..22}] run return run attribute @s generic.movement_speed modifier add rend:armour_movement_inhibition -0.5 add_multiplied_base

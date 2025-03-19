@@ -4,10 +4,10 @@ advancement grant @s only rend:root
 #Track player xp
 scoreboard objectives add rend.xp_level level
 scoreboard objectives add rend.xp_points xp
-scoreboard objectives add rend.xp_level.NETHER_MAX dummy
-scoreboard players set @s rend.xp_level.NETHER_MAX 24
 
 #Faded Husk
+scoreboard objectives add rend.xp_level.NETHER_MAX dummy
+scoreboard players set @s rend.xp_level.NETHER_MAX 24
 # - Setup max health constants (y=2x-60)
 scoreboard objectives add rend.faded_husk.HEALTH_GRADIENT dummy
 scoreboard players set @s rend.faded_husk.HEALTH_GRADIENT 2
@@ -31,25 +31,32 @@ scoreboard objectives add rend_ending_xp_levels dummy
 scoreboard objectives add rend_used_xp_levels dummy
 
 #Agile physique
+# - Armour speed detriment variables and constants (y=-(100/22+c)x+c), c=xp level, x=armour points
 scoreboard objectives add rend.agile_phys.armour_points dummy
 scoreboard objectives add rend.agile_phys.prev_armour_points dummy
 scoreboard players set @s rend.agile_phys.prev_armour_points -1
-scoreboard objectives add rend.agile_phys.shield_points dummy
-scoreboard players set @s rend.agile_phys.shield_points 2
+scoreboard objectives add rend.agile_phys.SHIELD_POINTS dummy
+scoreboard players set @s rend.agile_phys.SHIELD_POINTS 2
 scoreboard objectives add rend.agile_phys.armour_prev_xp_level dummy
 scoreboard players set @s rend.agile_phys.armour_prev_xp_level -1
-scoreboard objectives add rend.agile_phys.speed_prev_xp_level dummy
-scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 
-# - Setup speed variables and constants (y=2x+100)
+scoreboard objectives add rend.agile_phys.ONE_HUNDRED dummy
+scoreboard players set @s rend.agile_phys.ONE_HUNDRED -100
+scoreboard objectives add rend.agile_phys.TOTAL_ARMOUR_POINTS dummy
+scoreboard players set @s rend.agile_phys.TOTAL_ARMOUR_POINTS 22
+scoreboard objectives add rend.agile_phys.armour_numerator dummy
+scoreboard objectives add rend.agile_phys.armour_denominator dummy
+
+
+# - Setup speed variables and constants (y=1.2x-36)
 scoreboard objectives add rend.agile_phys.SPEED_GRADIENT dummy
 scoreboard players set @s rend.agile_phys.SPEED_GRADIENT 12
 scoreboard objectives add rend.agile_phys.SPEED_Y_MOD dummy
 scoreboard players set @s rend.agile_phys.SPEED_Y_MOD -360
-
-scoreboard objectives add rend.agile_phys.armour_calc dummy
+scoreboard objectives add rend.agile_phys.speed_prev_xp_level dummy
+scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 scoreboard objectives add rend.agile_phys.speed_calc dummy
-data modify storage minecraft:rend agile_phys set value {"speed_modifier": 0.0}
+data modify storage minecraft:rend agile_phys set value {"speed_bonus_modifier": 0.0, "armour_speed_modifier": 0.0}
 
 #Soul Purge 
 # - damage scores
