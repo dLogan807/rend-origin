@@ -13,6 +13,7 @@ scoreboard objectives add rend.faded_husk.HEALTH_GRADIENT dummy
 scoreboard players set @s rend.faded_husk.HEALTH_GRADIENT 2
 scoreboard objectives add rend.faded_husk.HEALTH_Y_MOD dummy
 scoreboard players set @s rend.faded_husk.HEALTH_Y_MOD -60
+
 # - Setup attack damage constants (y=5/30x-5), scaled by 100
 scoreboard objectives add rend.faded_husk.ATTACK_GRADIENT dummy
 scoreboard players set @s rend.faded_husk.ATTACK_GRADIENT 17
@@ -21,7 +22,7 @@ scoreboard players set @s rend.faded_husk.ATTACK_Y_MOD -500
 
 scoreboard objectives add rend.faded_husk.prev_xp_level dummy
 scoreboard players set @s rend.faded_husk.prev_xp_level -1
-scoreboard objectives add rend.faded_husk.percent_reduction dummy
+scoreboard objectives add rend.faded_husk.calc dummy
 data modify storage minecraft:rend faded_husk set value {"health_modifier": 0.0,"attack_modifier": 0.0}
 
 # - Advancement
@@ -35,10 +36,23 @@ scoreboard objectives add rend.agile_phys.prev_armour_points dummy
 scoreboard players set @s rend.agile_phys.prev_armour_points -1
 scoreboard objectives add rend.agile_phys.shield_points dummy
 scoreboard players set @s rend.agile_phys.shield_points 2
-scoreboard objectives add rend.agile_phys.prev_xp_level dummy
-scoreboard players set @s rend.agile_phys.prev_xp_level -1
+scoreboard objectives add rend.agile_phys.armour_prev_xp_level dummy
+scoreboard players set @s rend.agile_phys.armour_prev_xp_level -1
+scoreboard objectives add rend.agile_phys.speed_prev_xp_level dummy
+scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 
-#Soul purge damage scores
+# - Setup speed variables and constants (y=2x+100)
+scoreboard objectives add rend.agile_phys.SPEED_GRADIENT dummy
+scoreboard players set @s rend.agile_phys.SPEED_GRADIENT 12
+scoreboard objectives add rend.agile_phys.SPEED_Y_MOD dummy
+scoreboard players set @s rend.agile_phys.SPEED_Y_MOD -360
+
+scoreboard objectives add rend.agile_phys.armour_calc dummy
+scoreboard objectives add rend.agile_phys.speed_calc dummy
+data modify storage minecraft:rend agile_phys set value {"speed_modifier": 0.0}
+
+#Soul Purge 
+# - damage scores
 scoreboard objectives add rend_soul_purge_actor dummy
 scoreboard objectives add rend_soul_purge_damage dummy
 scoreboard objectives add rend_damage_mod dummy
@@ -46,13 +60,13 @@ scoreboard players set @s rend_damage_mod 2
 scoreboard objectives add rend_damage_max dummy
 scoreboard players set @s rend_damage_max 30
 
-#Soul purge xp % reduction scores
+# - xp % reduction scores
 scoreboard objectives add rend.soul_purge.xp_level dummy
 scoreboard objectives add rend_xp_percent_reduction dummy
 scoreboard objectives add rend_xp_subtract_denominator dummy
 scoreboard players set @s rend_xp_subtract_denominator 10000
 
-#Soul purge max tp height
+# - max tp height
 data modify storage minecraft:rend soul_purge set value {"max_height": 0}
 scoreboard objectives add rend.soul_purge.current_height dummy
 scoreboard objectives add rend.soul_purge.height_mod dummy

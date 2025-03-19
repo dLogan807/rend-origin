@@ -31,8 +31,17 @@
     "type": "origins:action_over_time",
     "interval": 40,
     "entity_action": {
-      "type": "origins:execute_command",
-      "command": "function rend:agile_physique/set_modifiers"
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:agile_physique/calc_and_set_armour_modifiers"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function rend:agile_physique/calc_and_set_speed_modifiers"
+        }
+      ]
     }
   },
   "increase_damage_taken": {
@@ -77,7 +86,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "Attack speed and capacity to use armour scale with XP levels."
+      "text": "Attack speed, movement speed, and capacity to use armour scale with XP levels."
     },
     {
       "type": "origins:tooltip",
@@ -92,12 +101,12 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-      "text": "Your attack speed is increased at higher levels. Axes are always of reduced effectiveness."
+      "text": "Your attack speed and movement speed scale past level 30. Axes are always of reduced effectiveness."
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "No attack speed bonus in the Nether."
+      "text": "No attack speed or movement speed buffs in the Nether."
     }
   ]
 }

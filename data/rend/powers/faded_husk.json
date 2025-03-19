@@ -7,7 +7,7 @@
     "interval": 40,
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "function rend:faded_husk/calculate_and_set_modifiers"
+      "command": "function rend:faded_husk/calc_and_set_modifiers"
     }
   },
   "toggle_invisibility": {
