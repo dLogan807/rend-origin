@@ -37,15 +37,23 @@
           "custom_model_data": 439203,
           "rarity": "uncommon",
           "custom_name": "[{\"text\":\"Fallen Tether Doll\",\"italic\":false}]",
-          "lore": [
-            "[{\"color\":\"red\",\"italic\":false,\"text\":\"Caution: \"},{\"color\":\"gray\",\"italic\":false,\"text\":\"This will return to an\"}]",
-            "[{\"color\":\"gray\",\"italic\":false,\"text\":\"item a minute after placing.\"}]"
-          ],
           "custom_data": { "fallen_tether": true },
           "entity_data": {
             "id": "minecraft:armor_stand",
             "Tags": ["fallen_tether"],
-            "Invisible": true
+            "Invisible": true,
+            "cardinal_components": {
+              "apoli:powers": {
+                "powers": [
+                  {
+                    "data": {},
+                    "sources": ["rend:soul_staff/staff_ability_summon_fallen"],
+                    "id": "rend:fallen/tether/placement",
+                    "type": "origins:action_on_callback"
+                  }
+                ]
+              }
+            }
           }
         }
       }

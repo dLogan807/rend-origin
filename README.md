@@ -15,10 +15,6 @@ This is a 1.21.1 datapack made for Origins 1.13.0 alpha 12. It is unlikely to fu
 
 A custom resource pack is highly recommended and will be linked here once complete.
 
-### Important Notes
-
-If a Fallen Tether Doll has not placed correctly, attempting to place another at the same location will fix this. Currently, successfully placed dolls will revert to items after 1 minute due to performance concerns.
-
 ### Lore
 
 A specialised subclass of an ancient race. Not excelling in physical strength

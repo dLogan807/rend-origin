@@ -2,6 +2,6 @@
   "type": "origins:action_on_callback",
   "entity_action_added": {
     "type": "origins:execute_command",
-    "command": "function rend:fallen/tether_setup"
+    "command": "function rend:fallen/tether_hitbox_setup"
   }
 }

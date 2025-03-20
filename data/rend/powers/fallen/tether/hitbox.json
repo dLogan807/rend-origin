@@ -10,32 +10,6 @@
     "type": "origins:cooldown",
     "cooldown": 6
   },
-  "destroy_cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 1200
-  },
-  "start_destroy_cooldown": {
-    "type": "origins:action_on_callback",
-    "entity_action_gained": {
-      "type": "origins:trigger_cooldown",
-      "power": "*:*_destroy_cooldown"
-    }
-  },
-  "performance_destroy": {
-    "type": "origins:action_over_time",
-    "interval": 40,
-    "entity_action": {
-      "type": "origins:damage",
-      "damage_type": "generic",
-      "amount": 1
-    },
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_destroy_cooldown",
-      "comparison": "==",
-      "compare_to": 0
-    }
-  },
   "store_model": {
     "type": "origins:action_on_callback",
     "entity_action_gained": {
@@ -55,37 +29,51 @@
         },
         {
           "type": "origins:delay",
-          "ticks": 5,
+          "ticks": 1,
           "action": {
             "type": "origins:area_of_effect",
             "radius": 2,
             "bientity_condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:entity_type",
-                    "entity_type": "minecraft:item_display"
-                  },
-                  {
-                    "type": "origins:nbt",
-                    "nbt": "{Tags:['aj.rend_fallen_tether.root']}"
-                  },
-                  {
-                    "type": "origins:nbt",
-                    "nbt": "{Tags:['rend_tether_placed']}",
-                    "inverted": true
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:actor_condition",
+                  "condition": {
+                    "type": "origins:entity_set_size",
+                    "set": "*:*_model_root",
+                    "comparison": "==",
+                    "compare_to": 0
                   }
-                ]
-              }
+                },
+                {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:item_display"
+                      },
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Tags:['aj.rend_fallen_tether.root']}"
+                      },
+                      {
+                        "type": "origins:nbt",
+                        "nbt": "{Tags:['rend_tether_placed']}",
+                        "inverted": true
+                      }
+                    ]
+                  }
+                }
+              ]
             },
             "bientity_action": {
               "type": "origins:and",
               "actions": [
                 {
                   "type": "origins:add_to_entity_set",
-                  "set": "*:fallen/tether/hitbox_model_root"
+                  "set": "*:*_model_root"
                 },
                 {
                   "type": "origins:target_action",
