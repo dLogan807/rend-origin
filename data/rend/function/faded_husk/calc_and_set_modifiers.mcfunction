@@ -2,7 +2,7 @@
 execute if score @s rend.xp_level = @s rend.faded_husk.prev_xp_level run return 0
 execute if dimension minecraft:the_nether if score @s rend.xp_level > @s rend.xp_level.NETHER_MAX if score @s rend.xp_level.NETHER_MAX = @s rend.faded_husk.prev_xp_level run return 0
 scoreboard players operation @s rend.faded_husk.prev_xp_level = @s rend.xp_level
-execute if dimension minecraft:the_nether if score @s rend.xp_level > @s rend.xp_level.NETHER_MAX run scoreboard players operation @s rend.faded_husk.prev_xp_level = @s rend.xp_level.NETHER_MAX
+execute if dimension minecraft:the_nether run scoreboard players operation @s rend.faded_husk.prev_xp_level < @s rend.xp_level.NETHER_MAX
 
 #Calculate max health modifier (y=2x-60)
 scoreboard players operation @s rend.faded_husk.calc = @s rend.faded_husk.prev_xp_level 

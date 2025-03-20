@@ -11,9 +11,6 @@ scoreboard players operation @s rend.agile_phys.speed_calc = @s rend.agile_phys.
 scoreboard players operation @s rend.agile_phys.speed_calc *= @s rend.agile_phys.SPEED_GRADIENT
 scoreboard players operation @s rend.agile_phys.speed_calc += @s rend.agile_phys.SPEED_Y_MOD
 
-#Cap maximum speed modifier to +90%
-execute if entity @s[scores={rend.agile_phys.speed_calc=900..}] run scoreboard players set @s rend.agile_phys.speed_calc 900
-
-#Store and set modifier
-execute store result storage minecraft:rend agile_phys.speed_bonus_modifier double 0.001 run scoreboard players get @s rend.agile_phys.speed_calc
+#Cap, store, and set modifier
+execute store result storage minecraft:rend agile_phys.speed_bonus_modifier double 0.001 run scoreboard players operation @s rend.agile_phys.speed_calc < @s rend.agile_phys.SPEED_MAX
 function rend:agile_physique/set_speed_bonus_modifiers with storage minecraft:rend agile_phys
