@@ -1,5 +1,7 @@
 {
   "type": "origins:action_over_time",
+  "hidden": true,
+  "interval": 60,
   "entity_action": {
     "type": "origins:if_else_list",
     "actions": [
@@ -7,11 +9,6 @@
         "condition": {
           "type": "origins:and",
           "conditions": [
-            {
-              "type": "origins:advancement",
-              "advancement": "*:reach_level_55",
-              "inverted": true
-            },
             {
               "type": "origins:xp_levels",
               "comparison": ">=",
@@ -30,6 +27,5 @@
         }
       }
     ]
-  },
-  "hidden": true
+  }
 }

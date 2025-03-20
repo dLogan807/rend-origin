@@ -21,16 +21,8 @@
           "bientity_action": {
             "type": "origins:target_action",
             "action": {
-              "type": "origins:if_else",
-              "condition": {
-                "type": "origins:advancement",
-                "advancement": "*:fallen_upgrade_to_leader",
-                "inverted": true
-              },
-              "if_action": {
-                "type": "origins:grant_advancement",
-                "advancement": "*:fallen_upgrade_to_leader"
-              }
+              "type": "origins:grant_advancement",
+              "advancement": "*:fallen_upgrade_to_leader"
             }
           }
         }
@@ -67,7 +59,7 @@
           "type": "origins:play_sound",
           "sound": "minecraft:entity.experience_orb.pickup",
           "pitch": 1.5,
-          "volume": 0.5,
+          "volume": 0.3,
           "category": "hostile"
         },
         {
@@ -77,7 +69,7 @@
             "type": "origins:play_sound",
             "sound": "minecraft:entity.experience_orb.pickup",
             "pitch": 1.1,
-            "volume": 0.5,
+            "volume": 0.3,
             "category": "hostile"
           }
         },
@@ -88,7 +80,7 @@
             "type": "origins:play_sound",
             "sound": "minecraft:entity.experience_orb.pickup",
             "pitch": 1.7,
-            "volume": 0.5,
+            "volume": 0.3,
             "category": "hostile"
           }
         },

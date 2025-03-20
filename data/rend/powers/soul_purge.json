@@ -64,7 +64,8 @@
         },
         {
           "type": "origins:play_sound",
-          "sound": "minecraft:block.portal.travel"
+          "sound": "minecraft:block.portal.travel",
+          "category": "players"
         },
         {
           "type": "origins:execute_command",
@@ -80,16 +81,8 @@
           "source": "*:soul_purge"
         },
         {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:advancement",
-            "advancement": "*:from_bad_to_worse",
-            "inverted": true
-          },
-          "if_action": {
-            "type": "origins:grant_advancement",
-            "advancement": "*:from_bad_to_worse"
-          }
+          "type": "origins:grant_advancement",
+          "advancement": "*:from_bad_to_worse"
         }
       ]
     },

@@ -104,16 +104,8 @@
           }
         },
         {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:advancement",
-            "advancement": "*:use_claws",
-            "inverted": true
-          },
-          "if_action": {
-            "type": "origins:grant_advancement",
-            "advancement": "*:use_claws"
-          }
+          "type": "origins:grant_advancement",
+          "advancement": "*:use_claws"
         }
       ]
     },

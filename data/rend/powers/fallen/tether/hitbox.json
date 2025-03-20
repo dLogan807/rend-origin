@@ -341,16 +341,8 @@
                   "command": "scoreboard players operation #rend_doing_summon rend_team = @s rend_team"
                 },
                 {
-                  "type": "origins:if_else",
-                  "condition": {
-                    "type": "origins:advancement",
-                    "advancement": "*:old_friend",
-                    "inverted": true
-                  },
-                  "if_action": {
-                    "type": "origins:grant_advancement",
-                    "advancement": "*:old_friend"
-                  }
+                  "type": "origins:grant_advancement",
+                  "advancement": "*:old_friend"
                 }
               ]
             }

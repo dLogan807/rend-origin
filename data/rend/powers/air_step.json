@@ -642,16 +642,8 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:advancement",
-            "advancement": "*:perform_air_step",
-            "inverted": true
-          },
-          "if_action": {
-            "type": "origins:grant_advancement",
-            "advancement": "*:perform_air_step"
-          }
+          "type": "origins:grant_advancement",
+          "advancement": "*:perform_air_step"
         },
         {
           "type": "origins:play_sound",
