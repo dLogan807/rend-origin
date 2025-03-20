@@ -9,6 +9,11 @@ scoreboard players operation @s rend.agile_phys.speed_prev_xp_level = @s rend.xp
 #Calculate speed modifier (y=1.2x-36)
 scoreboard players operation @s rend.agile_phys.speed_calc = @s rend.agile_phys.speed_prev_xp_level 
 scoreboard players operation @s rend.agile_phys.speed_calc *= @s rend.agile_phys.SPEED_GRADIENT
-execute store result storage minecraft:rend agile_phys.speed_bonus_modifier double 0.001 run scoreboard players operation @s rend.agile_phys.speed_calc += @s rend.agile_phys.SPEED_Y_MOD
+scoreboard players operation @s rend.agile_phys.speed_calc += @s rend.agile_phys.SPEED_Y_MOD
 
+#Cap maximum speed modifier to +90%
+execute if entity @s[scores={rend.agile_phys.speed_calc=9..}] run scoreboard players set @s rend.agile_phys.speed_calc 900
+
+#Store and set modifier
+execute store result storage minecraft:rend agile_phys.speed_bonus_modifier double 0.001 run scoreboard players get @s rend.agile_phys.speed_calc
 function rend:agile_physique/set_speed_bonus_modifiers with storage minecraft:rend agile_phys
