@@ -65,7 +65,7 @@
                 },
                 { "text": "" },
                 {
-                  "text": "Mana: -25%",
+                  "text": "Mana: -20%",
                   "type": "text",
                   "italic": false,
                   "color": "blue"

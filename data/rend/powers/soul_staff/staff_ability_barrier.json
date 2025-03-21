@@ -83,7 +83,7 @@
         {
           "type": "origins:change_resource",
           "resource": "*:mana_capacity",
-          "change": -25
+          "change": -20
         },
         {
           "type": "origins:grant_power",
@@ -156,7 +156,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": ">=",
-          "compare_to": 25
+          "compare_to": 20
         }
       ]
     }
@@ -263,7 +263,7 @@
           "type": "origins:resource",
           "resource": "*:mana_capacity",
           "comparison": "<",
-          "compare_to": 25
+          "compare_to": 20
         },
         {
           "type": "origins:resource",

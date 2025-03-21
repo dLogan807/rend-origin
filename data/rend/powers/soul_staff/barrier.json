@@ -7,6 +7,15 @@
       "power": "*:soul_staff/staff_ability_barrier_duration"
     }
   },
+  "blocked_projectiles": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 5,
+    "max_action": {
+      "type": "origins:grant_advancement",
+      "advancement": "*:barrier_block_projectiles"
+    }
+  },
   "do_barrier": {
     "type": "origins:action_over_time",
     "interval": 1,
@@ -46,6 +55,14 @@
                 "type": "origins:add_velocity",
                 "set": true,
                 "z": 0.5
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_blocked_projectiles",
+                  "change": 1
+                }
               }
             ]
           },

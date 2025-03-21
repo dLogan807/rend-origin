@@ -1,16 +1,16 @@
 {
   "display": {
     "title": {
-      "text": "Once More, Old Friend"
+      "text": "A Shield, What's That?"
     },
     "description": {
-      "text": "Summon a Fallen Warrior",
+      "text": "Reflect 5 projectiles using a Barrier spell",
       "color": "green"
     },
     "icon": {
       "id": "minecraft:enchanted_book",
       "components": {
-        "custom_model_data": 439210
+        "custom_model_data": 439215
       }
     }
   },
