@@ -4,12 +4,66 @@
   "type": "origins:multiple",
   "release_cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 40,
-    "hud_render": {
-      "should_render": true,
-      "bar_index": 2,
-      "order": 2,
-      "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png"
+    "cooldown": 40
+  },
+  "check_clinging_release": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "rising_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "*:*_release_cooldown"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
+              },
+              "offset_x": 0.1,
+              "offset_z": 0.1
+            },
+            {
+              "type": "origins:block_collision",
+              "block_condition": {
+                "type": "origins:hardness",
+                "comparison": "<",
+                "compare_to": 5
+              },
+              "offset_x": -0.1,
+              "offset_z": -0.1
+            }
+          ]
+        }
+      ],
+      "inverted": true
+    }
+  },
+  "half_fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "id": "*:*",
+      "operation": "multiply_base_additive",
+      "amount": -0.5
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_release_cooldown",
+      "comparison": ">",
+      "compare_to": 0
     }
   },
   "slow_fall": {
@@ -71,10 +125,6 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_release_cooldown"
-        },
-        {
           "type": "origins:execute_command",
           "command": "particle minecraft:ash ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
         },
@@ -112,12 +162,6 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_release_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
         {
           "type": "origins:on_block",
           "inverted": true
@@ -164,19 +208,29 @@
         }
       ]
     },
-    "cooldown": 20,
-    "key": "key.jump"
+    "key": "key.jump",
+    "cooldown": 40,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 2,
+      "order": 2,
+      "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png"
+    }
   },
   "badges": [
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "Hold [",
+        "§a§lClaws 🐾",
+        "\n\nYour claws §egrip§r into surfaces well and your §ephysique§r enables you to §aleap§r from them.",
+        "\n\n§7Hold [§r",
         { "keybind": "key.sneak" },
-        "] to cling to walls.\nWhile clinging, press [",
+        "§7] to §ecling§7 to walls.\nWhile §eclinging§7, press [§r",
         { "keybind": "key.jump" },
-        "] to leap."
+        "§7] to §aleap§7.",
+        "\n\n§7For §e2s§7 after letting go of a wall, fall damage is reduced by §a50%§7.",
+        "\n\n§7§lActive Ability"
       ]
     }
   ]
