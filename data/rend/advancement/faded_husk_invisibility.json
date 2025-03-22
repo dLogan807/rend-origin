@@ -4,7 +4,7 @@
       "text": "All According to Plan"
     },
     "description": {
-      "text": "Use at least 5 XP levels in one usage of invisibility",
+      "text": "Use 3 XP levels in one usage of invisibility",
       "color": "green"
     },
     "icon": {
@@ -14,7 +14,7 @@
     "frame": "task"
   },
   "criteria": {
-    "Used 5XP levels": {
+    "Used 3XP levels": {
       "trigger": "minecraft:impossible"
     }
   },
