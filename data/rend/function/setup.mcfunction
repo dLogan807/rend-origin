@@ -64,9 +64,9 @@ data modify storage minecraft:rend agile_phys set value {"speed_bonus_modifier":
 scoreboard objectives add rend_soul_purge_actor dummy
 scoreboard objectives add rend_soul_purge_damage dummy
 scoreboard objectives add rend_damage_mod dummy
-scoreboard players set @s rend_damage_mod 2
+scoreboard players set @s rend_damage_mod 3
 scoreboard objectives add rend_damage_max dummy
-scoreboard players set @s rend_damage_max 50
+scoreboard players set @s rend_damage_max 18
 
 # - xp % reduction scores
 scoreboard objectives add rend.soul_purge.xp_level dummy

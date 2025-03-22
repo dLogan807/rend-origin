@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "rend:soul_purge",
+    "rend:mana_potion_explode",
+    "rend:cursed_prison_explode"
+  ]
+}

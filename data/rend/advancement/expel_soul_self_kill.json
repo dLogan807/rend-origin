@@ -1,0 +1,22 @@
+{
+  "display": {
+    "hidden": true,
+    "title": {
+      "text": "Well, That Wasn't As Planned"
+    },
+    "description": {
+      "text": "Gamble your soul for a moment of glory",
+      "color": "green"
+    },
+    "icon": {
+      "id": "minecraft:skeleton_skull"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "rend:escape_nether"
+}

@@ -1,6 +1,6 @@
 {
   "name": "Soul Purge",
-  "description": "On the brink of death, expel your lifeforce. All nearby creatures are violently hurled away.",
+  "description": "On the brink of death, expel your lifeforce.",
   "type": "origins:multiple",
   "prevent_teleport_on_second_death": {
     "type": "origins:action_on_death",
@@ -311,6 +311,11 @@
           "compare_to": 20
         }
       ]
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "rend:soul_purge",
+      "inverted": true
     }
   },
   "purge": {
@@ -377,7 +382,19 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "At least 20 XP levels required. Damage scales with XP level. 85% of levels are lost."
+      "text": [
+        "§3§lExperience Scaling ⟡",
+        "\n\nThe strength you've built has to go somewhere.",
+        "\n\n§7Up to §330⟡ levels§7, you struggle to wear armour, §cdecreasing§7 your movement speed. This depends on the armour's §eweight§7.",
+        "\n\n§7Your attack and movement speed §aprogressively increase§7 past §330⟡ levels§7.",
+        "All nearby creatures are violently hurled away",
+        "\n\n§7§lPassive Ability"
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
+      "text": "At least 20 XP levels required. Damage scales with XP level. §c85%§7 of §3levels ⟡§7 are lost."
     },
     {
       "type": "origins:tooltip",

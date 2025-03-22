@@ -71,7 +71,7 @@
           {
             "type": "origins:damage",
             "damage_type": "rend:mana_potion_explode",
-            "amount": 12
+            "amount": 10
           },
           {
             "type": "origins:area_of_effect",
@@ -83,7 +83,7 @@
                 {
                   "type": "origins:damage",
                   "damage_type": "rend:mana_potion_explode",
-                  "amount": 8
+                  "amount": 6
                 },
                 {
                   "type": "origins:add_velocity",
