@@ -48,36 +48,6 @@
                 "italic": false
               },
               "target": "custom_name"
-            },
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
-                {
-                  "text": "Disturb and accelerate",
-                  "type": "text",
-                  "color": "gray"
-                },
-                {
-                  "text": "air at your whim.",
-                  "type": "text",
-                  "color": "gray"
-                },
-                { "text": "" },
-                {
-                  "text": "Mana: -20%",
-                  "type": "text",
-                  "italic": false,
-                  "color": "blue"
-                },
-                {
-                  "text": "XP Level: 35",
-                  "type": "text",
-                  "italic": false,
-                  "color": "green"
-                }
-              ],
-              "mode": "insert"
             }
           ]
         }

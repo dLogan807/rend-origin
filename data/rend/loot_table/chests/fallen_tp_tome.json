@@ -48,36 +48,6 @@
                 "italic": false
               },
               "target": "custom_name"
-            },
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
-                {
-                  "text": "Reach out and drag your",
-                  "type": "text",
-                  "color": "gray"
-                },
-                {
-                  "text": "tethered allies to you.",
-                  "type": "text",
-                  "color": "gray"
-                },
-                { "text": "" },
-                {
-                  "text": "Mana: -10%",
-                  "type": "text",
-                  "italic": false,
-                  "color": "blue"
-                },
-                {
-                  "text": "XP Level: 30",
-                  "type": "text",
-                  "italic": false,
-                  "color": "green"
-                }
-              ],
-              "mode": "insert"
             }
           ]
         }

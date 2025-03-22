@@ -335,6 +335,38 @@
     },
     "key": "key.use"
   },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "Bind allies of the past to",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      {
+        "text": "tethers in the mortal plane.",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      { "text": "" },
+      {
+        "text": "Mana: -15% per nearby tether",
+        "type": "text",
+        "color": "aqua"
+      },
+      {
+        "text": "XP Level: 40⟡",
+        "type": "text",
+        "color": "dark_aqua"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{fallen_summoning_tome: 1b}"
+    }
+  },
   "badges": [
     {
       "type": "origins:tooltip",

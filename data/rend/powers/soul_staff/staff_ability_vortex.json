@@ -258,6 +258,38 @@
     },
     "key": "key.use"
   },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "Accelerate air into",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      {
+        "text": "inescapable gusts.",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      { "text": "" },
+      {
+        "text": "Mana: -20%",
+        "type": "text",
+        "color": "aqua"
+      },
+      {
+        "text": "XP Level: 35⟡",
+        "type": "text",
+        "color": "dark_aqua"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{vortex_tome: 1b}"
+    }
+  },
   "badges": [
     {
       "type": "origins:tooltip",

@@ -46,7 +46,7 @@
           "lore": [
             "[{\"text\":\"\"}]",
             "[{\"color\":\"dark_purple\",\"italic\":false,\"text\":\"When Applied: \"}]",
-            "[{\"color\":\"blue\",\"italic\":false,\"text\":\"+15% Mana\"}]"
+            "[{\"color\":\"aqua\",\"italic\":false,\"text\":\"+15% Mana\"}]"
           ],
           "potion_contents": {
             "potion": "water",
@@ -177,7 +177,10 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
-      "text": "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing evil entities\n- Enchanted Golden Apples"
+      "text": [
+        "§b§lMana 💧",
+        "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing evil entities\n- Enchanted Golden Apples"
+      ]
     },
     {
       "type": "origins:crafting_recipe",

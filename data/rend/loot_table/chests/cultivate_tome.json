@@ -48,36 +48,6 @@
                 "italic": false
               },
               "target": "custom_name"
-            },
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
-                {
-                  "text": "Gently encourage plants",
-                  "type": "text",
-                  "color": "gray"
-                },
-                {
-                  "text": "to flourish.",
-                  "type": "text",
-                  "color": "gray"
-                },
-                { "text": "" },
-                {
-                  "text": "Mana: -5%",
-                  "type": "text",
-                  "italic": false,
-                  "color": "blue"
-                },
-                {
-                  "text": "XP Level: 25",
-                  "type": "text",
-                  "italic": false,
-                  "color": "green"
-                }
-              ],
-              "mode": "insert"
             }
           ]
         }

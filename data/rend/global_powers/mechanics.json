@@ -1,4 +1,8 @@
 {
   "entity_types": ["minecraft:player"],
-  "powers": ["rend:mana_potion_drink", "rend:fallen/forgive_dead_players"]
+  "powers": [
+    "rend:mana_potion_drink",
+    "rend:fallen/forgive_dead_players",
+    "rend:soul_staff/scrambled_tooltips"
+  ]
 }

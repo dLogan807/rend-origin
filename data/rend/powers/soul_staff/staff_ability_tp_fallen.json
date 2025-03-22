@@ -288,6 +288,38 @@
     },
     "key": "key.use"
   },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "Reach out and drag your",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      {
+        "text": "tethered allies to you.",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      { "text": "" },
+      {
+        "text": "Mana: -10%",
+        "type": "text",
+        "color": "aqua"
+      },
+      {
+        "text": "XP Level: 30⟡",
+        "type": "text",
+        "color": "dark_aqua"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{fallen_tp_tome: 1b}"
+    }
+  },
   "badges": [
     {
       "type": "origins:tooltip",

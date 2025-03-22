@@ -48,36 +48,6 @@
                 "italic": false
               },
               "target": "custom_name"
-            },
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
-                {
-                  "text": "Obliterate all with a",
-                  "type": "text",
-                  "color": "gray"
-                },
-                {
-                  "text": "magnificent explosion.",
-                  "type": "text",
-                  "color": "gray"
-                },
-                { "text": "" },
-                {
-                  "text": "Mana: -100%",
-                  "type": "text",
-                  "italic": false,
-                  "color": "blue"
-                },
-                {
-                  "text": "XP Level: 55",
-                  "type": "text",
-                  "italic": false,
-                  "color": "green"
-                }
-              ],
-              "mode": "insert"
             }
           ]
         }

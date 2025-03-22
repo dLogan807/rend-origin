@@ -48,36 +48,6 @@
                 "italic": false
               },
               "target": "custom_name"
-            },
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
-                {
-                  "text": "Weave a barrier around",
-                  "type": "text",
-                  "color": "gray"
-                },
-                {
-                  "text": "yourself.",
-                  "type": "text",
-                  "color": "gray"
-                },
-                { "text": "" },
-                {
-                  "text": "Mana: -20%",
-                  "type": "text",
-                  "italic": false,
-                  "color": "blue"
-                },
-                {
-                  "text": "XP Level: 25",
-                  "type": "text",
-                  "italic": false,
-                  "color": "green"
-                }
-              ],
-              "mode": "insert"
             }
           ]
         }

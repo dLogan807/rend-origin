@@ -31,5 +31,52 @@
     "replace": {
       "minecraft:chests/bastion_other": "rend:chests/barrier_tome/rare"
     }
+  },
+  "tome_not_escaped": {
+    "type": "origins:tooltip",
+    "hidden": true,
+    "texts": [
+      {
+        "text": "You know this language well, but",
+        "color": "gray"
+      },
+      {
+        "text": "the words seem to blur together.",
+        "color": "gray"
+      },
+      {
+        "text": "The tome feels familiar in your hand.",
+        "color": "gray"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:custom_data",
+          "nbt": "{barrier_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{cultivate_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{explosion_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{vortex_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{fallen_summoning_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{fallen_tp_tome: 1b}"
+        }
+      ]
+    }
   }
 }
