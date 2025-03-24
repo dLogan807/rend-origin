@@ -1,6 +1,6 @@
 {
   "name": "8th Sense",
-  "description": "Creatures sense your dangerous potential and pursue you over greater distances, imbuing extra strength into their attacks.",
+  "description": "Creatures sense your dangerous potential and pursue you over greater distances.",
   "type": "origins:multiple",
   "modify_target_range": {
     "type": "origins:action_on_callback",
@@ -17,5 +17,15 @@
         }
       ]
     }
-  }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        "§8§oInstinctively wary of you, entities go to great lengths to be rid of you.",
+        "\n\n§7Hostile entities §echase§7 you down over a §c50%§7 longer distance."
+      ]
+    }
+  ]
 }

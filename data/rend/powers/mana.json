@@ -43,11 +43,6 @@
         "components": {
           "custom_model_data": 439207,
           "custom_name": "{\"italic\":false,\"text\":\"Potion of Mana\"}",
-          "lore": [
-            "[{\"text\":\"\"}]",
-            "[{\"color\":\"dark_purple\",\"italic\":false,\"text\":\"When Applied: \"}]",
-            "[{\"color\":\"aqua\",\"italic\":false,\"text\":\"+15% Mana\"}]"
-          ],
           "potion_contents": {
             "potion": "water",
             "custom_name": "mana_potion"
@@ -55,6 +50,65 @@
           "custom_data": { "mana_potion": true }
         }
       }
+    }
+  },
+  "potion_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      { "text": "" },
+      { "text": "When Applied:", "color": "dark_purple" },
+      { "text": "+15% Mana", "color": "aqua" }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 20
+        }
+      ]
+    }
+  },
+  "potion_weak_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      { "text": "" },
+      {
+        "text": "Your current state cannot",
+        "color": "red"
+      },
+      { "text": "retain the potion!", "color": "red" },
+      { "text": "" },
+      { "text": "When Applied:", "color": "dark_purple" },
+      { "text": "+15% Mana", "color": "aqua" }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "origins:xp_levels",
+          "comparison": "<",
+          "compare_to": 20
+        }
+      ]
     }
   },
   "kill_refill": {
@@ -171,21 +225,17 @@
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "20 XP levels needed to utilise any mana-based abilities."
-    },
-    {
-      "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
       "text": [
-        "§b§lMana 💧",
-        "Replenished via:\n- Sleeping\n- Potions of Mana\n- Vanquishing evil entities\n- Enchanted Golden Apples"
+        "§8§oA precious art that few of your kind could master.",
+        "\n\n§320⟡ levels§7 needed to utilise any §bmana§7-based abilities.",
+        "\n\n§7Replenished via:\n- Sleeping §8(§b+60%§8)§7\n- Potions of Mana §8(§b+15%§8)§7\n- Vanquishing foes §8(§b+4%§8)§7\n- Enchanted Golden Apples §8(§b+100%§8)"
       ]
     },
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/mana_potion.png",
-      "prefix": ["Potion of Mana\n§5When Applied:\n§1+15% Mana"],
+      "prefix": ["Potion of Mana\n§5When Applied:\n§b+15% Mana"],
       "recipe": {
         "id": "rend:mana/potion_crafting",
         "type": "minecraft:crafting_shapeless",
@@ -205,7 +255,11 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "Mana cannot be utilised in the Nether."
+      "text": [
+        "§4§lCursed Prison ⛓",
+        "\n\n§8§oAll the mana here seems to have been driven out.",
+        "\n\n§bMana§7 cannot be utilised in the §4Nether§7."
+      ]
     }
   ]
 }

@@ -32,22 +32,20 @@
       "minecraft:chests/bastion_other": "rend:chests/barrier_tome/rare"
     }
   },
-  "tome_not_escaped": {
+  "tome_tooltip": {
     "type": "origins:tooltip",
-    "hidden": true,
     "texts": [
       {
         "text": "You know this language well, but",
-        "color": "gray"
+        "color": "dark_gray",
+        "italic": true
       },
       {
         "text": "the words seem to blur together.",
-        "color": "gray"
+        "color": "dark_gray",
+        "italic": true
       },
-      {
-        "text": "The tome feels familiar in your hand.",
-        "color": "gray"
-      }
+      { "text": "" }
     ],
     "item_condition": {
       "type": "origins:or",
@@ -77,6 +75,65 @@
           "nbt": "{fallen_tp_tome: 1b}"
         }
       ]
+    }
+  },
+  "mana_potion_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      { "text": "" },
+      {
+        "text": "You recognise this potion...",
+        "color": "dark_gray",
+        "italic": true
+      },
+      { "text": "" },
+      { "text": "When Applied:", "color": "dark_purple" },
+      { "text": "???", "color": "red" }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    }
+  },
+  "soul_staff_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "A high-quality staff.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": "It hums at your touch.",
+        "color": "dark_gray",
+        "italic": true
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{soul_staff: 1b}"
+    }
+  },
+  "fallen_tether_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "An odd bone mannequin.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": "Perhaps it could be useful?",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": ""
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{fallen_tether: 1b}"
     }
   }
 }

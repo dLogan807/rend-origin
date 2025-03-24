@@ -649,7 +649,7 @@
           "type": "origins:play_sound",
           "sound": "minecraft:entity.breeze.land",
           "pitch": 0,
-          "volume": 0.7,
+          "volume": 0.5,
           "category": "players"
         },
         {
@@ -725,17 +725,24 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": ["Use with [", { "keybind": "key.jump" }, "] while in the air."]
+      "text": [
+        "§8§oCompress and add elasticity to the air at your feet.",
+        "\n\n§7Use with [",
+        { "keybind": "key.jump" },
+        "§7] while airbourne to §espring forth§7.",
+        "\n\n§7XP Level: §320⟡",
+        "\n§7Mana Cost: §b-1%"
+      ]
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "Scales with XP levels:\n- 20 = 1 jump\n- 24 = 2 jumps\n- 28 = 3 jumps\n- 32 = 4 jumps\n- 36 = 5 jumps\n- 40 = 6 jumps\n- 44 = 7 jumps"
+      "text": "§eScales§7 with §3levels⟡§7:\n- §320⟡§7 = 1 jump\n- §324⟡§7 = 2 jumps\n- §328⟡§7 = 3 jumps\n- §332⟡§7 = 4 jumps\n- §336⟡§7 = 5 jumps\n- §340⟡§7 = 6 jumps\n- §344⟡§7 = 7 jumps"
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "Unusable in the Nether."
+      "text": ["§4§lCursed Prison ⛓", "\n\n§7Unusable in the §4Nether§7."]
     }
   ]
 }

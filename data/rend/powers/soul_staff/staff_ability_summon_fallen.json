@@ -59,6 +59,28 @@
       }
     }
   },
+  "fallen_tether_tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "A bone doll that acts",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": "as a vessel for a soul.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": ""
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{fallen_tether: 1b}"
+    }
+  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
@@ -352,14 +374,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -15% per nearby tether",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-15% per nearby tether"
       },
       {
-        "text": "XP Level: 40⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §340⟡"
       }
     ],
     "item_condition": {
@@ -371,7 +389,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/fallen_summoning.png",
-      "text": "§eTome of Fallen Summoning\n§fCan be found in Jungle Temples."
+      "text": "§eTome of Fallen Summoning\n§7Found in §fJungle Temples§7."
     },
     {
       "type": "origins:crafting_recipe",
@@ -403,17 +421,17 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/armor.png",
-      "text": "After slaying an evil entity, Fallen heal, have temporary resistance, and are granted improved armour."
+      "text": "§7After §eslaying a foe§7, Fallen §aheal§7, have temporary §aresistance§7, and are granted §aimproved armour§7."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/triangle_up.png",
-      "text": "Fallen gain an unbreakable helmet after 5 kills, allowing indefinite sun exposure."
+      "text": "§7Fallen gain an §eunbreakable helmet§7 after §e5§7 kills, allowing indefinite sun exposure."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
-      "text": "If a Fallen's summoner dies, their tether to this plane is weakened, damaging them."
+      "text": "§7If a Fallen's summoner §cdies§7, their tether to this plane is weakened, §edamaging§7 them."
     }
   ]
 }

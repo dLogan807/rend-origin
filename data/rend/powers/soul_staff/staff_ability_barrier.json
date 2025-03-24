@@ -292,14 +292,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -20%",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-20%"
       },
       {
-        "text": "XP Level: 25⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §325⟡"
       }
     ],
     "item_condition": {
@@ -311,7 +307,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/barrier.png",
-      "text": "§eTome of Conjure Barrier\n§fCan be found in Bastion Remnants."
+      "text": "§eTome of Conjure Barrier\n§7Found in §fBastion Remnants§7."
     }
   ]
 }

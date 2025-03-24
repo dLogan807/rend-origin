@@ -383,28 +383,28 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": [
-        "§3§lExperience Scaling ⟡",
-        "\n\nThe strength you've built has to go somewhere.",
-        "\n\n§7Up to §330⟡ levels§7, you struggle to wear armour, §cdecreasing§7 your movement speed. This depends on the armour's §eweight§7.",
-        "\n\n§7Your attack and movement speed §aprogressively increase§7 past §330⟡ levels§7.",
-        "All nearby creatures are violently hurled away",
-        "\n\n§7§lPassive Ability"
+        "§8§oThe strength you've built up cascades out of you in an effort to stabilise your near-death body.",
+        "\n\n§7When you would die, all nearby creatures are violently §ehurled away§7 and dealt up to §c33%§7 of your §3level⟡§7, §ebypassing armour§7.",
+        "\n\n§7You are then briefly buffed, but §c§lseverely weakened§7.",
+        "\n\n§7XP Level: §320⟡",
+        "\n§7XP Cost: §3-85%⟡"
       ]
     },
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "At least 20 XP levels required. Damage scales with XP level. §c85%§7 of §3levels ⟡§7 are lost."
-    },
-    {
-      "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/portal.png",
-      "text": "You may not be stable enough to remain free of your shackles..."
+      "text": [
+        "§7You may not be §estable§7 enough to remain free of your §cshackles§7..."
+      ]
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "Unusable in the Nether."
+      "text": [
+        "§4§lCursed Prison ⛓",
+        "\n\n§8§oThe §4§oNether§8§o dismisses your §c§ofeeble§8§o attempt to cling to life.",
+        "\n\n§7This ability is §ccompletely ineffective§7 in this dimension."
+      ]
     }
   ]
 }

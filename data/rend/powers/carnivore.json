@@ -35,7 +35,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/golden_apple.png",
-      "text": "Enchanted Golden Apples may be consumed."
+      "text": "§eEnchanted Golden Apples§7 can be §aconsumed§7 due to their magical properties allowing your body to tolerate them."
     }
   ]
 }

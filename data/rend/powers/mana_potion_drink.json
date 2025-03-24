@@ -10,8 +10,7 @@
         "conditions": [
           {
             "type": "origins:origin",
-            "origin": "rend:rend_escaped_nether",
-            "layer": "origins:origin"
+            "origin": "rend:rend_escaped_nether"
           },
           {
             "type": "origins:dimension",
@@ -28,7 +27,7 @@
       },
       "if_action": {
         "type": "origins:execute_command",
-        "command": "title @s actionbar {\"text\":\"You sense you can't contain the potion's energy\",\"color\":\"red\"}"
+        "command": "title @s actionbar {\"text\":\"The potion fizzes fiercely\",\"color\":\"red\"}"
       }
     },
     "item_condition": {

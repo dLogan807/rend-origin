@@ -1,6 +1,6 @@
 {
   "name": "Claws",
-  "description": "You can cling to walls that aren't too tough.",
+  "description": "You can cling and leap from walls that aren't too tough.",
   "type": "origins:multiple",
   "release_cooldown": {
     "type": "origins:cooldown",
@@ -222,15 +222,13 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "§a§lClaws 🐾",
-        "\n\nYour claws §egrip§r into surfaces well and your §ephysique§r enables you to §aleap§r from them.",
+        "§8§oYour §6§oclaws§8 §e§ogrip§8§o into surfaces and your §e§ophysique§8§o enables you to §a§oleap§8§o from them.",
         "\n\n§7Hold [§r",
         { "keybind": "key.sneak" },
         "§7] to §ecling§7 to walls.\nWhile §eclinging§7, press [§r",
         { "keybind": "key.jump" },
         "§7] to §aleap§7.",
-        "\n\n§7For §e2s§7 after letting go of a wall, fall damage is reduced by §a50%§7.",
-        "\n\n§7§lActive Ability"
+        "\n\n§7For §e2s§7 after letting go of a wall, fall damage is §ahalved§7."
       ]
     }
   ]

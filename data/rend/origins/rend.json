@@ -10,7 +10,7 @@
     "*:carnivore",
     "*:piercing_strike",
     "*:eighth_sense",
-    "*:soul_staff/hazy_memories"
+    "*:hazy_memories"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
@@ -23,7 +23,7 @@
     {
       "condition": "rend:escape_nether",
       "origin": "rend:rend_escaped_nether",
-      "announcement": "You have broken free of the Nether! New powers are now available"
+      "announcement": "You have broken free of the Nether! You feel your memories flow back into you. New powers are now available!"
     }
   ]
 }

@@ -29,9 +29,6 @@
           "custom_model_data": 439202,
           "rarity": "epic",
           "custom_name": "[\"\",{\"text\":\"Soul Staff\",\"italic\":false}]",
-          "lore": [
-            "[\"\",{\"text\":\"Channels mana into spell tomes.\",\"italic\":false}]"
-          ],
           "attribute_modifiers": {
             "modifiers": [
               {
@@ -47,6 +44,19 @@
           "custom_data": { "soul_staff": true }
         }
       }
+    }
+  },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "Channels mana into spell tomes.",
+        "color": "dark_purple"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{soul_staff: 1b}"
     }
   },
   "cooldown": {
@@ -96,7 +106,7 @@
       "sprite": "*:textures/gui/community/leopardx/badge/soul_staff.png",
       "prefix": [
         "§dSoul Staff\n§7Use with [",
-        { "keybind": "key.use", "color": "gray" },
+        { "keybind": "key.use" },
         "§7].\nHold spell tomes in your offhand."
       ],
       "recipe": {
@@ -128,7 +138,11 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": "Unusable in the Nether."
+      "text": [
+        "§4§lCursed Prison ⛓",
+        "\n\n§8§oThere is no mana to channel here.",
+        "\n\n§7Unusable in the §4Nether§7."
+      ]
     }
   ]
 }

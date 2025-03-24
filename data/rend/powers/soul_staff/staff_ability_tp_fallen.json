@@ -305,14 +305,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -10%",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-10%"
       },
       {
-        "text": "XP Level: 30⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §330⟡"
       }
     ],
     "item_condition": {
@@ -324,7 +320,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/fallen_tp.png",
-      "text": "§eTome of Apparate Fallen\n§fCan be found in Desert Pyramids."
+      "text": "§eTome of Apparate Fallen\n§7Found in §fDesert Pyramids§7."
     }
   ]
 }

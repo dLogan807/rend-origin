@@ -415,14 +415,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -100%",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-100%"
       },
       {
-        "text": "XP Level: 55⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §355⟡"
       }
     ],
     "item_condition": {
@@ -434,17 +430,20 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/explosion.png",
-      "text": "§eTome of Explosion\n§fCan be found in Nether Fortresses."
+      "text": "§eTome of Explosion\n§7Found in §fNether Fortresses§7."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/info.png",
-      "text": "You must maintain eye contact with the spell's centre while casting."
+      "text": "§7You must maintain §eeye contact§7 with the spell's centre while §ecasting§7."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
-      "text": "You need time to recover from the strain of casting the spell."
+      "text": [
+        "§8§oYou need time to recover from the §c§ostrain§8§o of casting this spell.",
+        "\n\n§7For §f8 minutes§7 after casting, you have §c30%§7 break speed and need to eat §ctwice§7 as much."
+      ]
     }
   ]
 }

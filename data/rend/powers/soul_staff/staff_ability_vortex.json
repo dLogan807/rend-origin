@@ -275,14 +275,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -20%",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-20%"
       },
       {
-        "text": "XP Level: 35⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §335⟡"
       }
     ],
     "item_condition": {
@@ -294,7 +290,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
-      "text": "§eTome of Create Vortex\n§fCan be found in Trail Chamber vaults."
+      "text": "§eTome of Create Vortex\n§7Found in §fTrail Chamber vaults§7."
     }
   ]
 }

@@ -66,7 +66,7 @@ scoreboard objectives add rend_soul_purge_damage dummy
 scoreboard objectives add rend_damage_mod dummy
 scoreboard players set @s rend_damage_mod 3
 scoreboard objectives add rend_damage_max dummy
-scoreboard players set @s rend_damage_max 18
+scoreboard players set @s rend_damage_max 50
 
 # - xp % reduction scores
 scoreboard objectives add rend.soul_purge.xp_level dummy

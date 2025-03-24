@@ -1,0 +1,150 @@
+{
+  "type": "origins:multiple",
+  "tomes": {
+    "type": "origins:tooltip",
+    "hidden": true,
+    "texts": [
+      {
+        "text": "Some kind of spell book, clearly.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": "Written in a language unfamiliar to you.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      { "text": "" }
+    ],
+    "item_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:custom_data",
+          "nbt": "{barrier_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{cultivate_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{explosion_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{vortex_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{fallen_summoning_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
+          "nbt": "{fallen_tp_tome: 1b}"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend",
+          "inverted": true
+        },
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend_escaped_nether",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "mana_potion": {
+    "type": "origins:tooltip",
+    "texts": [
+      { "text": "" },
+      { "text": "When Applied:", "color": "dark_purple" },
+      { "text": "???", "color": "red" }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{mana_potion: 1b}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend_escaped_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "soul_staff": {
+    "type": "origins:tooltip",
+    "text": {
+      "text": "A high-quality staff of some sort.",
+      "color": "dark_gray",
+      "italic": true
+    },
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{soul_staff: 1b}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend_escaped_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "fallen_tether": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "A crude mannequin made out of bones.",
+        "color": "dark_gray",
+        "italic": true
+      },
+      {
+        "text": ""
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{fallen_tether: 1b}"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend_escaped_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:origin",
+          "origin": "rend:rend",
+          "inverted": true
+        }
+      ]
+    }
+  }
+}

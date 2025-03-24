@@ -118,9 +118,18 @@
       "block": "minecraft:nether_quartz_ore"
     },
     "condition": {
-      "type": "origins:status_effect",
-      "effect": "minecraft:invisibility",
-      "inverted": true
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:invisibility",
+          "inverted": true
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether"
+        }
+      ]
     },
     "entity_action": {
       "type": "origins:and",
@@ -164,12 +173,19 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "20 XP levels needed to escape.\nYour body cannot maintain further XP gain past 20 levels in this dimension."
+      "text": [
+        "§8§oAn ethereal force is adamant at ensuring you §c§onever return home§8§o for the waste your kind laid to this land. You §n§omust§8§o escape this place.",
+        "\n\n§320⟡ levels§7 needed to §aescape§7.",
+        "\n\n§7Your body §ccannot gain§7 more than §320⟡ levels§7 in this dimension."
+      ]
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/zombified_piglin.png",
-      "text": "Nearby Zombified Piglin become hostile on mining Nether Quartz Ore."
+      "text": [
+        "§8§oYour attempts to escape will anger the §4§oNether's§8§o undead denizens.",
+        "\n\n§7Nearby §eZombified Piglin§7 become §chostile§7 on mining §eNether Quartz Ore§7."
+      ]
     }
   ]
 }

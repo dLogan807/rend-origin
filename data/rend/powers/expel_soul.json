@@ -35,7 +35,7 @@
         "type": "origins:resource",
         "resource": "*:mana_capacity",
         "comparison": ">=",
-        "compare_to": 5
+        "compare_to": 10
       },
       "if_action": {
         "type": "origins:and",
@@ -51,7 +51,7 @@
           {
             "type": "origins:change_resource",
             "resource": "*:mana_capacity",
-            "change": -5
+            "change": -10
           },
           {
             "type": "origins:raycast",
@@ -219,17 +219,25 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "§9§lExpel Soul ☄",
-        "\n\nConcentrate a part of your being and cast it at a foe. A §cdangerous§r ability that §eignores armour§7.",
+        "§8§oConcentrate a part of your being and cast it at a foe. A §c§odangerous§8§o ability that §e§oignores armour§8§o.",
         "\n\n§7Activate with [§r",
         { "keybind": "key.origins.primary_active" },
         "§7].",
-        "\n\n§7Does damage equal to §a50%§7 of the target's maximum health §8(Bosses take 15%)§7.",
+        "\n\n§7Damages for §a50%§7 of their maximum health §8(bosses take 15%)§7.",
         "\n§7If they survive, your soul may (§c33%§7 chance) §erebound§7 back at §oyou§r for §c4.5 ❤§7.",
-        "\n\n§7Cooldown: §r30s",
-        "\n§7XP Cost: §3-1⟡ level",
-        "\n§7Mana Cost: §b-5%",
-        "\n\n§7§lActive Ability"
+        "\n\n§7XP Level: §320⟡",
+        "\n§7XP Cost: §3-1⟡",
+        "\n§7Mana Cost: §b-10%",
+        "\n§7Cooldown: §r30s"
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
+      "text": [
+        "§4§lCursed Prison ⛓",
+        "\n\n§8§oYou daren't try letting a burst of your strength part with you here for you fear all of it would follow.",
+        "\n\n§7Unusable in the §4Nether§7."
       ]
     }
   ]

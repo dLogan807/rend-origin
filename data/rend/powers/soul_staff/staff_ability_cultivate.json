@@ -313,14 +313,10 @@
       },
       { "text": "" },
       {
-        "text": "Mana: -5%",
-        "type": "text",
-        "color": "aqua"
+        "text": "§7Mana Cost: §b-5%"
       },
       {
-        "text": "XP Level: 25⟡",
-        "type": "text",
-        "color": "dark_aqua"
+        "text": "§7XP Level: §325⟡"
       }
     ],
     "item_condition": {
@@ -332,12 +328,12 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/cultivation.png",
-      "text": "§eTome of Cultivation\n§fCan be found in villages."
+      "text": "§eTome of Cultivation§7\nFound in all manner of §fvillages§7."
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/sun_icon.png",
-      "text": "Light level of 9 needed."
+      "text": "§7Plants need a light level of §e9§7."
     }
   ]
 }

@@ -105,15 +105,17 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "When within 4 blocks behind a target, hold [",
+        "§8§oA quick glance is all it takes for you to determine where to strike.",
+        "\n\n§7When within §e4§7 blocks §ebehind§7 a foe, hold [§r",
         { "keybind": "key.sneak" },
-        "] and strike to deal 4x damage."
+        "§7] and attack to deal §a400%§7 damage.",
+        "\n\n§7Cooldown: §r25s"
       ]
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-      "text": "Sword required."
+      "text": "§7Sword §erequired§7."
     }
   ]
 }

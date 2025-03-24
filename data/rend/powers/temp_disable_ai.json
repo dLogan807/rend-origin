@@ -18,7 +18,7 @@
   },
   "duration": {
     "type": "origins:cooldown",
-    "cooldown": 8
+    "cooldown": 10
   },
   "decrement": {
     "type": "origins:action_over_time",
