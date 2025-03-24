@@ -89,124 +89,6 @@
       ]
     }
   },
-  "move_to_ground": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:action_on_entity_set",
-      "set": "*:fallen/tether/hitbox_model_root",
-      "bientity_action": {
-        "type": "origins:if_else_list",
-        "actions": [
-          {
-            "condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:raycast",
-                    "entity": false,
-                    "shape_type": "collider",
-                    "fluid_handling": "none",
-                    "direction": {
-                      "y": -1.0
-                    },
-                    "space": "world",
-                    "block_distance": 0.3,
-                    "inverted": true
-                  },
-                  {
-                    "type": "origins:raycast",
-                    "entity": false,
-                    "shape_type": "collider",
-                    "fluid_handling": "none",
-                    "direction": {
-                      "y": -1.0
-                    },
-                    "space": "world",
-                    "block_distance": 0.1,
-                    "inverted": true
-                  }
-                ]
-              }
-            },
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "tp @s ~ ~-0.3 ~"
-                  }
-                },
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "tp @s ~ ~-0.3 ~"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "condition": {
-              "type": "origins:target_condition",
-              "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:raycast",
-                    "entity": false,
-                    "shape_type": "collider",
-                    "fluid_handling": "none",
-                    "direction": {
-                      "y": -1.0
-                    },
-                    "space": "world",
-                    "block_distance": 0.3
-                  },
-                  {
-                    "type": "origins:raycast",
-                    "entity": false,
-                    "shape_type": "collider",
-                    "fluid_handling": "none",
-                    "direction": {
-                      "y": -1.0
-                    },
-                    "space": "world",
-                    "block_distance": 0.1,
-                    "inverted": true
-                  }
-                ]
-              }
-            },
-            "action": {
-              "type": "origins:and",
-              "actions": [
-                {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "tp @s ~ ~-0.1 ~"
-                  }
-                },
-                {
-                  "type": "origins:actor_action",
-                  "action": {
-                    "type": "origins:execute_command",
-                    "command": "tp @s ~ ~-0.1 ~"
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "interval": 1
-  },
   "initial_invulnerability": {
     "type": "origins:modify_damage_taken",
     "bientity_condition": {
@@ -279,6 +161,10 @@
         {
           "type": "origins:execute_command",
           "command": "tp @s ~ -66 ~"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "kill @s"
         }
       ]
     },
