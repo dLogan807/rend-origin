@@ -156,10 +156,6 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "kill @e[type=minecraft:experience_orb,distance=..1,limit=2]"
-        },
-        {
-          "type": "origins:execute_command",
           "command": "tp @s ~ -66 ~"
         },
         {
@@ -297,6 +293,10 @@
               ]
             }
           }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ -66 ~"
         },
         {
           "type": "origins:execute_command",
