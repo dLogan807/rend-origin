@@ -87,6 +87,10 @@
       "type": "origins:and",
       "actions": [
         {
+          "type": "origins:trigger_cooldown",
+          "power": "*:soul_staff/soul_staff_cooldown"
+        },
+        {
           "type": "origins:swing_hand",
           "hand": "MAIN_HAND"
         },
@@ -167,12 +171,6 @@
               }
             ]
           }
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "change": 9200,
-          "operation": "set"
         }
       ]
     },
@@ -180,8 +178,8 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0,
-      "order": 1,
+      "bar_index": 6,
+      "order": 4,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -378,6 +376,9 @@
       },
       {
         "text": "§7XP Level: §340⟡"
+      },
+      {
+        "text": "§7Cooldown: §r40s"
       }
     ],
     "item_condition": {

@@ -87,7 +87,6 @@
             "actions": [
               {
                 "type": "origins:area_of_effect",
-                "shape": "sphere",
                 "radius": 10,
                 "bientity_action": {
                   "type": "origins:target_action",
@@ -108,8 +107,7 @@
               },
               {
                 "type": "origins:area_of_effect",
-                "shape": "sphere",
-                "radius": 15,
+                "radius": 20,
                 "bientity_action": {
                   "type": "origins:target_action",
                   "action": {
@@ -129,8 +127,7 @@
               },
               {
                 "type": "origins:area_of_effect",
-                "shape": "sphere",
-                "radius": 20,
+                "radius": 30,
                 "bientity_action": {
                   "type": "origins:target_action",
                   "action": {
@@ -150,8 +147,7 @@
               },
               {
                 "type": "origins:area_of_effect",
-                "shape": "sphere",
-                "radius": 25,
+                "radius": 40,
                 "bientity_action": {
                   "type": "origins:target_action",
                   "action": {
@@ -171,8 +167,7 @@
               },
               {
                 "type": "origins:area_of_effect",
-                "shape": "sphere",
-                "radius": 30,
+                "radius": 50,
                 "bientity_action": {
                   "type": "origins:target_action",
                   "action": {
@@ -556,30 +551,29 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.537,0.984,0.941],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.537,0.984,0.941],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.549,0.953,0.506],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.549,0.953,0.506],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.878,0.404,0.894],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.878,0.404,0.894],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.984,0.996,0.384],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 15 3 15 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.984,0.996,0.384],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
         }
       ]
     },
-    "interval": 7
+    "interval": 5
   },
   "warn_players": {
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:area_of_effect",
-      "radius": 30,
-      "shape": "sphere",
+      "radius": 50,
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {

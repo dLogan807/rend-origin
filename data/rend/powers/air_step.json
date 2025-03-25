@@ -11,7 +11,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_01.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -49,7 +49,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_02.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -87,7 +87,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_03.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -125,7 +125,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_04.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -163,7 +163,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_05.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -201,7 +201,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_06.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -239,7 +239,7 @@
       "should_render": true,
       "sprite_location": "rend:textures/gui/community/leopardx/air_step_bar_07.png",
       "bar_index": 0,
-      "order": 3,
+      "order": 7,
       "condition": {
         "type": "origins:and",
         "conditions": [

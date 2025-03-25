@@ -86,7 +86,7 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-      "order": 2,
+      "order": 3,
       "bar_index": 1
     },
     "cooldown": 500

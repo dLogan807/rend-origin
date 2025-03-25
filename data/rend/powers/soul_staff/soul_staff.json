@@ -61,7 +61,28 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 10000
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 0,
+      "order": 5,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
+    }
   },
   "nether_use": {
     "type": "origins:active_self",
@@ -107,7 +128,8 @@
       "prefix": [
         "§dSoul Staff\n§7Use with [",
         { "keybind": "key.use" },
-        "§7].\nHold spell tomes in your offhand."
+        "§7].\nHold spell tomes in your offhand.",
+        "\n\n§7Cooldown: §r5s"
       ],
       "recipe": {
         "id": "*:soul_staff",

@@ -13,12 +13,12 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 10000,
+    "cooldown": 9600,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 0,
-      "order": 1,
+      "bar_index": 8,
+      "order": 4,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -52,12 +52,12 @@
             "power": "*:*_cooldown"
           },
           {
-            "type": "origins:swing_hand",
-            "hand": "MAIN_HAND"
-          },
-          {
             "type": "origins:trigger_cooldown",
             "power": "*:soul_staff/soul_staff_cooldown"
+          },
+          {
+            "type": "origins:swing_hand",
+            "hand": "MAIN_HAND"
           },
           {
             "type": "origins:change_resource",
@@ -201,7 +201,7 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
       "bar_index": 7,
-      "order": 1,
+      "order": 6,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -419,6 +419,9 @@
       },
       {
         "text": "§7XP Level: §355⟡"
+      },
+      {
+        "text": "§7Cooldown: §r8 minutes"
       }
     ],
     "item_condition": {
