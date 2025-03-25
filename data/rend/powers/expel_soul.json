@@ -9,7 +9,7 @@
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
       "bar_index": 16,
-      "order": 1,
+      "order": 3,
       "condition": {
         "type": "origins:and",
         "conditions": [
@@ -171,6 +171,7 @@
         "command": "title @s actionbar {\"text\":\"Insufficient mana\",\"color\":\"red\"}"
       }
     },
+    "key": "key.origins.secondary_active",
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -221,7 +222,7 @@
       "text": [
         "§8§oConcentrate a part of your being and cast it at a foe. A §c§odangerous§8§o ability that §e§oignores armour§8§o.",
         "\n\n§7Activate with [§r",
-        { "keybind": "key.origins.primary_active" },
+        { "keybind": "key.origins.secondary_active" },
         "§7].",
         "\n\n§7Damages for §a50%§7 of their maximum health §8(bosses take 15%)§7.",
         "\n§7If they survive, your soul may (§c33%§7 chance) §erebound§7 back at §oyou§r for §c4.5 ❤§7.",
