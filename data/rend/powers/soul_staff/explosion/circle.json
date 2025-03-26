@@ -144,46 +144,6 @@
                     "inverted": true
                   }
                 }
-              },
-              {
-                "type": "origins:area_of_effect",
-                "radius": 40,
-                "bientity_action": {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:damage",
-                    "damage_type": "rend:soul_staff_explosion",
-                    "amount": 10
-                  }
-                },
-                "bientity_condition": {
-                  "type": "origins:target_condition",
-                  "condition": {
-                    "type": "origins:in_tag",
-                    "tag": "*:inanimate",
-                    "inverted": true
-                  }
-                }
-              },
-              {
-                "type": "origins:area_of_effect",
-                "radius": 50,
-                "bientity_action": {
-                  "type": "origins:target_action",
-                  "action": {
-                    "type": "origins:damage",
-                    "damage_type": "rend:soul_staff_explosion",
-                    "amount": 5
-                  }
-                },
-                "bientity_condition": {
-                  "type": "origins:target_condition",
-                  "condition": {
-                    "type": "origins:in_tag",
-                    "tag": "*:inanimate",
-                    "inverted": true
-                  }
-                }
               }
             ]
           }
@@ -551,19 +511,19 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.537,0.984,0.941],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.537,0.984,0.941],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 30 3 30 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.549,0.953,0.506],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.549,0.953,0.506],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 30 3 30 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.878,0.404,0.894],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.878,0.404,0.894],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 30 3 30 0 1 normal"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle dust_color_transition{from_color:[0.984,0.996,0.384],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 50 3 50 0 1 normal"
+          "command": "particle dust_color_transition{from_color:[0.984,0.996,0.384],scale:4,to_color:[1.000,1.000,1.000]} ~ ~ ~ 30 3 30 0 1 normal"
         }
       ]
     },
@@ -573,7 +533,7 @@
     "type": "origins:action_over_time",
     "entity_action": {
       "type": "origins:area_of_effect",
-      "radius": 50,
+      "radius": 30,
       "bientity_condition": {
         "type": "origins:target_condition",
         "condition": {
