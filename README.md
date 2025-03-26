@@ -15,7 +15,7 @@ Mod downloads:
 
 ### Installation
 
-Download the latest [release](https://github.com/dLogan807/rend-origin/releases). There's no need to unzip the files! Copy the datapack to your world's datapack folder and the resource pack to your resource pack folder.
+Download the latest `rend_datapack.zip` and `rend_resources.zip` from [releases](https://github.com/dLogan807/rend-origin/releases). There's no need to unzip the files! Copy the datapack to your world's datapack folder and the resource pack to your resource pack folder.
 
 ### Lore
 
