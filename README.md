@@ -13,6 +13,10 @@ Mod downloads:
 - [Origins](https://modrinth.com/mod/origins)
 - [Pehkui](https://modrinth.com/mod/pehkui)
 
+### Installation
+
+Download the latest [release](https://github.com/dLogan807/rend-origin/releases). There's no need to unzip the files! Copy the datapack to your world's datapack folder and the resource pack to your resource pack folder.
+
 ### Lore
 
 A specialised subclass of an ancient race that invaded the Nether. Not excelling in physical strength but making up for it in agility. Few of them have managed to survive the millennia of entombment, having sealed themselves away in makeshift sarcophagi. Those who have are exceedingly weak, making the chances of them ever escaping the hell they created near-insurmountable.
