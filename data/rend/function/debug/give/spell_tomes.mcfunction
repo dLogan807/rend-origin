@@ -1,0 +1,7 @@
+#Give all spell books
+give @s enchanted_book[custom_model_data=439210,custom_name='{"text":"Tome of Fallen Summoning","color": "yellow","italic": false}',custom_data={fallen_summoning_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439211,custom_name='{"text":"Tome of Create Vortex","color": "yellow","italic": false}',custom_data={vortex_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439212,custom_name='{"text":"Tome of Explosion","color": "yellow","italic": false}',custom_data={explosion_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439213,custom_name='{"text":"Tome of Fallen Apparation","color": "yellow","italic": false}',custom_data={fallen_tp_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439214,custom_name='{"text":"Tome of Cultivation","color": "yellow","italic": false}',custom_data={cultivate_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439215,custom_name='{"text":"Tome of Conjure Barrier","color": "yellow","italic": false}',custom_data={barrier_tome:1b},enchantment_glint_override=true] 1

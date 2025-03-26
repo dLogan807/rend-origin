@@ -1,0 +1,1 @@
+give @s netherite_sword[custom_model_data=439202,rarity="epic",custom_name="{\"text\":\"Soul Staff\",\"italic\":false}",attribute_modifiers={modifiers:[{"id": "attack_damage","type": "generic.attack_damage","amount": -0.5,"operation": "add_multiplied_base","slot": "mainhand"}]},unbreakable={},custom_data={"soul_staff": true}] 1
