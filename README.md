@@ -26,8 +26,10 @@ Especially when starting out, this is a difficult origin to play! Your XP level 
 Each power is accompanied by tooltips with detailed explanations of the power's effects.
 
 <details>
-    <summary><b>Show power list screenshot</b></summary>
-    Is... that it? <i>You can't help but feel that there is more to the Rend...</i>
+<summary>Show power list screenshot</summary>
+    
+![rend_power_list](https://github.com/user-attachments/assets/36639243-2fb8-4873-8a6a-e9dfda8b9511)
+<br>Is that it? <i>You can't help but feel that there is more to the Rend...</i>    
 </details>
 
 ## Questions and Answers
