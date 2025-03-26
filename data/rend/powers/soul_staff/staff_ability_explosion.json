@@ -11,31 +11,6 @@
   "root": {
     "type": "origins:entity_set"
   },
-  "cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 9600,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 8,
-      "order": 4,
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:xp_levels",
-            "comparison": ">=",
-            "compare_to": 20
-          },
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
-          }
-        ]
-      }
-    }
-  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
@@ -47,10 +22,6 @@
       "hit_action": {
         "type": "origins:and",
         "actions": [
-          {
-            "type": "origins:trigger_cooldown",
-            "power": "*:*_cooldown"
-          },
           {
             "type": "origins:trigger_cooldown",
             "power": "*:soul_staff/soul_staff_cooldown"
@@ -132,20 +103,32 @@
       "command_step": 1,
       "command_along_ray_only_on_hit": false
     },
+    "cooldown": 9600,
     "hud_render": {
-      "should_render": false
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 8,
+      "order": 4,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
     },
-    "cooldown": 20,
     "key": "key.use",
     "condition": {
       "type": "origins:and",
       "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
         {
           "type": "origins:entity_set_size",
           "set": "*:*_root",

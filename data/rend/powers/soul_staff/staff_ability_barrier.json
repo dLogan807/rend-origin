@@ -36,40 +36,11 @@
       "order": 6
     }
   },
-  "cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 600,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 4,
-      "order": 4,
-      "condition": {
-        "type": "origins:and",
-        "conditions": [
-          {
-            "type": "origins:xp_levels",
-            "comparison": ">=",
-            "compare_to": 20
-          },
-          {
-            "type": "origins:dimension",
-            "dimension": "minecraft:the_nether",
-            "inverted": true
-          }
-        ]
-      }
-    }
-  },
   "activation": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:and",
       "actions": [
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:*_cooldown"
-        },
         {
           "type": "origins:trigger_cooldown",
           "power": "*:soul_staff/soul_staff_cooldown"
@@ -104,20 +75,32 @@
         }
       ]
     },
-    "cooldown": 20,
+    "cooldown": 600,
     "hud_render": {
-      "should_render": false
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 4,
+      "order": 4,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
     },
     "key": "key.use",
     "condition": {
       "type": "origins:and",
       "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
         {
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
