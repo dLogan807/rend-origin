@@ -16,7 +16,10 @@
       "trigger": "minecraft:changed_dimension",
       "conditions": {
         "from": "minecraft:the_nether",
-        "to": "minecraft:overworld"
+        "to": "minecraft:overworld",
+        "player": {
+          "nbt": "{Tags:[rend.player]}"
+        }
       }
     }
   },

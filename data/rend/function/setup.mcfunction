@@ -1,5 +1,6 @@
 #Grant player advancement tree
 advancement grant @s only rend:root
+tag @s add rend.player
 
 #Track player xp
 scoreboard objectives add rend.xp_level level
