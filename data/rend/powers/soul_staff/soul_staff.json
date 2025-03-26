@@ -28,7 +28,7 @@
         "components": {
           "custom_model_data": 439202,
           "rarity": "epic",
-          "custom_name": "[\"\",{\"text\":\"Soul Staff\",\"italic\":false}]",
+          "custom_name": "{\"text\":\"Soul Staff\",\"italic\":false}",
           "attribute_modifiers": {
             "modifiers": [
               {
