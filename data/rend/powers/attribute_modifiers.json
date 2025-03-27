@@ -10,34 +10,6 @@
       "operation": "add_value"
     }
   },
-  "axe_limit": {
-    "type": "origins:conditioned_attribute",
-    "modifiers": [
-      {
-        "id": "rend:axe_attack_damage",
-        "attribute": "minecraft:generic.attack_damage",
-        "operation": "add_value",
-        "amount": -5
-      },
-      {
-        "id": "rend:axe_attack_speed",
-        "attribute": "minecraft:generic.attack_speed",
-        "operation": "add_value",
-        "amount": -0.5
-      }
-    ],
-    "tick_rate": 30,
-    "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "mainhand",
-      "item_condition": {
-        "type": "origins:ingredient",
-        "ingredient": {
-          "tag": "rend:axes"
-        }
-      }
-    }
-  },
   "reapply_on_spawn": {
     "type": "origins:action_on_callback",
     "entity_action_added": {

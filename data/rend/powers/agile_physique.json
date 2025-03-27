@@ -114,14 +114,6 @@
     },
     {
       "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
-      "text": [
-        "§8§oYou simply aren't suited to wield axes.",
-        "\n\n§7Axes are always of §creduced effectiveness§7, having §c-50%§7 attack speed and dealing §c5 ❤§7 less damage."
-      ]
-    },
-    {
-      "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": [
         "§4§lCursed Prison ⛓",
