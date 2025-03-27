@@ -1,6 +1,5 @@
 {
   "powers": [
-    "*:teardown",
     "*:xp_level_advancement",
     "*:cursed_prison",
     "*:faded_husk",
