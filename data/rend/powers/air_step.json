@@ -653,6 +653,10 @@
           "category": "players"
         },
         {
+          "type": "origins:execute_command",
+          "command": "particle poof ~ ~ ~ 0.2 0 0.2 0.1 5 normal"
+        },
+        {
           "type": "origins:and",
           "actions": [
             {
@@ -693,10 +697,6 @@
           ]
         },
         {
-          "type": "origins:execute_command",
-          "command": "function rend:air_step_circle"
-        },
-        {
           "type": "origins:add_velocity",
           "set": true,
           "y": 0.5
@@ -727,9 +727,9 @@
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
         "§8§oCompress and add elasticity to the air at your feet.",
-        "\n\n§7Use with [",
+        "\n\n§7While airborne, press [",
         { "keybind": "key.jump" },
-        "§7] while airbourne to §espring forth§7.",
+        "§7] to §ejump§7.",
         "\n\n§7XP Level: §320⟡",
         "\n§7Mana Cost: §b-1%"
       ]
@@ -737,12 +737,15 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
-      "text": "§eScales§7 with §3levels⟡§7:\n- §320⟡§7 = 1 jump\n- §324⟡§7 = 2 jumps\n- §328⟡§7 = 3 jumps\n- §332⟡§7 = 4 jumps\n- §336⟡§7 = 5 jumps\n- §340⟡§7 = 6 jumps\n- §344⟡§7 = 7 jumps"
+      "text": "§7Scales with §3levels⟡§7:\n- §320⟡§7 = 1 jump\n- §324⟡§7 = 2 jumps\n- §328⟡§7 = 3 jumps\n- §332⟡§7 = 4 jumps\n- §336⟡§7 = 5 jumps\n- §340⟡§7 = 6 jumps\n- §344⟡§7 = 7 jumps"
     },
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": ["§4§lCursed Prison ⛓", "\n\n§7Unusable in the §4Nether§7."]
+      "text": [
+        "§4§lCursed Prison ⛓          ",
+        "\n\n§7Unusable in the §4Nether§7.       "
+      ]
     }
   ]
 }

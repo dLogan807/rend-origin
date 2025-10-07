@@ -3,7 +3,7 @@
   "hidden": true,
   "timer": {
     "type": "origins:cooldown",
-    "cooldown": 9600,
+    "cooldown": 3600,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
@@ -16,7 +16,7 @@
     "entity_action_gained": {
       "type": "origins:change_resource",
       "resource": "*:*_timer",
-      "change": 9600,
+      "change": 3600,
       "operation": "set"
     }
   },

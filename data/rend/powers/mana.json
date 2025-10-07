@@ -227,8 +227,8 @@
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
       "text": [
         "§8§oA precious art that few of your kind could master.",
-        "\n\n§320⟡ levels§7 needed to utilise any §bmana§7-based abilities.",
-        "\n\n§7Replenished via:\n- Sleeping §8(§b+60%§8)§7\n- Potions of Mana §8(§b+15%§8)§7\n- Vanquishing foes §8(§b+4%§8)§7\n- Enchanted Golden Apples §8(§b+100%§8)"
+        "\n\n§7Replenished via:\n- Sleeping §8(§b+60%§8)§7\n- Potions of Mana §8(§b+15%§8)§7\n- Vanquishing foes §8(§b+4%§8)§7\n- Enchanted Golden Apples §8(§b+100%§8)",
+        "\n\n§7XP Level: §320⟡"
       ]
     },
     {

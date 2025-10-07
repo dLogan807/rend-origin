@@ -104,11 +104,13 @@
     "type": "origins:particle",
     "particle": "minecraft:enchanted_hit",
     "count": 10,
+    "offset_y": 1,
     "spread": {
-      "x": 1.25,
+      "x": 1.0,
       "y": 0.5,
-      "z": 1.25
+      "z": 1.0
     },
-    "frequency": 5
+    "frequency": 5,
+    "visible_in_first_person": true
   }
 }

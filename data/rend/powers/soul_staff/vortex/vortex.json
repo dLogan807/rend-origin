@@ -59,7 +59,8 @@
           "type": "origins:play_sound",
           "sound": "minecraft:block.chorus_flower.grow",
           "category": "hostile",
-          "pitch": 0
+          "pitch": 0,
+          "volume": 2
         },
         {
           "type": "origins:area_of_effect",

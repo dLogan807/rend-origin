@@ -274,7 +274,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
-      "text": "§eTome of Create Vortex\n§7Found in §fTrail Chamber vaults§7."
+      "text": "§eTome of Create Vortex         \n§7Found in §fTrail Chamber vaults§7."
     }
   ]
 }

@@ -291,7 +291,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/barrier.png",
-      "text": "§eTome of Conjure Barrier\n§7Found in §fBastion Remnants§7."
+      "text": "§eTome of Conjure Barrier       \n§7Found in §fBastion Remnants§7.       "
     }
   ]
 }

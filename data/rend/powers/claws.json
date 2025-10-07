@@ -222,13 +222,13 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "§8§oYour §6§oclaws§8 §e§ogrip§8§o into surfaces and your §e§ophysique§8§o enables you to §a§oleap§8§o from them.",
+        "§8§oYour claws grip into blocks and your physique enables you to leap from them.",
         "\n\n§7Hold [§r",
         { "keybind": "key.sneak" },
         "§7] to §ecling§7 to walls.\nWhile §eclinging§7, press [§r",
         { "keybind": "key.jump" },
         "§7] to §aleap§7.",
-        "\n\n§7For §e2s§7 after letting go of a wall, fall damage is §ahalved§7."
+        "\n\n§7For §e2s§7 after releasing, fall damage is §ahalved§7."
       ]
     }
   ]

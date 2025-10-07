@@ -50,9 +50,9 @@ scoreboard objectives add rend.agile_phys.armour_denominator dummy
 
 # - Setup speed variables and constants (y=1.2x-36)
 scoreboard objectives add rend.agile_phys.SPEED_GRADIENT dummy
-scoreboard players set @s rend.agile_phys.SPEED_GRADIENT 12
+scoreboard players set @s rend.agile_phys.SPEED_GRADIENT 10
 scoreboard objectives add rend.agile_phys.SPEED_Y_MOD dummy
-scoreboard players set @s rend.agile_phys.SPEED_Y_MOD -360
+scoreboard players set @s rend.agile_phys.SPEED_Y_MOD -300
 scoreboard objectives add rend.agile_phys.SPEED_MAX dummy
 scoreboard players set @s rend.agile_phys.SPEED_MAX 900
 scoreboard objectives add rend.agile_phys.speed_prev_xp_level dummy

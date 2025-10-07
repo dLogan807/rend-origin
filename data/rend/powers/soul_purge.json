@@ -385,8 +385,8 @@
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": [
         "§8§oThe strength you've built up cascades out of you in an effort to stabilise your near-death body.",
-        "\n\n§7When you would die, all nearby creatures are violently §ehurled away§7 and dealt up to §c33%§7 of your §3level⟡§7, §ebypassing armour§7.",
-        "\n\n§7You are then briefly buffed, but §c§lseverely weakened§7.",
+        "\n\n§7When you would die, all nearby creatures are violently §ehurled away§7 and damaged up to §e33%§7 of your §3level⟡§7.",
+        "\n\n§7Become briefly buffed, but §c§lseverely weakened§7.",
         "\n\n§7XP Level: §320⟡",
         "\n§7XP Cost: §3-85%⟡"
       ]
@@ -395,7 +395,7 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/portal.png",
       "text": [
-        "§7You may not be §estable§7 enough to remain free of your §cshackles§7..."
+        "§7You may not be stable enough to remain free of your §4shackles§7..."
       ]
     },
     {
@@ -403,8 +403,8 @@
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
       "text": [
         "§4§lCursed Prison ⛓",
-        "\n\n§8§oThe §4§oNether§8§o dismisses your §c§ofeeble§8§o attempt to cling to life.",
-        "\n\n§7This ability is §ccompletely ineffective§7 in this dimension."
+        "\n\n§8§oThe §4§oNether§8§o dismisses your feeble attempt to cling to life.",
+        "\n\n§cCompletely ineffective§7 in this dimension."
       ]
     }
   ]

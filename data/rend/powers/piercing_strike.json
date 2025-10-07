@@ -108,7 +108,7 @@
         "§8§oA quick glance is all it takes for you to determine where to strike.",
         "\n\n§7When within §e4§7 blocks §ebehind§7 a foe, hold [§r",
         { "keybind": "key.sneak" },
-        "§7] and attack to deal §a400%§7 damage.",
+        "§7] and attack to deal §c400%§7 damage.",
         "\n\n§7Cooldown: §r25s"
       ]
     },

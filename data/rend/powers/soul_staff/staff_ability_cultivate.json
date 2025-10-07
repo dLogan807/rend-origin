@@ -312,7 +312,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/cultivation.png",
-      "text": "§eTome of Cultivation§7\nFound in all manner of §fvillages§7."
+      "text": "§eTome of Cultivation§7               \nFound in all manner of §fvillages§7."
     },
     {
       "type": "origins:tooltip",

@@ -58,31 +58,9 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:entity.experience_orb.pickup",
-          "pitch": 1.5,
+          "pitch": 0.4,
           "volume": 0.3,
           "category": "hostile"
-        },
-        {
-          "type": "origins:delay",
-          "ticks": 5,
-          "action": {
-            "type": "origins:play_sound",
-            "sound": "minecraft:entity.experience_orb.pickup",
-            "pitch": 1.1,
-            "volume": 0.3,
-            "category": "hostile"
-          }
-        },
-        {
-          "type": "origins:delay",
-          "ticks": 10,
-          "action": {
-            "type": "origins:play_sound",
-            "sound": "minecraft:entity.experience_orb.pickup",
-            "pitch": 1.7,
-            "volume": 0.3,
-            "category": "hostile"
-          }
         },
         {
           "type": "origins:if_else",

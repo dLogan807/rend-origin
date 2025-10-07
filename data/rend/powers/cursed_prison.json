@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "name": "Cursed Imprisonment",
+  "name": "Cursed Prison",
   "description": "Born of the Overworld but shackled to the ruins of the Nether. The dimension curbs most beneficial abilites.",
   "nether_spawn": {
     "type": "origins:modify_player_spawn",
@@ -174,9 +174,8 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": [
-        "§8§oAn ethereal force is adamant at ensuring you §c§onever return home§8§o for the waste your kind laid to this land. You §n§omust§8§o escape this place.",
-        "\n\n§320⟡ levels§7 needed to §aescape§7.",
-        "\n\n§7Your body §ccannot gain§7 more than §320⟡ levels§7 in this dimension."
+        "§8§oAn ethereal force is adamant at ensuring you never return home for the waste your kind laid to this land. You must escape this place.",
+        "\n\n§7XP Level to escape: §320⟡"
       ]
     },
     {

@@ -380,7 +380,8 @@
                   {
                     "type": "origins:play_sound",
                     "sound": "minecraft:item.armor.equip_iron",
-                    "category": "hostile"
+                    "category": "hostile",
+                    "volume": 0.6
                   }
                 ]
               }
@@ -412,7 +413,8 @@
                   {
                     "type": "origins:play_sound",
                     "sound": "minecraft:item.armor.equip_elytra",
-                    "category": "hostile"
+                    "category": "hostile",
+                    "volume": 0.6
                   }
                 ]
               }
@@ -441,7 +443,8 @@
                 {
                   "type": "origins:play_sound",
                   "sound": "minecraft:item.armor.equip_leather",
-                  "category": "hostile"
+                  "category": "hostile",
+                  "volume": 0.6
                 }
               ]
             }
@@ -465,7 +468,8 @@
           {
             "type": "origins:play_sound",
             "sound": "minecraft:particle.soul_escape",
-            "category": "hostile"
+            "category": "hostile",
+            "volume": 0.6
           }
         ]
       }

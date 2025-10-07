@@ -390,7 +390,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/fallen_summoning.png",
-      "text": "§eTome of Fallen Summoning\n§7Found in §fJungle Temples§7."
+      "text": "§eTome of Fallen Summoning  \n§7Found in §fJungle Temples§7.   "
     },
     {
       "type": "origins:crafting_recipe",
@@ -422,7 +422,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/icons/armor.png",
-      "text": "§7After §eslaying a foe§7, Fallen §aheal§7, have temporary §aresistance§7, and are granted §aimproved armour§7."
+      "text": "§7After §eslaying a foe§7, Fallen §aheal§7 and are granted §eimproved armour§7."
     },
     {
       "type": "origins:tooltip",
@@ -432,7 +432,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
-      "text": "§7If a Fallen's summoner §cdies§7, their tether to this plane is weakened, §edamaging§7 them."
+      "text": "§7If you die, your Fallen's tether to this plane is weakened, dealing them §c5❤§7."
     }
   ]
 }

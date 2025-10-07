@@ -98,18 +98,18 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": [
-        "§8§oYour strength §e§oscales§8§o with §3§oXP⟡ levels§8§o.",
-        "\n\n§7Up to §330⟡ levels§7, you struggle to wear armour, §cdecreasing§7 your movement speed. This depends on the armour's §eweight§7.",
-        "\n\n§7Your attack and movement speed §aprogressively increase§7 past §330⟡ levels§7."
+        "§8§oYour strength accumulates with your experience.",
+        "\n\n§7Up to §330⟡ levels§7, you struggle to wear armour, which §cdecreases§7 your movement speed.",
+        "\n§7Surpassing this causes your attack and movement speed to §eprogressively increase§7."
       ]
     },
     {
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
       "text": [
-        "§8§oNimble as you may be, your body is fairly frail.",
-        "\n\n§7Your maximum health is §c9 ❤§7.",
-        "\n\n§7You take §c0.5 ❤§7 more damage from §oeverything§r§7 and damage is increased by §c50%§7 when §eattacked from behind§r."
+        "§8§oNimble as you may be, your body is frail.",
+        "\n\n§7Your maximum health is §c9❤§7.",
+        "\n\n§7You take §c0.5❤§7 more damage from §oeverything§r§7 and damage is increased by §c50%§7 when §eattacked from behind§r."
       ]
     },
     {

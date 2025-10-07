@@ -327,7 +327,7 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/xp_orb.png",
       "text": [
-        "§8§oBut a shrivelled hollow of your former self, you must work to regain your §e§ostrength§8§o by gaining §3§oexperience⟡§8§o.",
+        "§8§oBut a shrivelled hollow of your former self, you must work to regain your strength.",
         "\n\n§7Beginning in a §csignificantly weakened§7 state, your attack damage and maximum health §escale§7 to your full capacity at §330⟡ levels§7."
       ]
     },
@@ -335,12 +335,12 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "§c§oStrain§8§o yourself to become §e§ofully transparent§8§o. Slip past foes or strike deftly from behind.",
-        "\n\n§7Up to §320⟡ levels§7, use [§r",
+        "§8§oStrain yourself to become fully transparent. Slip past foes or strike deftly from behind.",
+        "\n\n§7Use [§r",
         { "keybind": "key.origins.primary_active" },
-        "§7] to toggle §ainvisibility§7 and drastically reduce foes' perception of you.",
+        "§7] to toggle §einvisibility§7 and reduce foes' perception of you.",
         "\n\n§7XP Level: Up to §320⟡",
-        "\n§7XP Cost: Drains §3XP⟡§7 while §eactive§7",
+        "\n§7XP Cost: Drains §3XP⟡§7 while active",
         "\n§7Cooldown: §r20s"
       ]
     },
@@ -350,7 +350,7 @@
       "text": [
         "§4§lCursed Prison ⛓",
         "\n\n§8§oAlways slightly weakened in the §4§oNether§8§o.",
-        "\n\n§7At least §c-1 ❤§7 and §c-0.9 attack damage§7 while in this dimension."
+        "\n\n§7At least §c-1❤§7 and §c-0.9 attack damage§7 while in this dimension."
       ]
     }
   ]

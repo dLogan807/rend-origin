@@ -268,7 +268,7 @@
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
         "§8§oNow more skilled at controlling your fluctuations, you can influence them at will with mana.",
-        "\n\n§eDouble tap§7 [",
+        "\n\n§7Double tap [",
         { "keybind": "key.sneak" },
         "§7] when §efacing§7 an entity to teleport behind them.",
         "\n§7Cannot be used while §oPiercing Strike§7 is on cooldown.",
@@ -279,7 +279,10 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/cursed_prison.png",
-      "text": ["§4§lCursed Prison ⛓", "\n\n§7Unusable in the §4Nether§7."]
+      "text": [
+        "§4§lCursed Prison ⛓          ",
+        "\n\n§7Unusable in the §4Nether§7.       "
+      ]
     }
   ]
 }
