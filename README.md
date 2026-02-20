@@ -6,7 +6,7 @@ This was made for fun as a side project :D
 
 ### Dependencies
 
-This is a 1.21.1 datapack made for Origins 1.13.0 alpha 12. It is unlikely to function with older versions of Minecraft or Origins!
+This is a **1.21.1** datapack made for **Origins 1.13.0 pre-release 1**. It is unlikely to function with older versions of Minecraft or Origins!
 
 Mod downloads:
 
@@ -67,43 +67,32 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
     <summary><b>How stable is this? Can I expect bugs?</b></summary>
     Yes, there will probably be some bugs or powers which don't quite work as intended :'(
     <br><br>
-    The most likely areas are:
-    <ul>
-        <li>
-            Attribute modifiers not applying correctly. This is due to a bug with Origins alpha 12, and I have mitigated it somewhat. If you are too weak for your level, you can run <code>/function rend:recalculate_modifiers</code>.
-        </li>
-        <li>
-            Powers that involve entity sets. These don't always behave as expected, but most should account for potential failures.
-        </li>
-    </ul>
+    The most likely areas are powers that involve entity sets. These don't always behave as expected, but most should account for potential failures.
 </details>
 <br>
 
 <details>
-    <summary><b>Will you update this?</b></summary>
-    Probably! I'm most inclined to support the latest version of Origins. I would like to add more custom items and advancements.<br>
-    As for bugs, it depends how caught up I am.
+    <summary><b>Can this be used with older Origins/Minecraft versions?</b></summary>
+    The datapack relies heavily on Minecraft function features added in 1.20.2 and 1.20.3: <code>Function Macros</code> and <code>/return</code>, respectively.
 </details>
 <br>
 
-<details>
-    <summary><b>How about backporting to older Origins/Minecraft versions?</b></summary>
-    Unfortunately, this is not something that I am interested in doing. The datapack relies heavily on Minecraft function features added in 1.20.2 and 1.20.3: <code>Function Macros</code> and <code>/return</code>, respectively.
-</details>
-<br>
+## Testing
 
 <details>
-    <summary><b><code>Spoiler!</code>Is there something to make testing the Origin easier?</b></summary>
-     To set your mana to max, run <code>/resource set @s rend:mana_capacity 100</code>
-    <br><br>
-    To quickly obtain the pack's items:
+    <summary><code>(Spoiler)</code> List of functions for testing</summary>
+    <h3>Set maximum mana</h3>
+     Run <code>/resource set @s rend:mana_capacity 100</code>
+    <h3>Obtaining items</h3>
     <ul>
         <li>All items: <code>/function rend:debug/give/all_items</code></li>
         <li>Soul Staff: <code>/function rend:debug/give/soul_staff</code></li>
         <li>Spell Tomes: <code>/function rend:debug/give/spell_tomes</code></li>
         <li>Mana Potion: <code>/function rend:debug/give/mana_potion</code></li>
         <li>Fallen Tether Doll: <code>/function rend:debug/give/fallen_tether_doll</code></li>
-        </ul>
+    </ul>
+    <h3>Removing modifiers</h3>
+    Run <code>/function rend:remove_all_modifiers</code>
    
 </details>
 
