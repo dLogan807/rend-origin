@@ -63,8 +63,9 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:entity.player.attack.crit",
+          "category": "players",
           "pitch": 2,
-          "category": "players"
+          "volume": 0.8
         }
       ]
     },
@@ -100,7 +101,7 @@
       "text": [
         "§8§oYour strength accumulates with your experience.",
         "\n\n§7Up to §330⟡ levels§7, you struggle to wear armour, which §cdecreases§7 your movement speed.",
-        "\n§7Surpassing this causes your attack and movement speed to §eprogressively increase§7."
+        "\n§7Following this, your attack and movement speed §eprogressively increase§7."
       ]
     },
     {
