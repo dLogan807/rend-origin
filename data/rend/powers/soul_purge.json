@@ -278,7 +278,8 @@
         {
           "type": "origins:play_sound",
           "sound": "minecraft:item.trident.thunder",
-          "category": "players"
+          "category": "players",
+          "volume": 0.8
         },
         {
           "type": "origins:change_resource",
