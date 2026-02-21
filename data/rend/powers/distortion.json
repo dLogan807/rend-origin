@@ -285,7 +285,7 @@
       "type": "origins:tooltip",
       "sprite": "origins:textures/gui/badge/active.png",
       "text": [
-        "§8§oNow more skilled at controlling your fluctuations, you can influence them at will with mana.",
+        "§8§oBriefly distort your being with mana to gain an advantageous position.",
         "\n\n§7Double tap [",
         { "keybind": "key.sneak" },
         "§7] when §efacing§7 an entity to teleport behind them.",

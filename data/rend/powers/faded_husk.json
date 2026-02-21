@@ -13,10 +13,82 @@
   "toggle_invisibility": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
+      "type": "origins:if_else_list",
       "actions": [
         {
-          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_invisibility_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">",
+                "compare_to": 20
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether",
+                "inverted": true
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Your being is stable; you cannot turn invisible\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.2 0.5"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_invisibility_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:xp_levels",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:command",
+                "command": "xp query @s points",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"You are too weak; you cannot turn invisible\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.2 0.5"
+              }
+            ]
+          }
+        },
+        {
           "condition": {
             "type": "origins:and",
             "conditions": [
@@ -34,7 +106,7 @@
               }
             ]
           },
-          "if_action": {
+          "action": {
             "type": "origins:and",
             "actions": [
               {
@@ -67,11 +139,20 @@
                 "type": "origins:play_sound",
                 "sound": "minecraft:block.candle.extinguish",
                 "pitch": 2,
+                "volume": 0.8,
                 "category": "players"
               }
             ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_invisibility_active",
+            "comparison": "==",
+            "compare_to": 1
           },
-          "else_action": {
+          "action": {
             "type": "origins:and",
             "actions": [
               {
@@ -96,29 +177,7 @@
           }
         }
       ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:*_invisibility_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<=",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:xp_points",
-          "comparison": ">",
-          "compare_to": 0
-        }
-      ]
-    },
-    "key": "key.origins.primary_active"
+    }
   },
   "invisibility_active": {
     "type": "origins:resource",
@@ -151,6 +210,7 @@
           "type": "origins:play_sound",
           "sound": "minecraft:block.candle.extinguish",
           "pitch": 2,
+          "volume": 0.8,
           "category": "players"
         }
       ]
@@ -172,12 +232,7 @@
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 1,
-      "condition": {
-        "type": "origins:xp_levels",
-        "comparison": "<=",
-        "compare_to": 20
-      }
+      "bar_index": 1
     }
   },
   "mitigate_callback_trigger": {
@@ -214,7 +269,7 @@
             "type": "origins:change_resource",
             "resource": "*:*_invisibility_cooldown",
             "operation": "set",
-            "change": 500
+            "change": 400
           }
         ]
       }
@@ -235,14 +290,34 @@
         "type": "origins:and",
         "conditions": [
           {
-            "type": "origins:xp_points",
-            "comparison": ">",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:command",
+                "command": "xp query @s points",
+                "comparison": ">",
+                "compare_to": 0
+              }
+            ]
           },
           {
-            "type": "origins:xp_levels",
-            "comparison": "<=",
-            "compare_to": 20
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:xp_levels",
+                "comparison": "<=",
+                "compare_to": 20
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether"
+              }
+            ]
           }
         ]
       },
@@ -280,6 +355,39 @@
               "type": "origins:xp_levels",
               "comparison": "<=",
               "compare_to": 20
+            }
+          },
+          {
+            "action": {
+              "type": "origins:add_xp",
+              "points": -4
+            },
+            "condition": {
+              "type": "origins:xp_levels",
+              "comparison": "<=",
+              "compare_to": 30
+            }
+          },
+          {
+            "action": {
+              "type": "origins:add_xp",
+              "points": -12
+            },
+            "condition": {
+              "type": "origins:xp_levels",
+              "comparison": "<=",
+              "compare_to": 50
+            }
+          },
+          {
+            "action": {
+              "type": "origins:add_xp",
+              "points": -20
+            },
+            "condition": {
+              "type": "origins:xp_levels",
+              "comparison": ">",
+              "compare_to": 50
             }
           }
         ]
@@ -339,7 +447,7 @@
         "\n\n§7Use [§r",
         { "keybind": "key.origins.primary_active" },
         "§7] to toggle §einvisibility§7 and reduce foes' perception of you.",
-        "\n\n§7XP Level: Up to §320⟡",
+        "\n\n§7XP Level: Up to §320⟡§7 (or while in the §4Nether§7)",
         "\n§7XP Cost: Drains §3XP⟡§7 while active",
         "\n§7Cooldown: §r20s"
       ]
