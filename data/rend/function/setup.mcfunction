@@ -1,12 +1,11 @@
-#Grant player advancement tree
+# Grant player advancement tree
 advancement grant @s only rend:root
 tag @s add rend.player
 
-#Track player xp
+# Track player xp
 scoreboard objectives add rend.xp_level level
-scoreboard objectives add rend.xp_points xp
 
-#Faded Husk
+# Faded Husk
 scoreboard objectives add rend.xp_level.NETHER_MAX dummy
 scoreboard players set @s rend.xp_level.NETHER_MAX 24
 # - Setup max health constants (y=2x-60)
@@ -31,7 +30,7 @@ scoreboard objectives add rend_starting_xp_levels dummy
 scoreboard objectives add rend_ending_xp_levels dummy
 scoreboard objectives add rend_used_xp_levels dummy
 
-#Agile physique
+# Agile physique
 # - Armour speed detriment variables and constants (y=-(100/22+c)x+c), c=xp level, x=armour points
 scoreboard objectives add rend.agile_phys.armour_points dummy
 scoreboard objectives add rend.agile_phys.prev_armour_points dummy
@@ -60,7 +59,7 @@ scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 scoreboard objectives add rend.agile_phys.speed_calc dummy
 data modify storage minecraft:rend agile_phys set value {"speed_bonus_modifier": 0.0, "armour_speed_modifier": 0.0}
 
-#Soul Purge 
+# Soul Purge 
 # - damage scores
 scoreboard objectives add rend_soul_purge_actor dummy
 scoreboard objectives add rend_soul_purge_damage dummy
@@ -81,7 +80,7 @@ scoreboard objectives add rend.soul_purge.current_height dummy
 scoreboard objectives add rend.soul_purge.height_mod dummy
 scoreboard players set @s rend.soul_purge.height_mod 10
 
-#Fallen
+# Fallen
 scoreboard objectives add rend_tether_summon_y dummy
 data modify storage minecraft:rend tether set value {"y_store": 0.0, "y_use": 0.0, "animation_num": 0}
 data modify storage minecraft:rend fallen set value {"name": "rend", "counter": 0, "x_centre": 0.0, "z_centre": 0.0, "max_height": 0.0}
@@ -94,23 +93,23 @@ scoreboard objectives add rend.fallen.current_height dummy
 scoreboard objectives add rend.fallen.height_mod dummy
 scoreboard players set @s rend.fallen.height_mod 6
 
-#Explosion
+# Explosion
 scoreboard objectives add rend_explosion_circle_num dummy
 data modify storage minecraft:rend explosion set value {"counter": 0}
 
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
-#Dynamic team creation:
+# Dynamic team creation:
 
-#Increment global rend team counter
+# - Increment global rend team counter
 scoreboard objectives add rend_team dummy
 scoreboard players add #rend_global rend_team 1
 scoreboard players operation @s rend_team = #rend_global rend_team
 
-#Create team storage location
+# - Create team storage location
 data modify storage minecraft:rend team set value {"name": "rend", "counter": 0}
-#Store current team number
+# - Store current team number
 execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team
-#Assign to new team and create storage locations for the namespace
+# - Assign to new team and create storage locations for the namespace
 function rend:set_team_and_storage with storage minecraft:rend team
