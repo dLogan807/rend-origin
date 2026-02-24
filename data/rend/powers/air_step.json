@@ -649,12 +649,12 @@
           "type": "origins:play_sound",
           "sound": "minecraft:entity.breeze.land",
           "pitch": 0,
-          "volume": 0.5,
+          "volume": 0.1,
           "category": "players"
         },
         {
           "type": "origins:execute_command",
-          "command": "particle poof ~ ~ ~ 0.2 0 0.2 0.1 5 normal"
+          "command": "particle poof ~ ~ ~ 0.3 0 0.3 0.1 5 normal"
         },
         {
           "type": "origins:and",

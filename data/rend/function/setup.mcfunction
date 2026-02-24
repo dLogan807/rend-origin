@@ -25,7 +25,7 @@ scoreboard players set @s rend.faded_husk.prev_xp_level -1
 scoreboard objectives add rend.faded_husk.calc dummy
 data modify storage minecraft:rend faded_husk set value {"health_modifier": 0.0,"attack_modifier": 0.0}
 
-# - Advancement
+# - Xp usage advancement
 scoreboard objectives add rend_starting_xp_levels dummy
 scoreboard objectives add rend_ending_xp_levels dummy
 scoreboard objectives add rend_used_xp_levels dummy

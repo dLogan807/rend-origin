@@ -46,7 +46,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.2 0.5"
+                "command": "function rend:sounds/playsound_unusable"
               }
             ]
           }
@@ -83,7 +83,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.2 0.5"
+                "command": "function rend:sounds/playsound_unusable"
               }
             ]
           }

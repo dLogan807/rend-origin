@@ -1,0 +1,1 @@
+playsound minecraft:ui.toast.out master @s ~ ~ ~ 0.5 2
