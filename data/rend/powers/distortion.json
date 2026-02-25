@@ -83,7 +83,7 @@
               {
                 "type": "origins:raycast",
                 "block": false,
-                "distance": 5,
+                "distance": 6,
                 "bientity_action": {
                   "type": "origins:and",
                   "actions": [
@@ -106,7 +106,7 @@
                           "distance": 5,
                           "space": "local",
                           "direction": {
-                            "y": -0.9,
+                            "y": -1.3,
                             "z": -1
                           }
                         }
@@ -119,7 +119,7 @@
                             "type": "origins:resource",
                             "resource": "rend:mana_capacity",
                             "comparison": ">=",
-                            "compare_to": 10
+                            "compare_to": 5
                           }
                         },
                         "if_action": {
@@ -145,7 +145,7 @@
                                   {
                                     "type": "origins:change_resource",
                                     "resource": "*:mana_capacity",
-                                    "change": -10
+                                    "change": -5
                                   },
                                   {
                                     "type": "origins:execute_command",
@@ -212,7 +212,7 @@
                                     "distance": 5,
                                     "space": "local",
                                     "direction": {
-                                      "y": -0.9,
+                                      "y": -1.3,
                                       "z": -1
                                     },
                                     "command_at_hit": "execute positioned ~ ~-1 ~ run function rend:tp_behind_target with storage rend team"
@@ -291,7 +291,7 @@
         "§7] when §efacing§7 an entity to teleport behind them.",
         "\n§7Cannot be used while §oPiercing Strike§7 is on cooldown.",
         "\n\n§7XP Level: §320⟡",
-        "\n§7Mana Cost: §b-10%"
+        "\n§7Mana Cost: §b-5%"
       ]
     },
     {
