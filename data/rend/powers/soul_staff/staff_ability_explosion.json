@@ -413,7 +413,10 @@
       "sprite": "origins:textures/gui/community/silent/badge/shapes/shape_heart.png",
       "text": [
         "§8§oYou need time to recover from the strain of casting this spell.",
-        "\n\n§7For §f3 minutes§7 after casting, you have §c30%§7 break speed and need to eat §ctwice§7 as much."
+        "\n\n§7For §f3 minutes§7 after casting, you:",
+        "\n§7 - have §c30%§7 break speed and",
+        "\n§7 - need to eat §ctwice§7 as much.",
+        "\n§7Resting will aid your recovery."
       ]
     }
   ]

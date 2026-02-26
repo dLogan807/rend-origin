@@ -20,6 +20,15 @@
       "operation": "set"
     }
   },
+  "rest_recharge": {
+    "type": "origins:action_on_wake_up",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_timer",
+      "operation": "add",
+      "change": -900
+    }
+  },
   "decrease_break_speed": {
     "type": "origins:modify_break_speed",
     "modifier": {
