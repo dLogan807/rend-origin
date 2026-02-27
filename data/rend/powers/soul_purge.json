@@ -288,14 +288,60 @@
           "operation": "set"
         },
         {
-          "type": "origins:random_chance",
-          "chance": 0.33,
-          "success_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_dimension_instability",
-            "change": 2,
-            "operation": "set"
-          }
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:xp_levels",
+                "comparison": "<",
+                "compare_to": 30
+              },
+              "action": {
+                "type": "origins:random_chance",
+                "chance": 0.2,
+                "success_action": {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_dimension_instability",
+                  "change": 2,
+                  "operation": "set"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:xp_levels",
+                "comparison": "<",
+                "compare_to": 40
+              },
+              "action": {
+                "type": "origins:random_chance",
+                "chance": 0.3,
+                "success_action": {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_dimension_instability",
+                  "change": 2,
+                  "operation": "set"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:xp_levels",
+                "comparison": ">=",
+                "compare_to": 40
+              },
+              "action": {
+                "type": "origins:random_chance",
+                "chance": 0.4,
+                "success_action": {
+                  "type": "origins:change_resource",
+                  "resource": "*:*_dimension_instability",
+                  "change": 2,
+                  "operation": "set"
+                }
+              }
+            }
+          ]
         }
       ]
     },
@@ -396,7 +442,7 @@
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/portal.png",
       "text": [
-        "§7You may not be stable enough to remain free of your §4shackles§7..."
+        "§7The greater your strength, the more your §4shackles§7 hunger..."
       ]
     },
     {
