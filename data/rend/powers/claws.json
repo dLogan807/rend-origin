@@ -2,17 +2,9 @@
   "name": "Claws",
   "description": "You can cling and leap from walls that aren't too tough.",
   "type": "origins:multiple",
-  "release_cooldown": {
-    "type": "origins:cooldown",
-    "cooldown": 40
-  },
   "check_clinging_release": {
     "type": "origins:action_over_time",
     "interval": 2,
-    "rising_action": {
-      "type": "origins:trigger_cooldown",
-      "power": "*:*_release_cooldown"
-    },
     "condition": {
       "type": "origins:and",
       "conditions": [
@@ -46,24 +38,6 @@
         }
       ],
       "inverted": true
-    }
-  },
-  "half_fall_damage": {
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-      "id": "*:*",
-      "operation": "multiply_base_additive",
-      "amount": -0.5
-    },
-    "damage_condition": {
-      "type": "origins:type",
-      "damage_type": "minecraft:fall"
-    },
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_release_cooldown",
-      "comparison": ">",
-      "compare_to": 0
     }
   },
   "slow_fall": {

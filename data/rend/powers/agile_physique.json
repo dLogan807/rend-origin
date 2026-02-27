@@ -19,6 +19,41 @@
       ]
     }
   },
+  "reduce_fall_damage": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "id": "*:*",
+      "operation": "multiply_base_multiplicative",
+      "amount": -0.33
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  },
+  "negate_fall_damage": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:fall_distance",
+          "comparison": "<=",
+          "compare_to": 5
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
   "increase_damage_taken": {
     "type": "origins:modify_damage_taken",
     "modifier": {
@@ -40,7 +75,7 @@
           "sound": "minecraft:entity.player.attack.crit",
           "category": "players",
           "pitch": 2,
-          "volume": 0.8
+          "volume": 0.7
         }
       ]
     },
@@ -102,6 +137,16 @@
         "§8§oNimble as you may be, your body is frail.",
         "\n\n§7Your maximum health is §c9❤§7.",
         "\n\n§7You take §c0.5❤§7 more damage from §oeverything§r§7 and damage is increased by §c50%§7 when §eattacked from behind§r."
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/feather.png",
+      "text": [
+        "§8§oYou're adept at landing gracefully on your feet.",
+        "\n\n§7Hold [",
+        { "keybind": "key.sneak" },
+        "§7] to §anegate§7 short falls and reduce fall damage by §a33%§7."
       ]
     },
     {
