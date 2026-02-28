@@ -46,7 +46,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "function rend:sounds/playsound_unusable"
+                "command": "function rend:sounds/playsound_unusable_warning"
               }
             ]
           }
@@ -83,7 +83,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "function rend:sounds/playsound_unusable"
+                "command": "function rend:sounds/playsound_unusable_warning"
               }
             ]
           }

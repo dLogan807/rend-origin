@@ -1,0 +1,1 @@
+playsound minecraft:block.small_amethyst_bud.place master @s ~ ~ ~ 0.5 1.5
