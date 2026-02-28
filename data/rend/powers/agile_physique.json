@@ -102,6 +102,11 @@
       "id": "*:agile_physique_increased_behind_damage",
       "amount": 0.5,
       "operation": "multiply_base_additive"
+    },
+    "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">",
+      "compare_to": 0
     }
   },
   "axe_insuitability": {
