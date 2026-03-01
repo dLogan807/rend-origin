@@ -24,7 +24,7 @@
     "modifier": {
       "id": "*:*",
       "operation": "multiply_base_multiplicative",
-      "amount": -0.33
+      "amount": -0.5
     },
     "damage_condition": {
       "type": "origins:type",
@@ -46,7 +46,7 @@
         {
           "type": "origins:fall_distance",
           "comparison": "<=",
-          "compare_to": 5
+          "compare_to": 6
         },
         {
           "type": "origins:sneaking"
@@ -151,7 +151,7 @@
         "§8§oYou're adept at landing gracefully on your feet.",
         "\n\n§7Hold [",
         { "keybind": "key.sneak" },
-        "§7] to §anegate§7 short falls and reduce fall damage by §a33%§7."
+        "§7] to §anegate§7 short falls and reduce fall damage by §a50%§7."
       ]
     },
     {
