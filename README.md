@@ -2,7 +2,7 @@
 
 A 1.21.1 Minecraft datapack adding a custom origin for use with the Origins mod. It is intended to provide a polished and fully furnished experience, but drastically alter how you approach the game. Multiple players playing as a Rend are supported.
 
-This was made for fun as a side project :D
+This was made for fun as a side project >:D
 
 ### Dependencies
 
@@ -64,8 +64,8 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 <br>
 
 <details>
-    <summary><b>How stable is this? Can I expect bugs?</b></summary>
-    Yes, there will probably be some bugs or powers which don't quite work as intended :'(
+    <summary><b>How stable is it?</b></summary>
+    Well, there will probably be some bugs or powers which don't quite work as intended :P
     <br><br>
     The most likely areas are powers that involve entity sets. These don't always behave as expected, but most should account for potential failures.
 </details>
