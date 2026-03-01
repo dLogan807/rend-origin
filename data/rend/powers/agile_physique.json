@@ -59,6 +59,22 @@
     "modifier": {
       "operation": "add_base_late",
       "amount": 1
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall",
+      "inverted": true
+    }
+  },
+  "increase_fall_damage_taken": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "add_base_early",
+      "amount": 1
+    },
+    "damage_condition": {
+      "type": "origins:type",
+      "damage_type": "minecraft:fall"
     }
   },
   "increased_damage_from_behind": {
