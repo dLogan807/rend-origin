@@ -28,7 +28,7 @@
   },
   "duration": {
     "type": "origins:cooldown",
-    "cooldown": 300,
+    "cooldown": 550,
     "hud_render": {
       "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
@@ -75,7 +75,7 @@
         }
       ]
     },
-    "cooldown": 600,
+    "cooldown": 1200,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
@@ -264,7 +264,7 @@
         "text": "§7XP Level: §325⟡"
       },
       {
-        "text": "§7Cooldown: §r30s"
+        "text": "§7Cooldown: §r60s"
       }
     ],
     "item_condition": {
