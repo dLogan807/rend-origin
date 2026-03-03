@@ -90,7 +90,7 @@
       "order": 3,
       "bar_index": 1
     },
-    "cooldown": 500
+    "cooldown": 400
   },
   "recharge_on_kill": {
     "type": "origins:self_action_on_kill",
@@ -98,7 +98,7 @@
       "type": "origins:resource",
       "resource": "*:*_cooldown",
       "comparison": "<",
-      "compare_to": 500
+      "compare_to": 400
     },
     "entity_action": {
       "type": "origins:change_resource",
@@ -112,7 +112,7 @@
     "entity_action_gained": {
       "type": "origins:change_resource",
       "resource": "*:*_cooldown",
-      "change": 500,
+      "change": 400,
       "operation": "set"
     }
   },
