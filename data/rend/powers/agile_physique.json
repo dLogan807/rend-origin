@@ -175,7 +175,7 @@
       "sprite": "origins:textures/gui/community/silent/badge/icons/sword.png",
       "text": [
         "§8§oYou simply aren't suited to wield axes.",
-        "\n\n§7Axes are always of §creduced effectiveness§7, having §c-50%§7 attack speed and dealing §c5 ❤§7 less damage."
+        "\n\n§7Axes are always of §creduced effectiveness§7, having §c50%§7 attack speed and dealing §c5 ❤§7 less damage."
       ]
     },
     {
