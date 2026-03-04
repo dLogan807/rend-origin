@@ -1,0 +1,9 @@
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^1 ^1 ^ 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^1.5 ^2 ^.2 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^2 ^3 ^.4 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^2.5 ^4 ^.6 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^3 ^5 ^.8 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^3.5 ^6 ^1 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^4 ^7 ^1.2 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^4.5 ^8 ^1.4 0 0 0 0 1 normal @a
+particle minecraft:dust{color:[0.69,0.64,0.7],scale:1} ^5 ^9 ^1.6 0 0 0 0 1 normal @a
