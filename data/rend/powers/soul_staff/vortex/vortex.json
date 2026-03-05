@@ -47,7 +47,7 @@
                     "type": "origins:apply_effect",
                     "effect": {
                       "id": "minecraft:levitation",
-                      "duration": 20,
+                      "duration": 10,
                       "amplifier": 1,
                       "show_particles": false,
                       "show_icon": false
@@ -64,12 +64,21 @@
             }
           },
           "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
-              "type": "origins:in_tag",
-              "tag": "*:inanimate",
-              "inverted": true
-            }
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:riding",
+                "inverted": true
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:in_tag",
+                  "tag": "*:inanimate",
+                  "inverted": true
+                }
+              }
+            ]
           }
         },
         {
@@ -79,13 +88,7 @@
         }
       ]
     },
-    "interval": 1,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_timer",
-      "comparison": ">",
-      "compare_to": 0
-    }
+    "interval": 1
   },
   "timer": {
     "type": "origins:resource",
@@ -93,8 +96,26 @@
     "max": 300,
     "start_value": 300,
     "min_action": {
-      "type": "origins:execute_command",
-      "command": "kill @s"
+      "type": "origins:riding_action",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "kill @s"
+            }
+          },
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "kill @s"
+            }
+          }
+        ]
+      }
     }
   }
 }

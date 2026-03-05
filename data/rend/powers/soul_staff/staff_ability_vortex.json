@@ -45,12 +45,36 @@
         "y": 5,
         "action": {
           "type": "origins:spawn_entity",
-          "entity_type": "minecraft:armor_stand",
-          "tag": "{Tags:[\"rend_vortex_inner\"],Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+          "entity_type": "minecraft:bat",
+          "tag": "{Invulnerable:1b,NoGravity:1b,Silent:1b}",
           "entity_action": {
-            "type": "origins:grant_power",
-            "power": "*:soul_staff/vortex/vortex",
-            "source": "*:soul_staff/staff_ability_vortex_activation"
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "id": "minecraft:invisibility",
+                  "show_particles": false,
+                  "duration": -1
+                }
+              },
+              {
+                "type": "origins:spawn_entity",
+                "entity_type": "minecraft:armor_stand",
+                "tag": "{Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+                "entity_action": {
+                  "type": "origins:grant_power",
+                  "power": "*:soul_staff/vortex/vortex",
+                  "source": "*:soul_staff/vortex/base"
+                },
+                "bientity_action": {
+                  "type": "origins:invert",
+                  "action": {
+                    "type": "origins:mount"
+                  }
+                }
+              }
+            ]
           }
         }
       },
