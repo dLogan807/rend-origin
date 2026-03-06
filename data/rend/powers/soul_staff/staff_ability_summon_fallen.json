@@ -299,6 +299,18 @@
       "type": "origins:and",
       "conditions": [
         {
+          "type": "origins:resource",
+          "resource": "*:soul_staff/soul_staff_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_activation",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
           "item_condition": {
@@ -329,12 +341,6 @@
           "resource": "*:mana_capacity",
           "comparison": "<",
           "compare_to": 15
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "comparison": "==",
-          "compare_to": 0
         }
       ]
     },
