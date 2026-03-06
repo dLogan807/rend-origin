@@ -149,54 +149,6 @@
       ]
     }
   },
-  "need_xp": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"35 XP levels needed\",\"color\":\"red\"}"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function rend:sounds/playsound_xp_warning"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{vortex_tome: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<",
-          "compare_to": 35
-        }
-      ]
-    },
-    "key": "key.use"
-  },
   "insufficient_mana": {
     "type": "origins:active_self",
     "entity_action": {
