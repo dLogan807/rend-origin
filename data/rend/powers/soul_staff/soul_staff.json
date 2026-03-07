@@ -118,11 +118,32 @@
     },
     "key": "key.use"
   },
-  "notify_spell_unusable": {
+  "notify_unusable": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:if_else_list",
       "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:soul_staff/soul_staff_cooldown",
+            "comparison": ">",
+            "compare_to": 10
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Staff on cooldown\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_unusable_warning"
+              }
+            ]
+          }
+        },
         {
           "condition": {
             "type": "origins:equipped_item",
@@ -135,6 +156,18 @@
           "action": {
             "type": "origins:if_else_list",
             "actions": [
+              {
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_barrier_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
               {
                 "condition": {
                   "type": "origins:xp_levels",
@@ -339,63 +372,22 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        }
-      ]
-    },
-    "key": "key.use"
-  },
-  "notify_staff_on_cooldown": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"Staff on cooldown\",\"color\":\"red\"}"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "function rend:sounds/playsound_unusable_warning"
-        }
-      ]
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "comparison": ">",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        },
-        {
           "type": "origins:xp_levels",
           "comparison": ">=",
           "compare_to": 20
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
         }
       ]
     },
