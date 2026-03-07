@@ -56,7 +56,7 @@
     "texts": [
       { "text": "" },
       { "text": "When Applied:", "color": "dark_purple" },
-      { "text": "+15% Mana", "color": "aqua" }
+      { "text": "+20% Mana", "color": "aqua" }
     ],
     "item_condition": {
       "type": "origins:custom_data",
@@ -89,7 +89,7 @@
       { "text": "retain the potion!", "color": "red" },
       { "text": "" },
       { "text": "When Applied:", "color": "dark_purple" },
-      { "text": "+15% Mana", "color": "aqua" }
+      { "text": "+20% Mana", "color": "aqua" }
     ],
     "item_condition": {
       "type": "origins:custom_data",
@@ -212,14 +212,14 @@
       "sprite": "*:textures/gui/community/leopardx/badge/regenerate_mana.png",
       "text": [
         "§8§oA precious art that few of your kind could master.",
-        "\n\n§7Replenished via:\n- Sleeping §8(§b+60%§8)§7\n- Potions of Mana §8(§b+15%§8)§7\n- Vanquishing foes §8(§b+4%§8)§7\n- Enchanted Golden Apples §8(§b+100%§8)",
+        "\n\n§7Replenished via:\n- Sleeping §8(§b+60%§8)§7\n- Potions of Mana §8(§b+20%§8)§7\n- Vanquishing foes §8(§b+4%§8)§7\n- Enchanted Golden Apples §8(§b+100%§8)",
         "\n\n§7XP Level: §320⟡"
       ]
     },
     {
       "type": "origins:crafting_recipe",
       "sprite": "*:textures/gui/community/leopardx/badge/mana_potion.png",
-      "prefix": ["Potion of Mana\n§5When Applied:\n§b+15% Mana"],
+      "prefix": ["Potion of Mana\n§5When Applied:\n§b+20% Mana"],
       "recipe": {
         "id": "rend:mana/potion_crafting",
         "type": "minecraft:crafting_shapeless",

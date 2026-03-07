@@ -62,7 +62,7 @@
       "if_action": {
         "type": "origins:change_resource",
         "resource": "*:mana_capacity",
-        "change": 15
+        "change": 20
       },
       "else_action": {
         "type": "origins:and",
