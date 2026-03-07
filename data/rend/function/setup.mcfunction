@@ -8,17 +8,17 @@ scoreboard objectives add rend.xp_level level
 # Faded Husk
 scoreboard objectives add rend.xp_level.NETHER_MAX dummy
 scoreboard players set @s rend.xp_level.NETHER_MAX 24
-# - Setup max health constants (y=2x-60)
+# - Setup max health constants (y=2x-60, x = xp level)
 scoreboard objectives add rend.faded_husk.HEALTH_GRADIENT dummy
 scoreboard players set @s rend.faded_husk.HEALTH_GRADIENT 2
 scoreboard objectives add rend.faded_husk.HEALTH_Y_MOD dummy
 scoreboard players set @s rend.faded_husk.HEALTH_Y_MOD -60
 
-# - Setup attack damage constants (y=5/30x-5), scaled by 100
+# - Setup attack damage constants (y=5/30x-3, x = xp level), scaled by 100
 scoreboard objectives add rend.faded_husk.ATTACK_GRADIENT dummy
 scoreboard players set @s rend.faded_husk.ATTACK_GRADIENT 17
 scoreboard objectives add rend.faded_husk.ATTACK_Y_MOD dummy
-scoreboard players set @s rend.faded_husk.ATTACK_Y_MOD -500
+scoreboard players set @s rend.faded_husk.ATTACK_Y_MOD -300
 
 scoreboard objectives add rend.faded_husk.prev_xp_level dummy
 scoreboard players set @s rend.faded_husk.prev_xp_level -1
