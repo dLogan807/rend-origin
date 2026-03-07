@@ -44,7 +44,7 @@
           "custom_model_data": 439207,
           "custom_name": "{\"italic\":false,\"text\":\"Potion of Mana\"}",
           "potion_contents": {
-            "potion": "water"
+            "potion": "awkward"
           },
           "custom_data": { "mana_potion": true }
         }

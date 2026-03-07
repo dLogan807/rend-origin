@@ -1,1 +1,1 @@
-give @s potion[custom_model_data=439207,custom_name="{\"italic\":false,\"text\":\"Potion of Mana\"}",potion_contents=water,custom_data={"mana_potion": true}] 1
+give @s potion[custom_model_data=439207,custom_name="{\"italic\":false,\"text\":\"Potion of Mana\"}",potion_contents=awkward,custom_data={"mana_potion": true}] 1
