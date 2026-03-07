@@ -126,7 +126,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:*_cooldown",
             "comparison": ">",
             "compare_to": 10
           },
@@ -205,6 +205,18 @@
             "actions": [
               {
                 "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_cultivate_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
+              {
+                "condition": {
                   "type": "origins:xp_levels",
                   "comparison": "<",
                   "compare_to": 25
@@ -238,6 +250,18 @@
           "action": {
             "type": "origins:if_else_list",
             "actions": [
+              {
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_explosion_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
               {
                 "condition": {
                   "type": "origins:xp_levels",
@@ -275,6 +299,18 @@
             "actions": [
               {
                 "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_summon_fallen_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
+              {
+                "condition": {
                   "type": "origins:xp_levels",
                   "comparison": "<",
                   "compare_to": 40
@@ -310,6 +346,18 @@
             "actions": [
               {
                 "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_tp_fallen_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
+              {
+                "condition": {
                   "type": "origins:xp_levels",
                   "comparison": "<",
                   "compare_to": 30
@@ -343,6 +391,18 @@
           "action": {
             "type": "origins:if_else_list",
             "actions": [
+              {
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:soul_staff/staff_ability_vortex_activation",
+                  "comparison": ">",
+                  "compare_to": 0
+                },
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function rend:mana/notify_spell_on_cooldown"
+                }
+              },
               {
                 "condition": {
                   "type": "origins:xp_levels",
