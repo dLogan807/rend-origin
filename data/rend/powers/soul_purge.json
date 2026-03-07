@@ -294,23 +294,6 @@
               "condition": {
                 "type": "origins:xp_levels",
                 "comparison": "<",
-                "compare_to": 30
-              },
-              "action": {
-                "type": "origins:random_chance",
-                "chance": 0.2,
-                "success_action": {
-                  "type": "origins:change_resource",
-                  "resource": "*:*_dimension_instability",
-                  "change": 2,
-                  "operation": "set"
-                }
-              }
-            },
-            {
-              "condition": {
-                "type": "origins:xp_levels",
-                "comparison": "<",
                 "compare_to": 40
               },
               "action": {
