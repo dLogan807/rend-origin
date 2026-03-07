@@ -160,7 +160,7 @@
                   "conditions": [
                     {
                       "type": "origins:entity_type",
-                      "entity_type": "minecraft:bee"
+                      "entity_type": "minecraft:bat"
                     },
                     {
                       "type": "origins:nbt",

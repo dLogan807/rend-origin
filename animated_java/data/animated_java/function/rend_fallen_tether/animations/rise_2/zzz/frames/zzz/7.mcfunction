@@ -4,4 +4,4 @@ particle minecraft:soul ~ ~1 ~ .1 .1 .1 .04 1
 particle minecraft:soul ~ ~1 ~ .1 .1 .1 .04 1
 particle minecraft:soul ~ ~1 ~ .1 .1 .1 .04 1
 particle minecraft:soul ~ ~1 ~ .1 .1 .1 .04 1
-resource set @e[type=minecraft:bee,tag=fallen_tether_hitbox,distance=..1,sort=nearest,limit=1] rend:fallen/tether/hitbox_animation_complete 1
+resource set @e[type=minecraft:bat,tag=fallen_tether_hitbox,distance=..1,sort=nearest,limit=1] rend:fallen/tether/hitbox_animation_complete 1
