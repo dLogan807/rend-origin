@@ -36,45 +36,8 @@
       "order": 6
     }
   },
-  "activation": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:trigger_cooldown",
-          "power": "*:soul_staff/soul_staff_cooldown"
-        },
-        {
-          "type": "origins:swing_hand",
-          "hand": "MAIN_HAND"
-        },
-        {
-          "type": "origins:change_resource",
-          "resource": "*:mana_capacity",
-          "change": -20
-        },
-        {
-          "type": "origins:grant_power",
-          "power": "*:soul_staff/barrier",
-          "source": "*:*"
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:entity.evoker.cast_spell",
-          "category": "players",
-          "pitch": 1.3,
-          "volume": 1
-        },
-        {
-          "type": "origins:play_sound",
-          "sound": "minecraft:block.enchantment_table.use",
-          "category": "players",
-          "pitch": 1.5,
-          "volume": 1
-        }
-      ]
-    },
+  "cooldown": {
+    "type": "origins:cooldown",
     "cooldown": 1200,
     "hud_render": {
       "should_render": true,
@@ -96,6 +59,127 @@
           }
         ]
       }
+    }
+  },
+  "activation": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 25
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"25 XP levels needed\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_xp_warning"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:soul_staff/soul_staff_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Staff on cooldown\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_unusable_warning"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:notification/notify_spell_on_cooldown"
+          }
+        },
+
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:mana_capacity",
+            "comparison": "<",
+            "compare_to": 20
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:notification/notify_spell_insufficient_mana"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:soul_staff/soul_staff_cooldown"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_cooldown"
+              },
+              {
+                "type": "origins:swing_hand",
+                "hand": "MAIN_HAND"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:mana_capacity",
+                "change": -20
+              },
+              {
+                "type": "origins:grant_power",
+                "power": "*:soul_staff/barrier",
+                "source": "*:*"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.evoker.cast_spell",
+                "category": "players",
+                "pitch": 1.3,
+                "volume": 1
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.enchantment_table.use",
+                "category": "players",
+                "pitch": 1.5,
+                "volume": 1
+              }
+            ]
+          }
+        }
+      ]
     },
     "key": "key.use",
     "condition": {
@@ -118,86 +202,12 @@
           }
         },
         {
-          "type": "origins:xp_levels",
-          "comparison": ">=",
-          "compare_to": 25
-        },
-        {
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether",
           "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:mana_capacity",
-          "comparison": ">=",
-          "compare_to": 20
         }
       ]
     }
-  },
-  "insufficient_mana": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:execute_command",
-      "command": "function rend:mana/notify_spell_insufficient_mana"
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:resource",
-          "resource": "*:soul_staff/soul_staff_cooldown",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_activation",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "offhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{barrier_tome: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether",
-          "inverted": true
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": ">=",
-          "compare_to": 25
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:mana_capacity",
-          "comparison": "<",
-          "compare_to": 20
-        }
-      ]
-    },
-    "key": "key.use"
   },
   "tooltip": {
     "type": "origins:tooltip",

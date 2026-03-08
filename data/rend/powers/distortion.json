@@ -244,7 +244,7 @@
                           "type": "origins:actor_action",
                           "action": {
                             "type": "origins:execute_command",
-                            "command": "function rend:mana/notify_insufficient_mana"
+                            "command": "function rend:notification/notify_insufficient_mana"
                           }
                         }
                       }
