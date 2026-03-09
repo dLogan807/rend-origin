@@ -6,8 +6,7 @@
     "type": "origins:modify_player_spawn",
     "dimension": "minecraft:the_nether",
     "dimension_distance_multiplier": 0.125,
-    "biome": "minecraft:nether_wastes",
-    "spawn_strategy": "center"
+    "biome": "minecraft:nether_wastes"
   },
   "prevent_nether_xp_gain": {
     "type": "origins:modify_xp_gain",
