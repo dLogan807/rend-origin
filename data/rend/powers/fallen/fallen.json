@@ -36,22 +36,6 @@
             "chance": 0.2,
             "success_action": {
               "type": "origins:execute_command",
-              "command": "item replace entity @s armor.head with minecraft:iron_helmet 1"
-            },
-            "fail_action": {
-              "type": "origins:execute_command",
-              "command": "item replace entity @s armor.head with minecraft:chainmail_helmet 1"
-            }
-          }
-        },
-        {
-          "type": "origins:chance",
-          "chance": 0.4,
-          "success_action": {
-            "type": "origins:chance",
-            "chance": 0.2,
-            "success_action": {
-              "type": "origins:execute_command",
               "command": "item replace entity @s armor.chest with minecraft:iron_chestplate 1"
             },
             "fail_action": {
