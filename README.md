@@ -33,7 +33,7 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 <summary>Show power list screenshot</summary>
     
 ![rend_power_list](https://github.com/user-attachments/assets/36639243-2fb8-4873-8a6a-e9dfda8b9511)
-<br>Is that it? <i>You can't help but feel that there is more to the Rend...</i>    
+<br>Is that all? <i>You can't help but feel that you're forgetting something...</i>    
 </details>
 
 ## Questions and Answers
@@ -77,6 +77,12 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 </details>
 <br>
 
+## Changing Origin
+
+Before switching to a different origin, run `function rend:debug/reset/remove_tags_and_team`.
+
+After you've switched, run `function rend:debug/reset/remove_all_modifiers`.
+
 ## Testing
 
 <details>
@@ -91,8 +97,6 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
         <li>Mana Potion: <code>/function rend:debug/give/mana_potion</code></li>
         <li>Fallen Tether Doll: <code>/function rend:debug/give/fallen_tether_doll</code></li>
     </ul>
-    <h3>Removing modifiers</h3>
-    Run <code>/function rend:remove_all_modifiers</code>
    
 </details>
 
