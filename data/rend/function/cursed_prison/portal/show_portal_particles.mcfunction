@@ -1,0 +1,1 @@
+$particle minecraft:crimson_spore ~ ~ ~ 1 1 1 2 5 normal @a[team=$(name)$(counter),limit=1]

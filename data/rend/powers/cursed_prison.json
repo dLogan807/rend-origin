@@ -31,17 +31,128 @@
   },
   "nether_prison": {
     "type": "origins:action_over_time",
+    "rising_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+        },
+        {
+          "type": "origins:block_action_at",
+          "block_action": {
+            "type": "origins:area_of_effect",
+            "block_condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:block",
+                  "block": "minecraft:nether_portal"
+                },
+                {
+                  "type": "origins:adjacent",
+                  "adjacent_condition": {
+                    "type": "origins:block",
+                    "block": "minecraft:obsidian"
+                  },
+                  "comparison": "==",
+                  "compare_to": 2
+                }
+              ]
+            },
+            "radius": 11,
+            "block_action": {
+              "type": "origins:execute_command",
+              "command": "function rend:cursed_prison/portal/playsound_portal_locked with storage minecraft:rend team"
+            }
+          }
+        }
+      ]
+    },
     "entity_action": {
       "type": "origins:and",
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"You are not yet worthy...\",\"color\":\"red\"}"
+          "command": "title @s actionbar {\"text\":\"You are too weak to escape...\",\"color\":\"red\"}"
         },
         {
-          "type": "origins:damage",
-          "amount": 3,
-          "damage_type": "rend:cursed_prison"
+          "type": "origins:execute_command",
+          "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+        },
+        {
+          "type": "origins:block_action_at",
+          "block_action": {
+            "type": "origins:area_of_effect",
+            "block_condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:block",
+                  "block": "minecraft:nether_portal"
+                },
+                {
+                  "type": "origins:adjacent",
+                  "adjacent_condition": {
+                    "type": "origins:block",
+                    "block": "minecraft:obsidian"
+                  },
+                  "comparison": ">",
+                  "compare_to": 0
+                }
+              ]
+            },
+            "radius": 10,
+            "block_action": {
+              "type": "origins:execute_command",
+              "command": "function rend:cursed_prison/portal/show_portal_particles with storage minecraft:rend team"
+            }
+          }
+        },
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:block_in_radius",
+                "block_condition": {
+                  "type": "origins:block",
+                  "block": "minecraft:nether_portal"
+                },
+                "radius": 1
+              },
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:explode",
+                    "power": 1,
+                    "damage_self": false
+                  },
+                  {
+                    "type": "origins:damage",
+                    "damage_type": "rend:cursed_prison_explode",
+                    "amount": 10
+                  }
+                ]
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:block_in_radius",
+                "block_condition": {
+                  "type": "origins:block",
+                  "block": "minecraft:nether_portal"
+                },
+                "radius": 5
+              },
+              "action": {
+                "type": "origins:damage",
+                "amount": 2.5,
+                "damage_type": "rend:cursed_prison"
+              }
+            }
+          ]
         }
       ]
     },
@@ -64,48 +175,7 @@
             "type": "origins:block",
             "block": "minecraft:nether_portal"
           },
-          "radius": 5
-        }
-      ]
-    }
-  },
-  "portal_destroy": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:explode",
-          "power": 1,
-          "damage_self": false
-        },
-        {
-          "type": "origins:damage",
-          "damage_type": "rend:cursed_prison_explode",
-          "amount": 10
-        }
-      ]
-    },
-    "interval": 10,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether"
-        },
-        {
-          "type": "origins:xp_levels",
-          "comparison": "<",
-          "compare_to": 20
-        },
-        {
-          "type": "origins:block_in_radius",
-          "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:nether_portal"
-          },
-          "radius": 1
+          "radius": 11
         }
       ]
     }
@@ -163,7 +233,7 @@
               "actions": [
                 {
                   "type": "origins:execute_command",
-                  "command": "function rend:set_angry_at with storage rend uuid_store"
+                  "command": "function rend:cursed_prison/zombified_piglins/set_angry_at with storage rend uuid_store"
                 },
                 {
                   "type": "origins:play_sound",
