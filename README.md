@@ -31,8 +31,7 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 
 <details>
 <summary>Show power list screenshot</summary>
-    
-<img width="704" height="2780" alt="rend power list" src="https://github.com/user-attachments/assets/a64345f2-57c7-4ca4-8fea-c824d09bea61" />
+<img width="350" height="1382" alt="rend power list scaled" src="https://github.com/user-attachments/assets/3090d53f-d5b6-47ec-928c-93cfb2c8be56" />
 <br>Is that all? <i>You can't help but feel that you're forgetting something...</i>    
 </details>
 
