@@ -29,8 +29,8 @@
           "type": "origins:target_action",
           "action": {
             "type": "origins:revoke_power",
-            "power": "*:nether_portal_overlay",
-            "source": "*:soul_purge"
+            "power": "*:soul_purge/nether_portal_overlay",
+            "source": "*:soul_purge/soul_purge"
           }
         }
       ]
@@ -77,8 +77,8 @@
         },
         {
           "type": "origins:revoke_power",
-          "power": "*:nether_portal_overlay",
-          "source": "*:soul_purge"
+          "power": "*:soul_purge/nether_portal_overlay",
+          "source": "*:soul_purge/soul_purge"
         },
         {
           "type": "origins:grant_advancement",
@@ -219,8 +219,8 @@
                   },
                   {
                     "type": "origins:grant_power",
-                    "power": "rend:nether_portal_overlay",
-                    "source": "*:soul_purge"
+                    "power": "rend:soul_purge/nether_portal_overlay",
+                    "source": "*:soul_purge/soul_purge"
                   }
                 ]
               }
@@ -361,7 +361,7 @@
       "actions": [
         {
           "type": "origins:change_resource",
-          "resource": "rend:soul_purge_purge",
+          "resource": "rend:*_purge",
           "change": -1
         },
         {
