@@ -32,17 +32,11 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 <details>
 <summary>Show power list screenshot</summary>
     
-![rend_power_list](https://github.com/user-attachments/assets/36639243-2fb8-4873-8a6a-e9dfda8b9511)
+<img width="704" height="2780" alt="rend power list" src="https://github.com/user-attachments/assets/a64345f2-57c7-4ca4-8fea-c824d09bea61" />
 <br>Is that all? <i>You can't help but feel that you're forgetting something...</i>    
 </details>
 
 ## Questions and Answers
-
-<details>
-    <summary><b>Why is the file size so large?</b></summary>
-    The datapack uses <a href="https://animated-java.dev/">Animated Java</a> for a custom model which has 3 animations - that takes up a bit of space!
-</details>
-<br>
 
 <details>
     <summary><b>Why do I need Pehkui? Is the resourcepack important?</b></summary>
