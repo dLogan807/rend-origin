@@ -89,7 +89,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/soul_staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -133,7 +133,7 @@
             "actions": [
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:soul_staff/soul_staff_cooldown"
+                "power": "*:mana/soul_staff/soul_staff_cooldown"
               },
               {
                 "type": "origins:trigger_cooldown",
@@ -150,7 +150,7 @@
               },
               {
                 "type": "origins:grant_power",
-                "power": "*:soul_staff/barrier",
+                "power": "*:mana/soul_staff/barrier",
                 "source": "*:*"
               },
               {

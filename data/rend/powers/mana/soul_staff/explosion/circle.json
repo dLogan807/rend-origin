@@ -235,7 +235,7 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "execute store result score #rend_global rend_explosion_circle_num run resource get @s rend:soul_staff/explosion/circle_this_circle_num"
+                "command": "execute store result score #rend_global rend_explosion_circle_num run resource get @s rend:mana/soul_staff/explosion/circle_this_circle_num"
               },
               {
                 "type": "origins:spawn_entity",
@@ -246,12 +246,12 @@
                   "actions": [
                     {
                       "type": "origins:grant_power",
-                      "power": "*:soul_staff/explosion/circle",
+                      "power": "*:mana/soul_staff/explosion/circle",
                       "source": "*:*"
                     },
                     {
                       "type": "origins:execute_command",
-                      "command": "resource operation @s rend:soul_staff/explosion/circle_this_circle_num += #rend_global rend_explosion_circle_num"
+                      "command": "resource operation @s rend:mana/soul_staff/explosion/circle_this_circle_num += #rend_global rend_explosion_circle_num"
                     },
                     {
                       "type": "origins:change_resource",

@@ -67,7 +67,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/soul_staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -116,7 +116,7 @@
               "actions": [
                 {
                   "type": "origins:trigger_cooldown",
-                  "power": "*:soul_staff/soul_staff_cooldown"
+                  "power": "*:mana/soul_staff/soul_staff_cooldown"
                 },
                 {
                   "type": "origins:trigger_cooldown",
@@ -157,8 +157,8 @@
                       "tag": "{Invulnerable:1b,NoGravity:1b,Invisible:1b}",
                       "entity_action": {
                         "type": "origins:grant_power",
-                        "power": "*:soul_staff/vortex/vortex",
-                        "source": "*:soul_staff/vortex/base"
+                        "power": "*:mana/soul_staff/vortex/vortex",
+                        "source": "*:mana/soul_staff/staff_ability_vortex_activation"
                       },
                       "bientity_action": {
                         "type": "origins:invert",

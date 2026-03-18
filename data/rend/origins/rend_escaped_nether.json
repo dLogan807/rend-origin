@@ -12,17 +12,17 @@
     "*:inherent_target",
     "*:soul_purge/soul_purge",
     "*:mana/mana",
-    "*:air_step",
-    "*:distortion",
-    "*:soul_staff/soul_staff",
-    "*:soul_staff/staff_ability_cultivate",
-    "*:soul_staff/staff_ability_barrier",
-    "*:soul_staff/staff_ability_vortex",
-    "*:soul_staff/staff_ability_summon_fallen",
+    "*:mana/air_step",
+    "*:mana/distortion/distortion",
+    "*:mana/soul_staff/soul_staff",
+    "*:mana/soul_staff/staff_ability_cultivate",
+    "*:mana/soul_staff/staff_ability_barrier",
+    "*:mana/soul_staff/staff_ability_vortex",
+    "*:mana/soul_staff/staff_ability_summon_fallen",
     "*:fallen/summoner",
-    "*:soul_staff/staff_ability_tp_fallen",
-    "*:soul_staff/staff_ability_explosion",
-    "*:soul_staff/explosion/exhaustion"
+    "*:mana/soul_staff/staff_ability_tp_fallen",
+    "*:mana/soul_staff/staff_ability_explosion",
+    "*:mana/soul_staff/explosion/exhaustion"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"
