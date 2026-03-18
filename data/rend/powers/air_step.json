@@ -22,7 +22,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -60,7 +60,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -98,7 +98,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -136,7 +136,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -174,7 +174,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -212,7 +212,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -250,7 +250,7 @@
           },
           {
             "type": "origins:resource",
-            "resource": "rend:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": ">",
             "compare_to": 0
           },
@@ -610,7 +610,7 @@
         },
         {
           "type": "origins:resource",
-          "resource": "*:mana_capacity",
+          "resource": "*:mana/mana_capacity",
           "comparison": ">",
           "compare_to": 0
         },
@@ -715,7 +715,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "*:mana_capacity",
+          "resource": "*:mana/mana_capacity",
           "change": -1
         }
       ]

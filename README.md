@@ -81,7 +81,7 @@ After you've switched, run `function rend:debug/reset/remove_all_modifiers`.
 <details>
     <summary><code>(Spoiler)</code> List of functions for testing</summary>
     <h3>Set maximum mana</h3>
-     Run <code>/resource set @s rend:mana_capacity 100</code>
+     Run <code>/resource set @s rend:mana/mana_capacity 100</code>
     <h3>Obtaining items</h3>
     <ul>
         <li>All items: <code>/function rend:debug/give/all_items</code></li>

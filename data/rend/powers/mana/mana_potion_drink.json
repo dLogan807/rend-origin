@@ -61,7 +61,7 @@
       },
       "if_action": {
         "type": "origins:change_resource",
-        "resource": "*:mana_capacity",
+        "resource": "*:mana/mana_capacity",
         "change": 20
       },
       "else_action": {

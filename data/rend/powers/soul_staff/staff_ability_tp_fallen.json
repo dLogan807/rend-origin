@@ -86,7 +86,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": "<",
             "compare_to": 10
           },
@@ -117,7 +117,7 @@
               },
               {
                 "type": "origins:change_resource",
-                "resource": "*:mana_capacity",
+                "resource": "*:mana/mana_capacity",
                 "change": -10
               },
               {

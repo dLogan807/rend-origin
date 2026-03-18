@@ -283,7 +283,7 @@
         },
         {
           "type": "origins:change_resource",
-          "resource": "*:mana_capacity",
+          "resource": "*:mana/mana_capacity",
           "change": 0,
           "operation": "set"
         },
