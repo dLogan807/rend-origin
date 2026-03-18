@@ -115,7 +115,7 @@
       ]
     },
     "modifier": {
-      "id": "*:agile_physique_increased_behind_damage",
+      "id": "*:agile_physique/agile_physique_increased_behind_damage",
       "amount": 0.5,
       "operation": "multiply_base_additive"
     },

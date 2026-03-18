@@ -4,7 +4,7 @@
   "health_limit": {
     "type": "origins:attribute",
     "modifier": {
-      "id": "*:agile_physique_health_limit",
+      "id": "*:agile_physique/attribute_modifiers_health_limit",
       "attribute": "minecraft:generic.max_health",
       "amount": -2,
       "operation": "add_value"
@@ -14,19 +14,19 @@
     "type": "origins:conditioned_attribute",
     "modifiers": [
       {
-        "id": "rend:axe_attack_damage",
+        "id": "*:agile_physique/attribute_modifiers_axe_attack_damage_limit",
         "attribute": "minecraft:generic.attack_damage",
         "operation": "add_value",
         "amount": -5
       },
       {
-        "id": "rend:axe_attack_speed",
+        "id": "*:agile_physique/attribute_modifiers_axe_attack_speed_limit",
         "attribute": "minecraft:generic.attack_speed",
         "operation": "add_value",
         "amount": -0.5
       }
     ],
-    "tick_rate": 30,
+    "tick_rate": 20,
     "condition": {
       "type": "origins:equipped_item",
       "equipment_slot": "mainhand",
