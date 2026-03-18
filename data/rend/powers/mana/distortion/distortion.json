@@ -175,11 +175,11 @@
                                       {
                                         "condition": {
                                           "type": "origins:power_active",
-                                          "power": "*:temp_disable_ai"
+                                          "power": "*:mana/distortion/temp_disable_ai"
                                         },
                                         "action": {
                                           "type": "origins:change_resource",
-                                          "resource": "*:temp_disable_ai_duration",
+                                          "resource": "*:mana/distortion/temp_disable_ai_duration",
                                           "operation": "set",
                                           "change": 0
                                         }
@@ -200,8 +200,8 @@
                                         },
                                         "action": {
                                           "type": "origins:grant_power",
-                                          "power": "*:temp_disable_ai",
-                                          "source": "*:distortion_tp_behind"
+                                          "power": "*:mana/distortion/temp_disable_ai",
+                                          "source": "*:*_tp_behind"
                                         }
                                       }
                                     ]
