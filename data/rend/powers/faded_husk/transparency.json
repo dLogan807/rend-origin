@@ -32,7 +32,7 @@
           },
           "action": {
             "type": "origins:change_resource",
-            "resource": "rend:transparency_weakened_check",
+            "resource": "*:*_weakened_check",
             "change": 0,
             "operation": "set"
           }
@@ -45,7 +45,7 @@
           },
           "action": {
             "type": "origins:change_resource",
-            "resource": "rend:transparency_weakened_check",
+            "resource": "*:*_weakened_check",
             "change": 1,
             "operation": "set"
           }
@@ -58,7 +58,7 @@
           },
           "action": {
             "type": "origins:change_resource",
-            "resource": "rend:transparency_weakened_check",
+            "resource": "*:*_weakened_check",
             "change": 2,
             "operation": "set"
           }
@@ -71,7 +71,7 @@
           },
           "action": {
             "type": "origins:change_resource",
-            "resource": "rend:transparency_weakened_check",
+            "resource": "*:*_weakened_check",
             "change": 3,
             "operation": "set"
           }
@@ -93,7 +93,7 @@
           },
           "action": {
             "type": "origins:change_resource",
-            "resource": "rend:transparency_weakened_check",
+            "resource": "*:*_weakened_check",
             "change": 4,
             "operation": "set"
           }
@@ -107,7 +107,7 @@
     "alpha": 0.2,
     "condition": {
       "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
+      "resource": "*:*_weakened_check",
       "comparison": "==",
       "compare_to": 1
     }
@@ -117,7 +117,7 @@
     "alpha": 0.4,
     "condition": {
       "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
+      "resource": "*:*_weakened_check",
       "comparison": "==",
       "compare_to": 2
     }
@@ -127,7 +127,7 @@
     "alpha": 0.6,
     "condition": {
       "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
+      "resource": "*:*_weakened_check",
       "comparison": "==",
       "compare_to": 3
     }
@@ -137,7 +137,7 @@
     "alpha": 0.8,
     "condition": {
       "type": "origins:resource",
-      "resource": "rend:transparency_weakened_check",
+      "resource": "*:*_weakened_check",
       "comparison": "==",
       "compare_to": 4
     }

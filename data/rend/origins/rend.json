@@ -2,11 +2,11 @@
   "powers": [
     "*:setup",
     "*:cursed_prison",
-    "*:faded_husk",
+    "*:faded_husk/faded_husk",
+    "*:faded_husk/transparency",
     "*:agile_physique",
     "*:attribute_modifiers",
     "*:claws",
-    "*:transparency",
     "*:carnivore",
     "*:piercing_strike",
     "*:inherent_target",
@@ -21,8 +21,8 @@
   "description": "Wretched remains of an ancient species sealed away in the Nether following a failed invasion. Millenia of isolation and dormancy has drastically weakened them.",
   "upgrades": [
     {
-      "condition": "rend:escape_nether",
-      "origin": "rend:rend_escaped_nether",
+      "condition": "*:escape_nether",
+      "origin": "*:rend_escaped_nether",
       "announcement": "You have broken free of the Nether! You feel your memories flow back into you. New powers are now available!"
     }
   ]
