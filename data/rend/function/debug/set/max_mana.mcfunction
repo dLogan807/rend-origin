@@ -1,0 +1,1 @@
+resource set @s rend:mana/mana_capacity 100
