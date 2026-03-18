@@ -72,9 +72,9 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 
 ## Changing Origin
 
-Before switching to a different origin, run `function rend:debug/reset/remove_tags_and_team`.
+After switching to a different origin, run `function rend:debug/remove/everything` to remove any residual effects.
 
-After you've switched, run `function rend:debug/reset/remove_all_modifiers`.
+If you ran this command by mistake, run `function rend:setup` to re-initialise the Rend origin.
 
 ## Testing
 
