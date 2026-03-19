@@ -47,9 +47,7 @@
                 "powers": [
                   {
                     "data": {},
-                    "sources": [
-                      "rend:mana/soul_staff/staff_ability_summon_fallen"
-                    ],
+                    "sources": ["rend:mana/soul_staff/summon_fallen/spell"],
                     "id": "rend:fallen/tether/placement",
                     "type": "origins:action_on_callback"
                   }
@@ -136,7 +134,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana/soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -179,7 +177,7 @@
             "actions": [
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:mana/soul_staff/soul_staff_cooldown"
+                "power": "*:mana/soul_staff/staff_cooldown"
               },
               {
                 "type": "origins:trigger_cooldown",

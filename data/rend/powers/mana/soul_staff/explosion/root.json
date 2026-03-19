@@ -29,7 +29,7 @@
               {
                 "type": "origins:grant_power",
                 "power": "*:mana/soul_staff/explosion/circle",
-                "source": "*:mana/soul_staff/staff_ability_explosion_activation"
+                "source": "*:mana/soul_staff/explosion/root_start"
               }
             ]
           },
@@ -177,7 +177,7 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:change_resource",
-                      "resource": "*:mana/soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "resource": "*:mana/soul_staff/explosion/spell_eye_contact_bar",
                       "change": 2
                     }
                   }
@@ -198,7 +198,7 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:change_resource",
-                      "resource": "*:mana/soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "resource": "*:mana/soul_staff/explosion/spell_eye_contact_bar",
                       "change": -20
                     }
                   }
@@ -374,7 +374,7 @@
                   "type": "target_action",
                   "action": {
                     "type": "origins:change_resource",
-                    "resource": "*:mana/soul_staff/staff_ability_explosion_success",
+                    "resource": "*:mana/soul_staff/explosion/spell_explosion_success",
                     "change": 1
                   }
                 }

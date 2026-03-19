@@ -9,7 +9,14 @@
     }
   },
   "root": {
-    "type": "origins:entity_set"
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "say I was added to the set"
+      }
+    }
   },
   "cooldown": {
     "type": "origins:cooldown",
@@ -64,7 +71,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana/soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -134,7 +141,7 @@
               "actions": [
                 {
                   "type": "origins:trigger_cooldown",
-                  "power": "*:mana/soul_staff/soul_staff_cooldown"
+                  "power": "*:mana/soul_staff/staff_cooldown"
                 },
                 {
                   "type": "origins:trigger_cooldown",
@@ -177,7 +184,7 @@
                       {
                         "type": "origins:grant_power",
                         "power": "*:mana/soul_staff/explosion/root",
-                        "source": "*:mana/soul_staff/staff_ability_explosion_activation"
+                        "source": "*:mana/soul_staff/explosion/spell_explosion_activation"
                       },
                       {
                         "type": "origins:selector_action",
@@ -189,7 +196,7 @@
                               "type": "origins:invert",
                               "action": {
                                 "type": "add_to_entity_set",
-                                "set": "*:mana/soul_staff/staff_ability_explosion_root"
+                                "set": "*:mana/soul_staff/explosion/spell_root"
                               }
                             },
                             {
@@ -263,8 +270,8 @@
           {
             "type": "origins:entity_set_size",
             "set": "*:*_root",
-            "comparison": "==",
-            "compare_to": 1
+            "comparison": ">",
+            "compare_to": 0
           },
           {
             "type": "origins:resource",
