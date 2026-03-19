@@ -247,7 +247,7 @@
                     {
                       "type": "origins:grant_power",
                       "power": "*:mana/soul_staff/explosion/circle",
-                      "source": "*:*"
+                      "source": "*:*_raise_amount"
                     },
                     {
                       "type": "origins:execute_command",

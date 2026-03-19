@@ -252,12 +252,12 @@
                       {
                         "type": "origins:grant_power",
                         "power": "*:fallen/fallen",
-                        "source": "*:fallen/tether/hitbox"
+                        "source": "*:*_animation_complete"
                       },
                       {
                         "type": "origins:grant_power",
                         "power": "*:fallen/upgrade_on_kill",
-                        "source": "*:fallen/tether/hitbox"
+                        "source": "*:*_animation_complete"
                       },
                       {
                         "type": "origins:delay",
