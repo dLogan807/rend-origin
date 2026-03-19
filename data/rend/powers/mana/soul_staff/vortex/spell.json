@@ -158,7 +158,7 @@
                       "entity_action": {
                         "type": "origins:grant_power",
                         "power": "*:mana/soul_staff/vortex/vortex",
-                        "source": "*:mana/soul_staff/vortex/spell_vortex_activation"
+                        "source": "*:*_activation"
                       },
                       "bientity_action": {
                         "type": "origins:invert",

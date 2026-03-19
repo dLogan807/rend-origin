@@ -24,14 +24,9 @@
           "entity_type": "minecraft:armor_stand",
           "tag": "{NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:[rend_explosion]}",
           "entity_action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:grant_power",
-                "power": "*:mana/soul_staff/explosion/circle",
-                "source": "*:mana/soul_staff/explosion/root_start"
-              }
-            ]
+            "type": "origins:grant_power",
+            "power": "*:mana/soul_staff/explosion/circle",
+            "source": "*:*_start"
           },
           "bientity_action": {
             "type": "origins:add_to_entity_set",
@@ -374,7 +369,7 @@
                   "type": "target_action",
                   "action": {
                     "type": "origins:change_resource",
-                    "resource": "*:mana/soul_staff/explosion/spell_explosion_success",
+                    "resource": "*:mana/soul_staff/explosion/spell_success",
                     "change": 1
                   }
                 }

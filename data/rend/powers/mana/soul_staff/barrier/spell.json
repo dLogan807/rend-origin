@@ -151,7 +151,7 @@
               {
                 "type": "origins:grant_power",
                 "power": "*:mana/soul_staff/barrier/barrier",
-                "source": "*:*"
+                "source": "*:*_activation"
               },
               {
                 "type": "origins:play_sound",

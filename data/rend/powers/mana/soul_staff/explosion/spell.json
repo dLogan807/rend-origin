@@ -184,7 +184,7 @@
                       {
                         "type": "origins:grant_power",
                         "power": "*:mana/soul_staff/explosion/root",
-                        "source": "*:mana/soul_staff/explosion/spell_explosion_activation"
+                        "source": "*:*_activation"
                       },
                       {
                         "type": "origins:selector_action",
