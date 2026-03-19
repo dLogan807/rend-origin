@@ -4,7 +4,7 @@
     "type": "origins:action_on_callback",
     "entity_action_gained": {
       "type": "origins:trigger_cooldown",
-      "power": "*:soul_staff/staff_ability_barrier_duration"
+      "power": "*:mana/soul_staff/barrier/spell_duration"
     }
   },
   "blocked_projectiles": {
@@ -92,7 +92,7 @@
           },
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/staff_ability_barrier_duration",
+            "resource": "*:mana/soul_staff/barrier/spell_duration",
             "comparison": "==",
             "compare_to": 0
           }

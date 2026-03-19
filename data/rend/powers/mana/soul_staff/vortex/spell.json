@@ -1,48 +1,26 @@
 {
   "type": "origins:multiple",
-  "name": "Barrier",
-  "description": "Create a barrier around yourself that deflects all projectiles.",
-  "tome_bridge": {
+  "name": "Create Vortex",
+  "description": "Call forth a howling whirlwind.",
+  "tome_vault": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/bastion_bridge": "rend:chests/barrier_tome/normal"
+      "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome/trial_vault"
     }
   },
-  "tome_treasure": {
+  "tome_ominous_vault": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/bastion_treasure": "rend:chests/barrier_tome/normal"
-    }
-  },
-  "tome_hoglin_stable": {
-    "type": "origins:replace_loot_table",
-    "replace": {
-      "minecraft:chests/bastion_hoglin_stable": "rend:chests/barrier_tome/normal"
-    }
-  },
-  "tome_other": {
-    "type": "origins:replace_loot_table",
-    "replace": {
-      "minecraft:chests/bastion_other": "rend:chests/barrier_tome/normal"
-    }
-  },
-  "duration": {
-    "type": "origins:cooldown",
-    "cooldown": 550,
-    "hud_render": {
-      "should_render": true,
-      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-      "bar_index": 0,
-      "order": 6
+      "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/vortex_tome/trial_ominous_vault"
     }
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 1200,
+    "cooldown": 1000,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 4,
+      "bar_index": 5,
       "order": 4,
       "condition": {
         "type": "origins:and",
@@ -70,14 +48,14 @@
           "condition": {
             "type": "origins:xp_levels",
             "comparison": "<",
-            "compare_to": 25
+            "compare_to": 35
           },
           "action": {
             "type": "origins:and",
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "title @s actionbar {\"text\":\"25 XP levels needed\",\"color\":\"red\"}"
+                "command": "title @s actionbar {\"text\":\"35 XP levels needed\",\"color\":\"red\"}"
               },
               {
                 "type": "origins:execute_command",
@@ -89,7 +67,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -110,11 +88,10 @@
             "command": "function rend:notification/notify_spell_on_cooldown"
           }
         },
-
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": "<",
             "compare_to": 20
           },
@@ -129,45 +106,74 @@
             "value": true
           },
           "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:trigger_cooldown",
-                "power": "*:soul_staff/soul_staff_cooldown"
-              },
-              {
-                "type": "origins:trigger_cooldown",
-                "power": "*:*_cooldown"
-              },
-              {
-                "type": "origins:swing_hand",
-                "hand": "MAIN_HAND"
-              },
-              {
-                "type": "origins:change_resource",
-                "resource": "*:mana_capacity",
-                "change": -20
-              },
-              {
-                "type": "origins:grant_power",
-                "power": "*:soul_staff/barrier",
-                "source": "*:*"
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:entity.evoker.cast_spell",
-                "category": "players",
-                "pitch": 1.3,
-                "volume": 1
-              },
-              {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.enchantment_table.use",
-                "category": "players",
-                "pitch": 1.5,
-                "volume": 1
+            "type": "origins:raycast",
+            "distance": 70,
+            "entity": false,
+            "shape_type": "collider",
+            "fluid_handling": "source_only",
+            "hit_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:mana/soul_staff/staff_cooldown"
+                },
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "*:*_cooldown"
+                },
+                {
+                  "type": "origins:swing_hand",
+                  "hand": "MAIN_HAND"
+                },
+                {
+                  "type": "origins:change_resource",
+                  "resource": "*:mana/mana_capacity",
+                  "change": -20
+                }
+              ]
+            },
+            "block_action": {
+              "type": "origins:offset",
+              "y": 5,
+              "action": {
+                "type": "origins:spawn_entity",
+                "entity_type": "minecraft:bat",
+                "tag": "{Invulnerable:1b,NoGravity:1b,Silent:1b}",
+                "entity_action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:apply_effect",
+                      "effect": {
+                        "id": "minecraft:invisibility",
+                        "show_particles": false,
+                        "duration": -1
+                      }
+                    },
+                    {
+                      "type": "origins:spawn_entity",
+                      "entity_type": "minecraft:armor_stand",
+                      "tag": "{Invulnerable:1b,NoGravity:1b,Invisible:1b}",
+                      "entity_action": {
+                        "type": "origins:grant_power",
+                        "power": "*:mana/soul_staff/vortex/vortex",
+                        "source": "*:mana/soul_staff/vortex/spell_vortex_activation"
+                      },
+                      "bientity_action": {
+                        "type": "origins:invert",
+                        "action": {
+                          "type": "origins:mount"
+                        }
+                      }
+                    }
+                  ]
+                }
               }
-            ]
+            },
+            "command_along_ray": "particle minecraft:cloud",
+            "command_step": 1,
+            "command_along_ray_only_on_hit": false
           }
         }
       ]
@@ -189,7 +195,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{barrier_tome: 1b}"
+            "nbt": "{vortex_tome: 1b}"
           }
         },
         {
@@ -204,13 +210,13 @@
     "type": "origins:tooltip",
     "texts": [
       {
-        "text": "Weave a barrier around",
+        "text": "Accelerate air into",
         "type": "text",
         "italic": true,
         "color": "gray"
       },
       {
-        "text": "yourself.",
+        "text": "inescapable gusts.",
         "type": "text",
         "italic": true,
         "color": "gray"
@@ -220,22 +226,22 @@
         "text": "§7Mana Cost: §b-20%"
       },
       {
-        "text": "§7XP Level: §325⟡"
+        "text": "§7XP Level: §335⟡"
       },
       {
-        "text": "§7Cooldown: §r60s"
+        "text": "§7Cooldown: §r50s"
       }
     ],
     "item_condition": {
       "type": "origins:custom_data",
-      "nbt": "{barrier_tome: 1b}"
+      "nbt": "{vortex_tome: 1b}"
     }
   },
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/barrier.png",
-      "text": "§eTome of Conjure Barrier       \n§7Found in §fBastion Remnants§7.       "
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
+      "text": "§eTome of Create Vortex         \n§7Found in §fTrail Chamber vaults§7."
     }
   ]
 }

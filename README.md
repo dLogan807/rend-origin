@@ -38,15 +38,14 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 ## Questions and Answers
 
 <details>
-    <summary><b>Why do I need Pehkui? Is the resourcepack important?</b></summary>
-    <ol>
-        <li>
-            Pehkui is required for altering the follow range of entities for the player. In 1.21.1, setting a mob's follow range <a href="https://bugs.mojang.com/browse/MC/issues/MC-145656">does not work</a>. This is not a size-changing origin.
-        </li>
-         <li>
-            While you don't <i>need</i> the resource pack, I highly recommended it! It's used for custom items, death messages, resource bars, and a custom model.
-        </li>
-    </ol>
+    <summary><b>Is Pehkui required?</b></summary>
+    Pehkui is required for altering the follow range of entities for the player. In 1.21.1, setting a mob's follow range <a href="https://bugs.mojang.com/browse/MC/issues/MC-145656">does not work</a>. This is not a size-changing origin.
+</details>
+<br>
+
+<details>
+    <summary><b>Is the resourcepack required?</b></summary>
+    While it isn't strictly <i>required</i>, I would highly recommended it! It's used for custom items, death messages, resource bars, and a custom model.
 </details>
 <br>
 
@@ -72,16 +71,16 @@ Each power is accompanied by tooltips with detailed explanations of the power's 
 
 ## Changing Origin
 
-Before switching to a different origin, run `function rend:debug/reset/remove_tags_and_team`.
+After switching to a different origin, run `/function rend:debug/remove/everything` to remove any residual effects.
 
-After you've switched, run `function rend:debug/reset/remove_all_modifiers`.
+If you ran the above command by mistake, run `/function rend:setup` to re-initialise the Rend origin.
 
 ## Testing
 
 <details>
     <summary><code>(Spoiler)</code> List of functions for testing</summary>
-    <h3>Set maximum mana</h3>
-     Run <code>/resource set @s rend:mana_capacity 100</code>
+    <h3>Setting maximum mana</h3>
+     Run <code>/function rend:debug/set/max_mana</code>
     <h3>Obtaining items</h3>
     <ul>
         <li>All items: <code>/function rend:debug/give/all_items</code></li>
@@ -100,4 +99,4 @@ After you've switched, run `function rend:debug/reset/remove_all_modifiers`.
 - [Animated Java](https://animated-java.dev/) for enabling creating custom models and animations without needing another dependency.
 - Davide Ciacco's [Alchemy Circle Generator](https://ciaccodavi.de/qbdp/acg/) for inspiration.
 - kemo14331's [Particle Converter](https://github.com/kemo14331/Particle-Converter) for enabling porting images to functions.
-- Friends for helping playtest the Rend!
+- Friends for helping playtest the Origin <3

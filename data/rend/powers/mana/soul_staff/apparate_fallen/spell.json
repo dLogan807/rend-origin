@@ -61,7 +61,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -86,7 +86,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": "<",
             "compare_to": 10
           },
@@ -105,7 +105,7 @@
             "actions": [
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:soul_staff/soul_staff_cooldown"
+                "power": "*:mana/soul_staff/staff_cooldown"
               },
               {
                 "type": "origins:trigger_cooldown",
@@ -117,7 +117,7 @@
               },
               {
                 "type": "origins:change_resource",
-                "resource": "*:mana_capacity",
+                "resource": "*:mana/mana_capacity",
                 "change": -10
               },
               {

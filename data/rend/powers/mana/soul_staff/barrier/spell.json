@@ -1,44 +1,48 @@
 {
   "type": "origins:multiple",
-  "name": "Cultivate",
-  "description": "Grow nearby crops and some plants.",
-  "tome_plains": {
+  "name": "Barrier",
+  "description": "Create a barrier around yourself that deflects all projectiles.",
+  "tome_bridge": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/village/village_plains_house": "rend:chests/cultivate_tome"
+      "minecraft:chests/bastion_bridge": "rend:chests/barrier_tome/normal"
     }
   },
-  "tome_desert": {
+  "tome_treasure": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/village/village_desert_house": "rend:chests/cultivate_tome"
+      "minecraft:chests/bastion_treasure": "rend:chests/barrier_tome/normal"
     }
   },
-  "tome_savanna": {
+  "tome_hoglin_stable": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/village/village_savanna_house": "rend:chests/cultivate_tome"
+      "minecraft:chests/bastion_hoglin_stable": "rend:chests/barrier_tome/normal"
     }
   },
-  "snowy_plains": {
+  "tome_other": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/village/village_snowy_house": "rend:chests/cultivate_tome"
+      "minecraft:chests/bastion_other": "rend:chests/barrier_tome/normal"
     }
   },
-  "taiga_plains": {
-    "type": "origins:replace_loot_table",
-    "replace": {
-      "minecraft:chests/village/village_taiga_house": "rend:chests/cultivate_tome"
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 550,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 0,
+      "order": 6
     }
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 100,
+    "cooldown": 1200,
     "hud_render": {
       "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
-      "bar_index": 3,
+      "bar_index": 4,
       "order": 4,
       "condition": {
         "type": "origins:and",
@@ -85,7 +89,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -110,9 +114,9 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": "<",
-            "compare_to": 5
+            "compare_to": 20
           },
           "action": {
             "type": "origins:execute_command",
@@ -129,7 +133,7 @@
             "actions": [
               {
                 "type": "origins:trigger_cooldown",
-                "power": "*:soul_staff/soul_staff_cooldown"
+                "power": "*:mana/soul_staff/staff_cooldown"
               },
               {
                 "type": "origins:trigger_cooldown",
@@ -141,52 +145,27 @@
               },
               {
                 "type": "origins:change_resource",
-                "resource": "*:mana_capacity",
-                "change": -5
+                "resource": "*:mana/mana_capacity",
+                "change": -20
               },
               {
-                "type": "origins:execute_command",
-                "command": "particle minecraft:happy_villager ~ ~ ~ 3.5 3.5 3.5 0 50 normal @a"
+                "type": "origins:grant_power",
+                "power": "*:mana/soul_staff/barrier/barrier",
+                "source": "*:*"
               },
               {
-                "type": "origins:block_action_at",
-                "block_action": {
-                  "type": "origins:area_of_effect",
-                  "radius": 7,
-                  "block_action": {
-                    "type": "origins:and",
-                    "actions": [
-                      {
-                        "type": "origins:bonemeal"
-                      },
-                      {
-                        "type": "origins:chance",
-                        "chance": 0.4,
-                        "success_action": {
-                          "type": "origins:delay",
-                          "ticks": 10,
-                          "action": {
-                            "type": "origins:bonemeal"
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "block_condition": {
-                    "type": "origins:and",
-                    "conditions": [
-                      {
-                        "type": "origins:in_tag",
-                        "tag": "rend:bonemeal_usable"
-                      },
-                      {
-                        "type": "origins:light_level",
-                        "comparison": ">=",
-                        "compare_to": 9
-                      }
-                    ]
-                  }
-                }
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.evoker.cast_spell",
+                "category": "players",
+                "pitch": 1.3,
+                "volume": 1
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.enchantment_table.use",
+                "category": "players",
+                "pitch": 1.5,
+                "volume": 1
               }
             ]
           }
@@ -210,7 +189,7 @@
           "equipment_slot": "offhand",
           "item_condition": {
             "type": "origins:custom_data",
-            "nbt": "{cultivate_tome: 1b}"
+            "nbt": "{barrier_tome: 1b}"
           }
         },
         {
@@ -225,43 +204,38 @@
     "type": "origins:tooltip",
     "texts": [
       {
-        "text": "Gently encourage plants",
+        "text": "Weave a barrier around",
         "type": "text",
         "italic": true,
         "color": "gray"
       },
       {
-        "text": "to flourish.",
+        "text": "yourself.",
         "type": "text",
         "italic": true,
         "color": "gray"
       },
       { "text": "" },
       {
-        "text": "§7Mana Cost: §b-5%"
+        "text": "§7Mana Cost: §b-20%"
       },
       {
         "text": "§7XP Level: §325⟡"
       },
       {
-        "text": "§7Cooldown: §r5s"
+        "text": "§7Cooldown: §r60s"
       }
     ],
     "item_condition": {
       "type": "origins:custom_data",
-      "nbt": "{cultivate_tome: 1b}"
+      "nbt": "{barrier_tome: 1b}"
     }
   },
   "badges": [
     {
       "type": "origins:tooltip",
-      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/cultivation.png",
-      "text": "§eTome of Cultivation§7               \nFound in all manner of §fvillages§7."
-    },
-    {
-      "type": "origins:tooltip",
-      "sprite": "origins:textures/gui/community/silent/badge/icons/sun_icon.png",
-      "text": "§7Plants need a light level of §e9§7."
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/barrier.png",
+      "text": "§eTome of Conjure Barrier       \n§7Found in §fBastion Remnants§7.       "
     }
   ]
 }

@@ -28,8 +28,8 @@
             "actions": [
               {
                 "type": "origins:grant_power",
-                "power": "*:soul_staff/explosion/circle",
-                "source": "*:soul_staff/staff_ability_explosion_activation"
+                "power": "*:mana/soul_staff/explosion/circle",
+                "source": "*:mana/soul_staff/explosion/root_start"
               }
             ]
           },
@@ -177,7 +177,7 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:change_resource",
-                      "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "resource": "*:mana/soul_staff/explosion/spell_eye_contact_bar",
                       "change": 2
                     }
                   }
@@ -198,7 +198,7 @@
                     "type": "origins:target_action",
                     "action": {
                       "type": "origins:change_resource",
-                      "resource": "*:soul_staff/staff_ability_explosion_eye_contact_bar",
+                      "resource": "*:mana/soul_staff/explosion/spell_eye_contact_bar",
                       "change": -20
                     }
                   }
@@ -229,7 +229,7 @@
             "type": "target_action",
             "action": {
               "type": "origins:change_resource",
-              "resource": "*:soul_staff/explosion/circle_destroy",
+              "resource": "*:mana/soul_staff/explosion/circle_destroy",
               "change": 1
             }
           }
@@ -355,12 +355,12 @@
                     "actions": [
                       {
                         "type": "origins:change_resource",
-                        "resource": "*:soul_staff/explosion/circle_explode",
+                        "resource": "*:mana/soul_staff/explosion/circle_explode",
                         "change": 1
                       },
                       {
                         "type": "origins:change_resource",
-                        "resource": "*:soul_staff/explosion/circle_destroy",
+                        "resource": "*:mana/soul_staff/explosion/circle_destroy",
                         "change": 1
                       }
                     ]
@@ -374,7 +374,7 @@
                   "type": "target_action",
                   "action": {
                     "type": "origins:change_resource",
-                    "resource": "*:soul_staff/staff_ability_explosion_success",
+                    "resource": "*:mana/soul_staff/explosion/spell_explosion_success",
                     "change": 1
                   }
                 }

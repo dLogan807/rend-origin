@@ -9,7 +9,14 @@
     }
   },
   "root": {
-    "type": "origins:entity_set"
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "say I was added to the set"
+      }
+    }
   },
   "cooldown": {
     "type": "origins:cooldown",
@@ -64,7 +71,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:soul_staff/soul_staff_cooldown",
+            "resource": "*:mana/soul_staff/staff_cooldown",
             "comparison": ">",
             "compare_to": 0
           },
@@ -88,7 +95,7 @@
         {
           "condition": {
             "type": "origins:resource",
-            "resource": "*:mana_capacity",
+            "resource": "*:mana/mana_capacity",
             "comparison": "<",
             "compare_to": 100
           },
@@ -101,7 +108,7 @@
           "condition": {
             "type": "origins:entity_set_size",
             "set": "*:*_root",
-            "comparison": "==",
+            "comparison": ">",
             "compare_to": 0
           },
           "action": {
@@ -134,7 +141,7 @@
               "actions": [
                 {
                   "type": "origins:trigger_cooldown",
-                  "power": "*:soul_staff/soul_staff_cooldown"
+                  "power": "*:mana/soul_staff/staff_cooldown"
                 },
                 {
                   "type": "origins:trigger_cooldown",
@@ -146,7 +153,7 @@
                 },
                 {
                   "type": "origins:change_resource",
-                  "resource": "*:mana_capacity",
+                  "resource": "*:mana/mana_capacity",
                   "change": -100
                 },
                 {
@@ -176,8 +183,8 @@
                     "actions": [
                       {
                         "type": "origins:grant_power",
-                        "power": "*:soul_staff/explosion/root",
-                        "source": "*:soul_staff/staff_ability_explosion_activation"
+                        "power": "*:mana/soul_staff/explosion/root",
+                        "source": "*:mana/soul_staff/explosion/spell_explosion_activation"
                       },
                       {
                         "type": "origins:selector_action",
@@ -189,12 +196,12 @@
                               "type": "origins:invert",
                               "action": {
                                 "type": "add_to_entity_set",
-                                "set": "*:soul_staff/staff_ability_explosion_root"
+                                "set": "*:mana/soul_staff/explosion/spell_root"
                               }
                             },
                             {
                               "type": "add_to_entity_set",
-                              "set": "*:soul_staff/explosion/root_caster"
+                              "set": "*:mana/soul_staff/explosion/root_caster"
                             }
                           ]
                         },
@@ -263,8 +270,8 @@
           {
             "type": "origins:entity_set_size",
             "set": "*:*_root",
-            "comparison": "==",
-            "compare_to": 1
+            "comparison": ">",
+            "compare_to": 0
           },
           {
             "type": "origins:resource",
@@ -295,7 +302,7 @@
       "actions": [
         {
           "type": "origins:trigger_cooldown",
-          "power": "*:soul_staff/explosion/exhaustion_timer"
+          "power": "*:mana/soul_staff/explosion/exhaustion_timer"
         },
         {
           "type": "origins:change_resource",
@@ -317,7 +324,7 @@
           "type": "origins:target_action",
           "action": {
             "type": "origins:change_resource",
-            "resource": "*:soul_staff/explosion/root_only_destroy",
+            "resource": "*:mana/soul_staff/explosion/root_only_destroy",
             "change": 1
           }
         }
@@ -333,7 +340,7 @@
         "type": "origins:target_action",
         "action": {
           "type": "origins:change_resource",
-          "resource": "*:soul_staff/explosion/root_only_destroy",
+          "resource": "*:mana/soul_staff/explosion/root_only_destroy",
           "change": 1
         }
       }
