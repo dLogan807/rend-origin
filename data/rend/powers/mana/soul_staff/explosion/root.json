@@ -369,7 +369,7 @@
                   "type": "target_action",
                   "action": {
                     "type": "origins:change_resource",
-                    "resource": "*:mana/soul_staff/explosion/spell_explosion_success",
+                    "resource": "*:mana/soul_staff/explosion/spell_success",
                     "change": 1
                   }
                 }
