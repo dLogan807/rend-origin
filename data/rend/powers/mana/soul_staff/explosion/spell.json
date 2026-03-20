@@ -9,14 +9,7 @@
     }
   },
   "root": {
-    "type": "origins:entity_set",
-    "action_on_add": {
-      "type": "origins:target_action",
-      "action": {
-        "type": "origins:execute_command",
-        "command": "say I was added to the set"
-      }
-    }
+    "type": "origins:entity_set"
   },
   "cooldown": {
     "type": "origins:cooldown",
