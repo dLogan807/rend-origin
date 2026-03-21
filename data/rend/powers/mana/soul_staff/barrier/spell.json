@@ -30,7 +30,6 @@
     "type": "origins:cooldown",
     "cooldown": 550,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
       "bar_index": 0,
       "order": 6
@@ -40,7 +39,6 @@
     "type": "origins:cooldown",
     "cooldown": 1200,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 4,
       "order": 4,

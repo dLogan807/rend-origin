@@ -85,7 +85,6 @@
   "cooldown": {
     "type": "origins:cooldown",
     "hud_render": {
-      "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
       "order": 3,
       "bar_index": 1

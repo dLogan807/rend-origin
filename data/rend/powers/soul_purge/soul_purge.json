@@ -90,7 +90,6 @@
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
       "bar_index": 7,
       "order": 6,
-      "should_render": true,
       "condition": {
         "type": "origins:resource",
         "resource": "*:*_dimension_instability",

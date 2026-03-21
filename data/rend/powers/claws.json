@@ -185,7 +185,6 @@
     "key": "key.jump",
     "cooldown": 40,
     "hud_render": {
-      "should_render": true,
       "bar_index": 2,
       "order": 2,
       "sprite_location": "rend:textures/gui/community/leopardx/resource_bar_01.png"

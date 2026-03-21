@@ -85,7 +85,6 @@
     "type": "origins:cooldown",
     "cooldown": 800,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 6,
       "order": 4,
