@@ -31,7 +31,7 @@
   "decrease_break_speed": {
     "type": "origins:modify_break_speed",
     "modifier": {
-      "id": "*:*",
+      "id": "*:*_decrease_break_speed",
       "operation": "multiply_base_additive",
       "amount": -0.7
     },
@@ -45,7 +45,7 @@
   "increased_hunger": {
     "type": "origins:modify_exhaustion",
     "modifier": {
-      "id": "*:*",
+      "id": "*:*_increased_hunger",
       "operation": "multiply_base_additive",
       "amount": 1
     },
