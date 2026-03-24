@@ -646,8 +646,14 @@
           "category": "players"
         },
         {
-          "type": "origins:execute_command",
-          "command": "particle poof ~ ~ ~ 0.3 0 0.3 0.1 5 normal"
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:poof",
+          "spread": {
+            "x": 0.3,
+            "Z": 0.3
+          },
+          "speed": 0.1,
+          "count": 5
         },
         {
           "type": "origins:and",
