@@ -40,19 +40,6 @@
           "condition": {
             "type": "origins:resource",
             "resource": "*:*_cooldown",
-            "comparison": "<",
-            "compare_to": 5
-          },
-          "if_action": {
-            "type": "origins:execute_command",
-            "command": "playsound minecraft:ui.button.click player @s ~ ~ ~ 5 2"
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_cooldown",
             "comparison": "==",
             "compare_to": 0
           },
@@ -81,10 +68,6 @@
             "else_action": {
               "type": "origins:and",
               "actions": [
-                {
-                  "type": "origins:execute_command",
-                  "command": "function rend:air_burst/calculate_cooldown_time"
-                },
                 {
                   "type": "origins:if_else_list",
                   "actions": [
@@ -227,7 +210,14 @@
                   "type": "origins:play_sound",
                   "sound": "minecraft:entity.firework_rocket.launch",
                   "pitch": 2,
-                  "volume": 2,
+                  "volume": 3,
+                  "category": "players"
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:block.bell.use",
+                  "pitch": 1.5,
+                  "volume": 5,
                   "category": "players"
                 },
                 {
@@ -249,6 +239,10 @@
                   },
                   "speed": 0.5,
                   "count": 10
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "function rend:air_burst/calculate_cooldown_time"
                 }
               ]
             }
