@@ -15,7 +15,6 @@
     "type": "origins:cooldown",
     "cooldown": 9600,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 8,
       "order": 4,
@@ -253,7 +252,6 @@
     "max": 100,
     "min": 0,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
       "bar_index": 7,
       "order": 6,

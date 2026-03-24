@@ -5,3 +5,4 @@ give @s enchanted_book[custom_model_data=439212,custom_name='{"text":"Tome of Ex
 give @s enchanted_book[custom_model_data=439213,custom_name='{"text":"Tome of Fallen Apparation","color": "yellow","italic": false}',custom_data={fallen_tp_tome:1b},enchantment_glint_override=true] 1
 give @s enchanted_book[custom_model_data=439214,custom_name='{"text":"Tome of Cultivation","color": "yellow","italic": false}',custom_data={cultivate_tome:1b},enchantment_glint_override=true] 1
 give @s enchanted_book[custom_model_data=439215,custom_name='{"text":"Tome of Conjure Barrier","color": "yellow","italic": false}',custom_data={barrier_tome:1b},enchantment_glint_override=true] 1
+give @s enchanted_book[custom_model_data=439216,custom_name='{"text":"Tome of Charge Burst","color": "yellow","italic": false}',custom_data={charge_burst_tome:1b},enchantment_glint_override=true] 1

@@ -1,0 +1,283 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "charges_left": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 15,
+    "hud_render": {
+      "should_render": true,
+      "order": 6,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_charges_left",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100
+  },
+  "launch": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:poof",
+          "spread": {
+            "x": 0,
+            "Z": 0
+          },
+          "speed": 0,
+          "count": 1
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": "<",
+            "compare_to": 5
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:ui.button.click player @s ~ ~ ~ 5 2"
+          }
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "if_action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:and",
+              "conditions": [
+                {
+                  "type": "origins:on_block"
+                },
+                {
+                  "type": "origins:command",
+                  "command": "execute if score @s rend.air_burst.charges_left = @s rend.air_burst.total_charges",
+                  "comparison": "!=",
+                  "compare_to": 1
+                }
+              ]
+            },
+            "if_action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_charges_left",
+              "operation": "set",
+              "change": 0
+            },
+            "else_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "function rend:air_burst/calculate_cooldown_time"
+                },
+                {
+                  "type": "origins:if_else_list",
+                  "actions": [
+                    {
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "scoreboard players get @s rend.air_burst.modifier",
+                        "comparison": "<",
+                        "compare_to": 5
+                      },
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:add_velocity",
+                            "space": "local",
+                            "set": false,
+                            "server": false,
+                            "z": 2.0
+                          },
+                          {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.generic.explode",
+                            "pitch": 0.7,
+                            "volume": 5,
+                            "category": "players"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "scoreboard players get @s rend.air_burst.modifier",
+                        "comparison": "<",
+                        "compare_to": 10
+                      },
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:add_velocity",
+                            "space": "local",
+                            "set": false,
+                            "server": false,
+                            "z": 3.0
+                          },
+                          {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.generic.explode",
+                            "pitch": 0.9,
+                            "volume": 5,
+                            "category": "players"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "scoreboard players get @s rend.air_burst.modifier",
+                        "comparison": "<",
+                        "compare_to": 15
+                      },
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:add_velocity",
+                            "space": "local",
+                            "set": false,
+                            "server": false,
+                            "z": 4.0
+                          },
+                          {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.generic.explode",
+                            "pitch": 1.1,
+                            "volume": 5,
+                            "category": "players"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "origins:command",
+                        "command": "scoreboard players get @s rend.air_burst.modifier",
+                        "comparison": "<",
+                        "compare_to": 20
+                      },
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:add_velocity",
+                            "space": "local",
+                            "set": false,
+                            "server": false,
+                            "z": 6.0
+                          },
+                          {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.generic.explode",
+                            "pitch": 1.3,
+                            "volume": 5,
+                            "category": "players"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "condition": {
+                        "type": "origins:constant",
+                        "value": true
+                      },
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:add_velocity",
+                            "space": "local",
+                            "set": false,
+                            "server": false,
+                            "z": 8.0
+                          },
+                          {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:entity.generic.explode",
+                            "pitch": 1.5,
+                            "volume": 5,
+                            "category": "players"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:entity.firework_rocket.launch",
+                  "pitch": 2,
+                  "volume": 2,
+                  "category": "players"
+                },
+                {
+                  "type": "origins:spawn_particles",
+                  "particle": "minecraft:explosion",
+                  "spread": {
+                    "x": 0.3,
+                    "Z": 0.3
+                  },
+                  "speed": 0,
+                  "count": 1
+                },
+                {
+                  "type": "origins:spawn_particles",
+                  "particle": "minecraft:poof",
+                  "spread": {
+                    "x": 0.3,
+                    "Z": 0.3
+                  },
+                  "speed": 0.5,
+                  "count": 10
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_charges_left",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    },
+    "interval": 5
+  },
+  "fall_slowly": {
+    "type": "origins:modify_falling",
+    "velocity": 0.05,
+    "take_fall_damage": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_charges_left",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
   "entity_types": ["minecraft:player"],
   "powers": [
+    "*:mana/soul_staff/charge_burst/air_burst",
     "*:mana/mana_potion_drink",
     "*:fallen/forgive_dead_players",
     "*:non_rend_tooltips"

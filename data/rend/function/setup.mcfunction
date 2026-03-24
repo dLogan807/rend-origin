@@ -97,6 +97,24 @@ scoreboard players set @s rend.fallen.height_mod 6
 scoreboard objectives add rend_explosion_circle_num dummy
 data modify storage minecraft:rend explosion set value {"counter": 0}
 
+# Charge Burst
+scoreboard objectives add rend.air_burst.total_charges dummy
+scoreboard objectives add rend.air_burst.charges_left dummy
+scoreboard objectives add rend.air_burst.base dummy
+scoreboard objectives add rend.air_burst.denominator dummy
+scoreboard objectives add rend.air_burst.modifier dummy
+scoreboard objectives add rend.air_burst.cooldown dummy
+
+scoreboard objectives add rend.air_burst.MAX_COOLDOWN dummy
+scoreboard players set #rend_global rend.air_burst.MAX_COOLDOWN 100
+scoreboard objectives add rend.air_burst.X_SHIFT dummy
+scoreboard players set #rend_global rend.air_burst.X_SHIFT 2
+scoreboard objectives add rend.air_burst.Y_MOD dummy
+scoreboard players set #rend_global rend.air_burst.Y_MOD 200
+scoreboard objectives add rend.air_burst.DENOMINATOR_MOD dummy
+scoreboard players set #rend_global rend.air_burst.DENOMINATOR_MOD 8
+
+
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
