@@ -67,15 +67,10 @@
             },
             {
               "condition": {
-                "type": "origins:and",
-                "conditions": [
-                  {
-                    "type": "origins:resource",
-                    "resource": "*:*_cooldown",
-                    "comparison": "==",
-                    "compare_to": 0
-                  }
-                ]
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": "==",
+                "compare_to": 0
               },
               "action": {
                 "type": "origins:and",
