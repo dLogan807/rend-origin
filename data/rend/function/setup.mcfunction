@@ -114,6 +114,12 @@ scoreboard players set #rend_global rend.air_burst.Y_MOD 200
 scoreboard objectives add rend.air_burst.DENOMINATOR_MOD dummy
 scoreboard players set #rend_global rend.air_burst.DENOMINATOR_MOD 8
 
+# - Explosion sound
+scoreboard objectives add rend.air_burst.explosion_pitch dummy
+data modify storage minecraft:rend charge_burst set value {"explosion_pitch": 0.0}
+
+scoreboard objectives add rend.air_burst.MAX_SOUND_PITCH dummy
+scoreboard players set #rend_global rend.air_burst.MAX_SOUND_PITCH 20
 
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
