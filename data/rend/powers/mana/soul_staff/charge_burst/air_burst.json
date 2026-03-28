@@ -76,10 +76,6 @@
                 "type": "origins:and",
                 "actions": [
                   {
-                    "type": "origins:execute_command",
-                    "command": "function rend:air_burst/calculate_cooldown_time"
-                  },
-                  {
                     "type": "origins:if_else_list",
                     "actions": [
                       {
@@ -175,6 +171,10 @@
                   {
                     "type": "origins:execute_command",
                     "command": "function rend:air_burst/calculate_explosion_sound_pitch_and_play"
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function rend:air_burst/calculate_cooldown_time"
                   }
                 ]
               }
@@ -194,7 +194,7 @@
         }
       ]
     },
-    "interval": 5
+    "interval": 3
   },
   "fall_slowly": {
     "type": "origins:modify_falling",
