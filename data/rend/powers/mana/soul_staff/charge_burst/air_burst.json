@@ -89,7 +89,7 @@
                           "type": "origins:add_velocity",
                           "space": "local",
                           "server": false,
-                          "z": 2.0
+                          "z": 4.0
                         }
                       },
                       {
@@ -103,7 +103,7 @@
                           "type": "origins:add_velocity",
                           "space": "local",
                           "server": false,
-                          "z": 3.0
+                          "z": 5.0
                         }
                       },
                       {
@@ -117,7 +117,7 @@
                           "type": "origins:add_velocity",
                           "space": "local",
                           "server": false,
-                          "z": 4.0
+                          "z": 6.0
                         }
                       },
                       {
@@ -131,7 +131,7 @@
                           "type": "origins:add_velocity",
                           "space": "local",
                           "server": false,
-                          "z": 6.0
+                          "z": 8.0
                         }
                       },
                       {
@@ -143,7 +143,7 @@
                           "type": "origins:add_velocity",
                           "space": "local",
                           "server": false,
-                          "z": 8.0
+                          "z": 10.0
                         }
                       }
                     ]
@@ -191,6 +191,12 @@
           "resource": "*:*_charges_left",
           "comparison": ">",
           "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/charge_burst/spell_is_charging",
+          "comparison": "==",
+          "compare_to": 0
         }
       ]
     },
@@ -201,10 +207,21 @@
     "velocity": 0.05,
     "take_fall_damage": false,
     "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_charges_left",
-      "comparison": ">",
-      "compare_to": 0
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_charges_left",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/charge_burst/spell_is_charging",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
     }
   }
 }
