@@ -1,6 +1,6 @@
 {
   "name": "Claws",
-  "description": "You can cling and leap from walls that aren't too tough.",
+  "description": "You can dig your claws in to cling and leap from walls.",
   "type": "origins:multiple",
   "check_clinging_release": {
     "type": "origins:action_over_time",
