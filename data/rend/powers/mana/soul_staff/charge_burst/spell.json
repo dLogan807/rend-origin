@@ -92,17 +92,32 @@
                 "type": "origins:play_sound",
                 "sound": "minecraft:item.firecharge.use",
                 "category": "players",
+                "volume": 0.3,
+                "pitch": 2
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.trial_spawner.spawn_item_begin",
+                "category": "players",
                 "volume": 1,
-                "pitch": 1.3
+                "pitch": 1.5
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.breeze.wind_burst",
+                "category": "players",
+                "volume": 0.1,
+                "pitch": 0.3
               },
               {
                 "type": "origins:spawn_particles",
-                "particle": "minecraft:cloud",
-                "count": 10,
+                "particle": "minecraft:white_smoke",
+                "offset_y": 0.5,
+                "count": 20,
                 "spread": {
-                  "x": 0,
+                  "x": 0.1,
                   "y": 0,
-                  "z": 0
+                  "z": 0.1
                 },
                 "speed": 0.1
               },
