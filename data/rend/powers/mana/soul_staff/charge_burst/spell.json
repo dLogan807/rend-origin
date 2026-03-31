@@ -29,7 +29,7 @@
   "is_charging": {
     "type": "origins:resource",
     "min": 0,
-    "max": 3
+    "max": 2
   },
   "charge_cooldown": {
     "type": "origins:cooldown",
@@ -44,7 +44,7 @@
           "type": "origins:change_resource",
           "resource": "*:*_is_charging",
           "operation": "set",
-          "change": 3
+          "change": 2
         },
         {
           "type": "origins:if_else",
@@ -261,19 +261,17 @@
                 "type": "origins:change_resource",
                 "resource": "*:*_is_charging",
                 "operation": "set",
-                "change": 3
+                "change": 2
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+                "operation": "set",
+                "change": 0
               },
               {
                 "type": "origins:execute_command",
-                "command": "scoreboard players set @s rend.air_burst.total_charges 0"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
+                "command": "function rend:air_burst/initialise_num_charges"
               }
             ]
           }
@@ -304,12 +302,6 @@
           "type": "origins:dimension",
           "dimension": "minecraft:the_nether",
           "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_is_charging",
-          "comparison": "==",
-          "compare_to": 0
         }
       ]
     }
@@ -317,60 +309,46 @@
   "charge_spell": {
     "type": "origins:action_over_time",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_is_charging",
-            "comparison": ">",
-            "compare_to": 1
-          },
-          "if_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_is_charging",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_is_charging",
+        "operation": "add",
+        "change": -1
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
             "type": "origins:change_resource",
-            "resource": "*:*_is_charging",
-            "operation": "add",
-            "change": -1
-          }
-        },
-        {
-          "type": "origins:if_else",
-          "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_is_charging",
-            "comparison": "==",
-            "compare_to": 1
+            "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+            "operation": "set",
+            "change": 1
           },
-          "if_action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:change_resource",
-                "resource": "*:*_is_charging",
-                "operation": "set",
-                "change": 0
-              },
-              {
-                "type": "origins:trigger_cooldown",
-                "power": "*:mana/soul_staff/staff_cooldown"
-              },
-              {
-                "type": "origins:trigger_cooldown",
-                "power": "*:*_cooldown"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
-              }
-            ]
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:mana/soul_staff/staff_cooldown"
+          },
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
           }
-        }
-      ]
+        ]
+      }
     },
     "interval": 2,
     "condition": {
@@ -411,6 +389,12 @@
         {
           "type": "origins:resource",
           "resource": "*:*_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
           "comparison": "==",
           "compare_to": 0
         }
