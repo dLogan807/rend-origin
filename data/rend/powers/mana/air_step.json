@@ -436,37 +436,7 @@
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:and",
-          "conditions": [
-            {
-              "type": "origins:sneaking"
-            },
-            {
-              "type": "origins:or",
-              "conditions": [
-                {
-                  "type": "origins:block_collision",
-                  "block_condition": {
-                    "type": "origins:hardness",
-                    "comparison": "<",
-                    "compare_to": 5
-                  },
-                  "offset_x": 0.1,
-                  "offset_z": 0.1
-                },
-                {
-                  "type": "origins:block_collision",
-                  "block_condition": {
-                    "type": "origins:hardness",
-                    "comparison": "<",
-                    "compare_to": 5
-                  },
-                  "offset_x": -0.1,
-                  "offset_z": -0.1
-                }
-              ]
-            }
-          ],
+          "type": "origins:sneaking",
           "inverted": true
         },
         {
