@@ -29,7 +29,7 @@
   "is_charging": {
     "type": "origins:resource",
     "min": 0,
-    "max": 2
+    "max": 3
   },
   "charge_cooldown": {
     "type": "origins:cooldown",
@@ -44,7 +44,7 @@
           "type": "origins:change_resource",
           "resource": "*:*_is_charging",
           "operation": "set",
-          "change": 2
+          "change": 3
         },
         {
           "type": "origins:if_else",
@@ -261,7 +261,7 @@
                 "type": "origins:change_resource",
                 "resource": "*:*_is_charging",
                 "operation": "set",
-                "change": 2
+                "change": 3
               },
               {
                 "type": "origins:change_resource",
