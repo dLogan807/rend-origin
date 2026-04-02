@@ -112,7 +112,7 @@
               {
                 "type": "origins:spawn_particles",
                 "particle": "minecraft:white_smoke",
-                "offset_y": 0.5,
+                "offset_y": 1.0,
                 "count": 20,
                 "spread": {
                   "x": 0.1,
@@ -317,10 +317,23 @@
         "compare_to": 0
       },
       "if_action": {
-        "type": "origins:change_resource",
-        "resource": "*:*_is_charging",
-        "operation": "add",
-        "change": -1
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function rend:air_burst/whirlwind_particles/increment_then_display with storage rend team"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:*_is_charging",
+            "operation": "add",
+            "change": -1
+          }
+        ]
       },
       "else_action": {
         "type": "origins:and",
@@ -350,7 +363,7 @@
         ]
       }
     },
-    "interval": 2,
+    "interval": 1,
     "condition": {
       "type": "origins:and",
       "conditions": [

@@ -121,6 +121,12 @@ data modify storage minecraft:rend air_burst set value {"explosion_pitch": 0.0}
 scoreboard objectives add rend.air_burst.MAX_SOUND_PITCH dummy
 scoreboard players set #rend_global rend.air_burst.MAX_SOUND_PITCH 20
 
+# - Whirlwind particles
+scoreboard objectives add rend.air_burst.particle_rotation dummy
+scoreboard objectives add rend.air_burst.particle_y dummy
+scoreboard objectives add rend.air_burst.particle_y_is_increasing dummy
+scoreboard objectives add rend.air_burst.particle_player_distance dummy
+
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
@@ -137,3 +143,6 @@ data modify storage minecraft:rend team set value {"name": "rend", "counter": 0}
 execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team
 # - Assign to new team and create storage locations for the namespace
 function rend:set_team_and_storage with storage minecraft:rend team
+
+# Charge burst - particle storage location setup
+function rend:air_burst/whirlwind_particles/initialise_storage with storage rend team
