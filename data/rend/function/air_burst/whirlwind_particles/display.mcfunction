@@ -1,2 +1,1 @@
 $execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:smoke ^ ^$(particle_y) ^2 0 0 0 0 1 normal @a
-$execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:white_ash ^ ^$(particle_y) ^2 0 0 0 0 1 normal @a

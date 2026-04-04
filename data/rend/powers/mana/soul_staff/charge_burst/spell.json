@@ -113,7 +113,7 @@
                 "type": "origins:spawn_particles",
                 "particle": "minecraft:white_smoke",
                 "offset_y": 1.0,
-                "count": 20,
+                "count": 10,
                 "spread": {
                   "x": 0.1,
                   "y": 0,
