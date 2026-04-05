@@ -1,3 +1,3 @@
-# Show a bigger wave radius when sneaking
 $execute if score @s rend.air_burst.is_sneaking matches 0 run execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:smoke ^ ^$(particle_y) ^1 0 0 0 0 1 normal @a
+# Show a bigger wave radius when sneaking
 $execute if score @s rend.air_burst.is_sneaking matches 1 run execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:smoke ^ ^$(particle_y) ^2.5 0 0 0 0 1 normal @a

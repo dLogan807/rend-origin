@@ -2,6 +2,25 @@
   "type": "origins:multiple",
   "name": "Charge Burst",
   "description": "To-do.",
+  "players_in_radius_opting_in": {
+    "type": "origins:entity_set",
+    "action_on_remove": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "scoreboard players set @s rend.air_burst.total_charges 0"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.total_charges"
+          }
+        ]
+      }
+    }
+  },
   "cooldown": {
     "type": "origins:cooldown",
     "cooldown": 200,
@@ -128,6 +147,50 @@
               {
                 "type": "origins:execute_command",
                 "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.total_charges"
+              },
+              {
+                "type": "origins:area_of_effect",
+                "radius": 2.5,
+                "shape": "sphere",
+                "bientity_condition": {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:player"
+                      },
+                      {
+                        "type": "origins:sneaking"
+                      }
+                    ]
+                  }
+                },
+                "bientity_action": {
+                  "type": "origins:add_to_entity_set",
+                  "set": "*:*_players_in_radius_opting_in"
+                }
+              },
+              {
+                "type": "origins:action_on_entity_set",
+                "set": "*:*_players_in_radius_opting_in",
+                "bientity_action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:execute_command",
+                        "command": "scoreboard players add @s rend.air_burst.total_charges 1"
+                      },
+                      {
+                        "type": "origins:execute_command",
+                        "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.total_charges"
+                      }
+                    ]
+                  }
+                }
               }
             ]
           }
@@ -339,13 +402,51 @@
               "command": "scoreboard players set @s rend.air_burst.is_sneaking 1"
             },
             "else_action": {
-              "type": "origins:execute_command",
-              "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+                },
+                {
+                  "type": "origins:action_on_entity_set",
+                  "set": "*:*_players_in_radius_opting_in",
+                  "bientity_action": {
+                    "type": "origins:remove_from_entity_set",
+                    "set": "*:*_players_in_radius_opting_in"
+                  }
+                }
+              ]
             }
           },
           {
             "type": "origins:execute_command",
             "command": "function rend:air_burst/whirlwind_particles/increment_then_display with storage rend team"
+          },
+          {
+            "type": "origins:action_on_entity_set",
+            "set": "*:*_players_in_radius_opting_in",
+            "bientity_condition": {
+              "type": "origins:or",
+              "conditions": [
+                {
+                  "type": "origins:target_condition",
+                  "condition": {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                  }
+                },
+                {
+                  "type": "origins:distance",
+                  "comparison": ">",
+                  "compare_to": 2.5
+                }
+              ]
+            },
+            "bientity_action": {
+              "type": "origins:remove_from_entity_set",
+              "set": "*:*_players_in_radius_opting_in"
+            }
           }
         ]
       },
@@ -373,6 +474,26 @@
           {
             "type": "origins:execute_command",
             "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
+          },
+          {
+            "type": "origins:action_on_entity_set",
+            "set": "*:*_players_in_radius_opting_in",
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
+                  }
+                ]
+              }
+            }
           }
         ]
       }
