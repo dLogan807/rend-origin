@@ -324,14 +324,28 @@
             "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
           },
           {
-            "type": "origins:execute_command",
-            "command": "function rend:air_burst/whirlwind_particles/increment_then_display with storage rend team"
-          },
-          {
             "type": "origins:change_resource",
             "resource": "*:*_is_charging",
             "operation": "add",
             "change": -1
+          },
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:sneaking"
+            },
+            "if_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend.air_burst.is_sneaking 1"
+            },
+            "else_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+            }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function rend:air_burst/whirlwind_particles/increment_then_display with storage rend team"
           }
         ]
       },

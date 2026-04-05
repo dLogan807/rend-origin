@@ -105,6 +105,8 @@ scoreboard objectives add rend.air_burst.denominator dummy
 scoreboard objectives add rend.air_burst.modifier dummy
 scoreboard objectives add rend.air_burst.cooldown dummy
 
+scoreboard objectives add rend.air_burst.is_sneaking dummy
+
 scoreboard objectives add rend.air_burst.MAX_COOLDOWN dummy
 scoreboard players set #rend_global rend.air_burst.MAX_COOLDOWN 100
 scoreboard objectives add rend.air_burst.X_SHIFT dummy
