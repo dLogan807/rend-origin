@@ -2,34 +2,6 @@
   "name": "Claws",
   "description": "You can dig your claws in to cling and leap from walls.",
   "type": "origins:multiple",
-  "check_clinging_release": {
-    "type": "origins:action_over_time",
-    "interval": 2,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:sneaking"
-        },
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:block_collision",
-              "offset_x": 0.1,
-              "offset_z": 0.1
-            },
-            {
-              "type": "origins:block_collision",
-              "offset_x": -0.1,
-              "offset_z": -0.1
-            }
-          ]
-        }
-      ],
-      "inverted": true
-    }
-  },
   "slow_fall": {
     "type": "origins:modify_falling",
     "velocity": -0.01,
