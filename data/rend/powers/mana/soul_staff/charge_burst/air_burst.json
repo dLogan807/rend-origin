@@ -7,6 +7,8 @@
     "max": 15,
     "hud_render": {
       "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/charge_burst_bar_01.png",
+      "bar_index": 0,
       "order": 6,
       "condition": {
         "type": "origins:resource",
@@ -26,6 +28,15 @@
         "operation": "set",
         "change": 0
       }
+    }
+  },
+  "stop_on_leaving_world": {
+    "type": "origins:action_on_callback",
+    "entity_action_removed": {
+      "type": "origins:change_resource",
+      "resource": "*:*_charges_left",
+      "operation": "set",
+      "change": 0
     }
   },
   "has_finished_charging": {
