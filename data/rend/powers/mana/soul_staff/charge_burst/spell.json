@@ -1,7 +1,7 @@
 {
   "type": "origins:multiple",
   "name": "Charge Burst",
-  "description": "To-do.",
+  "description": "Propel yourself forward at terrifying speed.",
   "players_in_radius_opting_in": {
     "type": "origins:entity_set",
     "action_on_add": {
@@ -74,7 +74,7 @@
   },
   "cooldown": {
     "type": "origins:cooldown",
-    "cooldown": 100,
+    "cooldown": 300,
     "hud_render": {
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 9,
@@ -562,13 +562,13 @@
     "type": "origins:tooltip",
     "texts": [
       {
-        "text": "To-do",
+        "text": "Harness explosive gusts to",
         "type": "text",
         "italic": true,
         "color": "gray"
       },
       {
-        "text": "to-do.",
+        "text": "traverse the world.",
         "type": "text",
         "italic": true,
         "color": "gray"
@@ -581,7 +581,7 @@
         "text": "§7XP Level: §330⟡"
       },
       {
-        "text": "§7Cooldown: §r5s"
+        "text": "§7Cooldown: §r15s"
       }
     ],
     "item_condition": {
@@ -593,7 +593,16 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/charge_burst.png",
-      "text": "§eTome of Charge Burst§7               \nFound in all manner of §fto-do§7."
+      "text": "§eTome of Charge Burst§7               \nFound in ominous §fTrial Chamber§7 vaults."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": [
+        "§7You may charge the spell on nearby players if you are both holding [§r",
+        { "keybind": "key.sneak" },
+        "§7]."
+      ]
     }
   ]
 }
