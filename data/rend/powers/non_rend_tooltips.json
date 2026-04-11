@@ -25,6 +25,10 @@
         },
         {
           "type": "origins:custom_data",
+          "nbt": "{charge_burst_tome: 1b}"
+        },
+        {
+          "type": "origins:custom_data",
           "nbt": "{cultivate_tome: 1b}"
         },
         {
