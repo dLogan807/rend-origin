@@ -126,9 +126,7 @@
           "inverted": true
         },
         {
-          "type": "origins:in_tag",
-          "tag": "*:inanimate",
-          "inverted": true
+          "type": "origins:living"
         }
       ]
     },
