@@ -99,9 +99,7 @@
                 "bientity_condition": {
                   "type": "origins:target_condition",
                   "condition": {
-                    "type": "origins:in_tag",
-                    "tag": "*:inanimate",
-                    "inverted": true
+                    "type": "origins:living"
                   }
                 }
               },
@@ -119,9 +117,7 @@
                 "bientity_condition": {
                   "type": "origins:target_condition",
                   "condition": {
-                    "type": "origins:in_tag",
-                    "tag": "*:inanimate",
-                    "inverted": true
+                    "type": "origins:living"
                   }
                 }
               },
@@ -139,9 +135,7 @@
                 "bientity_condition": {
                   "type": "origins:target_condition",
                   "condition": {
-                    "type": "origins:in_tag",
-                    "tag": "*:inanimate",
-                    "inverted": true
+                    "type": "origins:living"
                   }
                 }
               }
