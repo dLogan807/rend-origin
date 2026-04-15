@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439213,custom_name='{"text":"Tome of Fallen Apparation","color": "yellow","italic": false}',custom_data={fallen_tp_tome:1b},enchantment_glint_override=true] 1

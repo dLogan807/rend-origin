@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439216,custom_name='{"text":"Tome of Charge Burst","color": "yellow","italic": false}',custom_data={charge_burst_tome:1b},enchantment_glint_override=true] 1

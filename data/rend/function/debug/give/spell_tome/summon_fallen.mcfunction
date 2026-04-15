@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439210,custom_name='{"text":"Tome of Fallen Summoning","color": "yellow","italic": false}',custom_data={fallen_summoning_tome:1b},enchantment_glint_override=true] 1
