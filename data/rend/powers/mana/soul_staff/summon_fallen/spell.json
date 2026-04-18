@@ -2,13 +2,13 @@
   "type": "origins:multiple",
   "name": "Fallen Summoning",
   "description": "Tether past allies to the mortal plane.",
-  "tome": {
+  "jungle_temple_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/jungle_temple": "rend:chests/fallen_summoning_tome"
     }
   },
-  "skeleton_skull_drop": {
+  "skeleton_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:entities/skeleton": "rend:entities/skeleton_drops_head"

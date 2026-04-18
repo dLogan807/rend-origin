@@ -2,25 +2,25 @@
   "type": "origins:multiple",
   "name": "Barrier",
   "description": "Create a barrier around yourself that deflects all projectiles.",
-  "tome_bridge": {
+  "bastion_bridge_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/bastion_bridge": "rend:chests/barrier_tome/normal"
     }
   },
-  "tome_treasure": {
+  "bastion_treasure_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/bastion_treasure": "rend:chests/barrier_tome/normal"
     }
   },
-  "tome_hoglin_stable": {
+  "bastion_hoglin_stable_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/bastion_hoglin_stable": "rend:chests/barrier_tome/normal"
     }
   },
-  "tome_other": {
+  "bastion_other_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/bastion_other": "rend:chests/barrier_tome/normal"

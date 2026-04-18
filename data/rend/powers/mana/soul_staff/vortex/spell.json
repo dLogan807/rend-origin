@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "name": "Create Vortex",
   "description": "Call forth a howling whirlwind.",
-  "tome_loot": {
+  "trial_chambers_vault_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome"

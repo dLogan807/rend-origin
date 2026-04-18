@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "name": "Explosion",
   "description": "Initiate a cataclysmic explosion. Not to be underestimated.",
-  "tome": {
+  "nether_fortress_bridge_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/nether_bridge": "rend:chests/explosion_tome/normal"

@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "name": "Charge Burst",
   "description": "Propel yourself forward at terrifying speed.",
-  "tome_loot": {
+  "trial_chamber_ominous_vault_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/charge_burst_tome"

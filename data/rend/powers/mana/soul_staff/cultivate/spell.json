@@ -2,31 +2,31 @@
   "type": "origins:multiple",
   "name": "Cultivate",
   "description": "Grow nearby crops and some plants.",
-  "tome_plains": {
+  "village_plains_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/village/village_plains_house": "rend:chests/cultivate_tome"
     }
   },
-  "tome_desert": {
+  "village_desert_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/village/village_desert_house": "rend:chests/cultivate_tome"
     }
   },
-  "tome_savanna": {
+  "village_savanna_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/village/village_savanna_house": "rend:chests/cultivate_tome"
     }
   },
-  "snowy_plains": {
+  "village_snowy_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/village/village_snowy_house": "rend:chests/cultivate_tome"
     }
   },
-  "taiga_plains": {
+  "village_taiga_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/village/village_taiga_house": "rend:chests/cultivate_tome"
