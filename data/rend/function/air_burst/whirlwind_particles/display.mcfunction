@@ -1,4 +1,4 @@
-$execute if score @s rend.air_burst.out_of_mana matches 1 run return run execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:white_smoke ^ ^$(particle_y) ^1 0 0 0 0 1 normal @a
+$execute if function rend:air_burst/out_of_mana run return run execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:white_smoke ^ ^$(particle_y) ^1 0 0 0 0 1 normal @a
 
 $execute if score @s rend.air_burst.is_sneaking matches 0 run return run execute positioned ^ ^0.5 ^ rotated ~$(particle_rotation) 0 run particle minecraft:smoke ^ ^$(particle_y) ^1 0 0 0 0 1 normal @a
 # Show a bigger wave radius when sneaking

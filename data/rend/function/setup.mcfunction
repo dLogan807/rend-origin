@@ -59,6 +59,9 @@ scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 scoreboard objectives add rend.agile_phys.speed_calc dummy
 data modify storage minecraft:rend agile_phys set value {"speed_bonus_modifier": 0.0, "armour_speed_modifier": 0.0}
 
+# Mana
+scoreboard objectives add rend.mana.current dummy
+
 # Soul Purge 
 # - damage scores
 scoreboard objectives add rend_soul_purge_actor dummy
@@ -106,7 +109,6 @@ scoreboard objectives add rend.air_burst.modifier dummy
 scoreboard objectives add rend.air_burst.cooldown dummy
 
 scoreboard objectives add rend.air_burst.is_sneaking dummy
-scoreboard objectives add rend.air_burst.out_of_mana dummy
 
 scoreboard objectives add rend.air_burst.MAX_COOLDOWN dummy
 scoreboard players set #rend_global rend.air_burst.MAX_COOLDOWN 100
