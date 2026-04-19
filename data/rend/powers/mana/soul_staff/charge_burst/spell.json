@@ -58,17 +58,6 @@
       }
     }
   },
-  "cancel_on_leaving_world": {
-    "type": "origins:action_on_callback",
-    "entity_action_removed": {
-      "type": "origins:action_on_entity_set",
-      "set": "*:*_players_in_radius_opting_in",
-      "bientity_action": {
-        "type": "origins:remove_from_entity_set",
-        "set": "*:*_players_in_radius_opting_in"
-      }
-    }
-  },
   "is_charging": {
     "type": "origins:resource",
     "min": 0,

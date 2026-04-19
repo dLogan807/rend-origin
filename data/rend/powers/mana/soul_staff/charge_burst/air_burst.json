@@ -30,15 +30,6 @@
       }
     }
   },
-  "stop_on_leaving_world": {
-    "type": "origins:action_on_callback",
-    "entity_action_removed": {
-      "type": "origins:change_resource",
-      "resource": "*:*_charges_left",
-      "operation": "set",
-      "change": 0
-    }
-  },
   "has_finished_charging": {
     "type": "origins:resource",
     "min": 0,
