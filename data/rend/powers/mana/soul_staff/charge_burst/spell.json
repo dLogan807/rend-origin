@@ -366,6 +366,21 @@
                     }
                   ]
                 }
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:mana/mana_capacity",
+                  "comparison": "<",
+                  "compare_to": 5
+                },
+                "if_action": {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:entity.camel.dash_ready",
+                  "pitch": 0,
+                  "category": "players"
+                }
               }
             ]
           }
