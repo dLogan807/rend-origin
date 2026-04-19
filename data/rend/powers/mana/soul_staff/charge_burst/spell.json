@@ -452,15 +452,37 @@
           {
             "type": "origins:if_else",
             "condition": {
-              "type": "origins:sneaking"
+              "type": "origins:resource",
+              "resource": "*:mana/mana_capacity",
+              "comparison": ">=",
+              "compare_to": 5
             },
             "if_action": {
-              "type": "origins:execute_command",
-              "command": "scoreboard players set @s rend.air_burst.is_sneaking 1"
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "scoreboard players set @s rend.air_burst.out_of_mana 0"
+                },
+                {
+                  "type": "origins:if_else",
+                  "condition": {
+                    "type": "origins:sneaking"
+                  },
+                  "if_action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rend.air_burst.is_sneaking 1"
+                  },
+                  "else_action": {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+                  }
+                }
+              ]
             },
             "else_action": {
               "type": "origins:execute_command",
-              "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+              "command": "scoreboard players set @s rend.air_burst.out_of_mana 1"
             }
           },
           {
