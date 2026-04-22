@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 7
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -31,12 +31,12 @@
             {
               "function": "minecraft:set_custom_data",
               "tag": {
-                "vortex_tome": true
+                "charge_burst_tome": true
               }
             },
             {
               "function": "minecraft:set_custom_model_data",
-              "value": 439211
+              "value": 439216
             },
             {
               "function": "minecraft:set_name",

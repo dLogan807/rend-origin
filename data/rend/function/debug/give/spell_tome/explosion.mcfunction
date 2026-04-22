@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439212,custom_name='{"text":"Tome of Explosion","color": "yellow","italic": false}',custom_data={explosion_tome:1b},enchantment_glint_override=true] 1

@@ -85,7 +85,7 @@ If you ran the above command by mistake, run `/function rend:setup` to re-initia
     <ul>
         <li>All items: <code>/function rend:debug/give/all_items</code></li>
         <li>Soul Staff: <code>/function rend:debug/give/soul_staff</code></li>
-        <li>Spell Tomes: <code>/function rend:debug/give/spell_tomes</code></li>
+        <li>Spell Tomes: <code>/function rend:debug/give/spell_tome/all</code></li>
         <li>Mana Potion: <code>/function rend:debug/give/mana_potion</code></li>
         <li>Fallen Tether Doll: <code>/function rend:debug/give/fallen_tether_doll</code></li>
     </ul>

@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439211,custom_name='{"text":"Tome of Create Vortex","color": "yellow","italic": false}',custom_data={vortex_tome:1b},enchantment_glint_override=true] 1

@@ -1,0 +1,1 @@
+$data modify storage minecraft:$(name)$(counter) air_burst set value {"particle_y": 0.0, "particle_rotation": 0.0}

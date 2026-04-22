@@ -2,7 +2,7 @@
   "type": "origins:multiple",
   "name": "Apparate Fallen",
   "description": "Teleport up to five Fallen to your location.",
-  "tome": {
+  "desert_pyramid_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
       "minecraft:chests/desert_pyramid": "rend:chests/fallen_tp_tome"

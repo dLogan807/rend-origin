@@ -63,7 +63,6 @@
     "type": "origins:cooldown",
     "cooldown": 100,
     "hud_render": {
-      "should_render": true,
       "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
       "bar_index": 0,
       "order": 5,
@@ -84,37 +83,92 @@
       }
     }
   },
-  "notify_on_nether_use": {
+  "notify_unusable": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
+      "type": "origins:if_else_list",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "title @s actionbar {\"text\":\"Unusable in the Nether\",\"color\":\"red\"}"
+          "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Unusable in the Nether\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_unusable_warning"
+              }
+            ]
+          }
         },
         {
-          "type": "origins:execute_command",
-          "command": "function rend:sounds/playsound_unusable_warning"
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+              "type": "origins:or",
+              "inverted": true,
+              "conditions": [
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{fallen_tp_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{barrier_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{charge_burst_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{cultivate_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{explosion_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{fallen_summoning_tome: 1b}"
+                },
+                {
+                  "type": "origins:custom_data",
+                  "nbt": "{vortex_tome: 1b}"
+                }
+              ]
+            }
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Not holding a spell tome\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_unusable_warning"
+              }
+            ]
+          }
         }
       ]
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:custom_data",
-            "nbt": "{soul_staff: 1b}"
-          }
-        },
-        {
-          "type": "origins:dimension",
-          "dimension": "minecraft:the_nether"
-        }
-      ]
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:custom_data",
+        "nbt": "{soul_staff: 1b}"
+      }
     },
     "key": "key.use"
   },

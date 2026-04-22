@@ -1,35 +1,7 @@
 {
   "name": "Claws",
-  "description": "You can cling and leap from walls that aren't too tough.",
+  "description": "You can dig your claws in to cling and leap from walls.",
   "type": "origins:multiple",
-  "check_clinging_release": {
-    "type": "origins:action_over_time",
-    "interval": 2,
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:sneaking"
-        },
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:block_collision",
-              "offset_x": 0.1,
-              "offset_z": 0.1
-            },
-            {
-              "type": "origins:block_collision",
-              "offset_x": -0.1,
-              "offset_z": -0.1
-            }
-          ]
-        }
-      ],
-      "inverted": true
-    }
-  },
   "slow_fall": {
     "type": "origins:modify_falling",
     "velocity": -0.01,
@@ -79,8 +51,15 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:execute_command",
-          "command": "particle minecraft:ash ~ ~ ~ 0.1 0.1 0.1 0 5 normal @a"
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:ash",
+          "spread": {
+            "x": 0.1,
+            "y": 0.1,
+            "z": 0.1
+          },
+          "speed": 0,
+          "count": 5
         },
         {
           "type": "origins:play_sound",

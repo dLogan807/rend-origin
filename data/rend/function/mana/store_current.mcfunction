@@ -1,0 +1,1 @@
+execute store result score @s rend.mana.current run resource get @s rend:mana/mana_capacity

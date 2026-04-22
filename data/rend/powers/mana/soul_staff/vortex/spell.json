@@ -2,16 +2,10 @@
   "type": "origins:multiple",
   "name": "Create Vortex",
   "description": "Call forth a howling whirlwind.",
-  "tome_vault": {
+  "trial_chambers_vault_loot": {
     "type": "origins:replace_loot_table",
     "replace": {
-      "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome/trial_vault"
-    }
-  },
-  "tome_ominous_vault": {
-    "type": "origins:replace_loot_table",
-    "replace": {
-      "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/vortex_tome/trial_ominous_vault"
+      "minecraft:chests/trial_chambers/reward": "rend:chests/vortex_tome"
     }
   },
   "cooldown": {
@@ -240,7 +234,7 @@
     {
       "type": "origins:tooltip",
       "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/vortex.png",
-      "text": "§eTome of Create Vortex         \n§7Found in §fTrail Chamber vaults§7."
+      "text": "§eTome of Create Vortex         \n§7Found in §fTrail Chamber§7 vaults."
     }
   ]
 }

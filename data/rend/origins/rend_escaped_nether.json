@@ -15,14 +15,15 @@
     "*:mana/air_step",
     "*:mana/distortion/distortion",
     "*:mana/soul_staff/staff",
-    "*:mana/soul_staff/cultivate/spell",
+    "*:mana/soul_staff/apparate_fallen/spell",
     "*:mana/soul_staff/barrier/spell",
-    "*:mana/soul_staff/vortex/spell",
+    "*:mana/soul_staff/charge_burst/spell",
+    "*:mana/soul_staff/cultivate/spell",
+    "*:mana/soul_staff/explosion/spell",
+    "*:mana/soul_staff/explosion/exhaustion",
     "*:mana/soul_staff/summon_fallen/spell",
     "*:fallen/summoner",
-    "*:mana/soul_staff/apparate_fallen/spell",
-    "*:mana/soul_staff/explosion/spell",
-    "*:mana/soul_staff/explosion/exhaustion"
+    "*:mana/soul_staff/vortex/spell"
   ],
   "icon": {
     "id": "minecraft:ancient_debris"

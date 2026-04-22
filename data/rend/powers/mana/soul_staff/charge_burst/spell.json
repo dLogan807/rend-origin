@@ -1,0 +1,618 @@
+{
+  "type": "origins:multiple",
+  "name": "Charge Burst",
+  "description": "Propel yourself forward at terrifying speed.",
+  "trial_chamber_ominous_vault_loot": {
+    "type": "origins:replace_loot_table",
+    "replace": {
+      "minecraft:chests/trial_chambers/reward_ominous": "rend:chests/charge_burst_tome"
+    }
+  },
+  "players_in_radius_opting_in": {
+    "type": "origins:entity_set",
+    "action_on_add": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+            "operation": "set",
+            "change": 0
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scoreboard players set @s rend.air_burst.total_charges 0"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:mana/soul_staff/charge_burst/air_burst_charges_left",
+            "operation": "set",
+            "change": 0
+          }
+        ]
+      }
+    },
+    "action_on_remove": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:mana/soul_staff/charge_burst/air_burst_charges_left",
+        "operation": "set",
+        "change": 0
+      }
+    }
+  },
+  "cancel_on_death": {
+    "type": "origins:action_on_death",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:action_on_entity_set",
+        "set": "*:*_players_in_radius_opting_in",
+        "bientity_action": {
+          "type": "origins:remove_from_entity_set",
+          "set": "*:*_players_in_radius_opting_in"
+        }
+      }
+    }
+  },
+  "is_charging": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3
+  },
+  "charge_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 13
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 300,
+    "hud_render": {
+      "sprite_location": "*:textures/gui/community/leopardx/resource_bar_01.png",
+      "bar_index": 9,
+      "order": 4,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:xp_levels",
+            "comparison": ">=",
+            "compare_to": 20
+          },
+          {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  },
+  "activation": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:xp_levels",
+            "comparison": "<",
+            "compare_to": 30
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"30 XP levels needed\",\"color\":\"red\"}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:sounds/playsound_xp_warning"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:mana/soul_staff/staff_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:notification/notify_staff_on_cooldown"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_cooldown",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:notification/notify_spell_on_cooldown"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "*:mana/mana_capacity",
+            "comparison": "<",
+            "compare_to": 5
+          },
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function rend:notification/notify_spell_insufficient_mana"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:action_on_entity_set",
+                "set": "*:*_players_in_radius_opting_in",
+                "bientity_action": {
+                  "type": "origins:remove_from_entity_set",
+                  "set": "*:*_players_in_radius_opting_in"
+                }
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:*_is_charging",
+                "operation": "set",
+                "change": 3
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+                "operation": "set",
+                "change": 0
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function rend:air_burst/initialise_num_charges"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "key": "key.use",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{charge_burst_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "charge": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_is_charging",
+          "operation": "set",
+          "change": 3
+        },
+        {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "*:*_charge_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "*:mana/mana_capacity",
+                "comparison": ">=",
+                "compare_to": 5
+              },
+              {
+                "type": "origins:command",
+                "command": "scoreboard players get @s rend.air_burst.total_charges",
+                "comparison": "<",
+                "compare_to": 15
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "*:*_charge_cooldown"
+              },
+              {
+                "type": "origins:change_resource",
+                "resource": "*:mana/mana_capacity",
+                "operation": "add",
+                "change": -5
+              },
+              {
+                "type": "origins:swing_hand",
+                "hand": "MAIN_HAND"
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:item.firecharge.use",
+                "category": "players",
+                "volume": 0.3,
+                "pitch": 2
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.trial_spawner.spawn_item_begin",
+                "category": "players",
+                "volume": 1,
+                "pitch": 1.5
+              },
+              {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.breeze.wind_burst",
+                "category": "players",
+                "volume": 0.1,
+                "pitch": 0.3
+              },
+              {
+                "type": "origins:spawn_particles",
+                "particle": "minecraft:white_smoke",
+                "offset_y": 1.0,
+                "count": 10,
+                "spread": {
+                  "x": 0.1,
+                  "y": 0,
+                  "z": 0.1
+                },
+                "speed": 0.1
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "scoreboard players add @s rend.air_burst.total_charges 1"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.total_charges"
+              },
+              {
+                "type": "origins:area_of_effect",
+                "radius": 2.5,
+                "shape": "sphere",
+                "bientity_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:actor_condition",
+                      "condition": {
+                        "type": "origins:sneaking"
+                      }
+                    },
+                    {
+                      "type": "origins:target_condition",
+                      "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:player"
+                          },
+                          {
+                            "type": "origins:sneaking"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "bientity_action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:add_to_entity_set",
+                      "set": "*:*_players_in_radius_opting_in"
+                    },
+                    {
+                      "type": "origins:target_action",
+                      "action": {
+                        "type": "origins:and",
+                        "actions": [
+                          {
+                            "type": "origins:execute_command",
+                            "command": "scoreboard players add @s rend.air_burst.total_charges 1"
+                          },
+                          {
+                            "type": "origins:execute_command",
+                            "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.total_charges"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:if_else",
+                "condition": {
+                  "type": "origins:resource",
+                  "resource": "*:mana/mana_capacity",
+                  "comparison": "<",
+                  "compare_to": 5
+                },
+                "if_action": {
+                  "type": "origins:play_sound",
+                  "sound": "minecraft:entity.camel.dash_ready",
+                  "pitch": 0,
+                  "category": "players"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:xp_levels",
+          "comparison": ">=",
+          "compare_to": 30
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/staff_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{soul_staff: 1b}"
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:custom_data",
+            "nbt": "{charge_burst_tome: 1b}"
+          }
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_is_charging",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    }
+  },
+  "check_has_finished_charging": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_is_charging",
+        "comparison": ">",
+        "compare_to": 0
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:*_is_charging",
+            "operation": "add",
+            "change": -1
+          },
+          {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:sneaking"
+            },
+            "if_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend.air_burst.is_sneaking 1"
+            },
+            "else_action": {
+              "type": "origins:execute_command",
+              "command": "scoreboard players set @s rend.air_burst.is_sneaking 0"
+            }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function rend:air_burst/whirlwind_particles/increment_then_display with storage rend team"
+          }
+        ]
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:mana/soul_staff/staff_cooldown"
+          },
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_cooldown"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+            "operation": "set",
+            "change": 1
+          },
+          {
+            "type": "origins:action_on_entity_set",
+            "set": "*:*_players_in_radius_opting_in",
+            "bientity_action": {
+              "type": "origins:target_action",
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation @s rend.air_burst.charges_left = @s rend.air_burst.total_charges"
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "resource operation @s rend:mana/soul_staff/charge_burst/air_burst_charges_left = @s rend.air_burst.charges_left"
+                  },
+                  {
+                    "type": "origins:change_resource",
+                    "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+                    "operation": "set",
+                    "change": 1
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:the_nether",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/staff_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:mana/soul_staff/charge_burst/air_burst_has_finished_charging",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "texts": [
+      {
+        "text": "Harness explosive gusts to",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      {
+        "text": "traverse the world.",
+        "type": "text",
+        "italic": true,
+        "color": "gray"
+      },
+      { "text": "" },
+      {
+        "text": "§7Mana Cost: §b-5% per charge"
+      },
+      {
+        "text": "§7XP Level: §330⟡"
+      },
+      {
+        "text": "§7Cooldown: §r15s"
+      }
+    ],
+    "item_condition": {
+      "type": "origins:custom_data",
+      "nbt": "{charge_burst_tome: 1b}"
+    }
+  },
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "*:textures/gui/community/leopardx/badge/spell_tomes/charge_burst.png",
+      "text": "§eTome of Charge Burst§7               \nFound in ominous §fTrial Chamber§7 vaults."
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": [
+        "§7You may charge the spell on nearby players if you are both holding [§r",
+        { "keybind": "key.sneak" },
+        "§7]."
+      ]
+    }
+  ]
+}

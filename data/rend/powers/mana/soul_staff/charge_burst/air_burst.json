@@ -1,0 +1,246 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "charges_left": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 15,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "*:textures/gui/community/leopardx/charge_burst_bar_01.png",
+      "bar_index": 0,
+      "order": 6,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_charges_left",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    }
+  },
+  "stop_on_death": {
+    "type": "origins:action_on_death",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_charges_left",
+        "operation": "set",
+        "change": 0
+      }
+    }
+  },
+  "has_finished_charging": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100
+  },
+  "launch": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:spawn_particles",
+          "particle": "minecraft:poof",
+          "spread": {
+            "x": 0,
+            "Z": 0
+          },
+          "count": 1
+        },
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": "==",
+                    "compare_to": 0
+                  },
+                  {
+                    "type": "origins:on_block"
+                  },
+                  {
+                    "type": "origins:command",
+                    "command": "execute if score @s rend.air_burst.charges_left = @s rend.air_burst.total_charges",
+                    "comparison": "!=",
+                    "compare_to": 1
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_charges_left",
+                "operation": "set",
+                "change": 0
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              "action": {
+                "type": "origins:and",
+                "actions": [
+                  {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                      {
+                        "condition": {
+                          "type": "origins:command",
+                          "command": "scoreboard players get @s rend.air_burst.modifier",
+                          "comparison": "<",
+                          "compare_to": 5
+                        },
+                        "action": {
+                          "type": "origins:add_velocity",
+                          "space": "local",
+                          "server": false,
+                          "z": 4.0
+                        }
+                      },
+                      {
+                        "condition": {
+                          "type": "origins:command",
+                          "command": "scoreboard players get @s rend.air_burst.modifier",
+                          "comparison": "<",
+                          "compare_to": 10
+                        },
+                        "action": {
+                          "type": "origins:add_velocity",
+                          "space": "local",
+                          "server": false,
+                          "z": 5.0
+                        }
+                      },
+                      {
+                        "condition": {
+                          "type": "origins:command",
+                          "command": "scoreboard players get @s rend.air_burst.modifier",
+                          "comparison": "<",
+                          "compare_to": 15
+                        },
+                        "action": {
+                          "type": "origins:add_velocity",
+                          "space": "local",
+                          "server": false,
+                          "z": 6.0
+                        }
+                      },
+                      {
+                        "condition": {
+                          "type": "origins:command",
+                          "command": "scoreboard players get @s rend.air_burst.modifier",
+                          "comparison": "<",
+                          "compare_to": 20
+                        },
+                        "action": {
+                          "type": "origins:add_velocity",
+                          "space": "local",
+                          "server": false,
+                          "z": 8.0
+                        }
+                      },
+                      {
+                        "condition": {
+                          "type": "origins:constant",
+                          "value": true
+                        },
+                        "action": {
+                          "type": "origins:add_velocity",
+                          "space": "local",
+                          "server": false,
+                          "z": 10.0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:explosion",
+                    "spread": {
+                      "x": 0.3,
+                      "Z": 0.3
+                    },
+                    "speed": 0,
+                    "count": 1
+                  },
+                  {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:poof",
+                    "spread": {
+                      "x": 0.3,
+                      "Z": 0.3
+                    },
+                    "speed": 0.5,
+                    "count": 10
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function rend:air_burst/calculate_explosion_sound_pitch_and_play"
+                  },
+                  {
+                    "type": "origins:execute_command",
+                    "command": "function rend:air_burst/calculate_cooldown_time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_charges_left",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_has_finished_charging",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    },
+    "interval": 3
+  },
+  "fall_slowly": {
+    "type": "origins:modify_falling",
+    "velocity": 0.05,
+    "take_fall_damage": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "*:*_charges_left",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:*_has_finished_charging",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  }
+}

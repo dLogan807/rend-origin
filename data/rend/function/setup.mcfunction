@@ -59,6 +59,9 @@ scoreboard players set @s rend.agile_phys.speed_prev_xp_level -1
 scoreboard objectives add rend.agile_phys.speed_calc dummy
 data modify storage minecraft:rend agile_phys set value {"speed_bonus_modifier": 0.0, "armour_speed_modifier": 0.0}
 
+# Mana
+scoreboard objectives add rend.mana.current dummy
+
 # Soul Purge 
 # - damage scores
 scoreboard objectives add rend_soul_purge_actor dummy
@@ -97,6 +100,38 @@ scoreboard players set @s rend.fallen.height_mod 6
 scoreboard objectives add rend_explosion_circle_num dummy
 data modify storage minecraft:rend explosion set value {"counter": 0}
 
+# Charge Burst
+scoreboard objectives add rend.air_burst.total_charges dummy
+scoreboard objectives add rend.air_burst.charges_left dummy
+scoreboard objectives add rend.air_burst.base dummy
+scoreboard objectives add rend.air_burst.denominator dummy
+scoreboard objectives add rend.air_burst.modifier dummy
+scoreboard objectives add rend.air_burst.cooldown dummy
+
+scoreboard objectives add rend.air_burst.is_sneaking dummy
+
+scoreboard objectives add rend.air_burst.MAX_COOLDOWN dummy
+scoreboard players set #rend_global rend.air_burst.MAX_COOLDOWN 100
+scoreboard objectives add rend.air_burst.X_SHIFT dummy
+scoreboard players set #rend_global rend.air_burst.X_SHIFT 2
+scoreboard objectives add rend.air_burst.Y_MOD dummy
+scoreboard players set #rend_global rend.air_burst.Y_MOD 200
+scoreboard objectives add rend.air_burst.DENOMINATOR_MOD dummy
+scoreboard players set #rend_global rend.air_burst.DENOMINATOR_MOD 8
+
+# - Explosion sound
+scoreboard objectives add rend.air_burst.explosion_pitch dummy
+data modify storage minecraft:rend air_burst set value {"explosion_pitch": 0.0}
+
+scoreboard objectives add rend.air_burst.MAX_SOUND_PITCH dummy
+scoreboard players set #rend_global rend.air_burst.MAX_SOUND_PITCH 20
+
+# - Whirlwind particles
+scoreboard objectives add rend.air_burst.particle_rotation dummy
+scoreboard objectives add rend.air_burst.particle_y dummy
+scoreboard objectives add rend.air_burst.particle_y_is_increasing dummy
+scoreboard objectives add rend.air_burst.particle_player_distance dummy
+
 #Cursed Prison UUID storage (for setting zombified piglin's AngryAt)
 data modify storage minecraft:rend uuid_store set value {"UUID":[I; 0, 0, 0, 0]}
 
@@ -113,3 +148,6 @@ data modify storage minecraft:rend team set value {"name": "rend", "counter": 0}
 execute store result storage minecraft:rend team.counter int 1 run scoreboard players get @s rend_team
 # - Assign to new team and create storage locations for the namespace
 function rend:set_team_and_storage with storage minecraft:rend team
+
+# Charge burst - particle storage location setup
+function rend:air_burst/whirlwind_particles/initialise_storage with storage rend team

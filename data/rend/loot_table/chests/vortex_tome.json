@@ -15,7 +15,7 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 3
+          "weight": 7
         },
         {
           "type": "minecraft:item",
@@ -42,7 +42,7 @@
               "function": "minecraft:set_name",
               "entity": "this",
               "name": {
-                "text": "Tome of Create Vortex",
+                "text": "Tome of Charge Burst",
                 "type": "text",
                 "color": "yellow",
                 "italic": false

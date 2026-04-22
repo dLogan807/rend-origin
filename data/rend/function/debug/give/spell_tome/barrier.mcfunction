@@ -1,0 +1,1 @@
+give @s enchanted_book[custom_model_data=439215,custom_name='{"text":"Tome of Conjure Barrier","color": "yellow","italic": false}',custom_data={barrier_tome:1b},enchantment_glint_override=true] 1
