@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "spgoding.datapack-language-server",
+    "minecraftcommands.syntax-mcfunction",
+    "snavesutit.origins-mod-helper",
+    "misodee.vscode-nbt",
+    "esbenp.prettier-vscode"
+  ]
+}
